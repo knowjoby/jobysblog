@@ -1,0 +1,22 @@
+title: Joby's Blog
+description: Personal thoughts and writings
+baseurl: "/jobysblog"
+url: "https://jobyjohn.github.io"
+
+theme: minima
+
+author:
+  name: Joby John
+
+minima:
+  skin: classic
+
+show_excerpts: true
+
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+permalink: /:year/:month/:day/:title/
