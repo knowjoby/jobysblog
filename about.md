@@ -1,7 +1,6 @@
 ---
 layout: page
 title: About
-permalink: /about/
 ---
 
 Hi, I'm Joby. This is my personal blog where I share my thoughts, learnings, and experiences.
