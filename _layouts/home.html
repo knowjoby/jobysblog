@@ -27,6 +27,13 @@ layout: default
 
   .feed-item:last-child { border-bottom: none; }
 
+  /* New-since-last-visit highlight */
+  .feed-item-new {
+    border-left: 3px solid #0057ff;
+    padding-left: 0.5rem;
+    margin-left: -0.55rem;
+  }
+
   .feed-title {
     font-size: 15px;
     font-weight: 500;
@@ -106,6 +113,29 @@ layout: default
   }
   .filter-clear:hover { color: #555; }
 
+  /* New-posts banner */
+  .new-banner {
+    display: none;
+    font-size: 13px;
+    color: #0057ff;
+    margin-bottom: 1rem;
+  }
+
+  /* Show older button */
+  .show-older-btn {
+    display: none;
+    margin: 1.5rem auto 0;
+    padding: 7px 20px;
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #888;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .show-older-btn:hover { border-color: #aaa; color: #444; }
+
   .rss-subscribe { font-size: 13px; color: #aaa; margin-top: 2rem; }
   .rss-subscribe a { color: #aaa; }
 </style>
@@ -120,6 +150,8 @@ layout: default
   {%- assign link_posts = site.posts | where_exp: "post", "post.link" -%}
   {%- if link_posts.size > 0 -%}
 
+    <div class="new-banner" id="new-banner"></div>
+
     <div class="filter-bar" id="filter-bar">
       Filtering by <span class="filter-bar-label" id="filter-label"></span>
       <a class="filter-clear" href="#" id="filter-clear">× clear</a>
@@ -127,8 +159,10 @@ layout: default
 
     {%- comment -%} Group link-only posts by date {%- endcomment -%}
     {%- assign current_date = "" -%}
+    {%- assign post_index = 0 -%}
 
     {%- for post in link_posts -%}
+      {%- assign post_index = post_index | plus: 1 -%}
       {%- assign post_date = post.date | date: "%Y-%m-%d" -%}
       {%- assign display_date = post.date | date: "%B %-d, %Y" -%}
 
@@ -150,7 +184,7 @@ layout: default
 
       {%- assign tag_list = post.tags | join: " " -%}
 
-      <div class="feed-item" data-tags="{{ tag_list }}">
+      <div class="feed-item" data-index="{{ post_index }}" data-pubdate="{{ post.date | date: '%s' }}" data-tags="{{ tag_list }}">
         <div class="score-dot {{ dot_class }}" title="Score: {{ post.score }}"></div>
 
         <a class="feed-title" href="{{ post.link }}" target="_blank" rel="noopener">
@@ -178,6 +212,8 @@ layout: default
       {%- if forloop.last -%}</div></div>{%- endif -%}
     {%- endfor -%}
 
+    <button class="show-older-btn" id="show-older-btn"></button>
+
     <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
 
   {%- else -%}
@@ -186,11 +222,76 @@ layout: default
 </div>
 
 <script>
+  var INITIAL_LIMIT = 50;
   var currentFilter = null;
 
+  // --- Pagination: hide older posts beyond INITIAL_LIMIT ---
+  (function() {
+    var items = document.querySelectorAll('.feed-item[data-index]');
+    var hiddenCount = 0;
+
+    items.forEach(function(el) {
+      if (parseInt(el.dataset.index) > INITIAL_LIMIT) {
+        el.dataset.older = '1';
+        el.style.display = 'none';
+        hiddenCount++;
+      }
+    });
+
+    if (hiddenCount > 0) {
+      syncDateGroups();
+      var btn = document.getElementById('show-older-btn');
+      btn.textContent = 'Show ' + hiddenCount + ' older posts';
+      btn.style.display = 'block';
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.feed-item[data-older]').forEach(function(el) {
+          el.style.display = '';
+        });
+        document.querySelectorAll('.feed-date-group').forEach(function(el) {
+          el.style.display = '';
+        });
+        btn.style.display = 'none';
+      });
+    }
+  })();
+
+  // --- New since last visit ---
+  (function() {
+    var lastVisit = parseInt(localStorage.getItem('ai_feed_last_visit') || '0');
+    var newCount = 0;
+
+    if (lastVisit > 0) {
+      document.querySelectorAll('.feed-item[data-pubdate]').forEach(function(el) {
+        var pubMs = parseInt(el.dataset.pubdate) * 1000;
+        if (pubMs > lastVisit) {
+          el.classList.add('feed-item-new');
+          newCount++;
+        }
+      });
+    }
+
+    if (newCount > 0) {
+      var banner = document.getElementById('new-banner');
+      banner.textContent = newCount + ' new since your last visit';
+      banner.style.display = 'block';
+    }
+
+    // Record this visit after a short delay (so refreshing the same page still shows new)
+    setTimeout(function() {
+      localStorage.setItem('ai_feed_last_visit', Date.now());
+    }, 3000);
+  })();
+
+  // --- Tag filtering ---
   function filterByTag(tag) {
     if (currentFilter === tag) { clearFilter(); return; }
     currentFilter = tag;
+
+    // Reveal all items (including older) so filter searches the full archive
+    document.querySelectorAll('.feed-item[data-older]').forEach(function(el) {
+      el.style.display = '';
+    });
+    document.getElementById('show-older-btn').style.display = 'none';
 
     document.querySelectorAll('.feed-tag').forEach(function(el) {
       el.classList.toggle('feed-tag-active', el.dataset.tag === tag);
@@ -201,10 +302,7 @@ layout: default
       el.style.display = tags.indexOf(tag) !== -1 ? '' : 'none';
     });
 
-    document.querySelectorAll('.feed-date-group').forEach(function(group) {
-      var visible = group.querySelectorAll('.feed-item:not([style*="none"])');
-      group.style.display = visible.length > 0 ? '' : 'none';
-    });
+    syncDateGroups();
 
     var bar = document.getElementById('filter-bar');
     bar.style.display = 'flex';
@@ -213,10 +311,39 @@ layout: default
 
   function clearFilter() {
     currentFilter = null;
-    document.querySelectorAll('.feed-item').forEach(function(el) { el.style.display = ''; });
-    document.querySelectorAll('.feed-date-group').forEach(function(el) { el.style.display = ''; });
-    document.querySelectorAll('.feed-tag').forEach(function(el) { el.classList.remove('feed-tag-active'); });
+
+    // Re-apply pagination
+    var hiddenCount = 0;
+    document.querySelectorAll('.feed-item').forEach(function(el) {
+      if (el.dataset.older) {
+        el.style.display = 'none';
+        hiddenCount++;
+      } else {
+        el.style.display = '';
+      }
+    });
+
+    syncDateGroups();
+
+    document.querySelectorAll('.feed-tag').forEach(function(el) {
+      el.classList.remove('feed-tag-active');
+    });
     document.getElementById('filter-bar').style.display = 'none';
+
+    if (hiddenCount > 0) {
+      var btn = document.getElementById('show-older-btn');
+      btn.textContent = 'Show ' + hiddenCount + ' older posts';
+      btn.style.display = 'block';
+    }
+  }
+
+  function syncDateGroups() {
+    document.querySelectorAll('.feed-date-group').forEach(function(group) {
+      var visible = Array.from(group.querySelectorAll('.feed-item')).filter(function(el) {
+        return el.style.display !== 'none';
+      });
+      group.style.display = visible.length > 0 ? '' : 'none';
+    });
   }
 
   document.getElementById('filter-clear').addEventListener('click', function(e) {
