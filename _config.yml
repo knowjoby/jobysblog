@@ -1,6 +1,6 @@
 title: Joby's Blog
 description: Personal thoughts and writings
-baseurl: "/jobysblog"
+baseurl: "/blog"
 url: "https://knowjoby.github.io"
 
 theme: minima
