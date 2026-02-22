@@ -331,7 +331,7 @@ def main():
 
     # Queue remaining good candidates for future days
     for item in candidates[len(posts_written):len(posts_written) + 10]:
-        if item["score"] < 30:
+        if item["score"] < 40:
             break
         if item["url"] in existing_urls:
             continue
