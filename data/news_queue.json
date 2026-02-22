@@ -7,21 +7,172 @@
   },
   "daily_usage": {
     "2026-02-22": {
-      "posts": 1,
-      "estimated_tokens": 15000
+      "posts": 2,
+      "estimated_tokens": 0
     }
   },
-  "pending": [],
+  "pending": [
+    {
+      "id": "microsoft-gaming-chief-phil-spencer-steps-down-after-38-2026-02-22",
+      "title": "Microsoft gaming chief Phil Spencer steps down after 38 years with company",
+      "source_url": "https://arstechnica.com/gaming/2026/02/microsoft-gaming-chief-phil-spencer-steps-down-after-38-years-with-company/",
+      "companies": [
+        "microsoft"
+      ],
+      "topics": [
+        "bug",
+        "safety"
+      ],
+      "score": 93,
+      "added_at": "2026-02-22"
+    },
+    {
+      "id": "the-pixel-10a-and-soundcore-space-one-are-just-two-of-t-2026-02-22",
+      "title": "The Pixel 10A and Soundcore Space One are just two of the best deals this week",
+      "source_url": "https://www.theverge.com/gadgets/881998/google-pixel-10a-anker-351-power-strip-deal-sale",
+      "companies": [
+        "google"
+      ],
+      "topics": [
+        "release",
+        "partnership"
+      ],
+      "score": 85,
+      "added_at": "2026-02-22"
+    },
+    {
+      "id": "google-vp-warns-that-two-types-of-ai-startups-may-not-s-2026-02-22",
+      "title": "Google VP warns that two types of AI startups may not survive",
+      "source_url": "https://techcrunch.com/2026/02/21/google-vp-warns-that-two-types-of-ai-startups-may-not-survive/",
+      "companies": [
+        "google"
+      ],
+      "topics": [
+        "product"
+      ],
+      "score": 81,
+      "added_at": "2026-02-22"
+    },
+    {
+      "id": "openai-debated-calling-police-about-suspected-canadian--2026-02-22",
+      "title": "OpenAI debated calling police about suspected Canadian shooter\u2019s chats",
+      "source_url": "https://techcrunch.com/2026/02/21/openai-debated-calling-police-about-suspected-canadian-shooters-chats/",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "product"
+      ],
+      "score": 81,
+      "added_at": "2026-02-22"
+    },
+    {
+      "id": "you-can-now-installand-updatemicrosoft-store-apps-using-2026-02-22",
+      "title": "You Can Now Install\u2014and Update\u2014Microsoft Store Apps Using the Command Line",
+      "source_url": "https://www.wired.com/story/install-and-update-microsoft-store-apps-using-the-command-line-in-windows/",
+      "companies": [
+        "microsoft"
+      ],
+      "topics": [
+        "product"
+      ],
+      "score": 81,
+      "added_at": "2026-02-22"
+    },
+    {
+      "id": "microsofts-new-gaming-ceo-vows-not-to-flood-the-ecosyst-2026-02-22",
+      "title": "Microsoft\u2019s new gaming CEO vows not to flood the ecosystem with \u2018endless AI slop\u2019",
+      "source_url": "https://techcrunch.com/2026/02/21/microsofts-new-gaming-ceo-vows-not-to-flood-the-ecosystem-with-endless-ai-slop/",
+      "companies": [
+        "microsoft"
+      ],
+      "topics": [
+        "bug",
+        "multimodal"
+      ],
+      "score": 80,
+      "added_at": "2026-02-22"
+    },
+    {
+      "id": "how-to-hide-googles-ai-overviews-from-your-search-resul-2026-02-22",
+      "title": "How to Hide Google\u2019s AI Overviews From Your Search Results",
+      "source_url": "https://www.wired.com/story/how-to-hide-google-ai-overviews-from-your-search-results/",
+      "companies": [
+        "google"
+      ],
+      "topics": [],
+      "score": 75,
+      "added_at": "2026-02-22"
+    },
+    {
+      "id": "suspect-in-tumbler-ridge-school-shooting-described-viol-2026-02-22",
+      "title": "Suspect in Tumbler Ridge school shooting described violent scenarios to ChatGPT",
+      "source_url": "https://www.theverge.com/ai-artificial-intelligence/882814/tumbler-ridge-school-shooting-chatgpt",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ],
+      "score": 73,
+      "added_at": "2026-02-22"
+    },
+    {
+      "id": "government-docs-reveal-new-details-about-tesla-and-waym-2026-02-22",
+      "title": "Government Docs Reveal New Details About Tesla and Waymo Robotaxis\u2019 Human Babysitters",
+      "source_url": "https://www.wired.com/story/government-docs-reveal-new-details-about-tesla-and-waymo-robotaxi-programs/",
+      "companies": [],
+      "topics": [
+        "policy",
+        "safety"
+      ],
+      "score": 68,
+      "added_at": "2026-02-22"
+    },
+    {
+      "id": "arturias-fx-collection-6-adds-two-new-effects-and-a-99--2026-02-22",
+      "title": "Arturia\u2019s FX Collection 6 adds two new effects and a $99 intro version",
+      "source_url": "https://www.theverge.com/tech/882852/arturia-fx-collection-6",
+      "companies": [],
+      "topics": [
+        "release"
+      ],
+      "score": 67,
+      "added_at": "2026-02-22"
+    }
+  ],
   "posted": [
     {
       "id": "anthropic-pentagon-tensions-2026-02-22",
       "title": "Anthropic and the Pentagon Are Clashing Over AI Red Lines",
       "summary": "Tensions between Anthropic and the DoD over a $200M contract are testing the company's AI safety commitments.",
       "source_url": "https://www.nbcnews.com/tech/security/anthropic-ai-defense-war-venezuela-maduro-rcna259603",
-      "companies": ["anthropic"],
-      "topics": ["controversy", "policy", "safety"],
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [
+        "controversy",
+        "policy",
+        "safety"
+      ],
       "score": 82,
       "file": "_posts/2026-02-22-anthropic-pentagon-tensions.md",
+      "added_at": "2026-02-22",
+      "posted_at": "2026-02-22"
+    },
+    {
+      "id": "anthropic-funded-group-backs-candidate-attacked-by-riva-2026-02-22",
+      "title": "Anthropic-funded group backs candidate attacked by rival AI super PAC",
+      "source_url": "https://techcrunch.com/2026/02/20/anthropic-funded-group-backs-candidate-attacked-by-rival-ai-super-pac/",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [
+        "policy",
+        "safety"
+      ],
+      "score": 93,
+      "file": "_posts/2026-02-22-anthropic-funded-group-backs-candidate-attacked-by-riva.md",
       "added_at": "2026-02-22",
       "posted_at": "2026-02-22"
     }
