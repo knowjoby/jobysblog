@@ -96,12 +96,13 @@ layout: default
 
   {{ content }}
 
-  {%- if site.posts.size > 0 -%}
+  {%- assign link_posts = site.posts | where_exp: "post", "post.link" -%}
+  {%- if link_posts.size > 0 -%}
 
-    {%- comment -%} Group posts by date {%- endcomment -%}
+    {%- comment -%} Group link-only posts by date {%- endcomment -%}
     {%- assign current_date = "" -%}
 
-    {%- for post in site.posts -%}
+    {%- for post in link_posts -%}
       {%- assign post_date = post.date | date: "%Y-%m-%d" -%}
       {%- assign display_date = post.date | date: "%B %-d, %Y" -%}
 
@@ -124,18 +125,12 @@ layout: default
       <div class="feed-item">
         <div class="score-dot {{ dot_class }}" title="Score: {{ post.score }}"></div>
 
-        {%- if post.link -%}
-          <a class="feed-title" href="{{ post.link }}" target="_blank" rel="noopener">
-            {{- post.title | escape -}}
-          </a>
-          <span class="feed-arrow">↗</span>
-          {%- if post.source -%}
-            <span class="feed-source">{{ post.source }}</span>
-          {%- endif -%}
-        {%- else -%}
-          <a class="feed-title" href="{{ post.url | relative_url }}">
-            {{- post.title | escape -}}
-          </a>
+        <a class="feed-title" href="{{ post.link }}" target="_blank" rel="noopener">
+          {{- post.title | escape -}}
+        </a>
+        <span class="feed-arrow">↗</span>
+        {%- if post.source -%}
+          <span class="feed-source">{{ post.source }}</span>
         {%- endif -%}
 
         {%- if post.tags and post.tags.size > 0 -%}
@@ -152,5 +147,7 @@ layout: default
 
     <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
 
+  {%- else -%}
+    <p style="color:#aaa; font-size:14px; margin-top:2rem;">No links yet — check back soon.</p>
   {%- endif -%}
 </div>
