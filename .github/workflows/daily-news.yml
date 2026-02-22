@@ -5,7 +5,7 @@ on:
   schedule:
     - cron: '0 8 * * *'
 
-  # Also allow manual trigger from the GitHub Actions UI
+  # Manual trigger from GitHub UI: Actions tab → Daily AI News → Run workflow
   workflow_dispatch:
 
 permissions:
@@ -27,11 +27,9 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install anthropic feedparser
+        run: pip install feedparser
 
-      - name: Generate AI news
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Generate AI news link posts
         run: python scripts/generate_news.py
 
       - name: Commit and push new posts
@@ -39,5 +37,5 @@ jobs:
           git config user.name "AI News Bot"
           git config user.email "noreply@github.com"
           git add _posts/ data/news_queue.json
-          git diff --staged --quiet || git commit -m "ai-news: daily update $(date -u +%Y-%m-%d)"
+          git diff --staged --quiet || git commit -m "ai-news: $(date -u +%Y-%m-%d)"
           git push
