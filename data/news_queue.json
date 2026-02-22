@@ -1,0 +1,29 @@
+{
+  "config": {
+    "daily_post_limit": 2,
+    "daily_token_budget": 100000,
+    "min_score_to_post": 50,
+    "max_words_per_post": 200
+  },
+  "daily_usage": {
+    "2026-02-22": {
+      "posts": 1,
+      "estimated_tokens": 15000
+    }
+  },
+  "pending": [],
+  "posted": [
+    {
+      "id": "anthropic-pentagon-tensions-2026-02-22",
+      "title": "Anthropic and the Pentagon Are Clashing Over AI Red Lines",
+      "summary": "Tensions between Anthropic and the DoD over a $200M contract are testing the company's AI safety commitments.",
+      "source_url": "https://www.nbcnews.com/tech/security/anthropic-ai-defense-war-venezuela-maduro-rcna259603",
+      "companies": ["anthropic"],
+      "topics": ["controversy", "policy", "safety"],
+      "score": 82,
+      "file": "_posts/2026-02-22-anthropic-pentagon-tensions.md",
+      "added_at": "2026-02-22",
+      "posted_at": "2026-02-22"
+    }
+  ]
+}
