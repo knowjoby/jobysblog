@@ -11,7 +11,7 @@ Releases, product launches, controversies, safety incidents, funding rounds, and
 
 **How it works**
 
-A script runs daily, pulls from tech RSS feeds (TechCrunch, The Verge, VentureBeat, Ars Technica, Wired), scores each story by recency, company importance, and topic weight, then posts the top picks here as direct links. No summaries — just the link, the source, and tags to filter by later.
+A script runs daily, pulls from 11 RSS feeds across tech media (TechCrunch, The Verge, VentureBeat, Ars Technica, Wired, MIT Technology Review, CNBC) and company blogs (OpenAI, Google AI, Microsoft AI, Hugging Face), scores each story by recency, company importance, and topic weight, then posts the top picks here as direct links. No summaries — just the link, the source, and tags to filter by later.
 
 **What the dots mean**
 
