@@ -1,6 +1,6 @@
 [
   {
-    "ran_at": "2026-02-22 17:10:22 UTC",
+    "ran_at": "2026-02-22 22:40:22 IST",
     "triggered_by": "Manual (local)",
     "candidates_found": 28,
     "posts_created": 1,
@@ -10,16 +10,12 @@
         "title": "Anthropic-funded group backs candidate attacked by rival AI super PAC",
         "file": "_posts/2026-02-22-anthropic-funded-group-backs-candidate-attacked-by-riva.md",
         "score": 93,
-        "tags": [
-          "anthropic",
-          "policy",
-          "safety"
-        ]
+        "tags": ["anthropic", "policy", "safety"]
       }
     ]
   },
   {
-    "ran_at": "2026-02-22 17:14:32 UTC",
+    "ran_at": "2026-02-22 22:44:32 IST",
     "triggered_by": "Manual (local)",
     "candidates_found": 0,
     "posts_created": 0,

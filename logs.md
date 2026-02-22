@@ -94,7 +94,7 @@ permalink: /logs/
   <thead>
     <tr>
       <th>#</th>
-      <th>Date &amp; Time (UTC)</th>
+      <th>Date &amp; Time (IST)</th>
       <th>Triggered By</th>
       <th>Candidates</th>
       <th>Posts Created</th>

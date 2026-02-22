@@ -172,7 +172,7 @@ def write_run_log(candidates_found, posts_written, queued_count):
         triggered_by = "Manual (local)"
 
     entry = {
-        "ran_at":            datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
+        "ran_at":            datetime.now(timezone(timedelta(hours=5, minutes=30))).strftime("%Y-%m-%d %H:%M:%S IST"),
         "triggered_by":      triggered_by,
         "candidates_found":  candidates_found,
         "posts_created":     len(posts_written),
