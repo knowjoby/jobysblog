@@ -30,12 +30,14 @@ jobs:
         run: pip install feedparser
 
       - name: Generate AI news link posts
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: python scripts/generate_news.py
 
       - name: Commit and push new posts
         run: |
           git config user.name "AI News Bot"
           git config user.email "noreply@github.com"
-          git add _posts/ data/news_queue.json
+          git add _posts/ data/news_queue.json _data/run_log.json
           git diff --staged --quiet || git commit -m "ai-news: $(date -u +%Y-%m-%d)"
           git push

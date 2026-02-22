@@ -8,6 +8,7 @@ Requires: pip install feedparser
 """
 
 import json
+import os
 import re
 import sys
 from datetime import datetime, timedelta, timezone
@@ -16,9 +17,10 @@ from pathlib import Path
 
 import feedparser
 
-REPO_ROOT = Path(__file__).parent.parent
+REPO_ROOT  = Path(__file__).parent.parent
 QUEUE_FILE = REPO_ROOT / "data" / "news_queue.json"
-POSTS_DIR = REPO_ROOT / "_posts"
+LOG_FILE   = REPO_ROOT / "_data" / "run_log.json"
+POSTS_DIR  = REPO_ROOT / "_posts"
 
 RSS_FEEDS = [
     ("TechCrunch",    "https://techcrunch.com/feed/"),
@@ -152,6 +154,44 @@ def save_queue(q):
         json.dump(q, f, indent=2)
 
 
+def write_run_log(candidates_found, posts_written, queued_count):
+    event = os.environ.get("GITHUB_EVENT_NAME", "")
+    if event == "schedule":
+        triggered_by = "Scheduled (daily)"
+    elif event == "workflow_dispatch":
+        triggered_by = "Manual (GitHub)"
+    else:
+        triggered_by = "Manual (local)"
+
+    entry = {
+        "ran_at":            datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
+        "triggered_by":      triggered_by,
+        "candidates_found":  candidates_found,
+        "posts_created":     len(posts_written),
+        "queued":            queued_count,
+        "posts": [
+            {
+                "title": p["title"],
+                "file":  p["file"],
+                "score": p["score"],
+                "tags":  p["companies"] + p["topics"],
+            }
+            for p in posts_written
+        ],
+    }
+
+    log = []
+    if LOG_FILE.exists():
+        try:
+            log = json.loads(LOG_FILE.read_text())
+        except Exception:
+            log = []
+
+    log.append(entry)
+    log = log[-50:]  # keep last 50 runs
+    LOG_FILE.write_text(json.dumps(log, indent=2))
+
+
 def main():
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     queue = load_queue()
@@ -161,6 +201,7 @@ def main():
 
     if posts_remaining <= 0:
         print(f"Daily post limit reached ({config['daily_post_limit']}). Nothing to do.")
+        write_run_log(0, [], 0)
         return
 
     existing_titles = [p.get("title", "") for p in queue["posted"] + queue["pending"]]
@@ -299,6 +340,7 @@ def main():
     }
     save_queue(queue)
 
+    write_run_log(len(candidates), posts_written, len(new_pending))
     print(f"\nDone: {len(posts_written)} post(s) written, {len(queue['pending'])} item(s) in queue")
 
 
