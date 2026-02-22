@@ -37,6 +37,10 @@ RSS_FEEDS = [
     ("Google AI",       "https://blog.google/technology/ai/rss/"),
     ("Microsoft AI",    "https://blogs.microsoft.com/ai/feed/"),
     ("Hugging Face",    "https://huggingface.co/blog/feed.xml"),
+
+    # --- AI-specialist newsletters ---
+    ("Import AI",       "https://importai.substack.com/feed"),
+    ("Platformer",      "https://www.platformer.news/rss/"),
 ]
 
 # --- Keyword maps for auto-tagging and scoring ---
