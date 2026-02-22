@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GitHub Pages + Claude: A Simple Blogging Setup"
-date: 2026-02-22 14:00:00 +0000
+date: 2026-02-22 00:00:00 +0000
 categories: blogging automation
 ---
 
