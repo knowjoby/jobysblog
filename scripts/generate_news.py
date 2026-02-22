@@ -23,12 +23,20 @@ LOG_FILE   = REPO_ROOT / "_data" / "run_log.json"
 POSTS_DIR  = REPO_ROOT / "_posts"
 
 RSS_FEEDS = [
-    ("TechCrunch",    "https://techcrunch.com/feed/"),
-    ("The Verge",     "https://www.theverge.com/rss/index.xml"),
-    ("VentureBeat",   "https://venturebeat.com/feed/"),
-    ("Ars Technica",  "https://feeds.arstechnica.com/arstechnica/index"),
-    ("Wired",         "https://www.wired.com/feed/rss"),
-    ("Reuters Tech",  "https://feeds.reuters.com/reuters/technologyNews"),
+    # --- Tech media ---
+    ("TechCrunch",      "https://techcrunch.com/feed/"),
+    ("The Verge",       "https://www.theverge.com/rss/index.xml"),
+    ("VentureBeat",     "https://feeds.feedburner.com/venturebeat/SZYF"),
+    ("Ars Technica",    "https://feeds.arstechnica.com/arstechnica/index"),
+    ("Wired",           "https://www.wired.com/feed/rss"),
+    ("MIT Tech Review", "https://www.technologyreview.com/feed/"),
+    ("CNBC Tech",       "https://www.cnbc.com/id/19854910/device/rss/rss.html"),
+
+    # --- Company blogs (first-party, no RSS: Anthropic, DeepMind, Meta AI) ---
+    ("OpenAI",          "https://openai.com/news/rss.xml"),
+    ("Google AI",       "https://blog.google/technology/ai/rss/"),
+    ("Microsoft AI",    "https://blogs.microsoft.com/ai/feed/"),
+    ("Hugging Face",    "https://huggingface.co/blog/feed.xml"),
 ]
 
 # --- Keyword maps for auto-tagging and scoring ---
