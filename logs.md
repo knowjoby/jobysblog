@@ -77,6 +77,17 @@ permalink: /logs/
     color: #aaa;
     font-style: italic;
   }
+  .feed-ok   { color: #4caf50; font-weight: 600; }
+  .feed-fail { color: #e53935; font-weight: 600; }
+  .feed-fail-name {
+    display: inline-block;
+    font-size: 11px;
+    background: #fdecea;
+    color: #c62828;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin: 2px 2px 0 0;
+  }
 </style>
 
 {% if site.data.run_log and site.data.run_log.size > 0 %}
@@ -99,6 +110,7 @@ permalink: /logs/
       <th>Candidates</th>
       <th>Posts Created</th>
       <th>Queued</th>
+      <th>Sources</th>
       <th>Articles</th>
     </tr>
   </thead>
@@ -128,6 +140,32 @@ permalink: /logs/
           {% endif %}
         </td>
         <td style="text-align:center; color:#888;">{{ run.queued }}</td>
+        <td>
+          {% if run.feeds %}
+            {% assign ok_count = 0 %}
+            {% assign fail_count = 0 %}
+            {% for feed in run.feeds %}
+              {% if feed[1].ok %}
+                {% assign ok_count = ok_count | plus: 1 %}
+              {% else %}
+                {% assign fail_count = fail_count | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+            <span class="feed-ok">✓{{ ok_count }}</span>
+            {% if fail_count > 0 %}
+              <span class="feed-fail"> ✗{{ fail_count }}</span>
+              <div style="margin-top:4px;">
+                {% for feed in run.feeds %}
+                  {% unless feed[1].ok %}
+                    <span class="feed-fail-name">{{ feed[0] }}</span>
+                  {% endunless %}
+                {% endfor %}
+              </div>
+            {% endif %}
+          {% else %}
+            <span style="color:#ddd; font-size:12px;">—</span>
+          {% endif %}
+        </td>
         <td>
           {% if run.posts and run.posts.size > 0 %}
             {% for post in run.posts %}

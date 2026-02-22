@@ -183,7 +183,7 @@ def save_queue(q):
         json.dump(q, f, indent=2)
 
 
-def write_run_log(candidates_found, posts_written, queued_count):
+def write_run_log(candidates_found, posts_written, queued_count, feed_stats=None):
     event = os.environ.get("GITHUB_EVENT_NAME", "")
     if event == "schedule":
         triggered_by = "Scheduled (daily)"
@@ -198,6 +198,7 @@ def write_run_log(candidates_found, posts_written, queued_count):
         "candidates_found":  candidates_found,
         "posts_created":     len(posts_written),
         "queued":            queued_count,
+        "feeds":             feed_stats or {},
         "posts": [
             {
                 "title": p["title"],
@@ -238,13 +239,17 @@ def main():
 
     # Collect and score candidates from RSS
     candidates = []
+    feed_stats = {}
     cutoff = datetime.now(timezone.utc) - timedelta(days=7)
 
     for source_name, feed_url in RSS_FEEDS:
         try:
             feed = feedparser.parse(feed_url)
+            entry_count = len(feed.entries)
+            feed_stats[source_name] = {"entries": entry_count, "ok": entry_count > 0}
         except Exception as e:
-            print(f"Feed error ({feed_url}): {e}", file=sys.stderr)
+            feed_stats[source_name] = {"entries": 0, "ok": False, "error": str(e)[:100]}
+            print(f"Feed error ({source_name}): {e}", file=sys.stderr)
             continue
 
         for entry in feed.entries[:25]:
@@ -393,7 +398,7 @@ def main():
     }
     save_queue(queue)
 
-    write_run_log(len(candidates), posts_written, len(new_pending))
+    write_run_log(len(candidates), posts_written, len(new_pending), feed_stats)
     print(f"\nDone: {len(posts_written)} post(s) written, {len(queue['pending'])} item(s) in queue")
 
 
