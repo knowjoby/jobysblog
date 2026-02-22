@@ -270,13 +270,20 @@ def main():
     candidates.sort(key=lambda x: x["score"], reverse=True)
     print(f"Found {len(candidates)} candidate(s)")
 
-    # Write top N posts
+    # Write top N posts (max 5/day total, max 2/day per company)
     posts_written = []
+    company_counts = {}
+    PER_COMPANY_LIMIT = 2
     for item in candidates:
         if len(posts_written) >= posts_remaining:
             break
         if item["score"] < config["min_score_to_post"]:
             break
+        # Skip if any company in this item has hit its per-company cap
+        if item["companies"] and all(
+            company_counts.get(co, 0) >= PER_COMPANY_LIMIT for co in item["companies"]
+        ):
+            continue
 
         slug     = slugify(item["title"])
         filename = f"{today}-{slug}.md"
@@ -319,6 +326,8 @@ def main():
         queue["posted"].append(entry_data)
         existing_urls.add(item["url"])
         posts_written.append(entry_data)
+        for co in item["companies"]:
+            company_counts[co] = company_counts.get(co, 0) + 1
 
     # Queue remaining good candidates for future days
     for item in candidates[len(posts_written):len(posts_written) + 10]:

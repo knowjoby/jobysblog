@@ -1,6 +1,6 @@
 {
   "config": {
-    "daily_post_limit": 2,
+    "daily_post_limit": 5,
     "daily_token_budget": 100000,
     "min_score_to_post": 50,
     "max_words_per_post": 200
