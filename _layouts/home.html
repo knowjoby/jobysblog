@@ -1,0 +1,156 @@
+---
+layout: default
+---
+<style>
+  /* Bookmark feed */
+  .feed-date-group { margin-bottom: 2.2rem; }
+
+  .feed-date-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .feed-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid #f4f4f4;
+    flex-wrap: wrap;
+  }
+
+  .feed-item:last-child { border-bottom: none; }
+
+  .feed-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #111;
+    text-decoration: none;
+    flex: 1 1 auto;
+    min-width: 0;
+    line-height: 1.4;
+  }
+
+  .feed-title:hover { color: #0057ff; text-decoration: underline; }
+
+  .feed-arrow {
+    font-size: 11px;
+    color: #bbb;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+
+  .feed-source {
+    font-size: 12px;
+    color: #999;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .feed-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    width: 100%;
+    margin-top: 2px;
+  }
+
+  .feed-tag {
+    font-size: 11px;
+    background: #f0f0f0;
+    color: #777;
+    padding: 1px 7px;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+
+  .feed-tag:hover { background: #e0e0e0; color: #444; }
+
+  /* Score dot — colour-coded by tier */
+  .score-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+    title: attr(data-score);
+  }
+  .score-high   { background: #4caf50; }
+  .score-mid    { background: #ff9800; }
+  .score-low    { background: #bdbdbd; }
+
+  .rss-subscribe { font-size: 13px; color: #aaa; margin-top: 2rem; }
+  .rss-subscribe a { color: #aaa; }
+</style>
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+
+    {%- comment -%} Group posts by date {%- endcomment -%}
+    {%- assign current_date = "" -%}
+
+    {%- for post in site.posts -%}
+      {%- assign post_date = post.date | date: "%Y-%m-%d" -%}
+      {%- assign display_date = post.date | date: "%B %-d, %Y" -%}
+
+      {%- if post_date != current_date -%}
+        {%- unless forloop.first -%}</div></div>{%- endunless -%}
+        <div class="feed-date-group">
+        <div class="feed-date-label">{{ display_date }}</div>
+        {%- assign current_date = post_date -%}
+      {%- endif -%}
+
+      {%- assign score = post.score | default: 0 | plus: 0 -%}
+      {%- if score >= 75 -%}
+        {%- assign dot_class = "score-high" -%}
+      {%- elsif score >= 50 -%}
+        {%- assign dot_class = "score-mid" -%}
+      {%- else -%}
+        {%- assign dot_class = "score-low" -%}
+      {%- endif -%}
+
+      <div class="feed-item">
+        <div class="score-dot {{ dot_class }}" title="Score: {{ post.score }}"></div>
+
+        {%- if post.link -%}
+          <a class="feed-title" href="{{ post.link }}" target="_blank" rel="noopener">
+            {{- post.title | escape -}}
+          </a>
+          <span class="feed-arrow">↗</span>
+          {%- if post.source -%}
+            <span class="feed-source">{{ post.source }}</span>
+          {%- endif -%}
+        {%- else -%}
+          <a class="feed-title" href="{{ post.url | relative_url }}">
+            {{- post.title | escape -}}
+          </a>
+        {%- endif -%}
+
+        {%- if post.tags and post.tags.size > 0 -%}
+          <div class="feed-tags">
+            {%- for tag in post.tags -%}
+              <span class="feed-tag">{{ tag }}</span>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- if forloop.last -%}</div></div>{%- endif -%}
+    {%- endfor -%}
+
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+
+  {%- endif -%}
+</div>
