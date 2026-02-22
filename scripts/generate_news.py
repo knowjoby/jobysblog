@@ -92,6 +92,23 @@ def detect_topics(text):
     return topics
 
 
+STOP_WORDS = {
+    "a", "an", "the", "is", "are", "was", "were", "in", "on", "at", "to",
+    "for", "of", "and", "or", "with", "by", "its", "it", "as", "from",
+    "that", "this", "has", "have", "new", "says", "say", "over", "after",
+    "how", "why", "what", "will", "can", "be", "been", "but", "not", "no",
+}
+
+def titles_are_similar(t1, t2, threshold=0.45):
+    """Return True if two titles are likely covering the same story."""
+    w1 = set(re.sub(r"[^a-z0-9\s]", "", t1.lower()).split()) - STOP_WORDS
+    w2 = set(re.sub(r"[^a-z0-9\s]", "", t2.lower()).split()) - STOP_WORDS
+    if len(w1) < 3 or len(w2) < 3:
+        return False
+    union = len(w1 | w2)
+    return len(w1 & w2) / union >= threshold
+
+
 def parse_date(entry):
     for field in ("published_parsed", "updated_parsed"):
         val = entry.get(field)
@@ -267,8 +284,23 @@ def main():
         print("No new AI news items found.")
         return
 
+    # Deduplicate: same story covered by multiple outlets — keep highest scored
+    deduped = []
+    for item in candidates:
+        matched = next(
+            (kept for kept in deduped if titles_are_similar(item["title"], kept["title"])),
+            None,
+        )
+        if matched is None:
+            deduped.append(item)
+        elif item["score"] > matched["score"]:
+            deduped[deduped.index(matched)] = item  # upgrade to better-scored version
+
+    dupes_removed = len(candidates) - len(deduped)
+    candidates = deduped
+
     candidates.sort(key=lambda x: x["score"], reverse=True)
-    print(f"Found {len(candidates)} candidate(s)")
+    print(f"Found {len(candidates)} candidate(s) ({dupes_removed} cross-source duplicate(s) removed)")
 
     # Write top N posts (max 5/day total, max 2/day per company)
     posts_written = []
