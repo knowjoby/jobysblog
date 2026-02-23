@@ -187,3 +187,11 @@ permalink: /logs/
 {% else %}
 <div class="empty-state">No runs recorded yet.</div>
 {% endif %}
+
+## Daily Run Log - 2026-02-23
+
+| Source | Articles Fetched | Relevant | Top Companies |
+|--------|-----------------|----------|---------------|
+| Import AI | 5 | 3 | OpenAI, Anthropic |
+| TechCrunch AI | 12 | 4 | Google, DeepMind |
+| [Broken Feed] | 0 | 0 | ⚠️ Failed |
