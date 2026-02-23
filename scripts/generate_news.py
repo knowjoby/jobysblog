@@ -283,8 +283,7 @@ def main():
                 continue
 
             text      = title + " " + summary
-            companies = detect_companies(text)
-            topics    = detect_topics(text)
+companies = detect_companies(text, title)  # Now passing title too!            topics    = detect_topics(text)
 
             # Must mention an AI company or have a strong AI topic
             if not companies and not any(t in topics for t in ("release", "safety", "policy", "agentic")):
