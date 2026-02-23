@@ -2,7 +2,7 @@
 layout: default
 title: AI News Dashboard
 ---
-
+{% raw %}
 # 🤖 AI News Tracker
 
 {% assign companies = "openai,anthropic,google,deepseek,microsoft,meta" | split: "," %}
@@ -127,3 +127,5 @@ title: AI News Dashboard
   border-bottom: 1px solid #ddd;
 }
 </style>
+{% endraw %}
+
