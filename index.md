@@ -55,7 +55,7 @@ title: AI News Dashboard
   {% endfor %}
 {% endif %}
 
-  <!-- Company-Specific Sections -->
+<!-- Company-Specific Sections -->
 ## 🏢 News by Company
 
 <div class="company-grid">
