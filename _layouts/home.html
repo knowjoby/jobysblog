@@ -1,61 +1,131 @@
 ---
 layout: default
 ---
+
 <style>
-  /* Bookmark feed */
-  .feed-date-group { margin-bottom: 2.2rem; }
+  /* Import Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  /* Color variables */
+  :root {
+    --primary-color: #0057ff;
+    --primary-dark: #0041cc;
+    --text-primary: #111;
+    --text-secondary: #555;
+    --text-light: #888;
+    --bg-light: #f8f9fa;
+    --border-light: #eee;
+    --border-medium: #ddd;
+    --success: #4caf50;
+    --warning: #ff9800;
+    --danger: #f44336;
+  }
+
+  /* Base typography */
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+
+  h1.page-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), #6f42c1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Your existing bookmark feed styles with typography updates */
+  .feed-date-group { 
+    margin-bottom: 2.2rem; 
+  }
 
   .feed-date-label {
-    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #aaa;
+    color: var(--text-light);
     margin-bottom: 0.6rem;
     padding-bottom: 0.3rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-light);
   }
 
   .feed-item {
     display: flex;
     align-items: baseline;
     gap: 0.6rem;
-    padding: 0.55rem 0;
-    border-bottom: 1px solid #f4f4f4;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border-light);
     flex-wrap: wrap;
+    transition: background-color 0.2s ease;
+  }
+
+  .feed-item:hover {
+    background-color: var(--bg-light);
   }
 
   .feed-item:last-child { border-bottom: none; }
 
   /* New-since-last-visit highlight */
   .feed-item-new {
-    border-left: 3px solid #0057ff;
-    padding-left: 0.5rem;
-    margin-left: -0.55rem;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 0.7rem;
+    margin-left: -0.7rem;
+    background: linear-gradient(to right, rgba(0,87,255,0.02), transparent);
   }
 
   .feed-title {
+    font-family: 'Inter', sans-serif;
     font-size: 15px;
     font-weight: 500;
-    color: #111;
+    color: var(--text-primary);
     text-decoration: none;
     flex: 1 1 auto;
     min-width: 0;
-    line-height: 1.4;
+    line-height: 1.5;
+    transition: color 0.2s ease;
   }
 
-  .feed-title:hover { color: #0057ff; text-decoration: underline; }
+  .feed-title:hover { 
+    color: var(--primary-color); 
+    text-decoration: underline; 
+  }
 
   .feed-arrow {
+    font-family: 'Inter', sans-serif;
     font-size: 11px;
-    color: #bbb;
+    color: var(--text-light);
     flex-shrink: 0;
     text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+
+  .feed-item:hover .feed-arrow {
+    transform: translate(2px, -2px);
+    color: var(--primary-color);
   }
 
   .feed-source {
+    font-family: 'Inter', sans-serif;
     font-size: 12px;
-    color: #999;
+    font-weight: 400;
+    color: var(--text-light);
     flex-shrink: 0;
     white-space: nowrap;
   }
@@ -63,26 +133,39 @@ layout: default
   .feed-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 3px;
+    gap: 4px;
     width: 100%;
-    margin-top: 2px;
+    margin-top: 4px;
   }
 
   .feed-tag {
+    font-family: 'Inter', sans-serif;
     font-size: 11px;
-    background: #f0f0f0;
-    color: #777;
-    padding: 1px 7px;
-    border-radius: 10px;
+    font-weight: 500;
+    background: var(--bg-light);
+    color: var(--text-secondary);
+    padding: 2px 8px;
+    border-radius: 12px;
     text-decoration: none;
     cursor: pointer;
     border: none;
-    font-family: inherit;
+    transition: all 0.2s ease;
   }
 
-  .feed-tag:hover { background: #e0e0e0; color: #444; }
-  .feed-tag-active { background: #111; color: #fff; }
-  .feed-tag-active:hover { background: #333; color: #fff; }
+  .feed-tag:hover { 
+    background: #e0e0e0; 
+    color: var(--text-primary); 
+  }
+  
+  .feed-tag-active { 
+    background: var(--primary-color); 
+    color: #fff; 
+  }
+  
+  .feed-tag-active:hover { 
+    background: var(--primary-dark); 
+    color: #fff; 
+  }
 
   /* Score dot — colour-coded by tier */
   .score-dot {
@@ -90,11 +173,17 @@ layout: default
     height: 8px;
     border-radius: 50%;
     flex-shrink: 0;
-    margin-top: 5px;
+    margin-top: 6px;
+    transition: transform 0.2s ease;
   }
-  .score-high   { background: #4caf50; }
-  .score-mid    { background: #ff9800; }
-  .score-low    { background: #bdbdbd; }
+  
+  .feed-item:hover .score-dot {
+    transform: scale(1.2);
+  }
+  
+  .score-high   { background: var(--success); }
+  .score-mid    { background: var(--warning); }
+  .score-low    { background: var(--text-light); }
 
   /* Filter bar */
   .filter-bar {
@@ -102,42 +191,128 @@ layout: default
     align-items: center;
     gap: 8px;
     margin-bottom: 1.2rem;
+    font-family: 'Inter', sans-serif;
     font-size: 13px;
-    color: #555;
+    color: var(--text-secondary);
+    background: var(--bg-light);
+    padding: 8px 12px;
+    border-radius: 6px;
   }
-  .filter-bar-label { font-weight: 600; }
+  
+  .filter-bar-label { 
+    font-weight: 600; 
+    color: var(--primary-color);
+  }
+  
   .filter-clear {
-    color: #bbb;
+    color: var(--text-light);
     text-decoration: none;
     font-size: 12px;
+    margin-left: auto;
   }
-  .filter-clear:hover { color: #555; }
+  
+  .filter-clear:hover { 
+    color: var(--primary-color); 
+    text-decoration: underline;
+  }
 
   /* New-posts banner */
   .new-banner {
     display: none;
+    font-family: 'Inter', sans-serif;
     font-size: 13px;
-    color: #0057ff;
+    font-weight: 500;
+    color: var(--primary-color);
     margin-bottom: 1rem;
+    padding: 8px 12px;
+    background: rgba(0,87,255,0.05);
+    border-radius: 6px;
   }
 
   /* Show older button */
   .show-older-btn {
     display: none;
-    margin: 1.5rem auto 0;
-    padding: 7px 20px;
-    background: none;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+    margin: 1.8rem auto 0;
+    padding: 8px 24px;
+    background: white;
+    border: 1px solid var(--border-medium);
+    border-radius: 30px;
+    font-family: 'Inter', sans-serif;
     font-size: 13px;
-    color: #888;
+    font-weight: 500;
+    color: var(--text-secondary);
     cursor: pointer;
-    font-family: inherit;
+    transition: all 0.2s ease;
   }
-  .show-older-btn:hover { border-color: #aaa; color: #444; }
+  
+  .show-older-btn:hover { 
+    border-color: var(--primary-color); 
+    color: var(--primary-color);
+    background: var(--bg-light);
+  }
 
-  .rss-subscribe { font-size: 13px; color: #aaa; margin-top: 2rem; }
-  .rss-subscribe a { color: #aaa; }
+  /* RSS subscribe link */
+  .rss-subscribe { 
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; 
+    color: var(--text-light); 
+    margin-top: 2.5rem; 
+    text-align: center;
+  }
+  
+  .rss-subscribe a { 
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  
+  .rss-subscribe a:hover { 
+    color: var(--primary-color);
+    text-decoration: underline;
+  }
+
+  /* No posts message */
+  .no-posts-message {
+    color: var(--text-light);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    h1.page-heading {
+      font-size: 2rem;
+    }
+    
+    .feed-item {
+      gap: 0.4rem;
+    }
+    
+    .feed-source {
+      white-space: normal;
+      margin-left: 1.4rem;
+    }
+  }
+
+  /* Animations */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .new-banner, .filter-bar {
+    animation: slideIn 0.3s ease-out;
+  }
 </style>
 
 <div class="home">
@@ -217,7 +392,7 @@ layout: default
     <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
 
   {%- else -%}
-    <p style="color:#aaa; font-size:14px; margin-top:2rem;">No links yet — check back soon.</p>
+    <p class="no-posts-message">No links yet — check back soon.</p>
   {%- endif -%}
 </div>
 
@@ -276,7 +451,7 @@ layout: default
       banner.style.display = 'block';
     }
 
-    // Record this visit after a short delay (so refreshing the same page still shows new)
+    // Record this visit after a short delay
     setTimeout(function() {
       localStorage.setItem('ai_feed_last_visit', Date.now());
     }, 3000);
