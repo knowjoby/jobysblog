@@ -31,3 +31,7 @@ header_pages:
 sass:
   sass_dir: assets/css
   style: compressed
+
+# _config.yml
+paginate: 20  # Number of posts per page
+paginate_path: "/blog/page:num/"  # The URL structure for paginated pages
