@@ -1,3 +1,4 @@
+from scripts.ai_news_filter import extract_companies_mentioned, COMPANY_KEYWORDS as FILTER_COMPANIES
 #!/usr/bin/env python3
 """
 AI news link-post generator for Jekyll blog.
