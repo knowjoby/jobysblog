@@ -84,9 +84,25 @@ def slugify(text):
     return re.sub(r"-+", "-", s)[:55]
 
 
-def detect_companies(text):
+def detect_companies(text, title=""):
+    """Enhanced company detection using both simple and detailed filters"""
     t = text.lower()
-    return [co for co, kws in COMPANY_KEYWORDS.items() if any(k in t for k in kws)]
+    
+    # First use the simple keyword detection (existing)
+    simple_companies = [co for co, kws in COMPANY_KEYWORDS.items() if any(k in t for k in kws)]
+    
+    # Then use the more detailed filter from ai_news_filter.py
+    try:
+        detailed = extract_companies_mentioned(text, title)
+        # Add any companies from detailed that aren't already in simple
+        for company in detailed.keys():
+            if company not in simple_companies:
+                simple_companies.append(company)
+    except Exception as e:
+        # If the detailed filter fails, just use simple_companies
+        print(f"Note: Detailed company filter had a small issue: {e}")
+    
+    return simple_companies
 
 
 def detect_topics(text):
