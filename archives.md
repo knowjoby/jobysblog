@@ -6,7 +6,7 @@ permalink: /archives/
 
 # 📚 Complete Article Archives
 
-Browse all {{ site.data.stats.total_articles | default: 127 }} articles discovered from {{ site.data.stats.total_sources | default: 15 }} sources. Filtered down to {{ site.data.stats.filtered_articles | default: 42 }} relevant AI news items.
+Browse all {{ site.posts | size }} articles
 
 <!-- Filters -->
 <div class="filters">
@@ -36,54 +36,32 @@ Browse all {{ site.data.stats.total_articles | default: 127 }} articles discover
         <th onclick="sortTable(4)">Score ⬍</th>
       </tr>
     </thead>
-    <tbody>
-      {% assign all_articles = "" | split: "" %}
-      
-      {% comment %}Get articles from posted posts{% endcomment %}
+    <tbody id="tableBody">
       {% for post in site.posts %}
-        {% if post.tags contains 'ai-news' or post.categories contains 'ai-news' %}
-          {% assign article = post %}
-          {% assign all_articles = all_articles | push: article %}
-        {% endif %}
-      {% endfor %}
-      
-      {% comment %}Also get articles from news_queue.json pending items{% endcomment %}
-      {% if site.data.news_queue and site.data.news_queue.pending %}
-        {% for item in site.data.news_queue.pending %}
-          {% assign all_articles = all_articles | push: item %}
-        {% endfor %}
-      {% endif %}
-      
-      {% comment %}Sort by date (newest first){% endcomment %}
-      {% assign sorted_articles = all_articles | sort: "date" | reverse %}
-      
-      {% for article in sorted_articles limit:200 %}
       <tr class="article-row" 
-          data-companies="{% if article.companies %}{{ article.companies | join: ' ' }}{% elsif article.tags %}{{ article.tags | join: ' ' }}{% endif %}"
-          data-title="{{ article.title | downcase }}"
-          data-source="{{ article.source | downcase }}">
-        <td>{% if article.date %}{{ article.date | date: '%Y-%m-%d' }}{% elsif article.added_at %}{{ article.added_at }}{% endif %}</td>
-        <td><a href="{% if article.link %}{{ article.link }}{% elsif article.source_url %}{{ article.source_url }}{% endif %}" target="_blank">{{ article.title }}</a></td>
-        <td>{% if article.source %}{{ article.source }}{% endif %}</td>
+          data-companies="{% if post.companies %}{% if post.companies.first %}{% for company in post.companies %}{{ company | downcase }} {% endfor %}{% else %}{{ post.companies | downcase }}{% endif %}{% endif %}"
+          data-title="{{ post.title | downcase | escape }}"
+          data-source="{{ post.source | downcase | escape }}">
+        <td>{{ post.date | date: '%Y-%m-%d' }}</td>
+        <td><a href="{{ post.url }}">{{ post.title }}</a></td>
+        <td>{{ post.source }}</td>
         <td class="company-tags">
-          {% if article.companies %}
-            {% for company in article.companies %}
-              <span class="company-tag {{ company }}">{{ company | capitalize }}</span>
-            {% endfor %}
-          {% elsif article.tags %}
-            {% for tag in article.tags %}
-              {% if tag == 'openai' or tag == 'anthropic' or tag == 'google' or tag == 'microsoft' or tag == 'meta' or tag == 'deepseek' %}
-                <span class="company-tag {{ tag }}">{{ tag | capitalize }}</span>
-              {% endif %}
-            {% endfor %}
+          {% if post.companies %}
+            {% if post.companies.first %}
+              {% for company in post.companies %}
+                <span class="company-tag {{ company | downcase }}">{{ company | capitalize }}</span>
+              {% endfor %}
+            {% else %}
+              <span class="company-tag {{ post.companies | downcase }}">{{ post.companies | capitalize }}</span>
+            {% endif %}
           {% endif %}
         </td>
         <td class="score-cell">
           <span class="score-badge 
-            {% if article.score >= 85 %}score-high
-            {% elsif article.score >= 70 %}score-medium
+            {% if post.score >= 85 %}score-high
+            {% elsif post.score >= 70 %}score-medium
             {% else %}score-low{% endif %}">
-            {{ article.score }}
+            {{ post.score }}
           </span>
         </td>
       </tr>
@@ -103,33 +81,36 @@ Browse all {{ site.data.stats.total_articles | default: 127 }} articles discover
 <script>
 let currentPage = 1;
 const rowsPerPage = 20;
+let allRows = [];
 let filteredRows = [];
+
+// Initialize on page load
+window.onload = function() {
+  // Get all rows
+  allRows = Array.from(document.querySelectorAll('.article-row'));
+  filteredRows = [...allRows];
+  updatePagination();
+};
 
 function filterArticles(company) {
   // Update active button
   document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
   event.target.classList.add('active');
   
-  const rows = document.querySelectorAll('.article-row');
   const searchTerm = document.getElementById('searchInput').value.toLowerCase();
   
-  filteredRows = [];
-  rows.forEach(row => {
+  // Filter rows
+  filteredRows = allRows.filter(row => {
     const companies = row.getAttribute('data-companies') || '';
     const title = row.getAttribute('data-title') || '';
     const source = row.getAttribute('data-source') || '';
     
-    const matchesCompany = company === 'all' || companies.includes(company);
+    const matchesCompany = company === 'all' || companies.includes(company.toLowerCase());
     const matchesSearch = searchTerm === '' || 
                          title.includes(searchTerm) || 
                          source.includes(searchTerm);
     
-    if (matchesCompany && matchesSearch) {
-      filteredRows.push(row);
-      row.style.display = '';
-    } else {
-      row.style.display = 'none';
-    }
+    return matchesCompany && matchesSearch;
   });
   
   currentPage = 1;
@@ -142,52 +123,57 @@ function searchArticles() {
 }
 
 function sortTable(column) {
-  const table = document.getElementById('articlesTable');
-  const tbody = table.tBodies[0];
-  const rows = Array.from(tbody.rows);
+  const rows = filteredRows.length > 0 ? filteredRows : allRows;
   
-  const isNumeric = column === 0 || column === 4; // Date or Score columns
+  // Determine if column is numeric (Date or Score)
+  const isNumeric = column === 0 || column === 4;
   
   rows.sort((a, b) => {
     let aVal = a.cells[column].innerText;
     let bVal = b.cells[column].innerText;
     
     if (isNumeric) {
+      // Handle date specially (YYYY-MM-DD format)
+      if (column === 0) {
+        return aVal.localeCompare(bVal);
+      }
       return parseFloat(aVal) - parseFloat(bVal);
     }
     return aVal.localeCompare(bVal);
   });
   
-  // Reverse if already sorted
-  if (table.sortColumn === column) {
+  // Toggle sort direction
+  if (window.sortColumn === column) {
     rows.reverse();
-    table.sortDirection = table.sortDirection === 'asc' ? 'desc' : 'asc';
-  } else {
-    table.sortColumn = column;
-    table.sortDirection = 'asc';
   }
+  window.sortColumn = column;
   
-  tbody.append(...rows);
+  // Reorder the table body
+  const tbody = document.getElementById('tableBody');
+  rows.forEach(row => tbody.appendChild(row));
+  
+  updatePagination();
 }
 
 function updatePagination() {
-  const visibleRows = filteredRows.length > 0 ? filteredRows : 
-                     Array.from(document.querySelectorAll('.article-row')).filter(r => r.style.display !== 'none');
-  
-  const totalPages = Math.ceil(visibleRows.length / rowsPerPage);
+  const rowsToShow = filteredRows.length > 0 ? filteredRows : allRows;
+  const totalPages = Math.ceil(rowsToShow.length / rowsPerPage);
   
   // Hide all rows first
-  document.querySelectorAll('.article-row').forEach(r => r.style.display = 'none');
+  allRows.forEach(row => row.style.display = 'none');
   
   // Show only current page rows
   const start = (currentPage - 1) * rowsPerPage;
-  const end = start + rowsPerPage;
+  const end = Math.min(start + rowsPerPage, rowsToShow.length);
   
-  visibleRows.slice(start, end).forEach(r => r.style.display = '');
+  for (let i = start; i < end; i++) {
+    rowsToShow[i].style.display = '';
+  }
   
-  document.getElementById('pageInfo').innerText = `Page ${currentPage} of ${totalPages}`;
+  // Update page info and buttons
+  document.getElementById('pageInfo').innerText = `Page ${currentPage} of ${totalPages || 1}`;
   document.getElementById('prevBtn').disabled = currentPage === 1;
-  document.getElementById('nextBtn').disabled = currentPage === totalPages;
+  document.getElementById('nextBtn').disabled = currentPage === totalPages || totalPages === 0;
 }
 
 function previousPage() {
@@ -198,23 +184,16 @@ function previousPage() {
 }
 
 function nextPage() {
-  const visibleRows = filteredRows.length > 0 ? filteredRows : 
-                     Array.from(document.querySelectorAll('.article-row')).filter(r => r.style.display !== 'none');
-  const totalPages = Math.ceil(visibleRows.length / rowsPerPage);
+  const rowsToShow = filteredRows.length > 0 ? filteredRows : allRows;
+  const totalPages = Math.ceil(rowsToShow.length / rowsPerPage);
   
   if (currentPage < totalPages) {
     currentPage++;
     updatePagination();
   }
 }
-
-// Initialize on load
-window.onload = function() {
-  filterArticles('all');
-};
 </script>
 
-<!-- Add some CSS -->
 <style>
 .filters {
   margin: 20px 0;
@@ -288,6 +267,7 @@ window.onload = function() {
 .company-tag.google { background: #fff3e0; color: #bf360c; }
 .company-tag.microsoft { background: #e3f2fd; color: #0d47a1; }
 .company-tag.meta { background: #e8eaf6; color: #1a237e; }
+.company-tag.deepseek { background: #fce4ec; color: #880e4f; }
 .score-badge {
   display: inline-block;
   padding: 2px 8px;
