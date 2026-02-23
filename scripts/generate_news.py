@@ -454,7 +454,7 @@ def main():
     }
     save_queue(queue)
 
-    write_run_log(len(candidates), posts_written, len(queue["pending"]), feed_stats)
+write_run_log(len(candidates), posts_written, len(queue["pending"]), feed_stats)
     print(f"\nDone: {len(posts_written)} post(s) written, {len(queue['pending'])} item(s) in queue")
 
 
