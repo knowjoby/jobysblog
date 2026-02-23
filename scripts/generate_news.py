@@ -291,6 +291,7 @@ def main():
 
     if not candidates:
         print("No new AI news items found.")
+        write_run_log(0, [], len(queue["pending"]), feed_stats)
         return
 
     # Deduplicate: same story covered by multiple outlets — keep highest scored
@@ -334,7 +335,7 @@ def main():
 
         tags     = item["companies"] + item["topics"]
         now_str  = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S +0000")
-        safe_title = item["title"].replace('"', "'")
+        safe_title = item["title"].replace("\\", "\\\\").replace('"', "'")
 
         content = (
             f"---\n"
@@ -370,6 +371,61 @@ def main():
         for co in item["companies"]:
             company_counts[co] = company_counts.get(co, 0) + 1
 
+    # Promote pending items if slots remain after RSS posting
+    if len(posts_written) < posts_remaining:
+        still_pending = []
+        for item in queue["pending"]:
+            if len(posts_written) >= posts_remaining:
+                still_pending.append(item)
+                continue
+            if item.get("score", 0) < config["min_score_to_post"]:
+                still_pending.append(item)
+                continue
+            if item.get("source_url", "") in {p["source_url"] for p in queue["posted"]}:
+                continue  # already posted in a previous run
+
+            slug     = slugify(item["title"])
+            filename = f"{today}-{slug}.md"
+            filepath = POSTS_DIR / filename
+            if filepath.exists():
+                continue
+
+            tags     = item.get("companies", []) + item.get("topics", [])
+            now_str  = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S +0000")
+            safe_title = item["title"].replace("\\", "\\\\").replace('"', "'")
+
+            content = (
+                f"---\n"
+                f'layout: post\n'
+                f'title: "{safe_title}"\n'
+                f'date: {now_str}\n'
+                f'categories: ai-news\n'
+                f'tags: [{", ".join(tags)}]\n'
+                f'score: {item["score"]}\n'
+                f'link: {item["source_url"]}\n'
+                f'source: {item.get("source", "")}\n'
+                f'original_date: {item.get("added_at", today)}\n'
+                f'---\n\n'
+                f'[Read on {item.get("source", "source")}]({item["source_url"]})\n'
+            )
+            filepath.write_text(content)
+            print(f"  [{item['score']:3d}] {filename} (from pending)")
+
+            entry_data = {
+                "id":         item["id"],
+                "title":      item["title"],
+                "source_url": item["source_url"],
+                "companies":  item.get("companies", []),
+                "topics":     item.get("topics", []),
+                "score":      item["score"],
+                "file":       f"_posts/{filename}",
+                "added_at":   item.get("added_at", today),
+                "posted_at":  today,
+            }
+            queue["posted"].append(entry_data)
+            posts_written.append(entry_data)
+        queue["pending"] = still_pending
+
     # Queue remaining good candidates for future days
     for item in candidates[len(posts_written):len(posts_written) + 10]:
         if item["score"] < 40:
@@ -398,7 +454,7 @@ def main():
     }
     save_queue(queue)
 
-    write_run_log(len(candidates), posts_written, len(new_pending), feed_stats)
+    write_run_log(len(candidates), posts_written, len(queue["pending"]), feed_stats)
     print(f"\nDone: {len(posts_written)} post(s) written, {len(queue['pending'])} item(s) in queue")
 
 
