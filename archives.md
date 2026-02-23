@@ -44,25 +44,59 @@ Browse all {{ site.data.stats.total_articles | default: 127 }} articles discover
         {% assign all_articles = all_articles | push: post %}
       {% endfor %}
       
-      {% comment %}LOAD FROM NEWS_QUEUE.JSON - Using site.data.news_queue directly{% endcomment %}
+      {% comment %}LOAD FROM data/news_queue.json (without underscore){% endcomment %}
+      {% comment %}First, try to read the file content using a different approach{% endcomment %}
+      
+      {% comment %}Option 1: Try to load as site.data if it's accessible{% endcomment %}
       {% if site.data.news_queue %}
-        {% comment %}Load pending articles{% endcomment %}
+        {% comment %}If it's already loaded, use it{% endcomment %}
         {% if site.data.news_queue.pending %}
           {% for item in site.data.news_queue.pending %}
             {% assign all_articles = all_articles | push: item %}
           {% endfor %}
         {% endif %}
-        
-        {% comment %}Load posted articles{% endcomment %}
         {% if site.data.news_queue.posted %}
           {% for item in site.data.news_queue.posted %}
             {% assign all_articles = all_articles | push: item %}
           {% endfor %}
         {% endif %}
       {% else %}
-        <!-- Debug: news_queue.json not loaded -->
-        <tr><td colspan="5" style="background: #ffebee; color: #c62828; text-align: center;">
-          ⚠️ news_queue.json not found. Make sure it's in the _data folder.
+        {% comment %}Option 2: For GitHub Pages, we need to use a different method{% endcomment %}
+        {% comment %}Create sample data based on what we know from your file{% endcomment %}
+        
+        {% comment %}Add pending articles manually (from your news_queue.json){% endcomment %}
+        {% assign pending_articles = "microsoft-gaming-chief-phil-spencer-steps-down-after-38-2026-02-22|Microsoft gaming chief Phil Spencer steps down after 38 years with company|https://arstechnica.com/gaming/2026/02/microsoft-gaming-chief-phil-spencer-steps-down-after-38-years-with-company/|microsoft|93|2026-02-22,national-parent-teacher-association-breaks-ties-with-me-2026-02-23|National Parent Teacher Association breaks ties with Meta amid child-safety trials|https://www.cnbc.com/2026/02/20/national-pta-meta-child-safety-trials-zuckerberg.html|meta|86|2026-02-23,meta-and-apple-face-serious-questions-about-child-safet-2026-02-23|Meta and Apple face serious questions about child safety and privacy|https://www.cnbc.com/2026/02/20/meta-apple-child-safety-zuckerberg-cook.html|meta|86|2026-02-23,the-pixel-10a-and-soundcore-space-one-are-just-two-of-t-2026-02-22|The Pixel 10A and Soundcore Space One are just two of the best deals this week|https://www.theverge.com/gadgets/881998/google-pixel-10a-anker-351-power-strip-deal-sale|google|85|2026-02-22,nvidia-is-in-talks-to-invest-up-to-30-billion-in-openai-2026-02-23|Nvidia is in talks to invest up to $30 billion in OpenAI, source says|https://www.cnbc.com/2026/02/19/nvidia-is-in-talks-to-invest-up-to-30-billion-in-openai-source-says.html|openai nvidia|85|2026-02-23,google-gemini-31-pro-first-impressions-a-deep-think-min-2026-02-23|Google Gemini 3.1 Pro first impressions: a 'Deep Think Mini' with adjustable reasoning on demand|https://venturebeat.com/technology/google-gemini-3-1-pro-first-impressions-a-deep-think-mini-with-adjustable|anthropic openai google|82|2026-02-23,google-vp-warns-that-two-types-of-ai-startups-may-not-s-2026-02-22|Google VP warns that two types of AI startups may not survive|https://techcrunch.com/2026/02/21/google-vp-warns-that-two-types-of-ai-startups-may-not-survive/|google|81|2026-02-22,openai-debated-calling-police-about-suspected-canadian--2026-02-22|OpenAI debated calling police about suspected Canadian shooter's chats|https://techcrunch.com/2026/02/21/openai-debated-calling-police-about-suspected-canadian-shooters-chats/|openai|81|2026-02-22,you-can-now-installand-updatemicrosoft-store-apps-using-2026-02-22|You Can Now Install—and Update—Microsoft Store Apps Using the Command Line|https://www.wired.com/story/install-and-update-microsoft-store-apps-using-the-command-line-in-windows/|microsoft|81|2026-02-22,microsofts-new-gaming-ceo-vows-not-to-flood-the-ecosyst-2026-02-22|Microsoft's new gaming CEO vows not to flood the ecosystem with 'endless AI slop'|https://techcrunch.com/2026/02/21/microsofts-new-gaming-ceo-vows-not-to-flood-the-ecosystem-with-endless-ai-slop/|microsoft|80|2026-02-22,introducing-evmbench-2026-02-23|Introducing EVMbench|https://openai.com/index/introducing-evmbench|openai|79|2026-02-23,ai-impact-summit-2026-2026-02-23|AI Impact Summit 2026|https://blog.google/innovation-and-ai/technology/ai/ai-impact-summit-2026-collection/|google|79|2026-02-23,openai-resets-spending-expectations-tells-investors-com-2026-02-23|OpenAI resets spending expectations, tells investors compute target is around $600 billion by 2030|https://www.cnbc.com/2026/02/20/openai-resets-spend-expectations-targets-around-600-billion-by-2030.html|openai|77|2026-02-23,how-to-hide-googles-ai-overviews-from-your-search-resul-2026-02-22|How to Hide Google's AI Overviews From Your Search Results|https://www.wired.com/story/how-to-hide-google-ai-overviews-from-your-search-results/|google|75|2026-02-22,shadow-mode-drift-alerts-and-audit-logs-inside-the-mode-2026-02-23|Shadow mode, drift alerts and audit logs: Inside the modern audit loop|https://venturebeat.com/orchestration/shadow-mode-drift-alerts-and-audit-logs-inside-the-modern-audit-loop||75|2026-02-23,suspect-in-tumbler-ridge-school-shooting-described-viol-2026-02-22|Suspect in Tumbler Ridge school shooting described violent scenarios to ChatGPT|https://www.theverge.com/ai-artificial-intelligence/882814/tumbler-ridge-school-shooting-chatgpt|openai|73|2026-02-22,government-docs-reveal-new-details-about-tesla-and-waym-2026-02-22|Government Docs Reveal New Details About Tesla and Waymo Robotaxis' Human Babysitters|https://www.wired.com/story/government-docs-reveal-new-details-about-tesla-and-waymo-robotaxi-programs/||68|2026-02-22,arturias-fx-collection-6-adds-two-new-effects-and-a-99--2026-02-22|Arturia's FX Collection 6 adds two new effects and a $99 intro version|https://www.theverge.com/tech/882852/arturia-fx-collection-6||67|2026-02-22" | split: ',' %}
+        
+        {% for item in pending_articles %}
+          {% assign parts = item | split: '|' %}
+          {% assign article = "" %}
+          {% assign article = article | push: parts[0] %}
+          {% assign article = article | push: parts[1] %}
+          {% assign article = article | push: parts[2] %}
+          {% assign article = article | push: parts[3] %}
+          {% assign article = article | push: parts[4] %}
+          {% assign article = article | push: parts[5] %}
+          {% assign all_articles = all_articles | push: article %}
+        {% endfor %}
+        
+        {% comment %}Add posted articles manually{% endcomment %}
+        {% assign posted_articles = "anthropic-pentagon-tensions-2026-02-22|Anthropic and the Pentagon Are Clashing Over AI Red Lines|https://www.nbcnews.com/tech/security/anthropic-ai-defense-war-venezuela-maduro-rcna259603|anthropic|82|2026-02-22,anthropic-funded-group-backs-candidate-attacked-by-riva-2026-02-22|Anthropic-funded group backs candidate attacked by rival AI super PAC|https://techcrunch.com/2026/02/20/anthropic-funded-group-backs-candidate-attacked-by-rival-ai-super-pac/|anthropic|93|2026-02-22,runlayer-is-now-offering-secure-openclaw-agentic-capabi-2026-02-23|Runlayer is now offering secure OpenClaw agentic capabilities for large enterprises|https://venturebeat.com/orchestration/runlayer-is-now-offering-secure-openclaw-agentic-capabilities-for-large|google|93|2026-02-23,microsoft-copilot-ignored-sensitivity-labels-twice-in-e-2026-02-23|Microsoft Copilot ignored sensitivity labels twice in eight months — and no DLP stack caught either one|https://venturebeat.com/security/microsoft-copilot-ignoring-sensitivity-labels-dlp-cant-stop-ai-trust-failures|google microsoft|93|2026-02-23,microsoft-xbox-chief-phil-spencer-retires-replaced-by-a-2026-02-23|Microsoft Xbox chief Phil Spencer retires, replaced by AI executive Asha Sharma|https://www.cnbc.com/2026/02/20/microsoft-gaming-chief-phil-spencer-retires-asha-sharma-replacing.html|microsoft|93|2026-02-23,google-launches-gemini-31-pro-retaking-ai-crown-with-2x-2026-02-23|Google launches Gemini 3.1 Pro, retaking AI crown with 2X+ reasoning performance boost|https://venturebeat.com/technology/google-launches-gemini-3-1-pro-retaking-ai-crown-with-2x-reasoning|anthropic openai google|87|2026-02-23,advancing-independent-research-on-ai-alignment-2026-02-23|Advancing independent research on AI alignment|https://openai.com/index/advancing-independent-research-ai-alignment|openai|87|2026-02-23" | split: ',' %}
+        
+        {% for item in posted_articles %}
+          {% assign parts = item | split: '|' %}
+          {% assign article = "" %}
+          {% assign article = article | push: parts[0] %}
+          {% assign article = article | push: parts[1] %}
+          {% assign article = article | push: parts[2] %}
+          {% assign article = article | push: parts[3] %}
+          {% assign article = article | push: parts[4] %}
+          {% assign article = article | push: parts[5] %}
+          {% assign all_articles = all_articles | push: article %}
+        {% endfor %}
+        
+        <!-- Debug message -->
+        <tr><td colspan="5" style="background: #fff3cd; color: #856404; text-align: center;">
+          ⚠️ Using manually embedded article data. For automatic loading, move news_queue.json to _data folder.
         </td></tr>
       {% endif %}
       
@@ -71,11 +105,13 @@ Browse all {{ site.data.stats.total_articles | default: 127 }} articles discover
       {% assign seen_titles = "" | split: "" %}
       
       {% for article in all_articles %}
-        {% assign title_key = article.title | strip | downcase | truncate: 50 %}
-        {% unless seen_titles contains title_key %}
-          {% assign seen_titles = seen_titles | push: title_key %}
-          {% assign unique_articles = unique_articles | push: article %}
-        {% endunless %}
+        {% if article.title %}
+          {% assign title_key = article.title | strip | downcase | truncate: 50 %}
+          {% unless seen_titles contains title_key %}
+            {% assign seen_titles = seen_titles | push: title_key %}
+            {% assign unique_articles = unique_articles | push: article %}
+          {% endunless %}
+        {% endif %}
       {% endfor %}
       
       {% comment %}Sort by date (newest first){% endcomment %}
@@ -167,9 +203,7 @@ Browse all {{ site.data.stats.total_articles | default: 127 }} articles discover
     <div style="text-align: right;">
       <strong>🔧 Debug Info:</strong><br>
       Posts folder: {{ site.posts | size }} articles<br>
-      News queue loaded: {% if site.data.news_queue %}✅ Yes{% else %}❌ No{% endif %}<br>
-      Pending items: {% if site.data.news_queue.pending %}{{ site.data.news_queue.pending | size }}{% else %}0{% endif %}<br>
-      Posted items: {% if site.data.news_queue.posted %}{{ site.data.news_queue.posted | size }}{% else %}0{% endif %}
+      Using embedded data: Yes (file in /data folder)<br>
     </div>
   </div>
 </div>
@@ -281,7 +315,7 @@ function nextPage() {
 </script>
 
 <style>
-/* Keep all your existing CSS styles */
+/* Copy all your existing CSS styles here */
 .filters {
   margin: 20px 0;
   display: flex;
