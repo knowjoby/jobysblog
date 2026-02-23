@@ -19,9 +19,18 @@ title: AI News Dashboard
     {% assign has_today = true %}
     <div class="featured-post">
       <h3><a href="{{ post.link }}" target="_blank">{{ post.title }}</a></h3>
-      <small>📰 {{ post.source }} | 🔥 {% if post.tags %}{{ post.tags | first | capitalize }}{% else %}AI News{% endif %}</small>
-      {% if post.summary %}
-        <p>{{ post.summary | truncate: 200 }}</p>
+      <small>📰 {{ post.source }} | 
+        {% if post.tags %}
+          🔥 
+          {% for tag in post.tags limit:3 %}
+            {% if tag == 'openai' or tag == 'anthropic' or tag == 'google' or tag == 'microsoft' or tag == 'meta' or tag == 'deepseek' %}
+              {{ tag | capitalize }}{% unless forloop.last %}, {% endunless %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </small>
+      {% if post.content %}
+        <p>{{ post.content | strip_html | truncate: 200 }}</p>
       {% endif %}
     </div>
   {% endif %}
@@ -32,12 +41,21 @@ title: AI News Dashboard
   {% for post in site.posts limit:3 %}
     <div class="recent-post">
       <h3><a href="{{ post.link }}" target="_blank">{{ post.title }}</a></h3>
-      <small>📰 {{ post.source }} | 📅 {{ post.date | date: '%b %d' }} | 🏢 {% if post.tags %}{{ post.tags | first | capitalize }}{% else %}AI News{% endif %}</small>
+      <small>📰 {{ post.source }} | 📅 {{ post.date | date: '%b %d' }} | 
+        {% if post.tags %}
+          🏢 
+          {% for tag in post.tags limit:2 %}
+            {% if tag == 'openai' or tag == 'anthropic' or tag == 'google' or tag == 'microsoft' or tag == 'meta' or tag == 'deepseek' %}
+              {{ tag | capitalize }}{% unless forloop.last %}, {% endunless %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </small>
     </div>
   {% endfor %}
 {% endif %}
 
-<!-- Company-Specific Sections -->
+  <!-- Company-Specific Sections -->
 ## 🏢 News by Company
 
 <div class="company-grid">
