@@ -25,50 +25,39 @@ Browse all {{ site.posts | size }} articles
 </div>
 
 <!-- Articles Table -->
-<div class="archives-table">
-  <table id="articlesTable">
-    <thead>
-      <tr>
-        <th onclick="sortTable(0)">Date ⬍</th>
-        <th onclick="sortTable(1)">Title ⬍</th>
-        <th onclick="sortTable(2)">Source ⬍</th>
-        <th onclick="sortTable(3)">Companies ⬍</th>
-        <th onclick="sortTable(4)">Score ⬍</th>
-      </tr>
-    </thead>
-    <tbody id="tableBody">
-      {% for post in site.posts %}
-      <tr class="article-row" 
-          data-companies="{% if post.companies %}{% if post.companies.first %}{% for company in post.companies %}{{ company | downcase }} {% endfor %}{% else %}{{ post.companies | downcase }}{% endif %}{% endif %}"
-          data-title="{{ post.title | downcase | escape }}"
-          data-source="{{ post.source | downcase | escape }}">
-        <td>{{ post.date | date: '%Y-%m-%d' }}</td>
-        <td><a href="{{ post.url }}">{{ post.title }}</a></td>
-        <td>{{ post.source }}</td>
-        <td class="company-tags">
-          {% if post.companies %}
-            {% if post.companies.first %}
-              {% for company in post.companies %}
-                <span class="company-tag {{ company | downcase }}">{{ company | capitalize }}</span>
-              {% endfor %}
-            {% else %}
-              <span class="company-tag {{ post.companies | downcase }}">{{ post.companies | capitalize }}</span>
-            {% endif %}
-          {% endif %}
-        </td>
-        <td class="score-cell">
-          <span class="score-badge 
-            {% if post.score >= 85 %}score-high
-            {% elsif post.score >= 70 %}score-medium
-            {% else %}score-low{% endif %}">
-            {{ post.score }}
-          </span>
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
+<!-- TEMPORARY DEBUG VIEW -->
+<h2>Debug: Article Sources</h2>
+
+<h3>1. Posts in _posts folder ({{ site.posts | size }} total):</h3>
+<ul>
+{% for post in site.posts %}
+  <li>{{ post.date }} - <strong>{{ post.title }}</strong> (Source: {{ post.source }})</li>
+{% else %}
+  <li>No posts found in _posts folder.</li>
+{% endfor %}
+</ul>
+
+<h3>2. Data in news_queue.json (if it exists):</h3>
+<ul>
+{% if site.data.news_queue and site.data.news_queue.pending %}
+  {% for item in site.data.news_queue.pending %}
+    <li>{{ item.added_at }} - <strong>{{ item.title }}</strong> (Source: {{ item.source }})</li>
+  {% endfor %}
+{% else %}
+  <li>No pending items found in news_queue.json.</li>
+{% endif %}
+</ul>
+
+<h3>3. Data from stats.yml:</h3>
+<ul>
+  <li>Total articles (from stats): {{ site.data.stats.total_articles | default: 'not found' }}</li>
+  <li>Filtered articles (from stats): {{ site.data.stats.filtered_articles | default: 'not found' }}</li>
+</ul>
+
+<!-- Keep pagination and JS commented out for now -->
+<!-- Pagination -->
+<!-- <div class="pagination"> ... </div> -->
+<!-- <script> ... </script> -->
 
 <!-- Pagination -->
 <div class="pagination">
