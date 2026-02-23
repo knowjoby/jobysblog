@@ -1,6 +1,8 @@
 name: Deploy Jekyll to GitHub Pages
 
 on:
+  schedule:
+    - cron: "30 2 * * *"  # 8:00 AM IST (UTC+5:30)
   push:
     branches: ["main"]
   workflow_dispatch:
