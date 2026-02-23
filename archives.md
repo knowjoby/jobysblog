@@ -39,59 +39,65 @@ Browse all {{ site.data.stats.total_articles | default: 127 }} articles discover
     <tbody id="tableBody">
       {% assign all_articles = "" | split: "" %}
       
-      {% comment %}Load articles from all data files{% endcomment %}
-      
-      {% comment %}1. Check for ai-news data files (like ai-news-2026-02-23.json){% endcomment %}
-      {% assign news_files = site.static_files | where_exp: "file", "file.path contains '/data/ai-news'" %}
-      {% for file in news_files %}
-        {% comment %}Get the filename without path{% endcomment %}
-        {% assign filename = file.path | split: '/' | last | remove: '.json' %}
-        {% comment %}Try to load the data file{% endcomment %}
-        {% assign file_data = site.data[filename] %}
-        {% if file_data %}
-          {% for item in file_data %}
-            {% assign all_articles = all_articles | push: item %}
-          {% endfor %}
-        {% endif %}
-      {% endfor %}
-      
-      {% comment %}2. Check for any JSON files in _data folder{% endcomment %}
-      {% if site.data.news %}
-        {% for item in site.data.news %}
-          {% assign all_articles = all_articles | push: item %}
+      {% comment %}LOAD FROM NEWS_QUEUE.JSON - PENDING ARTICLES{% endcomment %}
+      {% if site.data.news_queue.pending %}
+        {% for item in site.data.news_queue.pending %}
+          {% assign article = item %}
+          {% assign all_articles = all_articles | push: article %}
         {% endfor %}
       {% endif %}
       
-      {% comment %}3. Also include posts from _posts folder (your 9 articles){% endcomment %}
+      {% comment %}LOAD FROM NEWS_QUEUE.JSON - POSTED ARTICLES{% endcomment %}
+      {% if site.data.news_queue.posted %}
+        {% for item in site.data.news_queue.posted %}
+          {% assign article = item %}
+          {% assign all_articles = all_articles | push: article %}
+        {% endfor %}
+      {% endif %}
+      
+      {% comment %}ALSO LOAD FROM _POSTS FOLDER (just in case){% endcomment %}
       {% for post in site.posts %}
         {% assign all_articles = all_articles | push: post %}
       {% endfor %}
       
-      {% comment %}Sort all articles by date (newest first){% endcomment %}
-      {% assign sorted_articles = all_articles | sort: "date" | reverse %}
+      {% comment %}Remove duplicates based on title or id{% endcomment %}
+      {% assign unique_articles = "" | split: "" %}
+      {% assign seen_titles = "" | split: "" %}
       
-      {% comment %}Display message if no articles found{% endcomment %}
+      {% for article in all_articles %}
+        {% assign title_lower = article.title | downcase %}
+        {% unless seen_titles contains title_lower %}
+          {% assign seen_titles = seen_titles | push: title_lower %}
+          {% assign unique_articles = unique_articles | push: article %}
+        {% endunless %}
+      {% endfor %}
+      
+      {% comment %}Sort by date (newest first){% endcomment %}
+      {% assign sorted_articles = unique_articles | sort: "added_at" | reverse %}
+      
       {% if sorted_articles.size == 0 %}
-        <tr><td colspan="5" style="text-align: center; padding: 40px;">No articles found. Check data files.</td></tr>
+        <tr><td colspan="5" style="text-align: center; padding: 40px;">No articles found</td></tr>
       {% else %}
-        {% comment %}Display all articles{% endcomment %}
         {% for article in sorted_articles %}
         <tr class="article-row" 
-            data-companies="{% if article.companies %}{% if article.companies.first %}{% for company in article.companies %}{{ company | downcase }} {% endfor %}{% else %}{{ article.companies | downcase }}{% endif %}{% endif %}"
+            data-companies="{% if article.companies %}{% for company in article.companies %}{{ company | downcase }} {% endfor %}{% endif %}"
             data-title="{{ article.title | downcase | escape }}"
-            data-source="{{ article.source | downcase | escape }}">
-          <td>{% if article.date %}{{ article.date | date: '%Y-%m-%d' }}{% else %}No date{% endif %}</td>
-          <td><a href="{% if article.link %}{{ article.link }}{% elsif article.url %}{{ article.url }}{% else %}#{% endif %}" target="_blank">{{ article.title }}</a></td>
-          <td>{% if article.source %}{{ article.source }}{% else %}Unknown{% endif %}</td>
+            data-source="{% if article.source %}{{ article.source | downcase | escape }}{% elsif article.source_url %}{{ article.source_url | downcase | escape }}{% endif %}">
+          <td>{{ article.added_at | default: article.date | default: '2026-02-23' }}</td>
+          <td><a href="{{ article.source_url | default: article.link | default: '#' }}" target="_blank">{{ article.title }}</a></td>
+          <td>
+            {% if article.source %}
+              {{ article.source }}
+            {% elsif article.source_url %}
+              {% assign url_parts = article.source_url | split: '/' %}
+              {{ url_parts[2] | replace: 'www.', '' | truncate: 20 }}
+            {% endif %}
+          </td>
           <td class="company-tags">
             {% if article.companies %}
-              {% if article.companies.first %}
-                {% for company in article.companies %}
-                  <span class="company-tag {{ company | downcase }}">{{ company | capitalize }}</span>
-                {% endfor %}
-              {% else %}
-                <span class="company-tag {{ article.companies | downcase }}">{{ article.companies | capitalize }}</span>
-              {% endif %}
+              {% for company in article.companies %}
+                <span class="company-tag {{ company | downcase }}">{{ company | capitalize }}</span>
+              {% endfor %}
             {% endif %}
           </td>
           <td class="score-cell">
@@ -116,9 +122,9 @@ Browse all {{ site.data.stats.total_articles | default: 127 }} articles discover
   <button onclick="nextPage()" id="nextBtn">Next →</button>
 </div>
 
-<!-- Add article count display -->
-<div style="text-align: right; margin: 10px 0; color: #666;">
-  Total articles loaded: <span id="totalCount">0</span>
+<!-- Article count -->
+<div style="text-align: right; margin: 10px 0; color: #666; font-size: 14px;">
+  Showing <span id="visibleCount">0</span> of <span id="totalCount">0</span> articles
 </div>
 
 <script>
@@ -132,8 +138,6 @@ window.onload = function() {
   filteredRows = [...allRows];
   document.getElementById('totalCount').innerText = allRows.length;
   updatePagination();
-  
-  console.log('Total articles loaded:', allRows.length); // For debugging
 };
 
 function filterArticles(company) {
@@ -174,9 +178,9 @@ function sortTable(column) {
     
     if (isNumeric) {
       if (column === 0) {
-        return aVal.localeCompare(bVal);
+        return bVal.localeCompare(aVal); // Reverse for dates (newest first)
       }
-      return parseFloat(aVal) - parseFloat(bVal);
+      return parseFloat(bVal) - parseFloat(aVal); // Reverse for scores (highest first)
     }
     return aVal.localeCompare(bVal);
   });
@@ -208,6 +212,7 @@ function updatePagination() {
   document.getElementById('pageInfo').innerText = `Page ${currentPage} of ${totalPages || 1}`;
   document.getElementById('prevBtn').disabled = currentPage === 1;
   document.getElementById('nextBtn').disabled = currentPage === totalPages || totalPages === 0;
+  document.getElementById('visibleCount').innerText = rowsToShow.length;
 }
 
 function previousPage() {
@@ -229,7 +234,7 @@ function nextPage() {
 </script>
 
 <style>
-/* Keep all your existing CSS styles */
+/* Copy all your existing CSS styles here - they're the same as before */
 .filters {
   margin: 20px 0;
   display: flex;
