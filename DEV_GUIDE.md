@@ -2,14 +2,20 @@
 
 This repository powers a Jekyll blog that automatically publishes short “AI news” posts. It was assembled via AI-assisted “vibecoding”, so this guide is intentionally explicit and maps **directly to what exists in the repo**.
 
+**Last audit**: 2026-02-23 (repo `main` at commit `9746ff3` at time of writing). This document includes the newer “smart fetch”/filter/monitor scripts and workflow that are present in the repo.
+
 ---
 
 ### What this repo does
 
 - **Builds a static blog** using Jekyll (theme: `minima`, classic skin), hosted on GitHub Pages at `https://knowjoby.github.io/blog`.
-- **Generates AI news posts automatically** using one (or both) of these pipelines:
+- **Generates AI news posts automatically** using one (or more) of these pipelines:
   - **RSS pipeline (Python)**: `scripts/generate_news.py` fetches RSS feeds, scores + dedupes items, writes minimal link-posts into `_posts/`, updates `data/news_queue.json`, and appends to `_data/run_log.json`.
   - **Agent pipeline (Claude command)**: `.claude/commands/ai-news.md` defines a fully-automated workflow that does web search, scores items, writes 150–200 word posts, updates queue, commits, and pushes.
+- **Includes experimental “smart fetch / filter / monitor” building blocks**:
+  - `scripts/smart_fetcher.py`, `scripts/smart_scheduler.py`, `scripts/check_new_content.py`, `scripts/ai_news_filter.py`, `scripts/breaking_news_monitor.py`
+  - `.github/workflows/smart-news-fetch.yml` runs every 30 minutes.
+  - **Important**: as currently committed, these “smart” scripts are scaffolding and contain placeholders/undefined methods that will fail if executed as-is. See the “Experimental smart fetch pipeline” section for details and risks.
 - **Automates runs and deployments** via GitHub Actions workflows under `.github/workflows/`.
 
 ---
@@ -30,12 +36,18 @@ This repository powers a Jekyll blog that automatically publishes short “AI ne
   - `scripts/generate_news.py`: RSS-based AI news generator.
   - `scripts/queue_status.py`: CLI tool to inspect/clean the queue.
   - `scripts/run_ai_news.sh`: local LaunchAgent-friendly runner for Claude `/ai-news`.
+  - `scripts/ai_news_filter.py`: alternative RSS filter/post generator (creates `_data/ai-news-<date>.yaml` and `_posts/<date>-ai-news-<n>.md`).
+  - `scripts/check_new_content.py`: counts new posts since last build; used by `smart-news-fetch.yml` to decide whether to rebuild/deploy.
+  - `scripts/smart_fetcher.py`: placeholder “smart” fetch framework for rate-limiting/refresh scheduling per source (currently incomplete).
+  - `scripts/smart_scheduler.py`: refresh schedule constants (data only).
+  - `scripts/breaking_news_monitor.py`: breaking-news detection + alert hooks (currently not wired into any workflow).
 - **Claude command (agent flow)**
   - `.claude/commands/ai-news.md`: specification for the `/ai-news` command.
 - **GitHub Actions**
   - `.github/workflows/daily-news.yml`: runs RSS pipeline daily + commits/pushes changes.
   - `.github/workflows/monitor.yml`: verifies daily run happened; retriggers if missing.
   - `.github/workflows/jekyll.yml`: builds and deploys the Jekyll site to GitHub Pages.
+  - `.github/workflows/smart-news-fetch.yml`: high-frequency (every 30 min) “smart fetch” workflow (currently inconsistent with the repo’s Pages deployment approach; see below).
 
 ---
 
@@ -114,6 +126,13 @@ Fully automated RSS-based AI news link-post generator:
 pip install feedparser
 python scripts/generate_news.py
 ```
+
+**Newer dependency note (current repo state):** `scripts/generate_news.py` now tries to import helper logic from `scripts/ai_news_filter.py` (`extract_companies_mentioned`) to enhance company detection. That helper file imports `yaml` (PyYAML). If you keep this integration, the RSS pipeline’s runtime dependencies become:
+
+- `feedparser`
+- `pyyaml`
+
+Also, the import is written as `from scripts.ai_news_filter import ...`, which requires Python to treat `scripts/` as an importable package/module path (it is not a package by default unless you add `scripts/__init__.py` or adjust `PYTHONPATH`). If this is not corrected, the daily RSS workflow (`daily-news.yml`) will fail at import time.
 
 #### Inputs / outputs
 
@@ -267,6 +286,109 @@ Operational risks / things to fix for team use:
 
 ---
 
+### 6) Experimental smart fetch pipeline (high frequency)
+
+This repo contains an additional workflow and helper scripts intended to support more frequent fetching and conditional deploys.
+
+#### Workflow: `.github/workflows/smart-news-fetch.yml`
+
+- **Schedule**: every 30 minutes (`*/30 * * * *`) + manual dispatch.
+- **Steps (as written)**:
+  1. Checkout code
+  2. Setup Python 3.9
+  3. `pip install feedparser pyyaml requests`
+  4. Run `python scripts/smart_fetcher.py`
+  5. Run `python scripts/check_new_content.py` and capture output as `NEW_COUNT`
+  6. If `NEW_COUNT > 0` (or manual dispatch):
+     - Run `bundle install` and `bundle exec jekyll build`
+     - Deploy using `peaceiris/actions-gh-pages@v3` from `./_site`
+
+#### Script: `scripts/smart_fetcher.py` (current state: incomplete / will fail)
+
+This file defines a `SmartNewsFetcher` class intended to:
+
+- Track last fetch times per source in `data/last_fetch_times.json`
+- Fetch only sources that are “due” based on per-source-type intervals
+
+However, as committed:
+
+- `self.schedules` contains placeholders like `sources: [...]` (a list containing an `Ellipsis`), not real source dicts.
+- It calls `self.update_last_run(...)` but **no such method exists**.
+- `fetch_source()` is `pass`.
+
+Result: running `python scripts/smart_fetcher.py` will error if execution reaches `fetch_due_sources()`, and it does not produce posts or update `data/news_queue.json`.
+
+#### Script: `scripts/check_new_content.py` (build gating)
+
+- Tracks build state in `data/last_build_state.json`.
+- Counts “new posts” as `_posts/*.md` files that weren’t present in the last saved state.
+- **Exit codes**:
+  - Exits **0** if new files exist.
+  - Exits **1** if no new files exist.
+
+In GitHub Actions, a non-zero exit usually fails the step. The workflow currently runs:
+
+- `NEW_COUNT=$(python scripts/check_new_content.py)`
+
+Because the script exits 1 when there are no new posts, this step will typically fail on “no-op” runs unless the workflow is configured to tolerate non-zero exit codes (it is not currently).
+
+#### Deployment inconsistency (important)
+
+This workflow deploys using `peaceiris/actions-gh-pages@v3`, while the repo’s primary deployment (`.github/workflows/jekyll.yml`) deploys via GitHub Pages’ official `actions/deploy-pages@v4`.
+
+The dev team should decide one deployment strategy and remove/disable the other to avoid conflicting publishes.
+
+---
+
+### 7) Alternate filter/post generator: `scripts/ai_news_filter.py` (not the same as `generate_news.py`)
+
+This script is a separate RSS-based fetch + filter pipeline with different outputs:
+
+- Uses an expanded `SOURCES` list (Substack newsletters, company blogs, AI category feeds)
+- Uses `COMPANY_KEYWORDS` with additional entries (includes `deepseek`)
+- Filters items by “company mention” using occurrence counts and regex checks
+- Builds a list of post dicts with:
+  - `title`, `link`, `date`, `source`, `summary`, `companies` (dict with scores), `primary_company`, `relevance_score`
+
+Outputs (as written):
+
+- Writes up to **20** posts as:
+  - `_posts/<today>-ai-news-<i>.md`
+  - Front matter includes `source`, `companies`, `primary`, `link`
+  - Body contains a summary snippet and a “Read full article” link
+- Writes a YAML file:
+  - `_data/ai-news-<today>.yaml` containing up to 50 items
+
+Known gaps in the script (as committed):
+
+- References `update_source_health(...)` but does not define it.
+- Uses PyYAML (`import yaml`), so it requires `pyyaml` at runtime.
+- It is not referenced directly by `daily-news.yml`, but `generate_news.py` currently imports `extract_companies_mentioned` from this file.
+
+---
+
+### 8) Breaking-news monitor: `scripts/breaking_news_monitor.py`
+
+This file defines a `BreakingNewsMonitor` class intended to:
+
+- Track already-alerted breaking links in `data/breaking_news_cache.json`
+- Identify “breaking” items based on:
+  - Mentioning a primary company (`openai`, `anthropic`, `google`, `deepseek`)
+  - Title containing breaking keywords (e.g., `GPT-5`, `Claude 4`, `Gemini Ultra`, `acquisition`, etc.)
+  - Or a high `relevance_score` (> 5)
+- Provide alert hooks:
+  - `send_email_alert()` (currently stub/prints)
+  - `post_to_social()` (currently stub/prints)
+
+As committed:
+
+- There is no `__main__` entry point wiring it into a workflow.
+- It imports `smtplib` and `requests` but does not implement real alert sending.
+
+Treat this as scaffolding unless/until it is integrated.
+
+---
+
 ## Data formats (must remain stable)
 
 ### `data/news_queue.json` (queue + config)
@@ -342,6 +464,13 @@ The RSS generator truncates this file to the last 50 runs.
 
 - Runs on push to `main`, on a schedule, and on manual dispatch.
 - Builds the Jekyll site and deploys to GitHub Pages.
+
+### Smart high-frequency fetch (experimental): `.github/workflows/smart-news-fetch.yml`
+
+- Runs every 30 minutes.
+- Installs Python deps and runs `scripts/smart_fetcher.py`.
+- Uses `scripts/check_new_content.py` to decide whether to build/deploy.
+- Deploys with `peaceiris/actions-gh-pages@v3` (different deployment model than `jekyll.yml`).
 
 ---
 
