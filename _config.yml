@@ -24,5 +24,6 @@ permalink: /:year/:month/:day/:title/
 header_pages:
   - about.md
   - logs.md
-  - archives.md   
+  - archives.md
+  - changelog.md
 
