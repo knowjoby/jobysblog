@@ -1,8 +1,8 @@
 # scripts/check_new_content.py
-from datetime import datetime  # Add this line
 import json
 from pathlib import Path
 import sys
+from datetime import datetime  # Add this line
 
 def count_new_content():
     """Returns number of new posts since last build"""
