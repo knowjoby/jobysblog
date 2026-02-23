@@ -20,6 +20,19 @@ Browse all {{ site.data.stats.total_articles | default: 127 }} articles discover
 </div>
 
 <!-- Search Box -->
+<!-- DEBUG SECTION - REMOVE LATER -->
+<div style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffeeba; border-radius: 4px;">
+  <strong>🔍 Debug Information:</strong><br>
+  Total posts in site: {{ site.posts | size }}<br>
+  <hr>
+  <strong>First 3 post titles (if any):</strong><br>
+  {% for post in site.posts limit:3 %}
+    - {{ post.title }} ({{ post.date }})<br>
+  {% else %}
+    No posts found!<br>
+  {% endfor %}
+</div>
+<!-- END DEBUG SECTION -->
 <div class="search-box">
   <input type="text" id="searchInput" placeholder="Search articles..." onkeyup="searchArticles()">
 </div>
