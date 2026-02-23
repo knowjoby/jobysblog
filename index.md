@@ -17,11 +17,7 @@ title: AI News Dashboard
   {% assign post_date = post.date | date: '%Y-%m-%d' %}
   {% if post_date == today %}
     {% assign has_today = true %}
-    <div class="featured-post">
-      <h3><a href="{{ post.link }}" target="_blank">{{ post.title }}</a></h3>
-      <small>📰 {{ post.source }} | 🔥 {{ post.companies | join: ', ' }}</small>
-      <p>{{ post.summary | truncate: 200 }}</p>
-    </div>
+  
   {% endif %}
 {% endfor %}
 
