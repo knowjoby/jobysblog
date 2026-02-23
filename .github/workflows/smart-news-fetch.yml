@@ -1,0 +1,47 @@
+# .github/workflows/smart-news-fetch.yml
+
+name: Smart AI News Fetch
+
+on:
+  schedule:
+    # High-frequency check (every 30 min)
+    - cron: '*/30 * * * *'
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  fetch-news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      
+      - name: Install dependencies
+        run: pip install feedparser pyyaml requests
+      
+      - name: Run smart fetcher
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/smart_fetcher.py
+      
+      - name: Check for new relevant content
+        id: content_check
+        run: |
+          NEW_COUNT=$(python scripts/check_new_content.py)
+          echo "count=$NEW_COUNT" >> $GITHUB_OUTPUT
+      
+      - name: Conditional Jekyll build
+        if: steps.content_check.outputs.count > 0 || github.event_name == 'workflow_dispatch'
+        run: |
+          bundle install
+          bundle exec jekyll build
+      
+      - name: Deploy to GitHub Pages
+        if: steps.content_check.outputs.count > 0 || github.event_name == 'workflow_dispatch'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
