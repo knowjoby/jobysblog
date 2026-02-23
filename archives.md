@@ -23,54 +23,7 @@ Browse all {{ site.data.stats.total_articles | default: 127 }} articles discover
 <div class="search-box">
   <input type="text" id="searchInput" placeholder="Search articles..." onkeyup="searchArticles()">
 </div>
-<!-- DEBUG: Show all data files -->
-<div style="background: #e3f2fd; padding: 15px; margin: 20px 0; border: 1px solid #90caf9; border-radius: 4px;">
-  <strong>🔍 Available Data Files:</strong><br>
-  
-  {% comment %}List all files in _data folder{% endcomment %}
-  <h4>Files in _data:</h4>
-  <ul>
-  {% for file in site.static_files %}
-    {% if file.path contains '/_data/' %}
-      <li>{{ file.path }}</li>
-    {% endif %}
-  {% endfor %}
-  </ul>
-  
-  <h4>Data variables loaded:</h4>
-  <ul>
-    {% if site.data.news_queue %}<li>✅ news_queue.json loaded</li>{% endif %}
-    {% if site.data.stats %}<li>✅ stats.yml loaded</li>{% endif %}
-    {% comment %}Add more as we find them{% endcomment %}
-  </ul>
-  
-  <h4>First few articles from all sources:</h4>
-  <ul>
-  {% assign sample_count = 0 %}
-  {% for post in site.posts limit:3 %}
-    <li>Post: {{ post.title }}</li>
-    {% assign sample_count = sample_count | plus: 1 %}
-  {% endfor %}
-  
-  {% if site.data.news_queue.pending %}
-    {% for item in site.data.news_queue.pending limit:3 %}
-      <li>Pending: {{ item.title }}</li>
-      {% assign sample_count = sample_count | plus: 1 %}
-    {% endfor %}
-  {% endif %}
-  
-  {% if site.data.news_queue.posted %}
-    {% for item in site.data.news_queue.posted limit:3 %}
-      <li>Posted: {{ item.title }}</li>
-      {% assign sample_count = sample_count | plus: 1 %}
-    {% endfor %}
-  {% endif %}
-  
-  {% if sample_count == 0 %}
-    <li>No articles found in any source!</li>
-  {% endif %}
-  </ul>
-</div>
+
 <!-- Articles Table -->
 <div class="archives-table">
   <table id="articlesTable">
@@ -86,35 +39,41 @@ Browse all {{ site.data.stats.total_articles | default: 127 }} articles discover
     <tbody id="tableBody">
       {% assign all_articles = "" | split: "" %}
       
-      {% comment %}LOAD FROM NEWS_QUEUE.JSON - PENDING ARTICLES{% endcomment %}
-      {% if site.data.news_queue.pending %}
-        {% for item in site.data.news_queue.pending %}
-          {% assign article = item %}
-          {% assign all_articles = all_articles | push: article %}
-        {% endfor %}
-      {% endif %}
-      
-      {% comment %}LOAD FROM NEWS_QUEUE.JSON - POSTED ARTICLES{% endcomment %}
-      {% if site.data.news_queue.posted %}
-        {% for item in site.data.news_queue.posted %}
-          {% assign article = item %}
-          {% assign all_articles = all_articles | push: article %}
-        {% endfor %}
-      {% endif %}
-      
-      {% comment %}ALSO LOAD FROM _POSTS FOLDER (just in case){% endcomment %}
+      {% comment %}LOAD FROM _POSTS FOLDER (your 9 articles){% endcomment %}
       {% for post in site.posts %}
         {% assign all_articles = all_articles | push: post %}
       {% endfor %}
       
-      {% comment %}Remove duplicates based on title or id{% endcomment %}
+      {% comment %}LOAD FROM NEWS_QUEUE.JSON - Using site.data.news_queue directly{% endcomment %}
+      {% if site.data.news_queue %}
+        {% comment %}Load pending articles{% endcomment %}
+        {% if site.data.news_queue.pending %}
+          {% for item in site.data.news_queue.pending %}
+            {% assign all_articles = all_articles | push: item %}
+          {% endfor %}
+        {% endif %}
+        
+        {% comment %}Load posted articles{% endcomment %}
+        {% if site.data.news_queue.posted %}
+          {% for item in site.data.news_queue.posted %}
+            {% assign all_articles = all_articles | push: item %}
+          {% endfor %}
+        {% endif %}
+      {% else %}
+        <!-- Debug: news_queue.json not loaded -->
+        <tr><td colspan="5" style="background: #ffebee; color: #c62828; text-align: center;">
+          ⚠️ news_queue.json not found. Make sure it's in the _data folder.
+        </td></tr>
+      {% endif %}
+      
+      {% comment %}Remove duplicates based on title{% endcomment %}
       {% assign unique_articles = "" | split: "" %}
       {% assign seen_titles = "" | split: "" %}
       
       {% for article in all_articles %}
-        {% assign title_lower = article.title | downcase %}
-        {% unless seen_titles contains title_lower %}
-          {% assign seen_titles = seen_titles | push: title_lower %}
+        {% assign title_key = article.title | strip | downcase | truncate: 50 %}
+        {% unless seen_titles contains title_key %}
+          {% assign seen_titles = seen_titles | push: title_key %}
           {% assign unique_articles = unique_articles | push: article %}
         {% endunless %}
       {% endfor %}
@@ -129,15 +88,43 @@ Browse all {{ site.data.stats.total_articles | default: 127 }} articles discover
         <tr class="article-row" 
             data-companies="{% if article.companies %}{% for company in article.companies %}{{ company | downcase }} {% endfor %}{% endif %}"
             data-title="{{ article.title | downcase | escape }}"
-            data-source="{% if article.source %}{{ article.source | downcase | escape }}{% elsif article.source_url %}{{ article.source_url | downcase | escape }}{% endif %}">
-          <td>{{ article.added_at | default: article.date | default: '2026-02-23' }}</td>
-          <td><a href="{{ article.source_url | default: article.link | default: '#' }}" target="_blank">{{ article.title }}</a></td>
+            data-source="
+              {% if article.source %}
+                {{ article.source | downcase | escape }}
+              {% elsif article.source_url %}
+                {{ article.source_url | downcase | escape }}
+              {% endif %}">
+          <td>
+            {% if article.added_at %}
+              {{ article.added_at }}
+            {% elsif article.date %}
+              {{ article.date | date: '%Y-%m-%d' }}
+            {% else %}
+              No date
+            {% endif %}
+          </td>
+          <td>
+            <a href="
+              {% if article.source_url %}
+                {{ article.source_url }}
+              {% elsif article.link %}
+                {{ article.link }}
+              {% elsif article.url %}
+                {{ article.url }}
+              {% else %}
+                #
+              {% endif %}" target="_blank">
+              {{ article.title }}
+            </a>
+          </td>
           <td>
             {% if article.source %}
               {{ article.source }}
             {% elsif article.source_url %}
               {% assign url_parts = article.source_url | split: '/' %}
               {{ url_parts[2] | replace: 'www.', '' | truncate: 20 }}
+            {% else %}
+              Unknown
             {% endif %}
           </td>
           <td class="company-tags">
@@ -169,9 +156,22 @@ Browse all {{ site.data.stats.total_articles | default: 127 }} articles discover
   <button onclick="nextPage()" id="nextBtn">Next →</button>
 </div>
 
-<!-- Article count -->
-<div style="text-align: right; margin: 10px 0; color: #666; font-size: 14px;">
-  Showing <span id="visibleCount">0</span> of <span id="totalCount">0</span> articles
+<!-- Article count and debug info -->
+<div style="margin: 20px 0; padding: 15px; background: #f5f5f5; border-radius: 4px;">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <strong>📊 Statistics:</strong><br>
+      Total articles loaded: <span id="totalCount">0</span><br>
+      Showing page: <span id="pageDisplay"></span>
+    </div>
+    <div style="text-align: right;">
+      <strong>🔧 Debug Info:</strong><br>
+      Posts folder: {{ site.posts | size }} articles<br>
+      News queue loaded: {% if site.data.news_queue %}✅ Yes{% else %}❌ No{% endif %}<br>
+      Pending items: {% if site.data.news_queue.pending %}{{ site.data.news_queue.pending | size }}{% else %}0{% endif %}<br>
+      Posted items: {% if site.data.news_queue.posted %}{{ site.data.news_queue.posted | size }}{% else %}0{% endif %}
+    </div>
+  </div>
 </div>
 
 <script>
@@ -225,9 +225,9 @@ function sortTable(column) {
     
     if (isNumeric) {
       if (column === 0) {
-        return bVal.localeCompare(aVal); // Reverse for dates (newest first)
+        return bVal.localeCompare(aVal);
       }
-      return parseFloat(bVal) - parseFloat(aVal); // Reverse for scores (highest first)
+      return parseFloat(bVal) - parseFloat(aVal);
     }
     return aVal.localeCompare(bVal);
   });
@@ -257,9 +257,9 @@ function updatePagination() {
   }
   
   document.getElementById('pageInfo').innerText = `Page ${currentPage} of ${totalPages || 1}`;
+  document.getElementById('pageDisplay').innerText = `${currentPage} of ${totalPages || 1}`;
   document.getElementById('prevBtn').disabled = currentPage === 1;
   document.getElementById('nextBtn').disabled = currentPage === totalPages || totalPages === 0;
-  document.getElementById('visibleCount').innerText = rowsToShow.length;
 }
 
 function previousPage() {
@@ -281,7 +281,7 @@ function nextPage() {
 </script>
 
 <style>
-/* Copy all your existing CSS styles here - they're the same as before */
+/* Keep all your existing CSS styles */
 .filters {
   margin: 20px 0;
   display: flex;
