@@ -23,7 +23,54 @@ Browse all {{ site.data.stats.total_articles | default: 127 }} articles discover
 <div class="search-box">
   <input type="text" id="searchInput" placeholder="Search articles..." onkeyup="searchArticles()">
 </div>
-
+<!-- DEBUG: Show all data files -->
+<div style="background: #e3f2fd; padding: 15px; margin: 20px 0; border: 1px solid #90caf9; border-radius: 4px;">
+  <strong>🔍 Available Data Files:</strong><br>
+  
+  {% comment %}List all files in _data folder{% endcomment %}
+  <h4>Files in _data:</h4>
+  <ul>
+  {% for file in site.static_files %}
+    {% if file.path contains '/_data/' %}
+      <li>{{ file.path }}</li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+  
+  <h4>Data variables loaded:</h4>
+  <ul>
+    {% if site.data.news_queue %}<li>✅ news_queue.json loaded</li>{% endif %}
+    {% if site.data.stats %}<li>✅ stats.yml loaded</li>{% endif %}
+    {% comment %}Add more as we find them{% endcomment %}
+  </ul>
+  
+  <h4>First few articles from all sources:</h4>
+  <ul>
+  {% assign sample_count = 0 %}
+  {% for post in site.posts limit:3 %}
+    <li>Post: {{ post.title }}</li>
+    {% assign sample_count = sample_count | plus: 1 %}
+  {% endfor %}
+  
+  {% if site.data.news_queue.pending %}
+    {% for item in site.data.news_queue.pending limit:3 %}
+      <li>Pending: {{ item.title }}</li>
+      {% assign sample_count = sample_count | plus: 1 %}
+    {% endfor %}
+  {% endif %}
+  
+  {% if site.data.news_queue.posted %}
+    {% for item in site.data.news_queue.posted limit:3 %}
+      <li>Posted: {{ item.title }}</li>
+      {% assign sample_count = sample_count | plus: 1 %}
+    {% endfor %}
+  {% endif %}
+  
+  {% if sample_count == 0 %}
+    <li>No articles found in any source!</li>
+  {% endif %}
+  </ul>
+</div>
 <!-- Articles Table -->
 <div class="archives-table">
   <table id="articlesTable">
