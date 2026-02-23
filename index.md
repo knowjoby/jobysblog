@@ -8,52 +8,7 @@ title: AI News Dashboard
 {% assign companies = "openai,anthropic,google,deepseek,microsoft,meta" | split: "," %}
 {% assign company_names = "OpenAI,Anthropic,Google,DeepSeek,Microsoft,Meta" | split: "," %}
 
-<!-- Today's Featured News -->
-## 📌 Today's Top Stories
-{% assign today = site.time | date: '%Y-%m-%d' %}
-{% assign has_today = false %}
 
-{% for post in site.posts limit:5 %}
-  {% assign post_date = post.date | date: '%Y-%m-%d' %}
-  {% if post_date == today %}
-    {% assign has_today = true %}
-    <div class="featured-post">
-      <h3><a href="{{ post.link }}" target="_blank">{{ post.title }}</a></h3>
-      <small>📰 {{ post.source }} | 
-        {% if post.tags %}
-          🔥 
-          {% for tag in post.tags limit:3 %}
-            {% if tag == 'openai' or tag == 'anthropic' or tag == 'google' or tag == 'microsoft' or tag == 'meta' or tag == 'deepseek' %}
-              {{ tag | capitalize }}{% unless forloop.last %}, {% endunless %}
-            {% endif %}
-          {% endfor %}
-        {% endif %}
-      </small>
-      {% if post.content %}
-        <p>{{ post.content | strip_html | truncate: 200 }}</p>
-      {% endif %}
-    </div>
-  {% endif %}
-{% endfor %}
-
-{% if has_today == false %}
-  <p>No new news today. Showing recent highlights:</p>
-  {% for post in site.posts limit:3 %}
-    <div class="recent-post">
-      <h3><a href="{{ post.link }}" target="_blank">{{ post.title }}</a></h3>
-      <small>📰 {{ post.source }} | 📅 {{ post.date | date: '%b %d' }} | 
-        {% if post.tags %}
-          🏢 
-          {% for tag in post.tags limit:2 %}
-            {% if tag == 'openai' or tag == 'anthropic' or tag == 'google' or tag == 'microsoft' or tag == 'meta' or tag == 'deepseek' %}
-              {{ tag | capitalize }}{% unless forloop.last %}, {% endunless %}
-            {% endif %}
-          {% endfor %}
-        {% endif %}
-      </small>
-    </div>
-  {% endfor %}
-{% endif %}
 
 <!-- Company-Specific Sections -->
 ## 🏢 News by Company
