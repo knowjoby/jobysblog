@@ -473,6 +473,18 @@ companies = detect_companies(text, title)  # Now passing title too!            t
     write_run_log(len(candidates), posts_written, len(queue["pending"]), feed_stats)
     print(f"\nDone: {len(posts_written)} post(s) written, {len(queue['pending'])} item(s) in queue")
 
+    # Check for breaking news
+    try:
+        from scripts.breaking_news_monitor import BreakingNewsMonitor
+        monitor = BreakingNewsMonitor()
+        breaking = monitor.check_for_breaking_news(posts_written)
+        if breaking:
+            print(f"\n🔥 BREAKING NEWS DETECTED: {len(breaking)} items")
+            for item in breaking:
+                print(f"  → {item['title']}")
+            monitor.trigger_immediate_build(breaking)
+    except Exception as e:
+        print(f"Note: Breaking news check had a small issue: {e}")
 
 if __name__ == "__main__":
     main()
