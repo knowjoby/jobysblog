@@ -163,5 +163,14 @@
         ]
       }
     ]
+  },
+  {
+    "ran_at": "2026-02-23 14:20:28 IST",
+    "triggered_by": "Scheduled (daily)",
+    "candidates_found": 0,
+    "posts_created": 0,
+    "queued": 0,
+    "feeds": {},
+    "posts": []
   }
 ]
