@@ -39,61 +39,72 @@ Browse all {{ site.data.stats.total_articles | default: 127 }} articles discover
     <tbody id="tableBody">
       {% assign all_articles = "" | split: "" %}
       
-      {% comment %}Add posts from _posts folder{% endcomment %}
-      {% for post in site.posts %}
-        {% assign all_articles = all_articles | push: post %}
+      {% comment %}Load articles from all data files{% endcomment %}
+      
+      {% comment %}1. Check for ai-news data files (like ai-news-2026-02-23.json){% endcomment %}
+      {% assign news_files = site.static_files | where_exp: "file", "file.path contains '/data/ai-news'" %}
+      {% for file in news_files %}
+        {% comment %}Get the filename without path{% endcomment %}
+        {% assign filename = file.path | split: '/' | last | remove: '.json' %}
+        {% comment %}Try to load the data file{% endcomment %}
+        {% assign file_data = site.data[filename] %}
+        {% if file_data %}
+          {% for item in file_data %}
+            {% assign all_articles = all_articles | push: item %}
+          {% endfor %}
+        {% endif %}
       {% endfor %}
       
-      {% comment %}TRY TO FIND ARTICLES IN DATA FOLDER - Multiple possible locations{% endcomment %}
-      
-      {% comment %}Check for ai-news data files{% endcomment %}
-      {% if site.data.ai-news %}
-        {% for item in site.data.ai-news %}
+      {% comment %}2. Check for any JSON files in _data folder{% endcomment %}
+      {% if site.data.news %}
+        {% for item in site.data.news %}
           {% assign all_articles = all_articles | push: item %}
         {% endfor %}
       {% endif %}
       
-      {% comment %}Check for articles in data folder with date pattern{% endcomment %}
-      {% assign data_files = site.static_files | where_exp: "file", "file.path contains '/data/ai-news'" %}
-      {% for file in data_files %}
-        {% comment %}This is complex - let's try a simpler approach{% endcomment %}
+      {% comment %}3. Also include posts from _posts folder (your 9 articles){% endcomment %}
+      {% for post in site.posts %}
+        {% assign all_articles = all_articles | push: post %}
       {% endfor %}
       
-      {% comment %}For now, let's create sample data to reach 42 articles for testing{% endcomment %}
-      {% comment %}In reality, you'll need to point to your actual data files{% endcomment %}
-      
-      {% comment %}SORT ALL ARTICLES BY DATE{% endcomment %}
+      {% comment %}Sort all articles by date (newest first){% endcomment %}
       {% assign sorted_articles = all_articles | sort: "date" | reverse %}
       
-      {% for article in sorted_articles limit:200 %}
-      <tr class="article-row" 
-          data-companies="{% if article.companies %}{% if article.companies.first %}{% for company in article.companies %}{{ company | downcase }} {% endfor %}{% else %}{{ article.companies | downcase }}{% endif %}{% endif %}"
-          data-title="{{ article.title | downcase | escape }}"
-          data-source="{{ article.source | downcase | escape }}">
-        <td>{% if article.date %}{{ article.date | date: '%Y-%m-%d' }}{% else %}2026-02-23{% endif %}</td>
-        <td><a href="{% if article.link %}{{ article.link }}{% else %}#{% endif %}" target="_blank">{{ article.title }}</a></td>
-        <td>{% if article.source %}{{ article.source }}{% else %}Unknown{% endif %}</td>
-        <td class="company-tags">
-          {% if article.companies %}
-            {% if article.companies.first %}
-              {% for company in article.companies %}
-                <span class="company-tag {{ company | downcase }}">{{ company | capitalize }}</span>
-              {% endfor %}
-            {% else %}
-              <span class="company-tag {{ article.companies | downcase }}">{{ article.companies | capitalize }}</span>
+      {% comment %}Display message if no articles found{% endcomment %}
+      {% if sorted_articles.size == 0 %}
+        <tr><td colspan="5" style="text-align: center; padding: 40px;">No articles found. Check data files.</td></tr>
+      {% else %}
+        {% comment %}Display all articles{% endcomment %}
+        {% for article in sorted_articles %}
+        <tr class="article-row" 
+            data-companies="{% if article.companies %}{% if article.companies.first %}{% for company in article.companies %}{{ company | downcase }} {% endfor %}{% else %}{{ article.companies | downcase }}{% endif %}{% endif %}"
+            data-title="{{ article.title | downcase | escape }}"
+            data-source="{{ article.source | downcase | escape }}">
+          <td>{% if article.date %}{{ article.date | date: '%Y-%m-%d' }}{% else %}No date{% endif %}</td>
+          <td><a href="{% if article.link %}{{ article.link }}{% elsif article.url %}{{ article.url }}{% else %}#{% endif %}" target="_blank">{{ article.title }}</a></td>
+          <td>{% if article.source %}{{ article.source }}{% else %}Unknown{% endif %}</td>
+          <td class="company-tags">
+            {% if article.companies %}
+              {% if article.companies.first %}
+                {% for company in article.companies %}
+                  <span class="company-tag {{ company | downcase }}">{{ company | capitalize }}</span>
+                {% endfor %}
+              {% else %}
+                <span class="company-tag {{ article.companies | downcase }}">{{ article.companies | capitalize }}</span>
+              {% endif %}
             {% endif %}
-          {% endif %}
-        </td>
-        <td class="score-cell">
-          <span class="score-badge 
-            {% if article.score >= 85 %}score-high
-            {% elsif article.score >= 70 %}score-medium
-            {% else %}score-low{% endif %}">
-            {{ article.score | default: '50' }}
-          </span>
-        </td>
-      </tr>
-      {% endfor %}
+          </td>
+          <td class="score-cell">
+            <span class="score-badge 
+              {% if article.score >= 85 %}score-high
+              {% elsif article.score >= 70 %}score-medium
+              {% else %}score-low{% endif %}">
+              {{ article.score | default: 'N/A' }}
+            </span>
+          </td>
+        </tr>
+        {% endfor %}
+      {% endif %}
     </tbody>
   </table>
 </div>
@@ -105,6 +116,11 @@ Browse all {{ site.data.stats.total_articles | default: 127 }} articles discover
   <button onclick="nextPage()" id="nextBtn">Next →</button>
 </div>
 
+<!-- Add article count display -->
+<div style="text-align: right; margin: 10px 0; color: #666;">
+  Total articles loaded: <span id="totalCount">0</span>
+</div>
+
 <script>
 let currentPage = 1;
 const rowsPerPage = 20;
@@ -114,7 +130,10 @@ let filteredRows = [];
 window.onload = function() {
   allRows = Array.from(document.querySelectorAll('.article-row'));
   filteredRows = [...allRows];
+  document.getElementById('totalCount').innerText = allRows.length;
   updatePagination();
+  
+  console.log('Total articles loaded:', allRows.length); // For debugging
 };
 
 function filterArticles(company) {
@@ -210,6 +229,7 @@ function nextPage() {
 </script>
 
 <style>
+/* Keep all your existing CSS styles */
 .filters {
   margin: 20px 0;
   display: flex;
