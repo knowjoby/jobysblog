@@ -1,4 +1,3 @@
-from scripts.ai_news_filter import extract_companies_mentioned, COMPANY_KEYWORDS as FILTER_COMPANIES
 #!/usr/bin/env python3
 """
 AI news link-post generator for Jekyll blog.
@@ -87,12 +86,13 @@ def slugify(text):
 def detect_companies(text, title=""):
     """Enhanced company detection using both simple and detailed filters"""
     t = text.lower()
-    
+
     # First use the simple keyword detection (existing)
     simple_companies = [co for co, kws in COMPANY_KEYWORDS.items() if any(k in t for k in kws)]
-    
+
     # Then use the more detailed filter from ai_news_filter.py
     try:
+        from scripts.ai_news_filter import extract_companies_mentioned
         detailed = extract_companies_mentioned(text, title)
         # Add any companies from detailed that aren't already in simple
         for company in detailed.keys():
@@ -101,7 +101,7 @@ def detect_companies(text, title=""):
     except Exception as e:
         # If the detailed filter fails, just use simple_companies
         print(f"Note: Detailed company filter had a small issue: {e}")
-    
+
     return simple_companies
 
 
@@ -283,7 +283,8 @@ def main():
                 continue
 
             text      = title + " " + summary
-companies = detect_companies(text, title)  # Now passing title too!            topics    = detect_topics(text)
+            companies = detect_companies(text, title)
+            topics    = detect_topics(text)
 
             # Must mention an AI company or have a strong AI topic
             if not companies and not any(t in topics for t in ("release", "safety", "policy", "agentic")):
@@ -307,7 +308,7 @@ companies = detect_companies(text, title)  # Now passing title too!            t
 
     if not candidates:
         print("No new AI news items found.")
-        write_run_log(0, [], len(queue["pending"]), feed_stats)
+        write_run_log(0, [], 0, feed_stats)
         return
 
     # Deduplicate: same story covered by multiple outlets — keep highest scored
@@ -443,6 +444,7 @@ companies = detect_companies(text, title)  # Now passing title too!            t
         queue["pending"] = still_pending
 
     # Queue remaining good candidates for future days
+    queued_count = 0
     for item in candidates[len(posts_written):len(posts_written) + 10]:
         if item["score"] < 40:
             break
@@ -458,6 +460,7 @@ companies = detect_companies(text, title)  # Now passing title too!            t
             "added_at":   today,
         })
         existing_urls.add(item["url"])
+        queued_count += 1
 
     queue["pending"].sort(key=lambda x: x.get("score", 0), reverse=True)
     # Drop pending older than 14 days
@@ -470,7 +473,7 @@ companies = detect_companies(text, title)  # Now passing title too!            t
     }
     save_queue(queue)
 
-    write_run_log(len(candidates), posts_written, len(queue["pending"]), feed_stats)
+    write_run_log(len(candidates), posts_written, queued_count, feed_stats)
     print(f"\nDone: {len(posts_written)} post(s) written, {len(queue['pending'])} item(s) in queue")
 
     # Check for breaking news
@@ -479,12 +482,13 @@ companies = detect_companies(text, title)  # Now passing title too!            t
         monitor = BreakingNewsMonitor()
         breaking = monitor.check_for_breaking_news(posts_written)
         if breaking:
-            print(f"\n🔥 BREAKING NEWS DETECTED: {len(breaking)} items")
+            print(f"\nBREAKING NEWS DETECTED: {len(breaking)} items")
             for item in breaking:
-                print(f"  → {item['title']}")
+                print(f"  -> {item['title']}")
             monitor.trigger_immediate_build(breaking)
     except Exception as e:
         print(f"Note: Breaking news check had a small issue: {e}")
+
 
 if __name__ == "__main__":
     main()

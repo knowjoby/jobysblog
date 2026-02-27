@@ -27,146 +27,26 @@
     "posts": []
   },
   {
-    "ran_at": "2026-02-23 08:58:07 IST",
-    "triggered_by": "Manual (GitHub)",
-    "candidates_found": 51,
-    "posts_created": 5,
-    "queued": 18,
-    "feeds": {
-      "TechCrunch": {
-        "entries": 20,
-        "ok": true
-      },
-      "The Verge": {
-        "entries": 10,
-        "ok": true
-      },
-      "VentureBeat": {
-        "entries": 7,
-        "ok": true
-      },
-      "Ars Technica": {
-        "entries": 20,
-        "ok": true
-      },
-      "Wired": {
-        "entries": 50,
-        "ok": true
-      },
-      "MIT Tech Review": {
-        "entries": 10,
-        "ok": true
-      },
-      "CNBC Tech": {
-        "entries": 30,
-        "ok": true
-      },
-      "OpenAI": {
-        "entries": 851,
-        "ok": true
-      },
-      "Google AI": {
-        "entries": 20,
-        "ok": true
-      },
-      "Microsoft AI": {
-        "entries": 10,
-        "ok": true
-      },
-      "Hugging Face": {
-        "entries": 738,
-        "ok": true
-      },
-      "Import AI": {
-        "entries": 0,
-        "ok": false
-      },
-      "Platformer": {
-        "entries": 15,
-        "ok": true
-      }
-    },
-    "posts": [
-      {
-        "title": "Runlayer is now offering secure OpenClaw agentic capabilities for large enterprises",
-        "file": "_posts/2026-02-23-runlayer-is-now-offering-secure-openclaw-agentic-capabi.md",
-        "score": 93,
-        "tags": [
-          "google",
-          "release",
-          "controversy",
-          "product",
-          "bug",
-          "rumor",
-          "funding",
-          "partnership",
-          "policy",
-          "safety",
-          "benchmark",
-          "agentic",
-          "drama",
-          "unverified"
-        ]
-      },
-      {
-        "title": "Microsoft Copilot ignored sensitivity labels twice in eight months \u2014 and no DLP stack caught either one",
-        "file": "_posts/2026-02-23-microsoft-copilot-ignored-sensitivity-labels-twice-in-e.md",
-        "score": 93,
-        "tags": [
-          "google",
-          "microsoft",
-          "release",
-          "product",
-          "bug",
-          "rumor",
-          "policy",
-          "safety",
-          "agentic",
-          "unverified"
-        ]
-      },
-      {
-        "title": "Microsoft Xbox chief Phil Spencer retires, replaced by AI executive Asha Sharma",
-        "file": "_posts/2026-02-23-microsoft-xbox-chief-phil-spencer-retires-replaced-by-a.md",
-        "score": 93,
-        "tags": [
-          "microsoft",
-          "safety"
-        ]
-      },
-      {
-        "title": "Google launches Gemini 3.1 Pro, retaking AI crown with 2X+ reasoning performance boost",
-        "file": "_posts/2026-02-23-google-launches-gemini-31-pro-retaking-ai-crown-with-2x.md",
-        "score": 87,
-        "tags": [
-          "anthropic",
-          "openai",
-          "google",
-          "release",
-          "product",
-          "bug",
-          "funding",
-          "partnership",
-          "safety",
-          "benchmark",
-          "agentic",
-          "multimodal"
-        ]
-      },
-      {
-        "title": "Advancing independent research on AI alignment",
-        "file": "_posts/2026-02-23-advancing-independent-research-on-ai-alignment.md",
-        "score": 87,
-        "tags": [
-          "openai",
-          "safety"
-        ]
-      }
-    ]
+    "ran_at": "2026-02-23 21:27:25 IST",
+    "triggered_by": "Manual (local)",
+    "candidates_found": 0,
+    "posts_created": 0,
+    "queued": 0,
+    "feeds": {},
+    "posts": []
   },
   {
-    "ran_at": "2026-02-23 14:20:28 IST",
-    "triggered_by": "Scheduled (daily)",
+    "ran_at": "2026-02-23 21:28:59 IST",
+    "triggered_by": "Manual (local)",
+    "candidates_found": 0,
+    "posts_created": 0,
+    "queued": 0,
+    "feeds": {},
+    "posts": []
+  },
+  {
+    "ran_at": "2026-02-23 21:29:06 IST",
+    "triggered_by": "Manual (local)",
     "candidates_found": 0,
     "posts_created": 0,
     "queued": 0,

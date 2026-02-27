@@ -7,11 +7,11 @@
   },
   "daily_usage": {
     "2026-02-22": {
-      "posts": 2,
+      "posts": 40,
       "estimated_tokens": 0
     },
     "2026-02-23": {
-      "posts": 5,
+      "posts": 50,
       "estimated_tokens": 0
     }
   },
@@ -29,6 +29,119 @@
       ],
       "score": 93,
       "added_at": "2026-02-22"
+    },
+    {
+      "id": "inside-microsofts-big-xbox-leadership-shake-up-2026-02-23",
+      "title": "Inside Microsoft\u2019s big Xbox leadership shake-up",
+      "source_url": "https://www.theverge.com/tech/883015/microsoft-xbox-new-ceo-shakeup-notepad",
+      "companies": [
+        "microsoft"
+      ],
+      "topics": [
+        "release"
+      ],
+      "score": 92,
+      "added_at": "2026-02-23"
+    },
+    {
+      "id": "openai-announces-frontier-alliance-partners-2026-02-23",
+      "title": "OpenAI announces Frontier Alliance Partners",
+      "source_url": "https://openai.com/index/frontier-alliance-partners",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "release",
+        "product",
+        "partnership",
+        "agentic"
+      ],
+      "score": 92,
+      "added_at": "2026-02-23"
+    },
+    {
+      "id": "samsung-is-adding-perplexity-to-galaxy-ai-2026-02-23",
+      "title": "Samsung is adding Perplexity to Galaxy AI",
+      "source_url": "https://www.theverge.com/tech/882921/samsung-is-adding-perplexity-to-galaxy-ai",
+      "companies": [
+        "google"
+      ],
+      "topics": [
+        "product",
+        "agentic"
+      ],
+      "score": 88,
+      "added_at": "2026-02-23"
+    },
+    {
+      "id": "openai-lands-multiyear-deals-with-consulting-giants-in--2026-02-23",
+      "title": "OpenAI lands multiyear deals with consulting giants in enterprise push",
+      "source_url": "https://www.cnbc.com/2026/02/23/open-ai-consulting-accenture-boston-capgemini-mckinsey-frontier.html",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "product",
+        "partnership",
+        "agentic"
+      ],
+      "score": 88,
+      "added_at": "2026-02-23"
+    },
+    {
+      "id": "how-attackers-hit-700-organizations-through-cx-platform-2026-02-23",
+      "title": "How attackers hit 700 organizations through CX platforms your SOC already approved",
+      "source_url": "https://venturebeat.com/security/cx-security-gaps-ai-stack-blind-spots",
+      "companies": [
+        "google"
+      ],
+      "topics": [
+        "product",
+        "bug",
+        "funding",
+        "policy",
+        "safety",
+        "agentic",
+        "drama"
+      ],
+      "score": 87,
+      "added_at": "2026-02-23"
+    },
+    {
+      "id": "google-launches-gemini-31-pro-retaking-ai-crown-with-2x-2026-02-23",
+      "title": "Google launches Gemini 3.1 Pro, retaking AI crown with 2X+ reasoning performance boost",
+      "source_url": "https://venturebeat.com/technology/google-launches-gemini-3-1-pro-retaking-ai-crown-with-2x-reasoning",
+      "companies": [
+        "anthropic",
+        "openai",
+        "google"
+      ],
+      "topics": [
+        "release",
+        "product",
+        "bug",
+        "funding",
+        "partnership",
+        "safety",
+        "benchmark",
+        "agentic",
+        "multimodal"
+      ],
+      "score": 87,
+      "added_at": "2026-02-23"
+    },
+    {
+      "id": "advancing-independent-research-on-ai-alignment-2026-02-23",
+      "title": "Advancing independent research on AI alignment",
+      "source_url": "https://openai.com/index/advancing-independent-research-ai-alignment",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "safety"
+      ],
+      "score": 87,
+      "added_at": "2026-02-23"
     },
     {
       "id": "national-parent-teacher-association-breaks-ties-with-me-2026-02-23",
@@ -72,42 +185,6 @@
       ],
       "score": 85,
       "added_at": "2026-02-22"
-    },
-    {
-      "id": "nvidia-is-in-talks-to-invest-up-to-30-billion-in-openai-2026-02-23",
-      "title": "Nvidia is in talks to invest up to $30 billion in OpenAI, source says",
-      "source_url": "https://www.cnbc.com/2026/02/19/nvidia-is-in-talks-to-invest-up-to-30-billion-in-openai-source-says.html",
-      "companies": [
-        "openai",
-        "nvidia"
-      ],
-      "topics": [
-        "release",
-        "funding",
-        "partnership"
-      ],
-      "score": 85,
-      "added_at": "2026-02-23"
-    },
-    {
-      "id": "google-gemini-31-pro-first-impressions-a-deep-think-min-2026-02-23",
-      "title": "Google Gemini 3.1 Pro first impressions: a 'Deep Think Mini' with adjustable reasoning on demand",
-      "source_url": "https://venturebeat.com/technology/google-gemini-3-1-pro-first-impressions-a-deep-think-mini-with-adjustable",
-      "companies": [
-        "anthropic",
-        "openai",
-        "google"
-      ],
-      "topics": [
-        "release",
-        "product",
-        "funding",
-        "benchmark",
-        "agentic",
-        "drama"
-      ],
-      "score": 82,
-      "added_at": "2026-02-23"
     },
     {
       "id": "google-vp-warns-that-two-types-of-ai-startups-may-not-s-2026-02-22",
@@ -163,49 +240,6 @@
       "added_at": "2026-02-22"
     },
     {
-      "id": "introducing-evmbench-2026-02-23",
-      "title": "Introducing EVMbench",
-      "source_url": "https://openai.com/index/introducing-evmbench",
-      "companies": [
-        "openai"
-      ],
-      "topics": [
-        "release",
-        "benchmark",
-        "agentic"
-      ],
-      "score": 79,
-      "added_at": "2026-02-23"
-    },
-    {
-      "id": "ai-impact-summit-2026-2026-02-23",
-      "title": "AI Impact Summit 2026",
-      "source_url": "https://blog.google/innovation-and-ai/technology/ai/ai-impact-summit-2026-collection/",
-      "companies": [
-        "google"
-      ],
-      "topics": [
-        "release",
-        "funding",
-        "partnership"
-      ],
-      "score": 79,
-      "added_at": "2026-02-23"
-    },
-    {
-      "id": "openai-resets-spending-expectations-tells-investors-com-2026-02-23",
-      "title": "OpenAI resets spending expectations, tells investors compute target is around $600 billion by 2030",
-      "source_url": "https://www.cnbc.com/2026/02/20/openai-resets-spend-expectations-targets-around-600-billion-by-2030.html",
-      "companies": [
-        "openai"
-      ],
-      "topics": [
-        "funding"
-      ],
-      "score": 77,
-      "added_at": "2026-02-23"
-    },
-    {
       "id": "how-to-hide-googles-ai-overviews-from-your-search-resul-2026-02-22",
       "title": "How to Hide Google\u2019s AI Overviews From Your Search Results",
       "source_url": "https://www.wired.com/story/how-to-hide-google-ai-overviews-from-your-search-results/",
@@ -215,24 +249,6 @@
       "topics": [],
       "score": 75,
       "added_at": "2026-02-22"
-    },
-    {
-      "id": "shadow-mode-drift-alerts-and-audit-logs-inside-the-mode-2026-02-23",
-      "title": "Shadow mode, drift alerts and audit logs: Inside the modern audit loop",
-      "source_url": "https://venturebeat.com/orchestration/shadow-mode-drift-alerts-and-audit-logs-inside-the-modern-audit-loop",
-      "companies": [],
-      "topics": [
-        "release",
-        "product",
-        "bug",
-        "funding",
-        "partnership",
-        "policy",
-        "safety",
-        "agentic"
-      ],
-      "score": 75,
-      "added_at": "2026-02-23"
     },
     {
       "id": "suspect-in-tumbler-ridge-school-shooting-described-viol-2026-02-22",
@@ -307,6 +323,21 @@
       "posted_at": "2026-02-22"
     },
     {
+      "id": "defense-secretary-summons-anthropics-amodei-over-milita-2026-02-23",
+      "title": "Defense Secretary summons Anthropic\u2019s Amodei over military use of Claude",
+      "source_url": "https://techcrunch.com/2026/02/23/defense-secretary-summons-anthropics-amodei-over-military-use-of-claude/",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [
+        "safety"
+      ],
+      "score": 100,
+      "file": "_posts/2026-02-23-defense-secretary-summons-anthropics-amodei-over-milita.md",
+      "added_at": "2026-02-23",
+      "posted_at": "2026-02-23"
+    },
+    {
       "id": "runlayer-is-now-offering-secure-openclaw-agentic-capabi-2026-02-23",
       "title": "Runlayer is now offering secure OpenClaw agentic capabilities for large enterprises",
       "source_url": "https://venturebeat.com/orchestration/runlayer-is-now-offering-secure-openclaw-agentic-capabilities-for-large",
@@ -372,12 +403,11 @@
       "posted_at": "2026-02-23"
     },
     {
-      "id": "google-launches-gemini-31-pro-retaking-ai-crown-with-2x-2026-02-23",
-      "title": "Google launches Gemini 3.1 Pro, retaking AI crown with 2X+ reasoning performance boost",
-      "source_url": "https://venturebeat.com/technology/google-launches-gemini-3-1-pro-retaking-ai-crown-with-2x-reasoning",
+      "id": "ai-agents-are-delivering-real-roi-heres-what-1100-devel-2026-02-23",
+      "title": "AI Agents are delivering real ROI \u2014 Here's what 1,100 developers and CTOs reveal about scaling them",
+      "source_url": "https://venturebeat.com/orchestration/ai-agents-are-delivering-real-roi-heres-what-1-100-developers-and-ctos",
       "companies": [
         "anthropic",
-        "openai",
         "google"
       ],
       "topics": [
@@ -386,28 +416,11 @@
         "bug",
         "funding",
         "partnership",
-        "safety",
-        "benchmark",
-        "agentic",
-        "multimodal"
+        "policy",
+        "agentic"
       ],
-      "score": 87,
-      "file": "_posts/2026-02-23-google-launches-gemini-31-pro-retaking-ai-crown-with-2x.md",
-      "added_at": "2026-02-23",
-      "posted_at": "2026-02-23"
-    },
-    {
-      "id": "advancing-independent-research-on-ai-alignment-2026-02-23",
-      "title": "Advancing independent research on AI alignment",
-      "source_url": "https://openai.com/index/advancing-independent-research-ai-alignment",
-      "companies": [
-        "openai"
-      ],
-      "topics": [
-        "safety"
-      ],
-      "score": 87,
-      "file": "_posts/2026-02-23-advancing-independent-research-on-ai-alignment.md",
+      "score": 92,
+      "file": "_posts/2026-02-23-ai-agents-are-delivering-real-roi-heres-what-1100-devel.md",
       "added_at": "2026-02-23",
       "posted_at": "2026-02-23"
     }
