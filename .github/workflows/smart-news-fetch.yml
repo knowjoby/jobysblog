@@ -30,7 +30,7 @@ jobs:
       - name: Check for new relevant content
         id: content_check
         run: |
-          NEW_COUNT=$(python scripts/check_new_content.py)
+          NEW_COUNT=$(python scripts/check_new_content.py || true)
           echo "count=$NEW_COUNT" >> $GITHUB_OUTPUT
       
       - name: Conditional Jekyll build

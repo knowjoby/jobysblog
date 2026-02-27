@@ -27,7 +27,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install feedparser
+        run: pip install feedparser pyyaml
 
       - name: Generate AI news link posts
         env:

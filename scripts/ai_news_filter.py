@@ -61,6 +61,11 @@ def extract_companies_mentioned(text, title):
     
     return mentioned
 
+def update_source_health(name, success=True):
+    """Stub for source health tracking — not yet implemented."""
+    pass
+
+
 def fetch_and_filter_news():
     """
     Main function to fetch, filter, and save news.
