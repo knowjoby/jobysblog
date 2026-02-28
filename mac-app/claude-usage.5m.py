@@ -129,10 +129,12 @@ def parse_sessions():
         except (OSError, PermissionError):
             continue
 
+    blank = {"input_tokens": 0, "output_tokens": 0,
+             "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0}
     return {
-        "today":          dict(totals["today"]),
-        "month":          dict(totals["month"]),
-        "all_time":       dict(totals["all_time"]),
+        "today":          {**blank, **dict(totals["today"])},
+        "month":          {**blank, **dict(totals["month"])},
+        "all_time":       {**blank, **dict(totals["all_time"])},
         "today_cost":     today_cost,
         "month_cost":     month_cost,
         "total_cost":     total_cost,
