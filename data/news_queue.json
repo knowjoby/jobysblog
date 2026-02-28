@@ -13,9 +13,69 @@
     "2026-02-23": {
       "posts": 50,
       "estimated_tokens": 0
+    },
+    "2026-02-28": {
+      "posts": 5,
+      "estimated_tokens": 0
     }
   },
   "pending": [
+    {
+      "id": "anthropic-hits-back-after-us-military-labels-it-a-suppl-2026-02-28",
+      "title": "Anthropic Hits Back After US Military Labels It a \u2018Supply Chain Risk\u2019",
+      "source_url": "https://www.wired.com/story/anthropic-supply-chain-risk-shockwaves-silicon-valley/",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [
+        "bug",
+        "safety"
+      ],
+      "score": 100,
+      "added_at": "2026-02-28"
+    },
+    {
+      "id": "sam-altman-aims-to-help-de-escalate-tensions-with-penta-2026-02-28",
+      "title": "Sam Altman aims to 'help de-escalate' tensions with Pentagon as OpenAI employees voice support for Anthropic",
+      "source_url": "https://www.cnbc.com/2026/02/27/openai-sam-altman-de-escalate-tensions-pentagon-anthropic.html",
+      "companies": [
+        "anthropic",
+        "openai"
+      ],
+      "topics": [
+        "safety",
+        "drama"
+      ],
+      "score": 100,
+      "added_at": "2026-02-28"
+    },
+    {
+      "id": "anthropic-vs-the-pentagon-whats-actually-at-stake-2026-02-28",
+      "title": "Anthropic vs. the Pentagon: What\u2019s actually at stake?",
+      "source_url": "https://techcrunch.com/2026/02/27/anthropic-vs-the-pentagon-whats-actually-at-stake/",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [
+        "agentic",
+        "drama"
+      ],
+      "score": 95,
+      "added_at": "2026-02-28"
+    },
+    {
+      "id": "pentagon-anthropic-ai-standoff-is-real-time-testing-bal-2026-02-28",
+      "title": "Pentagon-Anthropic AI standoff is real-time testing balance of power in future of warfare",
+      "source_url": "https://www.cnbc.com/2026/02/27/defense-anthropic-ai-war-risks-hegseth-amodei.html",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [
+        "drama"
+      ],
+      "score": 95,
+      "added_at": "2026-02-28"
+    },
     {
       "id": "microsoft-gaming-chief-phil-spencer-steps-down-after-38-2026-02-22",
       "title": "Microsoft gaming chief Phil Spencer steps down after 38 years with company",
@@ -29,6 +89,59 @@
       ],
       "score": 93,
       "added_at": "2026-02-22"
+    },
+    {
+      "id": "jack-dorseys-block-cuts-40-of-staff-4000-people-and-yes-2026-02-28",
+      "title": "Jack Dorsey's Block cuts 40% of staff, 4,000+ people \u2014 and yes, it's because of AI efficiencies",
+      "source_url": "https://venturebeat.com/orchestration/jack-dorseys-block-cuts-40-of-staff-4-000-people-and-yes-its-because-of-ai",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [
+        "release",
+        "controversy",
+        "product",
+        "bug",
+        "funding",
+        "policy",
+        "safety",
+        "benchmark",
+        "agentic",
+        "multimodal",
+        "drama"
+      ],
+      "score": 93,
+      "added_at": "2026-02-28"
+    },
+    {
+      "id": "an-update-on-our-mental-health-related-work-2026-02-28",
+      "title": "An update on our mental health-related work",
+      "source_url": "https://openai.com/index/update-on-mental-health-related-work",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "product",
+        "safety"
+      ],
+      "score": 93,
+      "added_at": "2026-02-28"
+    },
+    {
+      "id": "the-authoritarian-ai-crisis-has-arrived-2026-02-28",
+      "title": "The authoritarian AI crisis has arrived",
+      "source_url": "https://www.platformer.news/anthropic-pentagon-authoritarian-ai/",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [
+        "policy",
+        "safety",
+        "agentic",
+        "drama"
+      ],
+      "score": 93,
+      "added_at": "2026-02-28"
     },
     {
       "id": "inside-microsofts-big-xbox-leadership-shake-up-2026-02-23",
@@ -58,6 +171,53 @@
       ],
       "score": 92,
       "added_at": "2026-02-23"
+    },
+    {
+      "id": "chatgpt-reaches-900m-weekly-active-users-2026-02-28",
+      "title": "ChatGPT reaches 900M weekly active users",
+      "source_url": "https://techcrunch.com/2026/02/27/chatgpt-reaches-900m-weekly-active-users/",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "release",
+        "funding"
+      ],
+      "score": 92,
+      "added_at": "2026-02-28"
+    },
+    {
+      "id": "employees-at-google-and-openai-support-anthropics-penta-2026-02-28",
+      "title": "Employees at Google and OpenAI support Anthropic\u2019s Pentagon stand in open letter",
+      "source_url": "https://techcrunch.com/2026/02/27/employees-at-google-and-openai-support-anthropics-pentagon-stand-in-open-letter/",
+      "companies": [
+        "anthropic",
+        "openai",
+        "google"
+      ],
+      "topics": [
+        "release",
+        "partnership",
+        "agentic"
+      ],
+      "score": 92,
+      "added_at": "2026-02-28"
+    },
+    {
+      "id": "openai-announces-110-billion-funding-round-with-backing-2026-02-28",
+      "title": "OpenAI announces $110 billion funding round with backing from Amazon, Nvidia, SoftBank",
+      "source_url": "https://www.cnbc.com/2026/02/27/open-ai-funding-round-amazon.html",
+      "companies": [
+        "openai",
+        "nvidia"
+      ],
+      "topics": [
+        "release",
+        "funding",
+        "policy"
+      ],
+      "score": 92,
+      "added_at": "2026-02-28"
     },
     {
       "id": "samsung-is-adding-perplexity-to-galaxy-ai-2026-02-23",
@@ -423,6 +583,108 @@
       "file": "_posts/2026-02-23-ai-agents-are-delivering-real-roi-heres-what-1100-devel.md",
       "added_at": "2026-02-23",
       "posted_at": "2026-02-23"
+    },
+    {
+      "id": "pentagon-moves-to-designate-anthropic-as-a-supply-chain-2026-02-28",
+      "title": "Pentagon moves to designate Anthropic as a supply-chain risk",
+      "source_url": "https://techcrunch.com/2026/02/27/pentagon-moves-to-designate-anthropic-as-a-supply-chain-risk/",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [
+        "safety"
+      ],
+      "score": 100,
+      "file": "_posts/2026-02-28-pentagon-moves-to-designate-anthropic-as-a-supply-chain.md",
+      "added_at": "2026-02-28",
+      "posted_at": "2026-02-28"
+    },
+    {
+      "id": "musk-bashes-openai-in-deposition-saying-nobody-committe-2026-02-28",
+      "title": "Musk bashes OpenAI in deposition, saying \u2018nobody committed suicide because of Grok\u2019",
+      "source_url": "https://techcrunch.com/2026/02/27/musk-bashes-openai-in-deposition-saying-nobody-committed-suicide-because-of-grok/",
+      "companies": [
+        "openai",
+        "xai"
+      ],
+      "topics": [
+        "policy",
+        "safety",
+        "multimodal"
+      ],
+      "score": 100,
+      "file": "_posts/2026-02-28-musk-bashes-openai-in-deposition-saying-nobody-committe.md",
+      "added_at": "2026-02-28",
+      "posted_at": "2026-02-28"
+    },
+    {
+      "id": "defense-secretary-pete-hegseth-designates-anthropic-a-s-2026-02-28",
+      "title": "Defense secretary Pete Hegseth designates Anthropic a supply chain risk",
+      "source_url": "https://www.theverge.com/policy/886632/pentagon-designates-anthropic-supply-chain-risk-ai-standoff",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [
+        "release",
+        "product",
+        "policy",
+        "safety"
+      ],
+      "score": 100,
+      "file": "_posts/2026-02-28-defense-secretary-pete-hegseth-designates-anthropic-a-s.md",
+      "added_at": "2026-02-28",
+      "posted_at": "2026-02-28"
+    },
+    {
+      "id": "googles-opal-just-quietly-showed-enterprise-teams-the-n-2026-02-28",
+      "title": "Google's Opal just quietly showed enterprise teams the new blueprint for building AI agents",
+      "source_url": "https://venturebeat.com/technology/googles-opal-just-quietly-showed-enterprise-teams-the-new-blueprint-for",
+      "companies": [
+        "anthropic",
+        "google"
+      ],
+      "topics": [
+        "release",
+        "product",
+        "bug",
+        "rumor",
+        "funding",
+        "policy",
+        "safety",
+        "agentic",
+        "multimodal",
+        "drama",
+        "unverified"
+      ],
+      "score": 100,
+      "file": "_posts/2026-02-28-googles-opal-just-quietly-showed-enterprise-teams-the-n.md",
+      "added_at": "2026-02-28",
+      "posted_at": "2026-02-28"
+    },
+    {
+      "id": "openais-big-investment-from-amazon-comes-with-something-2026-02-28",
+      "title": "OpenAI's big investment from Amazon comes with something else: new 'stateful' architecture for enterprise agents",
+      "source_url": "https://venturebeat.com/orchestration/openais-big-investment-from-aws-comes-with-something-else-new-stateful",
+      "companies": [
+        "openai",
+        "microsoft",
+        "amazon",
+        "nvidia"
+      ],
+      "topics": [
+        "release",
+        "product",
+        "funding",
+        "partnership",
+        "policy",
+        "safety",
+        "agentic",
+        "multimodal"
+      ],
+      "score": 100,
+      "file": "_posts/2026-02-28-openais-big-investment-from-amazon-comes-with-something.md",
+      "added_at": "2026-02-28",
+      "posted_at": "2026-02-28"
     }
   ]
 }

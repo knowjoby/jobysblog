@@ -52,5 +52,140 @@
     "queued": 0,
     "feeds": {},
     "posts": []
+  },
+  {
+    "ran_at": "2026-02-28 13:59:00 IST",
+    "triggered_by": "Scheduled (daily)",
+    "candidates_found": 78,
+    "posts_created": 5,
+    "queued": 10,
+    "feeds": {
+      "TechCrunch": {
+        "entries": 20,
+        "ok": true
+      },
+      "The Verge": {
+        "entries": 10,
+        "ok": true
+      },
+      "VentureBeat": {
+        "entries": 7,
+        "ok": true
+      },
+      "Ars Technica": {
+        "entries": 20,
+        "ok": true
+      },
+      "Wired": {
+        "entries": 50,
+        "ok": true
+      },
+      "MIT Tech Review": {
+        "entries": 10,
+        "ok": true
+      },
+      "CNBC Tech": {
+        "entries": 30,
+        "ok": true
+      },
+      "OpenAI": {
+        "entries": 862,
+        "ok": true
+      },
+      "Google AI": {
+        "entries": 20,
+        "ok": true
+      },
+      "Microsoft AI": {
+        "entries": 10,
+        "ok": true
+      },
+      "Hugging Face": {
+        "entries": 740,
+        "ok": true
+      },
+      "Import AI": {
+        "entries": 0,
+        "ok": false
+      },
+      "Platformer": {
+        "entries": 15,
+        "ok": true
+      }
+    },
+    "posts": [
+      {
+        "title": "Pentagon moves to designate Anthropic as a supply-chain risk",
+        "file": "_posts/2026-02-28-pentagon-moves-to-designate-anthropic-as-a-supply-chain.md",
+        "score": 100,
+        "tags": [
+          "anthropic",
+          "safety"
+        ]
+      },
+      {
+        "title": "Musk bashes OpenAI in deposition, saying \u2018nobody committed suicide because of Grok\u2019",
+        "file": "_posts/2026-02-28-musk-bashes-openai-in-deposition-saying-nobody-committe.md",
+        "score": 100,
+        "tags": [
+          "openai",
+          "xai",
+          "policy",
+          "safety",
+          "multimodal"
+        ]
+      },
+      {
+        "title": "Defense secretary Pete Hegseth designates Anthropic a supply chain risk",
+        "file": "_posts/2026-02-28-defense-secretary-pete-hegseth-designates-anthropic-a-s.md",
+        "score": 100,
+        "tags": [
+          "anthropic",
+          "release",
+          "product",
+          "policy",
+          "safety"
+        ]
+      },
+      {
+        "title": "Google's Opal just quietly showed enterprise teams the new blueprint for building AI agents",
+        "file": "_posts/2026-02-28-googles-opal-just-quietly-showed-enterprise-teams-the-n.md",
+        "score": 100,
+        "tags": [
+          "anthropic",
+          "google",
+          "release",
+          "product",
+          "bug",
+          "rumor",
+          "funding",
+          "policy",
+          "safety",
+          "agentic",
+          "multimodal",
+          "drama",
+          "unverified"
+        ]
+      },
+      {
+        "title": "OpenAI's big investment from Amazon comes with something else: new 'stateful' architecture for enterprise agents",
+        "file": "_posts/2026-02-28-openais-big-investment-from-amazon-comes-with-something.md",
+        "score": 100,
+        "tags": [
+          "openai",
+          "microsoft",
+          "amazon",
+          "nvidia",
+          "release",
+          "product",
+          "funding",
+          "partnership",
+          "policy",
+          "safety",
+          "agentic",
+          "multimodal"
+        ]
+      }
+    ]
   }
 ]
