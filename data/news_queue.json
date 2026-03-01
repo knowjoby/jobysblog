@@ -5,7 +5,68 @@
     "min_score_to_post": 50,
     "max_words_per_post": 200
   },
+  "pending": [
+    {
+      "title": "AI power concentrated in too few hands, warns Anthropic CEO Dario Amodei",
+      "url": "https://www.livemint.com/technology/tech-news/ai-power-concentrated-in-too-few-hands-warns-anthropic-ceo-dario-amodei-in-interview-with-nikhil-kamath-11771932098444.html",
+      "score": 62,
+      "fetched_at": "2026-03-01",
+      "company": "anthropic",
+      "topic": "policy"
+    },
+    {
+      "title": "Florida 'AI Bill of Rights' enters free speech debate",
+      "url": "https://www.usatoday.com/story/news/state/2026/02/25/child-safety-vs-free-speech-rights-at-issue-in-florida-ai-bill/88669010007/",
+      "score": 57,
+      "fetched_at": "2026-03-01",
+      "company": "policy",
+      "topic": "policy"
+    }
+  ],
+  "posted": [
+    {
+      "title": "Google Employees Demand Military AI Restrictions After Anthropic-Pentagon Standoff",
+      "url": "https://www.theweek.in/news/sci-tech/2026/02/27/after-anthropic-pentagon-clash-more-than-200-google-employees-sign-letter-urging-tech-giant-to-avoid-military-ties.html",
+      "score": 93,
+      "file": "_posts/2026-03-01-google-employees-letter-military-ai.md",
+      "posted_at": "2026-03-01"
+    },
+    {
+      "title": "DeepSeek Withholds Latest AI Model from Nvidia and US Chipmakers",
+      "url": "https://www.msn.com/en-ca/money/topstories/exclusive-deepseek-withholds-latest-ai-model-from-us-chipmakers-including-nvidia-sources-say/ar-AA1X8bGd",
+      "score": 80,
+      "file": "_posts/2026-03-01-deepseek-withholds-model-nvidia.md",
+      "posted_at": "2026-03-01"
+    },
+    {
+      "title": "Google Releases Nano Banana 2 AI Image Generator",
+      "url": "https://arstechnica.com/ai/2026/02/google-releases-nano-banana-2-ai-image-generator-promises-pro-results-with-flash-speed/",
+      "score": 72,
+      "file": "_posts/2026-03-01-google-nano-banana-2-image-model.md",
+      "posted_at": "2026-03-01"
+    },
+    {
+      "title": "Apple's Xcode 26.3 Adds Native Support for Anthropic and OpenAI AI Agents",
+      "url": "https://www.macrumors.com/2026/02/26/apple-releases-xcode-26-3/",
+      "score": 70,
+      "file": "_posts/2026-03-01-apple-xcode-26-3-ai-agents.md",
+      "posted_at": "2026-03-01"
+    },
+    {
+      "title": "OpenAI Signs Pentagon Deal as Trump Bans Anthropic from Federal Use",
+      "url": "https://www.npr.org/2026/02/27/nx-s1-5729118/trump-anthropic-pentagon-openai-ai-weapons-ban",
+      "score": 68,
+      "file": "_posts/2026-03-01-openai-pentagon-deal-anthropic-ban.md",
+      "posted_at": "2026-03-01"
+    }
+  ],
   "daily_usage": [
+    {
+      "date": "2026-03-01",
+      "posts": 5,
+      "items_processed": 40,
+      "estimated_tokens": 75000
+    },
     {
       "date": "2026-02-27",
       "posts": 4,
