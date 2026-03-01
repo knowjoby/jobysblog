@@ -1,90 +1,123 @@
-# scripts/breaking_news_monitor.py
+#!/usr/bin/env python3
+"""
+Breaking News Monitor - Detects and logs high-importance AI news.
+"""
 
 import json
-from pathlib import Path
-import smtplib
-import requests
 from datetime import datetime
+from typing import List, Dict, Any, Optional
+from pathlib import Path
 
-class BreakingNewsMonitor:
-    def __init__(self):
-        self.cache_file = Path('data/breaking_news_cache.json')
-        self.load_cache()
+# Import shared configuration
+from scripts.config import match_keywords
+
+# Keywords that indicate breaking news
+BREAKING_KEYWORDS = [
+    # Major announcements
+    "releases", "announces", "launches", "unveils", "introduces",
+    "breakthrough", "milestone", "revolutionary",
+    
+    # Model releases (current generation)
+    "gpt-4o", "gpt4o", "claude 3.7", "claude 4", "gemini 2.0",
+    "llama 3.3", "llama 4", "deepseek v3", "o3", "sora",
+    
+    # Major events
+    "acquisition", "merger", "partnership", "investment",
+    "ceo", "leadership", "restructuring",
+    
+    # Controversial/important topics
+    "safety", "alignment", "regulation", "ban", "investigation",
+    "lawsuit", "copyright", "scandal"
+]
+
+BREAKING_SCORE_THRESHOLD = 80  # Minimum score to consider breaking
+
+BASE_DIR = Path(__file__).parent.parent
+RUN_LOG_FILE = BASE_DIR / "_data" / "run_log.json"
+
+
+def log_breaking_news(post: Dict[str, Any]) -> None:
+    """
+    Log a breaking news item to the run log.
+    
+    Args:
+        post: Post dictionary with title, companies, score, etc.
+    """
+    log_entry = {
+        "timestamp": datetime.now().isoformat(),
+        "type": "breaking_news",
+        "title": post.get("title", ""),
+        "score": post.get("score", 0),
+        "companies": post.get("companies", []),
+        "filename": post.get("filename", "")
+    }
+    
+    # Append to run log
+    log_data = []
+    if RUN_LOG_FILE.exists():
+        with open(RUN_LOG_FILE, 'r') as f:
+            try:
+                log_data = json.load(f)
+            except json.JSONDecodeError:
+                log_data = []
+    
+    log_data.append(log_entry)
+    
+    # Keep only last 200 entries
+    if len(log_data) > 200:
+        log_data = log_data[-200:]
+    
+    with open(RUN_LOG_FILE, 'w') as f:
+        json.dump(log_data, f, indent=2)
+    
+    print(f"  🚨 BREAKING: {post.get('title', '')[:80]}...")
+
+
+def check_for_breaking_news(posts: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """
+    Check a list of posts for breaking news candidates.
+    
+    Args:
+        posts: List of post dictionaries (from generate_news.py output)
         
-        # Define what constitutes "breaking news"
-        self.BREAKING_KEYWORDS = [
-            'just released', 'announces', 'launches', 'unveils',
-            'GPT-5', 'Claude 4', 'Gemini Ultra', 'breakthrough',
-            'major update', 'acquisition', 'partnership'
-        ]
+    Returns:
+        List of posts that qualify as breaking news
+    """
+    breaking_posts = []
+    
+    for post in posts:
+        # Skip if no score
+        score = post.get('score', 0)
+        if score < BREAKING_SCORE_THRESHOLD:
+            continue
         
-        # Companies that trigger immediate attention
-        self.PRIMARY_COMPANIES = ['openai', 'anthropic', 'google', 'deepseek']
-    
-    def check_for_breaking_news(self, new_posts):
-        """Identify if any post is breaking news worthy"""
-        breaking_posts = []
+        # Check title for breaking keywords
+        title = post.get('title', '').lower()
+        is_breaking = match_keywords(title, BREAKING_KEYWORDS)
         
-        for post in new_posts:
-            # Check if it mentions a primary company
-            has_primary = any(
-                company in post.get('companies', {})
-                for company in self.PRIMARY_COMPANIES
-            )
-            
-            if not has_primary:
-                continue
-            
-            # Check for breaking keywords in title
-            title_lower = post['title'].lower()
-            is_breaking = any(
-                keyword in title_lower 
-                for keyword in self.BREAKING_KEYWORDS
-            )
-            
-            # High relevance score also triggers
-            high_relevance = post.get('relevance_score', 0) > 5
-            
-            if is_breaking or high_relevance:
-                # Avoid duplicates
-                if post['link'] not in self.cache.get('posted', []):
-                    breaking_posts.append(post)
-                    self.mark_as_posted(post['link'])
-        
-        return breaking_posts
+        if is_breaking:
+            log_breaking_news(post)
+            breaking_posts.append(post)
     
-    def trigger_immediate_build(self, breaking_posts):
-        """Trigger GitHub Actions workflow for immediate deploy"""
-        for post in breaking_posts:
-            print(f"🔥 BREAKING: {post['title']}")
-            
-            # You could also:
-            # 1. Send email alert
-            self.send_email_alert(post)
-            
-            # 2. Post to Twitter/Discord (optional)
-            self.post_to_social(post)
-        
-        # Return special flag for GitHub Actions
-        return len(breaking_posts) > 0
+    return breaking_posts
+
+
+if __name__ == "__main__":
+    # Test with sample data
+    test_posts = [
+        {
+            'title': 'OpenAI announces GPT-4o with real-time voice',
+            'score': 95,
+            'companies': ['openai'],
+            'filename': '2026-02-28-openai-announces.md'
+        },
+        {
+            'title': 'Minor update to API documentation',
+            'score': 45,
+            'companies': ['openai'],
+            'filename': '2026-02-28-api-update.md'
+        }
+    ]
     
-    def send_email_alert(self, post):
-        """Optional: Email yourself for major news"""
-        # Configure with your email
-        print(f"Would send email for: {post['title']}")
-        # Add actual SMTP code if desired
-    
-    def post_to_social(self, post):
-        """Optional: Auto-post to social media"""
-        print(f"Would post to social: {post['title']}")
-    
-    def load_cache(self):
-        if self.cache_file.exists():
-            self.cache = json.loads(self.cache_file.read_text())
-        else:
-            self.cache = {'posted': [], 'last_check': None}
-    
-    def mark_as_posted(self, link):
-        self.cache['posted'].append(link)
-        self.cache['last_check'] = datetime.now().isoformat()
-        self.cache_file.write_text(json.dumps(self.cache, indent=2))
+    breaking = check_for_breaking_news(test_posts)
+    print(f"Found {len(breaking)} breaking news items")
