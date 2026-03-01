@@ -119,4 +119,37 @@ def show_breaking_news(run_log: list, limit: int = 5) -> None:
     ]
     
     if not breaking_entries:
-        print("  No breaking news
+        print("  No breaking news logged")
+        return
+    
+    for entry in breaking_entries[-limit:]:
+        timestamp = entry.get('timestamp', '')[:19]
+        title = entry.get('title', '')
+        score = entry.get('score', 0)
+        companies = entry.get('companies', [])
+        
+        print(f"  🚨 {timestamp} [{score}] {title[:70]}")
+        if companies:
+            print(f"      {', '.join(companies)}")
+
+
+def main():
+    """Main entry point."""
+    queue_data = load_queue()
+    run_log = load_run_log()
+    
+    config = queue_data.get('config', {})
+    queue = queue_data.get('queue', [])
+    daily_usage = queue_data.get('daily_usage', [])
+    
+    show_config(config)
+    show_daily_usage(daily_usage)
+    show_queue(queue)
+    show_recent_runs(run_log)
+    show_breaking_news(run_log)
+    
+    print()
+
+
+if __name__ == "__main__":
+    main()
