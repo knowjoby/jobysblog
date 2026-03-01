@@ -1,118 +1,152 @@
 #!/usr/bin/env python3
 """
-AI News Queue Status
-Usage: python scripts/queue_status.py [status|posted|pending|clear-old]
+Queue Status - CLI tool to inspect the news queue and daily usage.
 """
 
 import json
 import sys
-from datetime import datetime, timedelta
+from datetime import datetime
 from pathlib import Path
+from typing import Dict, Any, Optional
 
-QUEUE = Path(__file__).parent.parent / "data" / "news_queue.json"
+BASE_DIR = Path(__file__).parent.parent
+QUEUE_FILE = BASE_DIR / "data" / "news_queue.json"
+RUN_LOG_FILE = BASE_DIR / "_data" / "run_log.json"
 
 
-def load():
-    with open(QUEUE) as f:
+def load_queue() -> Dict[str, Any]:
+    """Load the news queue from JSON file."""
+    if not QUEUE_FILE.exists():
+        return {"queue": [], "config": {}, "daily_usage": []}
+    
+    with open(QUEUE_FILE, 'r') as f:
         return json.load(f)
 
 
-def save(q):
-    with open(QUEUE, "w") as f:
-        json.dump(q, f, indent=2)
+def load_run_log() -> list:
+    """Load the run log."""
+    if not RUN_LOG_FILE.exists():
+        return []
+    
+    with open(RUN_LOG_FILE, 'r') as f:
+        try:
+            return json.load(f)
+        except json.JSONDecodeError:
+            return []
 
 
-def status():
-    q = load()
-    today = datetime.now().strftime("%Y-%m-%d")
-    cfg = q["config"]
-    usage = q["daily_usage"].get(today, {"posts": 0, "estimated_tokens": 0})
-    pending = sorted(q["pending"], key=lambda x: x.get("score", 0), reverse=True)
-    recent = sorted(q["posted"], key=lambda x: x.get("posted_at", ""), reverse=True)
-
-    posts_used = usage["posts"]
-    posts_left = cfg["daily_post_limit"] - posts_used
-    tokens_used = usage["estimated_tokens"]
-    tokens_left = cfg["daily_token_budget"] - tokens_used
-    token_pct = int(tokens_used / cfg["daily_token_budget"] * 100)
-
-    print(f"\n{'='*50}")
-    print(f"  AI News Queue — {today}")
-    print(f"{'='*50}")
-    print(f"  Posts today : {posts_used}/{cfg['daily_post_limit']}  ({posts_left} remaining)")
-    print(f"  Tokens today: ~{tokens_used:,} / {cfg['daily_token_budget']:,}  ({token_pct}% used)")
-    print(f"  Min score   : {cfg['min_score_to_post']}")
-
-    print(f"\n  PENDING ({len(pending)} items):")
-    if not pending:
-        print("    — empty —")
-    for i, item in enumerate(pending[:5], 1):
-        companies = ", ".join(item.get("companies", []))
-        topics = ", ".join(item.get("topics", []))
-        print(f"    {i}. [{item.get('score', 0):3d}] {item['title']}")
-        print(f"         {companies} | {topics} | added {item.get('added_at', '?')}")
-    if len(pending) > 5:
-        print(f"    ... and {len(pending) - 5} more")
-
-    print(f"\n  RECENTLY POSTED:")
-    if not recent:
-        print("    — none yet —")
-    for item in recent[:5]:
-        companies = ", ".join(item.get("companies", []))
-        print(f"    [{item.get('score', 0):3d}] {item.get('posted_at', '?')} — {item['title']}")
-        print(f"         {companies} | {item.get('file', '')}")
-
-    print(f"\n  TOTAL POSTED: {len(q['posted'])}")
-    print(f"{'='*50}\n")
+def print_header(text: str) -> None:
+    """Print a formatted header."""
+    print(f"\n{'='*60}")
+    print(f" {text}")
+    print(f"{'='*60}")
 
 
-def clear_old(days=14):
-    q = load()
-    cutoff = (datetime.now() - timedelta(days=days)).strftime("%Y-%m-%d")
-    before = len(q["pending"])
-    q["pending"] = [p for p in q["pending"] if p.get("added_at", "9999") >= cutoff]
-    removed = before - len(q["pending"])
-    save(q)
-    print(f"Removed {removed} pending items older than {days} days.")
+def show_config(config: Dict[str, Any]) -> None:
+    """Display current configuration."""
+    print_header("CONFIGURATION")
+    for key, value in config.items():
+        print(f"  {key}: {value}")
 
 
-def show_posted():
-    q = load()
-    recent = sorted(q["posted"], key=lambda x: x.get("posted_at", ""), reverse=True)
-    print(f"\nAll posted ({len(recent)} total):\n")
-    for item in recent:
-        tags = ", ".join(item.get("companies", []) + item.get("topics", []))
-        print(f"  [{item.get('score', 0):3d}] {item.get('posted_at', '?')} — {item['title']}")
-        print(f"         tags: {tags}")
-        print(f"         file: {item.get('file', 'unknown')}")
-        print()
+def show_daily_usage(usage_list: list) -> None:
+    """Display daily usage statistics."""
+    print_header("DAILY USAGE")
+    
+    if not usage_list:
+        print("  No usage data")
+        return
+    
+    # Sort by date descending
+    usage_list = sorted(usage_list, key=lambda x: x.get('date', ''), reverse=True)
+    
+    for usage in usage_list[:10]:  # Show last 10 days
+        date = usage.get('date', 'unknown')
+        posts = usage.get('posts', 0)
+        processed = usage.get('items_processed', 0)
+        print(f"  {date}: {posts} posts from {processed} items")
 
 
-def show_pending():
-    q = load()
-    pending = sorted(q["pending"], key=lambda x: x.get("score", 0), reverse=True)
-    print(f"\nPending queue ({len(pending)} items):\n")
-    for i, item in enumerate(pending, 1):
-        tags = ", ".join(item.get("companies", []) + item.get("topics", []))
-        print(f"  {i}. [{item.get('score', 0):3d}] {item['title']}")
-        print(f"       tags: {tags}")
-        print(f"       added: {item.get('added_at', '?')} | source: {item.get('source_url', '')}")
-        print()
+def show_queue(queue: list, limit: int = 10) -> None:
+    """Display current queue items."""
+    print_header(f"QUEUE (showing top {limit})")
+    
+    if not queue:
+        print("  Queue is empty")
+        return
+    
+    # Sort by score descending
+    queue = sorted(queue, key=lambda x: x.get('score', 0), reverse=True)
+    
+    for i, item in enumerate(queue[:limit]):
+        score = item.get('score', 0)
+        title = item.get('title', 'Untitled')
+        companies = item.get('companies', [])
+        print(f"  {i+1:2d}. [{score:3d}] {title[:60]}")
+        if companies:
+            print(f"      Companies: {', '.join(companies)}")
 
 
-COMMANDS = {
-    "status": status,
-    "posted": show_posted,
-    "pending": show_pending,
-}
+def show_recent_runs(run_log: list, limit: int = 5) -> None:
+    """Display recent run log entries."""
+    print_header("RECENT RUNS")
+    
+    if not run_log:
+        print("  No run data")
+        return
+    
+    for entry in run_log[-limit:]:
+        timestamp = entry.get('timestamp', '')[:19]  # Truncate to YYYY-MM-DD HH:MM:SS
+        fetched = entry.get('entries_fetched', 0)
+        candidates = entry.get('candidates', 0)
+        posts = entry.get('posts_created', 0)
+        failing = entry.get('primary_feeds_failing', False)
+        
+        status = "⚠️" if failing else "✓"
+        print(f"  {status} {timestamp} - Fetched: {fetched}, Candidates: {candidates}, Posts: {posts}")
+
+
+def show_breaking_news(run_log: list, limit: int = 5) -> None:
+    """Show recent breaking news from run log."""
+    print_header("RECENT BREAKING NEWS")
+    
+    breaking_entries = [
+        e for e in run_log 
+        if isinstance(e, dict) and e.get('type') == 'breaking_news'
+    ]
+    
+    if not breaking_entries:
+        print("  No breaking news logged")
+        return
+    
+    for entry in breaking_entries[-limit:]:
+        timestamp = entry.get('timestamp', '')[:19]
+        title = entry.get('title', '')
+        score = entry.get('score', 0)
+        companies = entry.get('companies', [])
+        
+        print(f"  🚨 {timestamp} [{score}] {title[:70]}")
+        if companies:
+            print(f"      {', '.join(companies)}")
+
+
+def main():
+    """Main entry point."""
+    queue_data = load_queue()
+    run_log = load_run_log()
+    
+    config = queue_data.get('config', {})
+    queue = queue_data.get('queue', [])
+    daily_usage = queue_data.get('daily_usage', [])
+    
+    show_config(config)
+    show_daily_usage(daily_usage)
+    show_queue(queue)
+    show_recent_runs(run_log)
+    show_breaking_news(run_log)
+    
+    print()
+
 
 if __name__ == "__main__":
-    cmd = sys.argv[1] if len(sys.argv) > 1 else "status"
-    if cmd == "clear-old":
-        days = int(sys.argv[2]) if len(sys.argv) > 2 else 14
-        clear_old(days)
-    elif cmd in COMMANDS:
-        COMMANDS[cmd]()
-    else:
-        print(f"Unknown command: {cmd}")
-        print("Usage: queue_status.py [status|posted|pending|clear-old [days]]")
+    main()
