@@ -21,14 +21,14 @@ jobs:
           myToken: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Write changelog to file
-        run: echo "${{ steps.changelog.outputs.changelog }}" > CHANGELOG.md
+        run: echo "${{ steps.changelog.outputs.changelog }}" > changelog.md
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          body_path: CHANGELOG.md
+          body_path: changelog.md
           generate_release_notes: true
           files: |
-            CHANGELOG.md
+            changelog.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
