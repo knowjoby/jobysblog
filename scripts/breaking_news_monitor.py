@@ -3,10 +3,14 @@
 Breaking News Monitor - Detects and logs high-importance AI news.
 """
 
+import sys
+from pathlib import Path
+# Add repo root to path for imports when running script directly
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 import json
 from datetime import datetime
 from typing import List, Dict, Any, Optional
-from pathlib import Path
 
 # Import shared configuration
 from scripts.config import match_keywords
