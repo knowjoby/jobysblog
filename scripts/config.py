@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
 Shared configuration for AI news aggregator.
-Single source of truth for keywords, RSS feeds, and utility functions.
+Single source of truth for keywords and utility functions.
 """
 
 import re
-from typing import List, Dict, Any, Set, Union
+from typing import List, Dict, Any, Set
 
 # =============================================================================
 # COMPANY KEYWORDS (Tier 1 - Major AI Companies)
@@ -120,33 +120,6 @@ TOPIC_KEYWORDS: Dict[str, List[str]] = {
 }
 
 # =============================================================================
-# RSS FEED SOURCES
-# =============================================================================
-RSS_FEEDS: List[Dict[str, Any]] = [
-    # Primary sources (high authority)
-    {"url": "https://techcrunch.com/category/artificial-intelligence/feed/", "name": "TechCrunch AI", "primary": True},
-    {"url": "https://www.theverge.com/ai-artificial-intelligence/rss/index.xml", "name": "The Verge AI", "primary": True},
-    {"url": "https://venturebeat.com/category/ai/feed/", "name": "VentureBeat AI", "primary": True},
-    
-    # Company blogs (higher authority for specific news)
-    {"url": "https://openai.com/blog/rss/", "name": "OpenAI Blog", "primary": False},
-    {"url": "https://www.anthropic.com/news/rss.xml", "name": "Anthropic News", "primary": False},
-    {"url": "https://deepmind.google/blog/rss.xml", "name": "DeepMind Blog", "primary": False},
-    {"url": "https://ai.meta.com/blog/rss.xml", "name": "Meta AI Blog", "primary": False},
-    {"url": "https://blogs.microsoft.com/ai/feed/", "name": "Microsoft AI Blog", "primary": False},
-    
-    # Research & technical
-    {"url": "https://arxiv.org/rss/cs.ai", "name": "arXiv AI", "primary": False},
-    {"url": "https://huggingface.co/blog/feed.xml", "name": "Hugging Face Blog", "primary": False},
-    {"url": "https://lmsys.org/blog/index.xml", "name": "LMSYS Org", "primary": False},
-    
-    # News aggregators
-    {"url": "https://www.artificialintelligence-news.com/feed/", "name": "AI News", "primary": False},
-    {"url": "https://www.ainewsletter.com/newsletter.rss", "name": "AI Newsletter", "primary": False},
-    {"url": "https://aibusiness.com/feed.rss", "name": "AI Business", "primary": False},
-]
-
-# =============================================================================
 # UTILITY FUNCTIONS
 # =============================================================================
 
@@ -217,16 +190,6 @@ def detect_topics(text: str) -> List[str]:
             topics_found.append(topic)
     
     return topics_found
-
-
-def get_primary_feeds() -> List[Dict[str, Any]]:
-    """Return only primary RSS feeds."""
-    return [feed for feed in RSS_FEEDS if feed.get("primary", False)]
-
-
-def get_all_feeds() -> List[Dict[str, Any]]:
-    """Return all RSS feeds."""
-    return RSS_FEEDS
 
 
 def get_company_tier(company: str) -> int:

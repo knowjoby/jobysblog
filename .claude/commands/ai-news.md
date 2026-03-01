@@ -19,15 +19,19 @@ If posts_remaining ≤ 0: skip posting, still do searches to add to queue, then 
 
 ---
 
-## Step 2 — Search for news
+## Step 2 — Fetch news via LLM pipeline
 
-Run **3 web searches** targeting different angles:
+Run the news fetcher script using the Bash tool:
 
-1. `"AI model news site:techcrunch.com OR site:theverge.com OR site:wired.com [current month year]"`
-2. `"OpenAI OR Anthropic OR Google DeepMind OR xAI news [current week]"`
-3. `"AI company controversy OR release OR safety incident [current month year]"`
+```bash
+python scripts/fetch_news_llm.py
+```
 
-For each result, extract: title, publication, date published, URL, a 1-sentence summary of what happened.
+This uses **DuckDuckGo News** (free, no key) to pull live articles, then **Groq (Llama)** to filter down to AI-relevant results.
+
+Output is a JSON array of `{"title": "...", "url": "..."}` objects — one entry per article.
+
+For each result, record: title, URL. Use the title to infer publication and date where possible. Write a 1-sentence summary of what happened based on the title (the script returns only title + link).
 
 ---
 
