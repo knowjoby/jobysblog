@@ -322,8 +322,8 @@ layout: default
 
   {{ content }}
 
-  {%- assign link_posts = site.posts | where_exp: "post", "post.link" -%}
-  {%- if link_posts.size > 0 -%}
+  {%- assign feed_posts = site.posts | where_exp: "post", "post.categories contains 'ai-news'" -%}
+  {%- if feed_posts.size > 0 -%}
 
     <div class="new-banner" id="new-banner"></div>
 
@@ -336,7 +336,7 @@ layout: default
     {%- assign current_date = "" -%}
     {%- assign post_index = 0 -%}
 
-    {%- for post in link_posts -%}
+    {%- for post in feed_posts -%}
       {%- assign post_index = post_index | plus: 1 -%}
       {%- assign post_date = post.date | date: "%Y-%m-%d" -%}
       {%- assign display_date = post.date | date: "%B %-d, %Y" -%}
@@ -359,13 +359,25 @@ layout: default
 
       {%- assign tag_list = post.tags | join: " " -%}
 
+      {%- if post.link -%}
+        {%- assign item_href = post.link -%}
+        {%- assign item_target = "_blank" -%}
+        {%- assign item_rel = "noopener" -%}
+        {%- assign item_arrow = "↗" -%}
+      {%- else -%}
+        {%- assign item_href = post.url | relative_url -%}
+        {%- assign item_target = "" -%}
+        {%- assign item_rel = "" -%}
+        {%- assign item_arrow = "→" -%}
+      {%- endif -%}
+
       <div class="feed-item" data-index="{{ post_index }}" data-pubdate="{{ post.date | date: '%s' }}" data-tags="{{ tag_list }}">
         <div class="score-dot {{ dot_class }}" title="Score: {{ post.score }}"></div>
 
-        <a class="feed-title" href="{{ post.link }}" target="_blank" rel="noopener">
+        <a class="feed-title" href="{{ item_href }}"{% if item_target != "" %} target="{{ item_target }}"{% endif %}{% if item_rel != "" %} rel="{{ item_rel }}"{% endif %}>
           {{- post.title | escape -}}
         </a>
-        <span class="feed-arrow">↗</span>
+        <span class="feed-arrow">{{ item_arrow }}</span>
         {%- if post.source -%}
           <span class="feed-source">
             {{- post.source -}}
@@ -392,7 +404,7 @@ layout: default
     <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
 
   {%- else -%}
-    <p class="no-posts-message">No links yet — check back soon.</p>
+    <p class="no-posts-message">No posts yet — check back soon.</p>
   {%- endif -%}
 </div>
 
