@@ -4,8 +4,6 @@ title: Changelog
 permalink: /changelog/
 ---
 
-# Changelog
-
 Short, operator-focused history of changes.
 
 ## 2026-03-12

@@ -4,8 +4,6 @@ title: Archives
 permalink: /archives/
 ---
 
-# Archives
-
 Two views:
 
 - **Published:** what’s already on the blog

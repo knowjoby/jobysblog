@@ -4,8 +4,6 @@ title: Status
 permalink: /logs/
 ---
 
-# Status
-
 This page is the operational dashboard for Signal Log.
 
 ## Automation
