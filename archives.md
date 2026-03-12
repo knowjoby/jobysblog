@@ -157,6 +157,11 @@ Tip: use search + tag chips to filter; pagination keeps it fast even with hundre
     var tableQueue = document.getElementById('archiveTableQueue');
     var queueMeta = document.getElementById('queueMeta');
 
+    var LS_PREFIX = 'signal_log_';
+    var LS_ARCHIVE_TAB = LS_PREFIX + 'archive_tab';
+    var LS_ARCHIVE_QUERY = LS_PREFIX + 'archive_query';
+    var LS_ARCHIVE_TAG = LS_PREFIX + 'archive_tag';
+
     var activeTab = 'published';
     var activeTag = null;
     var currentPage = 1;
@@ -229,6 +234,11 @@ Tip: use search + tag chips to filter; pagination keeps it fast even with hundre
 
       document.getElementById('archiveCount').textContent = visible + ' shown';
 
+      try {
+        localStorage.setItem(LS_ARCHIVE_QUERY, q || '');
+        localStorage.setItem(LS_ARCHIVE_TAG, activeTag || '');
+      } catch (e) {}
+
       // Pagination after filter
       currentPage = 1;
       applyPagination(visibleRows);
@@ -244,14 +254,15 @@ Tip: use search + tag chips to filter; pagination keeps it fast even with hundre
       });
     }
 
-    function setTab(tab) {
+    function setTab(tab, opts) {
       activeTab = tab;
       tabPublished.style.background = (tab === 'published') ? '#f6f8fa' : '#fff';
       tabQueue.style.background = (tab === 'queue') ? '#f6f8fa' : '#fff';
       tablePublished.style.display = (tab === 'published') ? '' : 'none';
       tableQueue.style.display = (tab === 'queue') ? '' : 'none';
-      activeTag = null;
+      if (!(opts && opts.preserveTag)) activeTag = null;
       currentPage = 1;
+      try { localStorage.setItem(LS_ARCHIVE_TAB, tab); } catch (e) {}
       applyFilter();
     }
 
@@ -262,11 +273,45 @@ Tip: use search + tag chips to filter; pagination keeps it fast even with hundre
     clearEl.addEventListener('click', function() {
       activeTag = null;
       searchEl.value = '';
+      try {
+        localStorage.removeItem(LS_ARCHIVE_QUERY);
+        localStorage.removeItem(LS_ARCHIVE_TAG);
+      } catch (e) {}
       applyFilter();
     });
 
     wireTagButtons();
-    setTab('published');
+
+    // Restore last view
+    try {
+      var savedTab = (localStorage.getItem(LS_ARCHIVE_TAB) || '').trim();
+      var savedQuery = localStorage.getItem(LS_ARCHIVE_QUERY) || '';
+      var savedTag = (localStorage.getItem(LS_ARCHIVE_TAG) || '').trim();
+      if (savedQuery) searchEl.value = savedQuery;
+      activeTag = savedTag ? savedTag : null;
+      setTab(savedTab === 'queue' ? 'queue' : 'published', { preserveTag: true });
+    } catch (e) {
+      setTab('published');
+    }
+
+    // Keyboard shortcuts: "/" focus search, "Esc" clear
+    document.addEventListener('keydown', function(e) {
+      var t = e.target;
+      var isTyping = t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable);
+      if (!isTyping && e.key === '/') {
+        e.preventDefault();
+        if (searchEl) searchEl.focus();
+      }
+      if (e.key === 'Escape') {
+        activeTag = null;
+        searchEl.value = '';
+        try {
+          localStorage.removeItem(LS_ARCHIVE_QUERY);
+          localStorage.removeItem(LS_ARCHIVE_TAG);
+        } catch (e) {}
+        applyFilter();
+      }
+    });
 
     pagePrev.addEventListener('click', function() {
       if (currentPage > 1) currentPage--;

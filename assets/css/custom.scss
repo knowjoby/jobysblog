@@ -90,11 +90,40 @@ a:hover {
   background: white;
 }
 
+.site-header .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.site-brand {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 0;
+}
+
 .site-title {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.5px;
   color: var(--text-primary) !important;
+  float: none;
+  line-height: 1.1;
+  margin-bottom: 0;
+}
+
+.site-subtitle {
+  font-size: 12px;
+  line-height: 1.2;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.site-nav {
+  float: none;
 }
 
 .site-nav .page-link {
@@ -105,6 +134,12 @@ a:hover {
 
 .site-nav .page-link:hover {
   color: var(--primary-color);
+}
+
+@media (max-width: 600px) {
+  .site-header .wrapper {
+    align-items: flex-start;
+  }
 }
 
 /* Featured Posts & Cards */
