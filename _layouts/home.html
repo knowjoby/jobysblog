@@ -67,20 +67,28 @@ layout: default
   }
 
   .feed-item {
-    display: flex;
-    align-items: baseline;
-    gap: 0.6rem;
-    padding: 0.6rem 0;
-    border-bottom: 1px solid var(--border-light);
-    flex-wrap: wrap;
-    transition: background-color 0.2s ease;
+    display: block;
+    padding: 12px 12px 10px;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    background: white;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
   }
 
   .feed-item:hover {
+    border-color: var(--border-medium);
     background-color: var(--bg-light);
   }
 
-  .feed-item:last-child { border-bottom: none; }
+  .feed-items-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  @media (max-width: 900px) {
+    .feed-items-grid { grid-template-columns: 1fr; }
+  }
 
   /* New-since-last-visit highlight */
   .feed-item-new {
@@ -93,13 +101,12 @@ layout: default
   .feed-title {
     font-family: 'Inter', sans-serif;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text-primary);
     text-decoration: none;
-    flex: 1 1 auto;
-    min-width: 0;
     line-height: 1.5;
     transition: color 0.2s ease;
+    display: block;
   }
 
   .feed-title:hover { 
@@ -111,14 +118,17 @@ layout: default
     font-family: 'Inter', sans-serif;
     font-size: 11px;
     color: var(--text-light);
-    flex-shrink: 0;
     text-decoration: none;
-    transition: transform 0.2s ease;
+    transition: color 0.2s ease;
   }
 
-  .feed-item:hover .feed-arrow {
-    transform: translate(2px, -2px);
-    color: var(--primary-color);
+  .feed-meta {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    margin-top: 6px;
+    color: var(--text-light);
+    font-size: 12px;
   }
 
   .feed-source {
@@ -126,15 +136,15 @@ layout: default
     font-size: 12px;
     font-weight: 400;
     color: var(--text-light);
-    flex-shrink: 0;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .feed-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 4px;
-    width: 100%;
     margin-top: 4px;
   }
 
@@ -269,15 +279,8 @@ layout: default
     h1.page-heading {
       font-size: 2rem;
     }
-    
-    .feed-item {
-      gap: 0.4rem;
-    }
-    
-    .feed-source {
-      white-space: normal;
-      margin-left: 1.4rem;
-    }
+
+    .feed-source { white-space: normal; }
   }
 
   /* Animations */
@@ -418,6 +421,7 @@ layout: default
         {%- unless forloop.first -%}</div></div>{%- endunless -%}
         <div class="feed-date-group">
         <div class="feed-date-label">{{ display_date }}</div>
+        <div class="feed-items-grid">
         {%- assign current_date = post_date -%}
       {%- endif -%}
 
@@ -439,15 +443,18 @@ layout: default
         <a class="feed-title" href="{{ item_href }}"{% if item_target != "" %} target="{{ item_target }}"{% endif %}{% if item_rel != "" %} rel="{{ item_rel }}"{% endif %}>
           {{- post.title | escape | replace: '&amp;#8217;', '’' | replace: '&#8217;', '’' | replace: '&amp;rsquo;', '’' | replace: '&rsquo;', '’' -}}
         </a>
-        <span class="feed-arrow">{{ item_arrow }}</span>
-        {%- if post.source -%}
-          <span class="feed-source">
-            {{- post.source -}}
-            {%- if post.original_date -%}
-              &nbsp;·&nbsp;{{ post.original_date | date: "%b %-d" }}
-            {%- endif -%}
-          </span>
-        {%- endif -%}
+
+        <div class="feed-meta">
+          {%- if post.source -%}
+            <span class="feed-source">
+              {{- post.source -}}
+              {%- if post.original_date -%}
+                &nbsp;·&nbsp;{{ post.original_date | date: "%b %-d" }}
+              {%- endif -%}
+            </span>
+          {%- endif -%}
+          <span class="feed-arrow">{{ item_arrow }}</span>
+        </div>
 
         {%- if post.tags and post.tags.size > 0 -%}
           <div class="feed-tags">

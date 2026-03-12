@@ -131,6 +131,19 @@ Two views:
 
 <p id="archiveCount" style="margin-top: 12px; color: #666;"></p>
 
+<div id="archivePager" style="display:flex; gap:10px; align-items:center; margin: 10px 0; flex-wrap: wrap;">
+  <button id="pagePrev" type="button" style="padding:8px 12px; border-radius:8px; border:1px solid #ddd; background:#fff; cursor:pointer;">Prev</button>
+  <button id="pageNext" type="button" style="padding:8px 12px; border-radius:8px; border:1px solid #ddd; background:#fff; cursor:pointer;">Next</button>
+  <span id="pageInfo" style="color:#888; font-size:12px;"></span>
+  <span style="margin-left:auto; color:#888; font-size:12px;">Rows/page</span>
+  <select id="rowsPerPage" style="padding:8px 10px; border-radius:8px; border:1px solid #ddd; background:#fff;">
+    <option value="25">25</option>
+    <option value="50" selected>50</option>
+    <option value="100">100</option>
+    <option value="200">200</option>
+  </select>
+</div>
+
 <script>
   (function() {
     var searchEl = document.getElementById('archiveSearch');
@@ -144,6 +157,8 @@ Two views:
 
     var activeTab = 'published';
     var activeTag = null;
+    var currentPage = 1;
+    var rowsPerPage = 50;
 
     var rowsPublished = Array.from(document.querySelectorAll('.archiveRowPublished'));
     var rowsQueue = Array.from(document.querySelectorAll('.archiveRowQueue'));
@@ -154,18 +169,50 @@ Two views:
       queueMeta.textContent = 'Queue updated: {{ updated_ist_epoch | date: "%b %-d, %Y %H:%M" }} IST';
     {% endif %}
 
+    var pagePrev = document.getElementById('pagePrev');
+    var pageNext = document.getElementById('pageNext');
+    var pageInfo = document.getElementById('pageInfo');
+    var rowsPerPageEl = document.getElementById('rowsPerPage');
+
+    function getRows() {
+      return (activeTab === 'queue') ? rowsQueue : rowsPublished;
+    }
+
+    function applyPagination(visibleRows) {
+      var total = visibleRows.length;
+      var totalPages = Math.max(1, Math.ceil(total / rowsPerPage));
+      if (currentPage > totalPages) currentPage = totalPages;
+      if (currentPage < 1) currentPage = 1;
+
+      var start = (currentPage - 1) * rowsPerPage;
+      var end = start + rowsPerPage;
+
+      visibleRows.forEach(function(row, idx) {
+        row.style.display = (idx >= start && idx < end) ? '' : 'none';
+      });
+
+      pagePrev.disabled = currentPage <= 1;
+      pageNext.disabled = currentPage >= totalPages;
+      pagePrev.style.opacity = pagePrev.disabled ? '0.5' : '1';
+      pageNext.style.opacity = pageNext.disabled ? '0.5' : '1';
+      pageInfo.textContent = 'Page ' + currentPage + ' / ' + totalPages;
+    }
+
     function applyFilter() {
       var q = (searchEl.value || '').trim().toLowerCase();
       var visible = 0;
-      var rows = (activeTab === 'queue') ? rowsQueue : rowsPublished;
+      var rows = getRows();
+      var visibleRows = [];
 
       rows.forEach(function(row) {
         var hay = [row.dataset.title, row.dataset.source, row.dataset.tags].join(' ');
         var ok = true;
         if (q && hay.indexOf(q) === -1) ok = false;
         if (activeTag && row.dataset.tags.indexOf(activeTag) === -1) ok = false;
-        row.style.display = ok ? '' : 'none';
-        if (ok) visible++;
+        if (ok) {
+          visible++;
+          visibleRows.push(row);
+        }
       });
 
       var msg = [];
@@ -179,6 +226,10 @@ Two views:
       }
 
       document.getElementById('archiveCount').textContent = visible + ' shown';
+
+      // Pagination after filter
+      currentPage = 1;
+      applyPagination(visibleRows);
     }
 
     function wireTagButtons() {
@@ -198,6 +249,7 @@ Two views:
       tablePublished.style.display = (tab === 'published') ? '' : 'none';
       tableQueue.style.display = (tab === 'queue') ? '' : 'none';
       activeTag = null;
+      currentPage = 1;
       applyFilter();
     }
 
@@ -213,5 +265,37 @@ Two views:
 
     wireTagButtons();
     setTab('published');
+
+    pagePrev.addEventListener('click', function() {
+      if (currentPage > 1) currentPage--;
+      var rows = getRows();
+      var q = (searchEl.value || '').trim().toLowerCase();
+      var visibleRows = rows.filter(function(row) {
+        var hay = [row.dataset.title, row.dataset.source, row.dataset.tags].join(' ');
+        if (q && hay.indexOf(q) === -1) return false;
+        if (activeTag && row.dataset.tags.indexOf(activeTag) === -1) return false;
+        return true;
+      });
+      applyPagination(visibleRows);
+    });
+
+    pageNext.addEventListener('click', function() {
+      currentPage++;
+      var rows = getRows();
+      var q = (searchEl.value || '').trim().toLowerCase();
+      var visibleRows = rows.filter(function(row) {
+        var hay = [row.dataset.title, row.dataset.source, row.dataset.tags].join(' ');
+        if (q && hay.indexOf(q) === -1) return false;
+        if (activeTag && row.dataset.tags.indexOf(activeTag) === -1) return false;
+        return true;
+      });
+      applyPagination(visibleRows);
+    });
+
+    rowsPerPageEl.addEventListener('change', function() {
+      rowsPerPage = parseInt(rowsPerPageEl.value, 10) || 50;
+      currentPage = 1;
+      applyFilter();
+    });
   })();
 </script>
