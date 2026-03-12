@@ -9,7 +9,7 @@ permalink: /archives/
 Two views:
 
 - **Published:** what’s already on the blog
-- **Queue:** scored candidates not yet published (deduped)
+- **Read more:** extra links not yet published (deduped)
 
 <div style="display:flex; gap:10px; align-items:center; margin: 16px 0; flex-wrap: wrap;">
   <input id="archiveSearch" type="text" placeholder="Search title, source, tags…" style="flex:1 1 280px; padding:10px 12px; border:1px solid #ddd; border-radius:8px;">
@@ -18,7 +18,7 @@ Two views:
 
 <div style="display:flex; gap:10px; flex-wrap: wrap; margin: 10px 0 14px;">
   <button id="tabPublished" type="button" style="padding:8px 12px; border-radius:999px; border:1px solid #ddd; background:#f6f8fa; cursor:pointer;">Published</button>
-  <button id="tabQueue" type="button" style="padding:8px 12px; border-radius:999px; border:1px solid #ddd; background:#fff; cursor:pointer;">Queue</button>
+  <button id="tabQueue" type="button" style="padding:8px 12px; border-radius:999px; border:1px solid #ddd; background:#fff; cursor:pointer;">Read more</button>
   <span id="queueMeta" style="align-self:center; color:#888; font-size:12px;"></span>
 </div>
 
@@ -124,7 +124,7 @@ Two views:
       </tr>
     {%- endfor -%}
   {%- else -%}
-    <tr><td colspan="4" style="color:#888;">Queue data not available yet (wait for the next automation run).</td></tr>
+    <tr><td colspan="4" style="color:#888;">Read-more data not available yet (wait for the next automation run).</td></tr>
   {%- endif -%}
   </tbody>
 </table>
@@ -166,7 +166,7 @@ Two views:
     {% if q and q.updated_at_utc %}
       {% assign updated_epoch = q.updated_at_utc | date: "%s" | plus: 0 %}
       {% assign updated_ist_epoch = updated_epoch | plus: 19800 %}
-      queueMeta.textContent = 'Queue updated: {{ updated_ist_epoch | date: "%b %-d, %Y %H:%M" }} IST';
+      queueMeta.textContent = 'Read more updated: {{ updated_ist_epoch | date: "%b %-d, %Y %H:%M" }} IST';
     {% endif %}
 
     var pagePrev = document.getElementById('pagePrev');
