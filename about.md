@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-This is an automated AI news feed — a personal linklog tracking what's happening across the AI industry.
+Signal Log is an automated AI news feed — a personal linklog tracking what’s happening across the AI industry.
 
 **What it covers**
 
@@ -24,7 +24,7 @@ An automation runs continuously (every ~30 minutes) and:
 1. Fetches fresh AI news (DDG News when available; RSS fallback when DDG is blocked on runners)
 2. Filters for AI relevance (company + topic keyword rules)
 3. Ranks stories internally (recency + importance)
-4. Publishes selected items as posts on this site (usually outbound links)
+4. Publishes selected items as posts (usually outbound links)
 5. Commits to `main`, which triggers an automatic GitHub Pages deploy
 
 No paywalls bypassed, no scraping tricks — just public headlines + links.
@@ -50,4 +50,4 @@ Each post is auto-tagged by company (`anthropic`, `openai`, `google` …) and to
 
 **Logs**
 
-The [Status]({{ "/logs/" | relative_url }}) page shows the latest run + recent run history.
+The [Status]({{ "/logs/" | relative_url }}) page shows the latest run + recent run history (plus quick diagnostics when something looks stale).

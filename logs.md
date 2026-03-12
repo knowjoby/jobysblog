@@ -6,12 +6,14 @@ permalink: /logs/
 
 # Status
 
-This page is the operational dashboard for the automated AI news feed.
+This page is the operational dashboard for Signal Log.
 
 ## Automation
 
 - **Smart fetch (every 30 minutes):** finds + posts new AI news (commits to `main`)
 - **Deploy:** GitHub Pages rebuilds automatically on every push to `main`
+
+Quick links: [Home]({{ "/" | relative_url }}) · [Archives]({{ "/archives/" | relative_url }}) · [Changelog]({{ "/changelog/" | relative_url }})
 
 ## Latest run
 
@@ -23,7 +25,7 @@ This page is the operational dashboard for the automated AI news feed.
 **Triggered by:** {{ last.triggered_by | default: "unknown" }}  
 **Candidates found:** {{ last.candidates_found | default: 0 }}  
 **Posts created:** {{ last.posts_created | default: 0 }}  
-**Queued:** {{ last.queued | default: 0 }}
+**Read more added:** {{ last.queued | default: 0 }}
 
 {% if last.feeds %}
 ### Feeds
@@ -40,7 +42,7 @@ This page is the operational dashboard for the automated AI news feed.
 ### Posts created
 
 {% for p in last.posts %}
-- {% if p.file %}[{{ p.title }}]({{ p.file | relative_url }}){% else %}{{ p.title }}{% endif %} (score: {{ p.score | default: "?" }})
+- {% if p.file %}[{{ p.title }}]({{ p.file | relative_url }}){% else %}{{ p.title }}{% endif %}
 {% endfor %}
 {% else %}
 ### Posts created
@@ -57,7 +59,7 @@ No posts created on the latest run.
       <th>Trigger</th>
       <th>Candidates</th>
       <th>Posts</th>
-      <th>Queued</th>
+      <th>Read more</th>
     </tr>
   </thead>
   <tbody>

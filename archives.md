@@ -11,6 +11,8 @@ Two views:
 - **Published:** what’s already on the blog
 - **Read more:** extra links not yet published (deduped)
 
+Tip: use search + tag chips to filter; pagination keeps it fast even with hundreds of links.
+
 <div style="display:flex; gap:10px; align-items:center; margin: 16px 0; flex-wrap: wrap;">
   <input id="archiveSearch" type="text" placeholder="Search title, source, tags…" style="flex:1 1 280px; padding:10px 12px; border:1px solid #ddd; border-radius:8px;">
   <button id="archiveClear" type="button" style="padding:10px 12px; border:1px solid #ddd; border-radius:8px; background:#fff; cursor:pointer;">Clear</button>
