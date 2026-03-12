@@ -41,14 +41,14 @@ Search and filter *published* posts (the public feed). The internal queue is int
     {%- endif -%}
 
     <tr class="archiveRow"
-        data-title="{{ post.title | escape | downcase }}"
+        data-title="{{ post.title | escape | replace: '&amp;#8217;', '’' | replace: '&#8217;', '’' | replace: '&amp;rsquo;', '’' | replace: '&rsquo;', '’' | downcase }}"
         data-source="{{ source | downcase }}"
         data-tags="{{ tags | downcase }}"
         data-score="{{ post.score | default: 0 | plus: 0 }}">
       <td style="white-space:nowrap;">{{ post.date | date: "%Y-%m-%d" }}</td>
       <td>
         <a href="{{ href }}"{% if target != "" %} target="{{ target }}"{% endif %}{% if rel != "" %} rel="{{ rel }}"{% endif %}>
-          {{ post.title | escape }}
+          {{ post.title | escape | replace: '&amp;#8217;', '’' | replace: '&#8217;', '’' | replace: '&amp;rsquo;', '’' | replace: '&rsquo;', '’' }}
         </a>
       </td>
       <td style="white-space:nowrap;">{{ source }}</td>
@@ -123,4 +123,3 @@ Search and filter *published* posts (the public feed). The internal queue is int
     applyFilter();
   })();
 </script>
-

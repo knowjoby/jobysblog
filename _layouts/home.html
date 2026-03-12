@@ -364,7 +364,7 @@ layout: default
             {%- endif -%}
 
             <li style="margin: 8px 0;">
-              <a href="{{ href }}"{% if target != "" %} target="{{ target }}"{% endif %}{% if rel != "" %} rel="{{ rel }}"{% endif %}>{{ post.title | escape }}</a>
+              <a href="{{ href }}"{% if target != "" %} target="{{ target }}"{% endif %}{% if rel != "" %} rel="{{ rel }}"{% endif %}>{{ post.title | escape | replace: '&amp;#8217;', '’' | replace: '&#8217;', '’' | replace: '&amp;rsquo;', '’' | replace: '&rsquo;', '’' }}</a>
               <span style="color: var(--text-light); font-size: 12px;">{{ arrow }} · {{ post.source | default: "post" }} · {{ post.date | date: "%b %-d" }}</span>
               {%- if post.score -%}
                 <span style="margin-left: 6px; font-size: 12px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border-light); background: var(--bg-light);">score {{ post.score }}</span>
@@ -379,7 +379,7 @@ layout: default
     {%- assign now_s = site.time | date: "%s" | plus: 0 -%}
     {%- assign latest_s = latest.date | date: "%s" | plus: 0 -%}
     {%- assign age_s = now_s | minus: latest_s -%}
-    {%- assign stale_threshold_s = 64800 -%} {# 18 hours #}
+    {%- assign stale_threshold_s = 64800 -%} {%- comment -%}18 hours{%- endcomment -%}
 
     {%- if age_s > stale_threshold_s -%}
       <div class="new-banner" style="display:block;">
@@ -437,7 +437,7 @@ layout: default
         <div class="score-dot {{ dot_class }}" title="Score: {{ post.score }}"></div>
 
         <a class="feed-title" href="{{ item_href }}"{% if item_target != "" %} target="{{ item_target }}"{% endif %}{% if item_rel != "" %} rel="{{ item_rel }}"{% endif %}>
-          {{- post.title | escape -}}
+          {{- post.title | escape | replace: '&amp;#8217;', '’' | replace: '&#8217;', '’' | replace: '&amp;rsquo;', '’' | replace: '&rsquo;', '’' -}}
         </a>
         <span class="feed-arrow">{{ item_arrow }}</span>
         {%- if post.source -%}
