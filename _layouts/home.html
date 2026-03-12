@@ -377,10 +377,14 @@ layout: default
 
     {%- assign q = site.data.news_queue_public -%}
     {%- if q and q.pending and q.pending.size > 0 -%}
+      {%- assign updated_epoch = q.updated_at_utc | date: "%s" | plus: 0 -%}
+      {%- assign updated_ist_epoch = updated_epoch | plus: 19800 -%}
       <details style="margin: 0 0 18px; padding: 10px 12px; border: 1px solid var(--border-light); border-radius: 10px; background: white;">
         <summary style="cursor: pointer; font-weight: 600;">
           Queue ({{ q.pending_count | default: q.pending.size }}) — next up
-          <span style="color: var(--text-light); font-weight: 400; font-size: 12px;">· updated {{ q.updated_at_utc | default: "" }}</span>
+          <span style="color: var(--text-light); font-weight: 400; font-size: 12px;">
+            · updated {{ updated_ist_epoch | date: "%b %-d, %Y %H:%M" }} IST
+          </span>
         </summary>
         <div style="margin-top: 10px; color: var(--text-secondary); font-size: 13px;">
           These are scored candidates not yet published (deduped against posted items).

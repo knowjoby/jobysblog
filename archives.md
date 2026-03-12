@@ -155,7 +155,9 @@ Two views:
     var rowsQueue = Array.from(document.querySelectorAll('.archiveRowQueue'));
 
     {% if q and q.updated_at_utc %}
-      queueMeta.textContent = 'Queue updated: {{ q.updated_at_utc }}';
+      {% assign updated_epoch = q.updated_at_utc | date: "%s" | plus: 0 %}
+      {% assign updated_ist_epoch = updated_epoch | plus: 19800 %}
+      queueMeta.textContent = 'Queue updated: {{ updated_ist_epoch | date: "%b %-d, %Y %H:%M" }} IST';
     {% endif %}
 
     function applyFilter() {
