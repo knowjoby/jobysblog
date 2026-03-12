@@ -14,6 +14,8 @@
   --bg: #ffffff;
   --bg-light: #f6f8fa;
   --border-color: #e1e4e8;
+  --border-light: #e1e4e8;
+  --panel-bg: #f6f8fa;
   --accent-purple: #6f42c1;
   --accent-orange: #d73a49;
 }
@@ -181,6 +183,20 @@ tbody tr:hover {
   outline-offset: 2px;
 }
 
+/* Panels */
+.panel {
+  margin: 14px 0 18px;
+  padding: 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--panel-bg);
+}
+
+.panel-compact {
+  margin: 0 0 18px;
+  padding: 10px 12px;
+}
+
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -191,6 +207,8 @@ tbody tr:hover {
     --bg: #0b0f14;
     --bg-light: #111827;
     --border-color: #1f2937;
+    --border-light: #1f2937;
+    --panel-bg: #111827;
     --accent-purple: #a78bfa;
     --accent-orange: #fb7185;
   }

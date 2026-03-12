@@ -410,7 +410,7 @@ layout: default
   {%- if feed_posts.size > 0 -%}
 
     {%- assign now_ts = site.time | date: "%s" | plus: 0 -%}
-    {%- assign brief_window_s = 259200 -%} {# 72 hours #}
+	    {%- assign brief_window_s = 259200 -%}
     {%- assign brief_posts = "" | split: "" -%}
 
 	    {%- for post in feed_posts -%}
@@ -864,15 +864,3 @@ layout: default
 		    applyFilters();
 		  })();
 		</script>
-	  .panel {
-	    margin: 14px 0 18px;
-	    padding: 12px;
-	    border: 1px solid var(--border-light);
-	    border-radius: 10px;
-	    background: var(--panel-bg);
-	  }
-
-	  .panel-compact {
-	    margin: 0 0 18px;
-	    padding: 10px 12px;
-	  }
