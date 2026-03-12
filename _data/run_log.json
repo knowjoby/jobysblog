@@ -297,5 +297,18 @@
       }
     },
     "posts": []
+  },
+  {
+    "ran_at": "2026-03-13 00:55:16 IST",
+    "triggered_by": "Scheduled",
+    "candidates_found": 0,
+    "posts_created": 0,
+    "queued": 836,
+    "feeds": {
+      "ddg": {
+        "skipped": true
+      }
+    },
+    "posts": []
   }
 ]
