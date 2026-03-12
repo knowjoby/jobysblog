@@ -124,7 +124,7 @@
         ]
       },
       {
-        "title": "Musk bashes OpenAI in deposition, saying \u2018nobody committed suicide because of Grok\u2019",
+        "title": "Musk bashes OpenAI in deposition, saying ‘nobody committed suicide because of Grok’",
         "file": "_posts/2026-02-28-musk-bashes-openai-in-deposition-saying-nobody-committe.md",
         "score": 100,
         "tags": [
@@ -221,7 +221,7 @@
         ]
       },
       {
-        "title": "Microsoft\u2019s Copilot Health can connect to your medical records and wearables",
+        "title": "Microsoft’s Copilot Health can connect to your medical records and wearables",
         "file": "_posts/2026-03-12-microsofts-copilot-health-can-connect-to-your-medical-records-and-wear.md",
         "score": 63,
         "tags": [
@@ -261,6 +261,19 @@
   },
   {
     "ran_at": "2026-03-12 21:03:51 IST",
+    "triggered_by": "Scheduled",
+    "candidates_found": 0,
+    "posts_created": 0,
+    "queued": 836,
+    "feeds": {
+      "ddg": {
+        "skipped": true
+      }
+    },
+    "posts": []
+  },
+  {
+    "ran_at": "2026-03-12 22:33:18 IST",
     "triggered_by": "Scheduled",
     "candidates_found": 0,
     "posts_created": 0,
