@@ -5,15 +5,13 @@
 
 /* ===== CUSTOM TYPOGRAPHY ===== */
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-
 /* Define color variables */
 :root {
   --primary-color: #0366d6;
   --secondary-color: #2cbe4e;
   --text-primary: #24292e;
   --text-secondary: #586069;
+  --bg: #ffffff;
   --bg-light: #f6f8fa;
   --border-color: #e1e4e8;
   --accent-purple: #6f42c1;
@@ -26,6 +24,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   color: var(--text-primary);
+  background: var(--bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -87,7 +86,7 @@ a:hover {
 .site-header {
   border-top: 5px solid var(--primary-color);
   border-bottom: 1px solid var(--border-color);
-  background: white;
+  background: var(--bg);
 }
 
 .site-header .wrapper {
@@ -151,6 +150,55 @@ a:hover {
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border-bottom: 1px solid var(--border-color);
+  padding: 10px 8px;
+  vertical-align: top;
+}
+
+thead th {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+tbody tr:hover {
+  background: var(--bg-light);
+}
+
+/* Focus */
+:focus-visible {
+  outline: 2px solid rgba(3, 102, 214, 0.35);
+  outline-offset: 2px;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #60a5fa;
+    --secondary-color: #34d399;
+    --text-primary: #e5e7eb;
+    --text-secondary: #a1a1aa;
+    --bg: #0b0f14;
+    --bg-light: #111827;
+    --border-color: #1f2937;
+    --accent-purple: #a78bfa;
+    --accent-orange: #fb7185;
+  }
+
+  a:hover { color: #93c5fd; }
+  .site-nav .page-link { color: var(--text-secondary); }
+  .site-nav .page-link:hover { color: var(--primary-color); }
+  tbody tr:hover { background: rgba(255, 255, 255, 0.03); }
 }
 
 /* Featured Posts & Cards */
