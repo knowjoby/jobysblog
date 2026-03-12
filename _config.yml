@@ -22,6 +22,7 @@ plugins:
 permalink: /:year/:month/:day/:title/
 
 header_pages:
+  - now.md
   - about.md
   - logs.md
   - archives.md
