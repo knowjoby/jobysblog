@@ -164,7 +164,12 @@ def publish_public_queue(queue: Dict[str, Any]) -> None:
             }
         )
 
-    out_pending = sorted(out_pending, key=lambda x: int(x.get("score", 0) or 0), reverse=True)
+    def _pending_sort_key(item: Dict[str, Any]) -> Tuple[str, int, str]:
+        fetched_at = str(item.get("fetched_at", "") or "")
+        # sort newest first; YYYY-MM-DD strings sort lexicographically
+        return (fetched_at, int(item.get("score", 0) or 0), str(item.get("url", "") or ""))
+
+    out_pending = sorted(out_pending, key=_pending_sort_key, reverse=True)
 
     payload = {
         "updated_at_utc": datetime.now(timezone.utc).isoformat(),

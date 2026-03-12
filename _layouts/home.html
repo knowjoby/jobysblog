@@ -167,24 +167,6 @@ layout: default
     color: #fff; 
   }
 
-  /* Score dot — colour-coded by tier */
-  .score-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    margin-top: 6px;
-    transition: transform 0.2s ease;
-  }
-  
-  .feed-item:hover .score-dot {
-    transform: scale(1.2);
-  }
-  
-  .score-high   { background: var(--success); }
-  .score-mid    { background: var(--warning); }
-  .score-low    { background: var(--text-light); }
-
   /* Filter bar */
   .filter-bar {
     display: none;
@@ -326,7 +308,6 @@ layout: default
   {%- if feed_posts.size > 0 -%}
 
     {%- assign now_ts = site.time | date: "%s" | plus: 0 -%}
-    {%- assign day_seconds = 86400 -%}
     {%- assign brief_window_s = 259200 -%} {# 72 hours #}
     {%- assign brief_posts = "" | split: "" -%}
 
@@ -338,19 +319,17 @@ layout: default
       {%- endif -%}
     {%- endfor -%}
 
-    {%- assign brief_sorted = brief_posts | sort: "score" | reverse -%}
-
     <div style="margin: 14px 0 18px; padding: 12px; border: 1px solid var(--border-light); border-radius: 10px; background: white;">
       <div style="display:flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap;">
-        <strong style="font-size: 14px;">Briefing (top 5, last 72h)</strong>
+        <strong style="font-size: 14px;">Briefing (latest 5, last 72h)</strong>
         <span style="font-size: 12px; color: var(--text-light);">Ops: <a href="{{ '/logs/' | relative_url }}">Status</a> · <a href="{{ '/archives/' | relative_url }}">Archives</a></span>
       </div>
 
-      {%- if brief_sorted.size == 0 -%}
+      {%- if brief_posts.size == 0 -%}
         <div style="margin-top: 10px; color: var(--text-light); font-size: 13px;">No recent posts in the last 72 hours.</div>
       {%- else -%}
         <ol style="margin: 10px 0 0; padding-left: 18px;">
-          {%- for post in brief_sorted limit: 5 -%}
+          {%- for post in brief_posts limit: 5 -%}
             {%- if post.link -%}
               {%- assign href = post.link -%}
               {%- assign target = "_blank" -%}
@@ -366,9 +345,6 @@ layout: default
             <li style="margin: 8px 0;">
               <a href="{{ href }}"{% if target != "" %} target="{{ target }}"{% endif %}{% if rel != "" %} rel="{{ rel }}"{% endif %}>{{ post.title | escape | replace: '&amp;#8217;', '’' | replace: '&#8217;', '’' | replace: '&amp;rsquo;', '’' | replace: '&rsquo;', '’' }}</a>
               <span style="color: var(--text-light); font-size: 12px;">{{ arrow }} · {{ post.source | default: "post" }} · {{ post.date | date: "%b %-d" }}</span>
-              {%- if post.score -%}
-                <span style="margin-left: 6px; font-size: 12px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border-light); background: var(--bg-light);">score {{ post.score }}</span>
-              {%- endif -%}
             </li>
           {%- endfor -%}
         </ol>
@@ -394,7 +370,7 @@ layout: default
             {%- assign tags = item.companies | default: "" -%}
             <li style="margin: 8px 0;">
               <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title | escape | replace: '&amp;#8217;', '’' | replace: '&#8217;', '’' | replace: '&amp;rsquo;', '’' | replace: '&rsquo;', '’' }}</a>
-              <span style="color: var(--text-light); font-size: 12px;">↗ · {{ item.source | default: "source" }} · score {{ item.score | default: 0 }}</span>
+              <span style="color: var(--text-light); font-size: 12px;">↗ · {{ item.source | default: "source" }}{% if item.fetched_at %} · {{ item.fetched_at }}{% endif %}</span>
               {%- if item.companies and item.companies.size > 0 -%}
                 <span style="color: var(--text-light); font-size: 12px;">· {{ item.companies | join: ", " }}</span>
               {%- endif -%}
@@ -445,15 +421,6 @@ layout: default
         {%- assign current_date = post_date -%}
       {%- endif -%}
 
-      {%- assign score = post.score | default: 0 | plus: 0 -%}
-      {%- if score >= 75 -%}
-        {%- assign dot_class = "score-high" -%}
-      {%- elsif score >= 50 -%}
-        {%- assign dot_class = "score-mid" -%}
-      {%- else -%}
-        {%- assign dot_class = "score-low" -%}
-      {%- endif -%}
-
       {%- assign tag_list = post.tags | join: " " -%}
 
       {%- if post.link -%}
@@ -469,8 +436,6 @@ layout: default
       {%- endif -%}
 
       <div class="feed-item" data-index="{{ post_index }}" data-pubdate="{{ post.date | date: '%s' }}" data-tags="{{ tag_list }}">
-        <div class="score-dot {{ dot_class }}" title="Score: {{ post.score }}"></div>
-
         <a class="feed-title" href="{{ item_href }}"{% if item_target != "" %} target="{{ item_target }}"{% endif %}{% if item_rel != "" %} rel="{{ item_rel }}"{% endif %}>
           {{- post.title | escape | replace: '&amp;#8217;', '’' | replace: '&#8217;', '’' | replace: '&amp;rsquo;', '’' | replace: '&rsquo;', '’' -}}
         </a>

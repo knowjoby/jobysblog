@@ -73,6 +73,8 @@ Contains:
 - “Queue (next up)” collapsible section (from `_data/news_queue_public.json`)
 - Main feed grouped by date, with tag filtering, “new since last visit”, and “show older”
 
+Note: scoring still exists internally, but the UI is intentionally **not score-first**. The homepage and archives are designed for chronological reading, with queue visibility for operators.
+
 Notable knobs:
 
 - `INITIAL_LIMIT` controls how many feed items show by default (currently higher than the original).
@@ -184,4 +186,3 @@ If the homepage looks stale:
 - Add a lightweight “Queue → Publish” policy (e.g., publish from queue when no fresh candidates).
 - Add a `/health/` page that just shows “last post age” + “last run age” in one line.
 - Add per-source stats (RSS/ DDG) to the Status page if you want deeper ops visibility.
-

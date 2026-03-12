@@ -31,7 +31,6 @@ Two views:
       <th style="text-align:left;">Title</th>
       <th style="text-align:left;">Source</th>
       <th style="text-align:left;">Tags</th>
-      <th style="text-align:right;">Score</th>
     </tr>
   </thead>
   <tbody>
@@ -52,8 +51,7 @@ Two views:
     <tr class="archiveRow archiveRowPublished"
         data-title="{{ post.title | escape | replace: '&amp;#8217;', '’' | replace: '&#8217;', '’' | replace: '&amp;rsquo;', '’' | replace: '&rsquo;', '’' | downcase }}"
         data-source="{{ source | downcase }}"
-        data-tags="{{ tags | downcase }}"
-        data-score="{{ post.score | default: 0 | plus: 0 }}">
+        data-tags="{{ tags | downcase }}">
       <td style="white-space:nowrap;">{{ post.date | date: "%Y-%m-%d" }}</td>
       <td>
         <a href="{{ href }}"{% if target != "" %} target="{{ target }}"{% endif %}{% if rel != "" %} rel="{{ rel }}"{% endif %}>
@@ -70,7 +68,6 @@ Two views:
           {%- endfor -%}
         {%- endif -%}
       </td>
-      <td style="text-align:right; font-variant-numeric: tabular-nums;">{{ post.score | default: 0 }}</td>
     </tr>
   {%- endfor -%}
   </tbody>
@@ -84,7 +81,6 @@ Two views:
       <th style="text-align:left;">Title</th>
       <th style="text-align:left;">Source</th>
       <th style="text-align:left;">Tags</th>
-      <th style="text-align:right;">Score</th>
     </tr>
   </thead>
   <tbody>
@@ -101,8 +97,7 @@ Two views:
       <tr class="archiveRow archiveRowQueue"
           data-title="{{ item.title | escape | replace: '&amp;#8217;', '’' | replace: '&#8217;', '’' | replace: '&amp;rsquo;', '’' | replace: '&rsquo;', '’' | downcase }}"
           data-source="{{ item.source | default: '' | downcase }}"
-          data-tags="{{ tag_str | downcase }}"
-          data-score="{{ item.score | default: 0 | plus: 0 }}">
+          data-tags="{{ tag_str | downcase }}">
         <td style="white-space:nowrap;">{{ item.fetched_at | default: "" }}</td>
         <td>
           <a href="{{ item.url }}" target="_blank" rel="noopener">
@@ -126,11 +121,10 @@ Two views:
             {%- endfor -%}
           {%- endif -%}
         </td>
-        <td style="text-align:right; font-variant-numeric: tabular-nums;">{{ item.score | default: 0 }}</td>
       </tr>
     {%- endfor -%}
   {%- else -%}
-    <tr><td colspan="5" style="color:#888;">Queue data not available yet (wait for the next automation run).</td></tr>
+    <tr><td colspan="4" style="color:#888;">Queue data not available yet (wait for the next automation run).</td></tr>
   {%- endif -%}
   </tbody>
 </table>
