@@ -174,7 +174,9 @@ def publish_public_queue(queue: Dict[str, Any]) -> None:
     payload = {
         "updated_at_utc": datetime.now(timezone.utc).isoformat(),
         "pending_count": len(out_pending),
-        "pending": out_pending[:200],
+        # Keep large enough to include the full queue in the UI (Archives -> Queue).
+        # Jekyll reads _data/*.json at build time; keep this bounded to avoid runaway sizes.
+        "pending": out_pending[:2000],
     }
 
     PUBLIC_QUEUE_FILE.parent.mkdir(parents=True, exist_ok=True)
