@@ -21,6 +21,10 @@ An automation runs continuously (every ~30 minutes) and:
 
 No paywalls bypassed, no scraping tricks — just public headlines + links, scored and organized.
 
+**Sources**
+
+See the current RSS fallback list on the [Sources]({{ "/sources/" | relative_url }}) page.
+
 **What the dots mean**
 
 - 🟢 Score ≥ 75 — high signal, worth reading

@@ -291,7 +291,7 @@ def fetch_ddg_news(*, queries: Sequence[str], max_results_per_query: int, timeli
     return results
 
 
-RSS_FEEDS: Sequence[Tuple[str, str]] = [
+DEFAULT_RSS_FEEDS: Sequence[Tuple[str, str]] = [
     ("TechCrunch", "https://techcrunch.com/feed/"),
     ("The Verge", "https://www.theverge.com/rss/index.xml"),
     ("VentureBeat", "https://feeds.feedburner.com/venturebeat/SZYF"),
@@ -305,18 +305,41 @@ RSS_FEEDS: Sequence[Tuple[str, str]] = [
 ]
 
 
+def load_rss_sources() -> Sequence[Tuple[str, str]]:
+    """
+    Load RSS sources from _data/rss_sources.json if present, otherwise fall back.
+    Kept in _data so Jekyll can render the same list on /sources/.
+    """
+    sources_file = REPO_ROOT / "_data" / "rss_sources.json"
+    if not sources_file.exists():
+        return DEFAULT_RSS_FEEDS
+
+    try:
+        data = json.loads(sources_file.read_text())
+        feeds: List[Tuple[str, str]] = []
+        for item in data:
+            name = (item.get("name") or "").strip()
+            url = (item.get("url") or "").strip()
+            if name and url:
+                feeds.append((name, url))
+        return feeds or DEFAULT_RSS_FEEDS
+    except Exception:
+        return DEFAULT_RSS_FEEDS
+
+
 def fetch_rss_news(*, max_age_days: int = 7) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
     try:
         import feedparser  # type: ignore
     except Exception as e:
         raise RuntimeError("feedparser is required. Install with: pip install feedparser") from e
 
+    rss_feeds = load_rss_sources()
     cutoff = datetime.now(timezone.utc) - timedelta(days=max_age_days)
     results: List[Dict[str, Any]] = []
     seen: Set[str] = set()
-    stats: Dict[str, Any] = {"feeds_total": len(RSS_FEEDS), "feeds_ok": 0, "feeds_failed": 0}
+    stats: Dict[str, Any] = {"feeds_total": len(rss_feeds), "feeds_ok": 0, "feeds_failed": 0}
 
-    for source, url in RSS_FEEDS:
+    for source, url in rss_feeds:
         try:
             parsed = feedparser.parse(url)
             if getattr(parsed, "bozo", 0):

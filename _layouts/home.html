@@ -325,6 +325,18 @@ layout: default
   {%- assign feed_posts = site.posts | where_exp: "post", "post.categories contains 'ai-news'" -%}
   {%- if feed_posts.size > 0 -%}
 
+    {%- assign latest = feed_posts.first -%}
+    {%- assign now_s = site.time | date: "%s" | plus: 0 -%}
+    {%- assign latest_s = latest.date | date: "%s" | plus: 0 -%}
+    {%- assign age_s = now_s | minus: latest_s -%}
+    {%- assign stale_threshold_s = 64800 -%} {# 18 hours #}
+
+    {%- if age_s > stale_threshold_s -%}
+      <div class="new-banner" style="display:block;">
+        Feed looks stale — last post {{ latest.date | date: "%b %-d, %Y %H:%M" }}. Check <a href="{{ '/logs/' | relative_url }}">Status</a> or <a href="{{ '/now/' | relative_url }}">Now</a>.
+      </div>
+    {%- endif -%}
+
     <div class="new-banner" id="new-banner"></div>
 
     <div class="filter-bar" id="filter-bar">
