@@ -187,5 +187,76 @@
         ]
       }
     ]
+  },
+  {
+    "ran_at": "2026-03-12 20:49:51 IST",
+    "triggered_by": "Manual (local)",
+    "candidates_found": 839,
+    "posts_created": 5,
+    "queued": 834,
+    "feeds": {
+      "ddg": {
+        "queries": 3,
+        "raw": 0,
+        "candidates": 839
+      },
+      "rss": {
+        "raw": 1780,
+        "feeds_total": 10,
+        "feeds_ok": 10,
+        "feeds_failed": 0,
+        "candidates": 839
+      }
+    },
+    "posts": [
+      {
+        "title": "Nvidia Will Spend $26 Billion to Build Open-Weight AI Models, Filings Show",
+        "file": "_posts/2026-03-12-nvidia-will-spend-26-billion-to-build-open-weight-ai-models-filings-sh.md",
+        "score": 70,
+        "tags": [
+          "openai",
+          "anthropic",
+          "nvidia",
+          "deepseek"
+        ]
+      },
+      {
+        "title": "Microsoft\u2019s Copilot Health can connect to your medical records and wearables",
+        "file": "_posts/2026-03-12-microsofts-copilot-health-can-connect-to-your-medical-records-and-wear.md",
+        "score": 63,
+        "tags": [
+          "microsoft",
+          "coding"
+        ]
+      },
+      {
+        "title": "Anthropic gives Claude shared context across Microsoft Excel and PowerPoint, enabling reusable workflows in multiple applications",
+        "file": "_posts/2026-03-12-anthropic-gives-claude-shared-context-across-microsoft-excel-and-power.md",
+        "score": 62,
+        "tags": [
+          "anthropic",
+          "microsoft",
+          "coding"
+        ]
+      },
+      {
+        "title": "Bespoke AI models are the next big thing in filmmaking",
+        "file": "_posts/2026-03-12-bespoke-ai-models-are-the-next-big-thing-in-filmmaking.md",
+        "score": 61,
+        "tags": [
+          "openai",
+          "google"
+        ]
+      },
+      {
+        "title": "Microsoft&#8217;s head of experiences and devices is retiring, triggering a shakeup",
+        "file": "_posts/2026-03-12-microsoft8217s-head-of-experiences-and-devices-is-retiring-triggering.md",
+        "score": 57,
+        "tags": [
+          "microsoft",
+          "coding"
+        ]
+      }
+    ]
   }
 ]

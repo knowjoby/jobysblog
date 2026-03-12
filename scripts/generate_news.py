@@ -247,10 +247,19 @@ def score_story(*, title: str, snippet: str, companies: Sequence[str], topics: S
 
 
 def fetch_ddg_news(*, queries: Sequence[str], max_results_per_query: int, timelimit: str) -> List[Dict[str, Any]]:
+    DDGS = None
+    # duckduckgo-search was renamed to ddgs; support both.
     try:
-        from duckduckgo_search import DDGS
-    except Exception as e:
-        raise RuntimeError("duckduckgo-search is required. Install with: pip install duckduckgo-search") from e
+        from ddgs import DDGS as _DDGS  # type: ignore
+
+        DDGS = _DDGS
+    except Exception:
+        try:
+            from duckduckgo_search import DDGS as _DDGS  # type: ignore
+
+            DDGS = _DDGS
+        except Exception as e:
+            raise RuntimeError("DDG client missing. Install with: pip install ddgs duckduckgo-search") from e
 
     results: List[Dict[str, Any]] = []
     seen: Set[str] = set()
@@ -280,6 +289,79 @@ def fetch_ddg_news(*, queries: Sequence[str], max_results_per_query: int, timeli
                 continue
 
     return results
+
+
+RSS_FEEDS: Sequence[Tuple[str, str]] = [
+    ("TechCrunch", "https://techcrunch.com/feed/"),
+    ("The Verge", "https://www.theverge.com/rss/index.xml"),
+    ("VentureBeat", "https://feeds.feedburner.com/venturebeat/SZYF"),
+    ("Ars Technica", "https://feeds.arstechnica.com/arstechnica/index"),
+    ("Wired", "https://www.wired.com/feed/rss"),
+    ("MIT Tech Review", "https://www.technologyreview.com/feed/"),
+    ("OpenAI", "https://openai.com/news/rss.xml"),
+    ("Google AI", "https://blog.google/technology/ai/rss/"),
+    ("Microsoft AI", "https://blogs.microsoft.com/ai/feed/"),
+    ("Hugging Face", "https://huggingface.co/blog/feed.xml"),
+]
+
+
+def fetch_rss_news(*, max_age_days: int = 7) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+    try:
+        import feedparser  # type: ignore
+    except Exception as e:
+        raise RuntimeError("feedparser is required. Install with: pip install feedparser") from e
+
+    cutoff = datetime.now(timezone.utc) - timedelta(days=max_age_days)
+    results: List[Dict[str, Any]] = []
+    seen: Set[str] = set()
+    stats: Dict[str, Any] = {"feeds_total": len(RSS_FEEDS), "feeds_ok": 0, "feeds_failed": 0}
+
+    for source, url in RSS_FEEDS:
+        try:
+            parsed = feedparser.parse(url)
+            if getattr(parsed, "bozo", 0):
+                # bozo=1 indicates a parse issue, but entries may still exist.
+                pass
+
+            entries = getattr(parsed, "entries", []) or []
+            if entries:
+                stats["feeds_ok"] += 1
+            else:
+                stats["feeds_failed"] += 1
+
+            for entry in entries:
+                title = (getattr(entry, "title", "") or "").strip()
+                link = normalize_url((getattr(entry, "link", "") or "").strip())
+                if not title or not link or link in seen:
+                    continue
+
+                summary = (getattr(entry, "summary", "") or "").strip()
+
+                published = (
+                    getattr(entry, "published", "")
+                    or getattr(entry, "updated", "")
+                    or getattr(entry, "pubDate", "")
+                    or ""
+                )
+                published_at = parse_any_date(str(published))
+                if published_at and published_at < cutoff:
+                    continue
+
+                seen.add(link)
+                results.append(
+                    {
+                        "title": title,
+                        "url": link,
+                        "source": source,
+                        "date": published_at.isoformat() if published_at else "",
+                        "snippet": summary[:300],
+                    }
+                )
+        except Exception:
+            stats["feeds_failed"] += 1
+            continue
+
+    return results, stats
 
 
 def ensure_unique_filename(date_prefix: str, base_slug: str, url: str) -> Path:
@@ -390,7 +472,26 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         if title:
             known_titles.append(title)
 
-    raw = fetch_ddg_news(queries=DEFAULT_SEARCH_QUERIES, max_results_per_query=args.max_results_per_query, timelimit=args.timelimit)
+    raw: List[Dict[str, Any]] = []
+    feed_stats: Dict[str, Any] = {"ddg": {}, "rss": {}}
+
+    try:
+        raw = fetch_ddg_news(
+            queries=DEFAULT_SEARCH_QUERIES,
+            max_results_per_query=args.max_results_per_query,
+            timelimit=args.timelimit,
+        )
+        feed_stats["ddg"] = {"queries": len(DEFAULT_SEARCH_QUERIES), "raw": len(raw)}
+    except Exception as e:
+        feed_stats["ddg"] = {"error": str(e)}
+
+    # GitHub-hosted runners sometimes get blocked by DDG; RSS is the reliable fallback.
+    if not raw:
+        try:
+            raw, rss_stats = fetch_rss_news(max_age_days=7)
+            feed_stats["rss"] = {"raw": len(raw), **rss_stats}
+        except Exception as e:
+            feed_stats["rss"] = {"error": str(e)}
 
     candidates: List[Dict[str, Any]] = []
     for r in raw:
@@ -510,7 +611,13 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     queue["posted"] = posted
     queue["daily_usage"] = daily_usage
 
-    feed_stats = {"ddg": {"queries": len(DEFAULT_SEARCH_QUERIES), "raw": len(raw), "candidates": len(candidates)}}
+    feed_stats.setdefault("ddg", {})
+    feed_stats.setdefault("rss", {})
+    # Preserve earlier feed_stats and add candidates count.
+    if "ddg" in feed_stats and isinstance(feed_stats["ddg"], dict):
+        feed_stats["ddg"]["candidates"] = len(candidates)
+    if "rss" in feed_stats and isinstance(feed_stats["rss"], dict):
+        feed_stats["rss"]["candidates"] = len(candidates)
     queued_after = len(pending)
     queued_added = max(0, queued_after - queued_count_before)
 

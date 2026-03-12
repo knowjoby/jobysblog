@@ -6,3 +6,4 @@ vendor/
 .bundle/
 Gemfile.lock
 logs/
+.DS_Store
