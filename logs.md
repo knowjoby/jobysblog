@@ -1,58 +1,79 @@
 ---
 layout: page
-title: System Logs
+title: Status
 permalink: /logs/
 ---
 
-# 📈 AI News System Logs
+# Status
 
-## Today's Run: {{ site.time | date: '%B %d, %Y' }}
+This page is the operational dashboard for the automated AI news feed.
 
-### 📊 Performance Summary
+## Automation
 
-| Metric | Value |
-|--------|-------|
-| **Total Sources** | 15 |
-| **Articles Fetched** | 127 |
-| **Filtered (Relevant)** | 42 |
-| **Filter Rate** | 33% |
-| **Breaking News Alerts** | 3 |
-| **Last Successful Run** | {{ site.time | date: '%H:%M:%S' }} |
+- **Smart fetch (every 30 minutes):** finds + posts new AI news (commits to `main`)
+- **Deploy:** GitHub Pages rebuilds automatically on every push to `main`
 
-### 🏢 Company Coverage Today
+## Latest run
 
-| Company | Articles | % of Total | Top Sources |
-|---------|----------|------------|-------------|
-| OpenAI | 15 | 36% | TechCrunch (4), Import AI (3) |
-| Anthropic | 8 | 19% | Anthropic Blog (3), Wired (2) |
-| Google | 10 | 24% | Google AI Blog (4), The Algorithm (2) |
-| DeepSeek | 5 | 12% | TechCrunch (2), VentureBeat (2) |
-| Microsoft | 3 | 7% | VentureBeat (2), Wired (1) |
-| Meta | 1 | 2% | TechCrunch (1) |
+{% assign runs = site.data.run_log | default: "" %}
+{% if runs and runs.size > 0 %}
+  {% assign last = runs | last %}
 
-### 📡 Source Health Report
+**Ran at:** {{ last.ran_at | default: "unknown" }}  
+**Triggered by:** {{ last.triggered_by | default: "unknown" }}  
+**Candidates found:** {{ last.candidates_found | default: 0 }}  
+**Posts created:** {{ last.posts_created | default: 0 }}  
+**Queued:** {{ last.queued | default: 0 }}
 
-| Source | Status | Articles | Relevant | Filter % | Last Fetch | Errors |
-|--------|--------|----------|----------|----------|------------|--------|
-| Import AI | ✅ Healthy | 5 | 4 | 80% | 10:30 AM | 0 |
-| TechCrunch AI | ✅ Healthy | 25 | 10 | 40% | 10:15 AM | 0 |
-| OpenAI Blog | ✅ Healthy | 3 | 3 | 100% | 9:00 AM | 0 |
-| Anthropic News | ⚠️ Degraded | 2 | 2 | 100% | 8:00 AM | 2 retries |
-| Random Substack | ❌ Failed | 0 | 0 | 0% | Never | Connection timeout |
+{% if last.feeds %}
+### Feeds
 
-### 🚨 Breaking News Log
+{% if last.feeds.ddg %}
+- **DDG:** {{ last.feeds.ddg.raw | default: "?" }} raw → {{ last.feeds.ddg.candidates | default: "?" }} candidates
+{% endif %}
+{% if last.feeds.rss %}
+- **RSS:** {{ last.feeds.rss.raw | default: "?" }} raw → {{ last.feeds.rss.candidates | default: "?" }} candidates (ok: {{ last.feeds.rss.feeds_ok | default: "?" }}, failed: {{ last.feeds.rss.feeds_failed | default: "?" }})
+{% endif %}
+{% endif %}
 
-| Time | Title | Company | Source |
-|------|-------|---------|--------|
-| 09:32 AM | "OpenAI announces GPT-5 with 1M context" | OpenAI | TechCrunch |
-| 11:15 AM | "Google unveils Gemini Ultra details" | Google | Google AI Blog |
-| 02:45 PM | "Anthropic secures $2B funding" | Anthropic | Reuters |
+{% if last.posts and last.posts.size > 0 %}
+### Posts created
 
-### ⚙️ System Performance
+{% for p in last.posts %}
+- {% if p.file %}[{{ p.title }}]({{ p.file | relative_url }}){% else %}{{ p.title }}{% endif %} (score: {{ p.score | default: "?" }})
+{% endfor %}
+{% else %}
+### Posts created
 
-- **Average fetch time**: 3.2 seconds per source
-- **Cache hit rate**: 67%
-- **GitHub Actions minutes used**: 12/2000
-- **Next scheduled run**: {{ site.time | date: '%s' | plus: 1800 | date: '%I:%M %p' }}
+No posts created on the latest run.
+{% endif %}
 
-### 📝 Raw Log Output
+## Recent run history
+
+<table>
+  <thead>
+    <tr>
+      <th>Ran at</th>
+      <th>Trigger</th>
+      <th>Candidates</th>
+      <th>Posts</th>
+      <th>Queued</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% assign recent = runs | reverse %}
+  {% for r in recent limit: 20 %}
+    <tr>
+      <td>{{ r.ran_at | default: "unknown" }}</td>
+      <td>{{ r.triggered_by | default: "unknown" }}</td>
+      <td>{{ r.candidates_found | default: 0 }}</td>
+      <td>{{ r.posts_created | default: 0 }}</td>
+      <td>{{ r.queued | default: 0 }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% else %}
+No run logs found. The automation hasn’t written `_data/run_log.json` yet.
+{% endif %}

@@ -11,7 +11,15 @@ Releases, product launches, controversies, safety incidents, funding rounds, and
 
 **How it works**
 
-A script runs daily, pulls from 13 RSS feeds across tech media (TechCrunch, The Verge, VentureBeat, Ars Technica, Wired, MIT Technology Review, CNBC), company blogs (OpenAI, Google AI, Microsoft AI, Hugging Face), and AI-specialist newsletters (Import AI, Platformer), scores each story by recency, company importance, and topic weight, then posts the top picks here as direct links. Duplicate stories from multiple outlets are collapsed to one. No summaries — just the link, the source, and tags to filter by later.
+An automation runs continuously (every ~30 minutes) and:
+
+1. Fetches fresh AI news (DDG News when available; RSS fallback when DDG is blocked on runners)
+2. Filters for AI relevance (company + topic keyword rules)
+3. Scores stories (0–100) based on recency + importance
+4. Publishes the top items as posts on this site (usually outbound links)
+5. Commits to `main`, which triggers an automatic GitHub Pages deploy
+
+No paywalls bypassed, no scraping tricks — just public headlines + links, scored and organized.
 
 **What the dots mean**
 
@@ -25,4 +33,4 @@ Each post is auto-tagged by company (`anthropic`, `openai`, `google` …) and to
 
 **Logs**
 
-The [Logs](/blog/logs/) page shows every run — when it fired, whether it was scheduled or triggered manually, and what got posted.
+The [Status]({{ "/logs/" | relative_url }}) page shows the latest run + recent run history.
