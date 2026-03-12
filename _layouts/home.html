@@ -325,6 +325,56 @@ layout: default
   {%- assign feed_posts = site.posts | where_exp: "post", "post.categories contains 'ai-news'" -%}
   {%- if feed_posts.size > 0 -%}
 
+    {%- assign now_ts = site.time | date: "%s" | plus: 0 -%}
+    {%- assign day_seconds = 86400 -%}
+    {%- assign brief_window_s = 259200 -%} {# 72 hours #}
+    {%- assign brief_posts = "" | split: "" -%}
+
+    {%- for post in feed_posts -%}
+      {%- assign post_ts = post.date | date: "%s" | plus: 0 -%}
+      {%- assign age = now_ts | minus: post_ts -%}
+      {%- if age >= 0 and age < brief_window_s -%}
+        {%- assign brief_posts = brief_posts | push: post -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- assign brief_sorted = brief_posts | sort: "score" | reverse -%}
+
+    <div style="margin: 14px 0 18px; padding: 12px; border: 1px solid var(--border-light); border-radius: 10px; background: white;">
+      <div style="display:flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap;">
+        <strong style="font-size: 14px;">Briefing (top 5, last 72h)</strong>
+        <span style="font-size: 12px; color: var(--text-light);">Ops: <a href="{{ '/logs/' | relative_url }}">Status</a> · <a href="{{ '/archives/' | relative_url }}">Archives</a></span>
+      </div>
+
+      {%- if brief_sorted.size == 0 -%}
+        <div style="margin-top: 10px; color: var(--text-light); font-size: 13px;">No recent posts in the last 72 hours.</div>
+      {%- else -%}
+        <ol style="margin: 10px 0 0; padding-left: 18px;">
+          {%- for post in brief_sorted limit: 5 -%}
+            {%- if post.link -%}
+              {%- assign href = post.link -%}
+              {%- assign target = "_blank" -%}
+              {%- assign rel = "noopener" -%}
+              {%- assign arrow = "↗" -%}
+            {%- else -%}
+              {%- assign href = post.url | relative_url -%}
+              {%- assign target = "" -%}
+              {%- assign rel = "" -%}
+              {%- assign arrow = "→" -%}
+            {%- endif -%}
+
+            <li style="margin: 8px 0;">
+              <a href="{{ href }}"{% if target != "" %} target="{{ target }}"{% endif %}{% if rel != "" %} rel="{{ rel }}"{% endif %}>{{ post.title | escape }}</a>
+              <span style="color: var(--text-light); font-size: 12px;">{{ arrow }} · {{ post.source | default: "post" }} · {{ post.date | date: "%b %-d" }}</span>
+              {%- if post.score -%}
+                <span style="margin-left: 6px; font-size: 12px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border-light); background: var(--bg-light);">score {{ post.score }}</span>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ol>
+      {%- endif -%}
+    </div>
+
     {%- assign latest = feed_posts.first -%}
     {%- assign now_s = site.time | date: "%s" | plus: 0 -%}
     {%- assign latest_s = latest.date | date: "%s" | plus: 0 -%}

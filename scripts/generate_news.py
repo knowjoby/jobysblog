@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import html
 import json
 import os
 import re
@@ -270,7 +271,7 @@ def fetch_ddg_news(*, queries: Sequence[str], max_results_per_query: int, timeli
                 items = ddgs.news(keywords=query, max_results=max_results_per_query, timelimit=timelimit)
                 for r in items:
                     url = normalize_url(r.get("url", ""))
-                    title = (r.get("title", "") or "").strip()
+                    title = html.unescape((r.get("title", "") or "").strip())
                     if not url or not title:
                         continue
                     if url in seen:
@@ -282,7 +283,7 @@ def fetch_ddg_news(*, queries: Sequence[str], max_results_per_query: int, timeli
                             "url": url,
                             "source": (r.get("source", "") or "").strip(),
                             "date": (r.get("date", "") or "").strip(),
-                            "snippet": (r.get("body", "") or "").strip(),
+                            "snippet": html.unescape((r.get("body", "") or "").strip()),
                         }
                     )
             except Exception:
@@ -353,12 +354,12 @@ def fetch_rss_news(*, max_age_days: int = 7) -> Tuple[List[Dict[str, Any]], Dict
                 stats["feeds_failed"] += 1
 
             for entry in entries:
-                title = (getattr(entry, "title", "") or "").strip()
+                title = html.unescape((getattr(entry, "title", "") or "").strip())
                 link = normalize_url((getattr(entry, "link", "") or "").strip())
                 if not title or not link or link in seen:
                     continue
 
-                summary = (getattr(entry, "summary", "") or "").strip()
+                summary = html.unescape((getattr(entry, "summary", "") or "").strip())
 
                 published = (
                     getattr(entry, "published", "")

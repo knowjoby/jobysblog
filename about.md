@@ -23,7 +23,18 @@ No paywalls bypassed, no scraping tricks — just public headlines + links, scor
 
 **Sources**
 
-See the current RSS fallback list on the [Sources]({{ "/sources/" | relative_url }}) page.
+RSS fallback sources:
+
+{% assign sources = site.data.rss_sources | default: "" %}
+{% if sources and sources.size > 0 %}
+<ul>
+{% for s in sources %}
+  <li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.name }}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+(No RSS sources file found.)
+{% endif %}
 
 **What the dots mean**
 

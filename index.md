@@ -1,4 +1,4 @@
 ---
 layout: home
-title: AI News Feed
+title: Now
 ---
