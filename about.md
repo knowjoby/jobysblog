@@ -9,17 +9,25 @@ This is an automated AI news feed — a personal linklog tracking what's happeni
 
 Releases, product launches, controversies, safety incidents, funding rounds, and anything notable from companies like Anthropic, OpenAI, Google DeepMind, Microsoft, Meta, xAI, and others building AI models.
 
+**How to use it (daily)**
+
+- Start on the homepage for the latest posts, grouped by day
+- Use search + quick filters (OpenAI / Anthropic / Google / Microsoft / NVIDIA) to skim what matters fast
+- Open **Read more** for extra links not yet published (a backlog, deduped against posted items)
+- Use [Archives]({{ "/archives/" | relative_url }}) to browse everything with search, tags, and pagination
+- Check [Changelog]({{ "/changelog/" | relative_url }}) for what changed
+
 **How it works**
 
 An automation runs continuously (every ~30 minutes) and:
 
 1. Fetches fresh AI news (DDG News when available; RSS fallback when DDG is blocked on runners)
 2. Filters for AI relevance (company + topic keyword rules)
-3. Scores stories (0–100) based on recency + importance
-4. Publishes the top items as posts on this site (usually outbound links)
+3. Ranks stories internally (recency + importance)
+4. Publishes selected items as posts on this site (usually outbound links)
 5. Commits to `main`, which triggers an automatic GitHub Pages deploy
 
-No paywalls bypassed, no scraping tricks — just public headlines + links, scored and organized.
+No paywalls bypassed, no scraping tricks — just public headlines + links.
 
 **Sources**
 
@@ -35,12 +43,6 @@ RSS fallback sources:
 {% else %}
 (No RSS sources file found.)
 {% endif %}
-
-**What the dots mean**
-
-- 🟢 Score ≥ 75 — high signal, worth reading
-- 🟠 Score ≥ 50 — decent story
-- ⚫ Below 50 — minor or background noise
 
 **Tags**
 
