@@ -399,10 +399,10 @@ layout: default
 	  }
 	</style>
 
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+	<div class="home">
+	  {%- if page.title and page.title != site.title -%}
+	    <h1 class="page-heading">{{ page.title }}</h1>
+	  {%- endif -%}
 
   {{ content }}
 
