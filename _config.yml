@@ -25,6 +25,7 @@ header_pages:
   - about.md
   - logs.md
   - archives.md
+  - changelog.md
 
 # Sass/SCSS settings
 sass:

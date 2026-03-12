@@ -33,6 +33,7 @@ from scripts.config import detect_companies, detect_topics, get_company_tier
 POSTS_DIR = REPO_ROOT / "_posts"
 QUEUE_FILE = REPO_ROOT / "data" / "news_queue.json"
 RUN_LOG_FILE = REPO_ROOT / "_data" / "run_log.json"
+PUBLIC_QUEUE_FILE = REPO_ROOT / "_data" / "news_queue_public.json"
 
 
 DEFAULT_SEARCH_QUERIES = [
@@ -131,6 +132,49 @@ def save_queue(queue: Dict[str, Any]) -> None:
     QUEUE_FILE.parent.mkdir(parents=True, exist_ok=True)
     QUEUE_FILE.write_text(json.dumps(queue, indent=2, sort_keys=False))
 
+def publish_public_queue(queue: Dict[str, Any]) -> None:
+    """
+    Publish a sanitized, deduplicated view of the queue for the UI.
+    GitHub Pages can read _data/*.json but not arbitrary /data files.
+    """
+    posted = list(queue.get("posted", []) or [])
+    pending = list(queue.get("pending", []) or [])
+
+    def _norm(u: str) -> str:
+        return normalize_url(u or "")
+
+    posted_urls: Set[str] = set(_norm(p.get("url", "")) for p in posted if p.get("url"))
+    out_pending: List[Dict[str, Any]] = []
+    seen: Set[str] = set()
+
+    for item in pending:
+        url = _norm(item.get("url", ""))
+        if not url or url in posted_urls or url in seen:
+            continue
+        seen.add(url)
+        out_pending.append(
+            {
+                "title": item.get("title", ""),
+                "url": url,
+                "score": int(item.get("score", 0) or 0),
+                "fetched_at": item.get("fetched_at", ""),
+                "source": item.get("source", ""),
+                "companies": item.get("companies") or [],
+                "topics": item.get("topics") or [],
+            }
+        )
+
+    out_pending = sorted(out_pending, key=lambda x: int(x.get("score", 0) or 0), reverse=True)
+
+    payload = {
+        "updated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "pending_count": len(out_pending),
+        "pending": out_pending[:200],
+    }
+
+    PUBLIC_QUEUE_FILE.parent.mkdir(parents=True, exist_ok=True)
+    PUBLIC_QUEUE_FILE.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+
 
 def load_run_log() -> List[Dict[str, Any]]:
     if not RUN_LOG_FILE.exists():
@@ -143,7 +187,7 @@ def load_run_log() -> List[Dict[str, Any]]:
 
 def save_run_log(entries: List[Dict[str, Any]]) -> None:
     RUN_LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
-    RUN_LOG_FILE.write_text(json.dumps(entries[-50:], indent=2))
+    RUN_LOG_FILE.write_text(json.dumps(entries[-50:], indent=2, ensure_ascii=False))
 
 
 def write_run_log(*, candidates_found: int, posts_written: List[Dict[str, Any]], queued_count: int, feed_stats: Dict[str, Any]) -> None:
@@ -484,6 +528,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             write_run_log(candidates_found=0, posts_written=[], queued_count=len(pending), feed_stats={"ddg": {"skipped": True}})
             queue["daily_usage"] = daily_usage
             save_queue(queue)
+            publish_public_queue(queue)
         return 0
 
     known_urls: Set[str] = set()
@@ -616,6 +661,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                 "url": c["url"],
                 "score": int(c["score"]),
                 "fetched_at": today,
+                "source": c.get("source", ""),
                 "companies": list(c["companies"]),
                 "topics": list(c["topics"]),
                 "company": (list(c["companies"]) or [""])[0],
@@ -647,6 +693,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     if not args.dry_run:
         save_queue(queue)
+        publish_public_queue(queue)
         write_run_log(candidates_found=len(candidates), posts_written=posts_written, queued_count=queued_added, feed_stats=feed_stats)
 
     return 0

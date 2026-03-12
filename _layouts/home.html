@@ -375,6 +375,37 @@ layout: default
       {%- endif -%}
     </div>
 
+    {%- assign q = site.data.news_queue_public -%}
+    {%- if q and q.pending and q.pending.size > 0 -%}
+      <details style="margin: 0 0 18px; padding: 10px 12px; border: 1px solid var(--border-light); border-radius: 10px; background: white;">
+        <summary style="cursor: pointer; font-weight: 600;">
+          Queue ({{ q.pending_count | default: q.pending.size }}) — next up
+          <span style="color: var(--text-light); font-weight: 400; font-size: 12px;">· updated {{ q.updated_at_utc | default: "" }}</span>
+        </summary>
+        <div style="margin-top: 10px; color: var(--text-secondary); font-size: 13px;">
+          These are scored candidates not yet published (deduped against posted items).
+        </div>
+        <ol style="margin: 10px 0 0; padding-left: 18px;">
+          {%- for item in q.pending limit: 20 -%}
+            {%- assign tags = item.companies | default: "" -%}
+            <li style="margin: 8px 0;">
+              <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title | escape | replace: '&amp;#8217;', '’' | replace: '&#8217;', '’' | replace: '&amp;rsquo;', '’' | replace: '&rsquo;', '’' }}</a>
+              <span style="color: var(--text-light); font-size: 12px;">↗ · {{ item.source | default: "source" }} · score {{ item.score | default: 0 }}</span>
+              {%- if item.companies and item.companies.size > 0 -%}
+                <span style="color: var(--text-light); font-size: 12px;">· {{ item.companies | join: ", " }}</span>
+              {%- endif -%}
+              {%- if item.topics and item.topics.size > 0 -%}
+                <span style="color: var(--text-light); font-size: 12px;">· {{ item.topics | join: ", " }}</span>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ol>
+        <div style="margin-top: 8px; font-size: 12px; color: var(--text-light);">
+          See everything in <a href="{{ '/archives/' | relative_url }}">Archives</a>.
+        </div>
+      </details>
+    {%- endif -%}
+
     {%- assign latest = feed_posts.first -%}
     {%- assign now_s = site.time | date: "%s" | plus: 0 -%}
     {%- assign latest_s = latest.date | date: "%s" | plus: 0 -%}
@@ -471,7 +502,7 @@ layout: default
 </div>
 
 <script>
-  var INITIAL_LIMIT = 50;
+  var INITIAL_LIMIT = 120;
   var currentFilter = null;
 
   // --- Pagination: hide older posts beyond INITIAL_LIMIT ---

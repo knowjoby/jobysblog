@@ -1,0 +1,2414 @@
+{
+  "updated_at_utc": "2026-03-12T15:46:41.500585+00:00",
+  "pending_count": 836,
+  "pending": [
+    {
+      "title": "AI power concentrated in too few hands, warns Anthropic CEO Dario Amodei",
+      "url": "https://www.livemint.com/technology/tech-news/ai-power-concentrated-in-too-few-hands-warns-anthropic-ceo-dario-amodei-in-interview-with-nikhil-kamath-11771932098444.html",
+      "score": 62,
+      "fetched_at": "2026-03-01",
+      "source": "",
+      "companies": [],
+      "topics": []
+    },
+    {
+      "title": "Florida 'AI Bill of Rights' enters free speech debate",
+      "url": "https://www.usatoday.com/story/news/state/2026/02/25/child-safety-vs-free-speech-rights-at-issue-in-florida-ai-bill/88669010007/",
+      "score": 57,
+      "fetched_at": "2026-03-01",
+      "source": "",
+      "companies": [],
+      "topics": []
+    },
+    {
+      "title": "Using GPT-4o reasoning to transform cancer care",
+      "url": "https://openai.com/index/color-health",
+      "score": 55,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai",
+        "microsoft"
+      ],
+      "topics": [
+        "reasoning",
+        "coding"
+      ]
+    },
+    {
+      "title": "Welcome the NVIDIA Llama Nemotron Nano VLM to Hugging Face Hub",
+      "url": "https://huggingface.co/blog/nvidia/llama-nemotron-nano-vl",
+      "score": 52,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "meta",
+        "nvidia",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Inside OpenAI’s Race to Catch Up to Claude Code",
+      "url": "https://www.wired.com/story/openai-codex-race-claude-code/",
+      "score": 50,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai",
+        "anthropic"
+      ],
+      "topics": [
+        "coding"
+      ]
+    },
+    {
+      "title": "Anthropic doesn’t trust the Pentagon, and neither should you",
+      "url": "https://www.theverge.com/podcast/893370/anthropic-pentagon-ai-mass-surveillance-nsa-privacy-spying",
+      "score": 49,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Introducing the Stateful Runtime Environment for Agents in Amazon Bedrock",
+      "url": "https://openai.com/index/introducing-the-stateful-runtime-environment-for-agents-in-amazon-bedrock",
+      "score": 48,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai",
+        "amazon"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI and Anthropic share findings from a joint safety evaluation",
+      "url": "https://openai.com/index/openai-anthropic-safety-evaluation",
+      "score": 48,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai",
+        "anthropic"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Microsoft invests in and partners with OpenAI to support us building beneficial AGI",
+      "url": "https://openai.com/index/microsoft-invests-in-and-partners-with-openai",
+      "score": 48,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai",
+        "microsoft"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Deploy Meta Llama 3.1 405B on Google Cloud Vertex AI",
+      "url": "https://huggingface.co/blog/llama31-on-vertex-ai",
+      "score": 48,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "google",
+        "meta"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Netomi’s lessons for scaling agentic systems into the enterprise",
+      "url": "https://openai.com/index/netomi",
+      "score": 45,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic",
+        "reasoning",
+        "regulation"
+      ]
+    },
+    {
+      "title": "Pioneering an AI clinical copilot with Penda Health",
+      "url": "https://openai.com/index/ai-clinical-copilot-penda-health",
+      "score": 44,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai",
+        "microsoft"
+      ],
+      "topics": [
+        "coding"
+      ]
+    },
+    {
+      "title": "Manufact raises $6.3M as MCP becomes the ‘USB-C for AI’ powering ChatGPT and Claude apps",
+      "url": "https://venturebeat.com/infrastructure/manufact-raises-usd6-3m-as-mcp-becomes-the-usb-c-for-ai-powering-chatgpt-and",
+      "score": 42,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai",
+        "anthropic"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Meta Is Developing 4 New Chips to Power Its AI and Recommendation Systems",
+      "url": "https://www.wired.com/story/meta-unveils-four-new-chips-to-power-its-ai-and-recommendation-systems/",
+      "score": 42,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "meta",
+        "nvidia"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Introducing Stargate UK",
+      "url": "https://openai.com/index/introducing-stargate-uk",
+      "score": 42,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai",
+        "nvidia"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Procgen and MineRL Competitions",
+      "url": "https://openai.com/index/procgen-minerl-competitions",
+      "score": 42,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai",
+        "google"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI Five defeats Dota 2 world champions",
+      "url": "https://openai.com/index/openai-five-defeats-dota-2-world-champions",
+      "score": 42,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai",
+        "google"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Llama 2 on Amazon SageMaker a Benchmark",
+      "url": "https://huggingface.co/blog/llama-sagemaker-benchmark",
+      "score": 42,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "meta",
+        "amazon"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Google's Gemini Embedding 2 arrives with native multimodal support to cut costs and speed up your enterprise data stack",
+      "url": "https://venturebeat.com/data/googles-gemini-embedding-2-arrives-with-native-multimodal-support-to-cut",
+      "score": 41,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "google"
+      ],
+      "topics": [
+        "multimodal"
+      ]
+    },
+    {
+      "title": "Introducing Aardvark: OpenAI’s agentic security researcher",
+      "url": "https://openai.com/index/introducing-aardvark",
+      "score": 41,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "OpenAI’s letter to Governor Newsom on harmonized regulation",
+      "url": "https://openai.com/global-affairs/letter-to-governor-newsom-on-harmonized-regulation",
+      "score": 41,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "regulation"
+      ]
+    },
+    {
+      "title": "NVIDIA Releases 6 Million Multi-Lingual Reasoning Dataset",
+      "url": "https://huggingface.co/blog/nvidia/multilingual-reasoning-v1",
+      "score": 41,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [
+        "reasoning"
+      ]
+    },
+    {
+      "title": "Solving complex problems with OpenAI o1 models",
+      "url": "https://openai.com/business/solving-complex-problems-with-openai-o1-models",
+      "score": 40,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "reasoning",
+        "coding"
+      ]
+    },
+    {
+      "title": "Meta-learning for wrestling",
+      "url": "https://openai.com/index/meta-learning-for-wrestling",
+      "score": 40,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "meta"
+      ],
+      "topics": [
+        "agentic",
+        "robotics"
+      ]
+    },
+    {
+      "title": "Introducing the Hugging Face Embedding Container for Amazon SageMaker",
+      "url": "https://huggingface.co/blog/sagemaker-huggingface-embedding",
+      "score": 40,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "amazon",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "The Partnership: Amazon SageMaker and Hugging Face",
+      "url": "https://huggingface.co/blog/the-partnership-amazon-sagemaker-and-hugging-face",
+      "score": 40,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "amazon",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Dyson’s new stain-spotting AI robovac is now available",
+      "url": "https://www.theverge.com/tech/893133/dyson-spot-scrub-ai-robot-vacuum-mop-lasers-multifunction-dock-availability-price",
+      "score": 39,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [],
+      "topics": [
+        "robotics"
+      ]
+    },
+    {
+      "title": "Nvidia's new open weights Nemotron 3 super combines three different architectures to beat gpt-oss and Qwen in throughput",
+      "url": "https://venturebeat.com/technology/nvidias-new-open-weights-nemotron-3-super-combines-three-different",
+      "score": 38,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "Pacific Northwest National Laboratory and OpenAI partner to accelerate federal permitting",
+      "url": "https://openai.com/index/pacific-northwest-national-laboratory",
+      "score": 38,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "coding"
+      ]
+    },
+    {
+      "title": "OpenAI announces Frontier Alliance Partners",
+      "url": "https://openai.com/index/frontier-alliance-partners",
+      "score": 38,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "Introducing OpenAI Frontier",
+      "url": "https://openai.com/index/introducing-openai-frontier",
+      "score": 38,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "regulation"
+      ]
+    },
+    {
+      "title": "OpenAI announces strategic collaboration with Japan’s Digital Agency",
+      "url": "https://openai.com/global-affairs/strategic-collaboration-with-japan-digital-agency",
+      "score": 38,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "regulation"
+      ]
+    },
+    {
+      "title": "Review completed & Altman, Brockman to continue to lead OpenAI",
+      "url": "https://openai.com/index/review-completed-altman-brockman-to-continue-to-lead-openai",
+      "score": 38,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "regulation"
+      ]
+    },
+    {
+      "title": "We Got Claude to Build CUDA Kernels and teach open models!",
+      "url": "https://huggingface.co/blog/upskill",
+      "score": 36,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "anthropic",
+        "nvidia"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Run a Chatgpt-like Chatbot on a Single GPU with ROCm",
+      "url": "https://huggingface.co/blog/chatbot-amd-gpu",
+      "score": 36,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai",
+        "nvidia"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Reasoning models struggle to control their chains of thought, and that’s good",
+      "url": "https://openai.com/index/reasoning-models-chain-of-thought-controllability",
+      "score": 35,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "reasoning"
+      ]
+    },
+    {
+      "title": "OpenAI co-founds Agentic AI Foundation, donates AGENTS.md",
+      "url": "https://openai.com/index/agentic-ai-foundation",
+      "score": 35,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "Deliberative alignment: reasoning enables safer language models",
+      "url": "https://openai.com/index/deliberative-alignment",
+      "score": 35,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "reasoning"
+      ]
+    },
+    {
+      "title": "Upgrading the Moderation API with our new multimodal moderation model",
+      "url": "https://openai.com/index/upgrading-the-moderation-api-with-our-new-multimodal-moderation-model",
+      "score": 35,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "multimodal"
+      ]
+    },
+    {
+      "title": "Coding with OpenAI o1",
+      "url": "https://openai.com/index/o1-coding",
+      "score": 35,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "coding"
+      ]
+    },
+    {
+      "title": "Economics and reasoning with OpenAI o1",
+      "url": "https://openai.com/index/o1-economics",
+      "score": 35,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "reasoning"
+      ]
+    },
+    {
+      "title": "OpenAI Robotics Symposium 2019",
+      "url": "https://openai.com/index/symposium-2019",
+      "score": 35,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "robotics"
+      ]
+    },
+    {
+      "title": "NVIDIA Cosmos Reason 2 Brings Advanced Reasoning To Physical AI",
+      "url": "https://huggingface.co/blog/nvidia/nvidia-cosmos-reason-2-brings-advanced-reasoning",
+      "score": 35,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [
+        "reasoning"
+      ]
+    },
+    {
+      "title": "Rakuten fixes issues twice as fast with Codex",
+      "url": "https://openai.com/index/rakuten",
+      "score": 34,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic",
+        "coding"
+      ]
+    },
+    {
+      "title": "Creating a safe, observable AI infrastructure for 1 million classrooms",
+      "url": "https://openai.com/index/schoolai",
+      "score": 34,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "regulation",
+        "multimodal"
+      ]
+    },
+    {
+      "title": "Tricks from OpenAI gpt-oss YOU 🫵 can use with transformers",
+      "url": "https://huggingface.co/blog/faster-transformers",
+      "score": 34,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Accelerate a World of LLMs on Hugging Face with NVIDIA NIM",
+      "url": "https://huggingface.co/blog/nvidia/multi-llm-nim",
+      "score": 34,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "nvidia",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Hugging Face models in Amazon Bedrock",
+      "url": "https://huggingface.co/blog/bedrock-marketplace",
+      "score": 34,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "amazon",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Serverless Inference with Hugging Face and NVIDIA NIM",
+      "url": "https://huggingface.co/blog/inference-dgx-cloud",
+      "score": 34,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "nvidia",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "From OpenAI to Open LLMs with Messages API on Hugging Face",
+      "url": "https://huggingface.co/blog/tgi-messages-api",
+      "score": 34,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Comparing the Performance of LLMs: A Deep Dive into Roberta, Llama 2, and Mistral for Disaster Tweets Analysis with Lora",
+      "url": "https://huggingface.co/blog/Lora-for-sequence-classification-with-Roberta-Llama-Mistral",
+      "score": 34,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "meta",
+        "mistral"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Fetch Cuts ML Processing Latency by 50% Using Amazon SageMaker & Hugging Face",
+      "url": "https://huggingface.co/blog/fetch-case-study",
+      "score": 34,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "amazon",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Deploy GPT-J 6B for inference using  Hugging Face Transformers and Amazon SageMaker",
+      "url": "https://huggingface.co/blog/gptj-sagemaker",
+      "score": 34,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "amazon",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Deploy Hugging Face models easily with Amazon SageMaker",
+      "url": "https://huggingface.co/blog/deploy-hugging-face-models-easily-with-amazon-sagemaker",
+      "score": 34,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "amazon",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Distributed Training: Train BART/T5 for Summarization using 🤗 Transformers and Amazon SageMaker",
+      "url": "https://huggingface.co/blog/sagemaker-distributed-training-seq2seq",
+      "score": 34,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "amazon",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Trump Administration Won’t Rule Out Further Action Against Anthropic",
+      "url": "https://www.wired.com/story/trump-administration-refuses-to-say-it-wont-take-further-action-against-anthropic/",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [
+        "regulation"
+      ]
+    },
+    {
+      "title": "Introducing GPT-5.4",
+      "url": "https://openai.com/index/introducing-gpt-5-4",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "coding"
+      ]
+    },
+    {
+      "title": "Introducing GPT-5.3-Codex-Spark",
+      "url": "https://openai.com/index/introducing-gpt-5-3-codex-spark",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "coding"
+      ]
+    },
+    {
+      "title": "Inside OpenAI’s in-house data agent",
+      "url": "https://openai.com/index/inside-our-in-house-data-agent",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "Powering tax donations with AI powered personalized recommendations",
+      "url": "https://openai.com/index/trustbank",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "Cisco and OpenAI redefine enterprise engineering with AI agents",
+      "url": "https://openai.com/index/cisco",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "OpenAI for Healthcare",
+      "url": "https://openai.com/index/openai-for-healthcare",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "regulation"
+      ]
+    },
+    {
+      "title": "Evaluating chain-of-thought monitorability",
+      "url": "https://openai.com/index/evaluating-chain-of-thought-monitorability",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "reasoning"
+      ]
+    },
+    {
+      "title": "Evaluating AI’s ability to perform scientific research tasks",
+      "url": "https://openai.com/index/frontierscience",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "reasoning"
+      ]
+    },
+    {
+      "title": "Accenture and OpenAI accelerate enterprise AI success",
+      "url": "https://openai.com/index/accenture-partnership",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "Introducing IndQA",
+      "url": "https://openai.com/index/introducing-indqa",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "reasoning"
+      ]
+    },
+    {
+      "title": "Introducing gpt-oss-safeguard",
+      "url": "https://openai.com/index/introducing-gpt-oss-safeguard",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "reasoning"
+      ]
+    },
+    {
+      "title": "Customizable, no-code voice agent automation with GPT-4o",
+      "url": "https://openai.com/index/retell-ai",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "Introducing data residency in Asia",
+      "url": "https://openai.com/index/introducing-data-residency-in-asia",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "regulation"
+      ]
+    },
+    {
+      "title": "Evolving OpenAI’s structure",
+      "url": "https://openai.com/index/evolving-our-structure",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "regulation"
+      ]
+    },
+    {
+      "title": "Introducing GPT-4.1 in the API",
+      "url": "https://openai.com/index/gpt-4-1",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "coding"
+      ]
+    },
+    {
+      "title": "Introducing 4o Image Generation",
+      "url": "https://openai.com/index/introducing-4o-image-generation",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "multimodal"
+      ]
+    },
+    {
+      "title": "OpenAI o3-mini",
+      "url": "https://openai.com/index/openai-o3-mini",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "reasoning"
+      ]
+    },
+    {
+      "title": "OpenAI appoints Scott Schools as Chief Compliance Officer",
+      "url": "https://openai.com/global-affairs/openai-chief-compliance-officer-announcement",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "regulation"
+      ]
+    },
+    {
+      "title": "Learning to reason with LLMs",
+      "url": "https://openai.com/index/learning-to-reason-with-llms",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "reasoning"
+      ]
+    },
+    {
+      "title": "Automating customer support agents",
+      "url": "https://openai.com/index/mavenagi",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "Introducing Triton: Open-source GPU programming for neural networks",
+      "url": "https://openai.com/index/triton",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [
+        "coding"
+      ]
+    },
+    {
+      "title": "Roboschool",
+      "url": "https://openai.com/index/roboschool",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "robotics"
+      ]
+    },
+    {
+      "title": "Building a Healthcare Robot from Simulation to Deployment with NVIDIA Isaac",
+      "url": "https://huggingface.co/blog/lerobotxnvidia-healthcare",
+      "score": 32,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [
+        "robotics"
+      ]
+    },
+    {
+      "title": "Meta Ramps Up Efforts to Disrupt Industrialized Scamming",
+      "url": "https://www.wired.com/story/meta-ramps-up-efforts-to-disrupt-industrialized-scamming/",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "meta"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI and Amazon announce strategic partnership",
+      "url": "https://openai.com/index/amazon-partnership",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI Codex and Figma launch seamless code-to-design experience",
+      "url": "https://openai.com/index/figma-partnership",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Introducing OpenAI for India",
+      "url": "https://openai.com/index/openai-for-india",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Retiring GPT-4o, GPT-4.1, GPT-4.1 mini, and OpenAI o4-mini in ChatGPT",
+      "url": "https://openai.com/index/retiring-gpt-4o-and-older-models",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI’s Raising Concerns Policy",
+      "url": "https://openai.com/index/openai-raising-concerns-policy",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI and SoftBank Group partner with SB Energy",
+      "url": "https://openai.com/index/stargate-sb-energy-partnership",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Announcing OpenAI Grove Cohort 2",
+      "url": "https://openai.com/index/openai-grove",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Introducing OpenAI Academy for News Organizations",
+      "url": "https://openai.com/index/openai-academy-for-news-organizations",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "BBVA and OpenAI collaborate to transform global banking",
+      "url": "https://openai.com/index/bbva-collaboration-expansion",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Launching our first OpenAI Certifications courses",
+      "url": "https://openai.com/index/openai-certificate-courses",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Instacart and OpenAI partner on AI shopping experiences",
+      "url": "https://openai.com/index/instacart-partnership",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI and Foxconn collaborate to strengthen U.S. manufacturing across the AI supply chain",
+      "url": "https://openai.com/index/openai-and-foxconn-collaborate",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Building more with GPT-5.1-Codex-Max",
+      "url": "https://openai.com/index/gpt-5-1-codex-max",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [],
+      "topics": [
+        "agentic",
+        "reasoning",
+        "coding"
+      ]
+    },
+    {
+      "title": "AWS and OpenAI announce multi-year strategic partnership",
+      "url": "https://openai.com/index/aws-and-openai-partnership",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "The next chapter of the Microsoft–OpenAI partnership",
+      "url": "https://openai.com/index/next-chapter-of-microsoft-openai-partnership",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI acquires Software Applications Incorporated, maker of Sky",
+      "url": "https://openai.com/index/openai-acquires-software-applications-incorporated",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "AI in South Korea—OpenAI’s Economic Blueprint",
+      "url": "https://openai.com/index/south-korea-economic-blueprint",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI and Broadcom announce strategic collaboration to deploy 10 gigawatts of OpenAI-designed AI accelerators",
+      "url": "https://openai.com/index/openai-and-broadcom-announce-strategic-collaboration",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "AMD and OpenAI announce strategic partnership to deploy 6 gigawatts of AMD GPUs",
+      "url": "https://openai.com/index/openai-amd-strategic-partnership",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "SAP and OpenAI partner to launch sovereign ‘OpenAI for Germany’",
+      "url": "https://openai.com/global-affairs/openai-for-germany",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI, Oracle, and SoftBank expand Stargate with five new AI datacenter sites",
+      "url": "https://openai.com/index/five-new-stargate-sites",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI and Greek Government launch ‘OpenAI for Greece’",
+      "url": "https://openai.com/global-affairs/openai-for-greece",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Announcing the OpenAI Learning Accelerator",
+      "url": "https://openai.com/global-affairs/learning-accelerator",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Announcing OpenAI DevDay 2025",
+      "url": "https://openai.com/index/announcing-devday-2025",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI’s new economic analysis",
+      "url": "https://openai.com/global-affairs/new-economic-analysis",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI and UK Government announce strategic partnership to deliver AI-driven growth",
+      "url": "https://openai.com/global-affairs/openai-and-uk-government-partnership",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI Deutschland",
+      "url": "https://openai.com/index/openai-deutschland",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Introducing OpenAI o3 and o4-mini",
+      "url": "https://openai.com/index/introducing-o3-and-o4-mini",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI announces nonprofit commission advisors",
+      "url": "https://openai.com/index/nonprofit-commission-advisors",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Nubank elevates customer experiences with OpenAI",
+      "url": "https://openai.com/index/nubank",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI and Guardian Media Group launch content partnership",
+      "url": "https://openai.com/index/openai-and-guardian-media-group-launch-content-partnership",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI partners with Schibsted Media Group",
+      "url": "https://openai.com/index/openai-partners-with-schibsted-media-group",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Partnering with Axios expands OpenAI’s work with the news industry",
+      "url": "https://openai.com/index/partnering-with-axios-expands-openai-work-with-the-news-industry",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI o1 and new tools for developers",
+      "url": "https://openai.com/index/o1-and-new-tools-for-developers",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI and Future partner on specialist content",
+      "url": "https://openai.com/index/openai-and-future-partner-on-specialist-content",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI and Hearst Content Partnership",
+      "url": "https://openai.com/index/hearst",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI and GEDI partner for Italian news content",
+      "url": "https://openai.com/index/gedi",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI and Los Alamos National Laboratory announce research partnership",
+      "url": "https://openai.com/index/openai-and-los-alamos-national-laboratory-work-together",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI acquires Rockset",
+      "url": "https://openai.com/index/openai-acquires-rockset",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI and Reddit Partnership",
+      "url": "https://openai.com/index/openai-and-reddit-partnership",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Ilya Sutskever to leave OpenAI, Jakub Pachocki announced as Chief Scientist",
+      "url": "https://openai.com/index/jakub-pachocki-announced-as-chief-scientist",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI’s comment to the NTIA on open model weights",
+      "url": "https://openai.com/global-affairs/openai-s-comment-to-the-ntia-on-open-model-weights",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI announces new members to board of directors",
+      "url": "https://openai.com/index/openai-announces-new-members-to-board-of-directors",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI announces leadership transition",
+      "url": "https://openai.com/index/openai-announces-leadership-transition",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI Data Partnerships",
+      "url": "https://openai.com/index/data-partnerships",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI Red Teaming Network",
+      "url": "https://openai.com/index/red-teaming-network",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI acquires Global Illumination",
+      "url": "https://openai.com/index/openai-acquires-global-illumination",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Announcing OpenAI’s Bug Bounty Program",
+      "url": "https://openai.com/index/bug-bounty-program",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI and Microsoft extend partnership",
+      "url": "https://openai.com/index/openai-and-microsoft-extend-partnership",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI leadership team update",
+      "url": "https://openai.com/index/leadership-team-update",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI Residency",
+      "url": "https://openai.com/index/openai-residency",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI Scholars 2021: Final projects",
+      "url": "https://openai.com/index/openai-scholars-2021-final-projects",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI Microscope",
+      "url": "https://openai.com/index/microscope",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI Scholars",
+      "url": "https://openai.com/index/openai-scholars",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI Baselines: DQN",
+      "url": "https://openai.com/index/openai-baselines-dqn",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Gemini in Google Sheets just achieved state-of-the-art performance.",
+      "url": "https://blog.google/products-and-platforms/products/workspace/gemini-google-sheets-state-of-the-art/",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "google"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Welcome GPT OSS, the new open-source model family from OpenAI!",
+      "url": "https://huggingface.co/blog/welcome-openai-gpt-oss",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Introducing Training Cluster as a Service - a new collaboration with NVIDIA",
+      "url": "https://huggingface.co/blog/nvidia-training-cluster",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": []
+    },
+    {
+      "title": "NVIDIA's GTC 2025 Announcement for Physical AI Developers: New Open Models and Datasets",
+      "url": "https://huggingface.co/blog/nvidia-physical-ai",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Introducing HuggingFace blog for Chinese speakers: Fostering Collaboration with the Chinese AI community",
+      "url": "https://huggingface.co/blog/chinese-language-blog",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "huggingface"
+      ],
+      "topics": [
+        "china"
+      ]
+    },
+    {
+      "title": "Faster Training and Inference: Habana Gaudi®2 vs Nvidia A100 80GB",
+      "url": "https://huggingface.co/blog/habana-gaudi-2-benchmark",
+      "score": 30,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Inside Mirakl's agentic commerce vision",
+      "url": "https://openai.com/index/mirakl",
+      "score": 29,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "Buy it in ChatGPT: Instant Checkout and the Agentic Commerce Protocol",
+      "url": "https://openai.com/index/buy-it-in-chatgpt",
+      "score": 29,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "Personal Copilot: Train Your Own Coding Assistant",
+      "url": "https://huggingface.co/blog/personal-copilot",
+      "score": 29,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "microsoft"
+      ],
+      "topics": [
+        "coding"
+      ]
+    },
+    {
+      "title": "Nvidia is reportedly planning its own open source OpenClaw competitor",
+      "url": "https://arstechnica.com/ai/2026/03/nvidia-is-reportedly-planning-its-own-open-source-openclaw-competitor/",
+      "score": 28,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [
+        "open_source"
+      ]
+    },
+    {
+      "title": "Best practices for deploying language models",
+      "url": "https://openai.com/index/best-practices-for-deploying-language-models",
+      "score": 28,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai",
+        "cohere"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Generate Images with Claude and Hugging Face",
+      "url": "https://huggingface.co/blog/claude-and-mcp",
+      "score": 28,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "anthropic",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Welcoming Llama Guard 4 on Hugging Face Hub",
+      "url": "https://huggingface.co/blog/llama-guard-4",
+      "score": 28,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "meta",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Welcome Llama 4 Maverick & Scout on Hugging Face",
+      "url": "https://huggingface.co/blog/llama4-release",
+      "score": 28,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "meta",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Hugging Face on AMD Instinct MI300 GPU",
+      "url": "https://huggingface.co/blog/huggingface-amd-mi300",
+      "score": 28,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "nvidia",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Bringing serverless GPU inference to Hugging Face users",
+      "url": "https://huggingface.co/blog/cloudflare-workers-ai",
+      "score": 28,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "nvidia",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Hugging Face and Google partner for open AI collaboration",
+      "url": "https://huggingface.co/blog/gcp-partnership",
+      "score": 28,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Llama 2 is here - get it on Hugging Face",
+      "url": "https://huggingface.co/blog/llama2",
+      "score": 28,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "meta",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Hugging Face and AMD partner on accelerating state-of-the-art models for CPU and GPU platforms",
+      "url": "https://huggingface.co/blog/huggingface-and-amd",
+      "score": 28,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "nvidia",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Fine-Tune Whisper For Multilingual ASR with 🤗 Transformers",
+      "url": "https://huggingface.co/blog/fine-tune-whisper",
+      "score": 28,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai",
+        "huggingface"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Hugging Face to sell open-source robots thanks to Pollen Robotics acquisition 🤖",
+      "url": "https://huggingface.co/blog/hugging-face-pollen-robotics-acquisition",
+      "score": 27,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "huggingface"
+      ],
+      "topics": [
+        "robotics"
+      ]
+    },
+    {
+      "title": "Designing AI agents to resist prompt injection",
+      "url": "https://openai.com/index/designing-agents-to-resist-prompt-injection",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "From model to agent: Equipping the Responses API with a computer environment",
+      "url": "https://openai.com/index/equip-responses-api-computer-environment",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "Keeping your data safe when an AI agent clicks a link",
+      "url": "https://openai.com/index/ai-agent-link-safety",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "Continuously hardening ChatGPT Atlas against prompt injection",
+      "url": "https://openai.com/index/hardening-atlas-against-prompt-injection",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "The new ChatGPT Images is here",
+      "url": "https://openai.com/index/new-chatgpt-images-is-here",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "multimodal"
+      ]
+    },
+    {
+      "title": "How We Used Codex to Ship Sora for Android in 28 Days",
+      "url": "https://openai.com/index/shipping-sora-for-android-with-codex",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "coding"
+      ]
+    },
+    {
+      "title": "How we built OWL, the new architecture behind our ChatGPT-based browser, Atlas",
+      "url": "https://openai.com/index/building-chatgpt-atlas",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "Built to benefit everyone",
+      "url": "https://openai.com/index/built-to-benefit-everyone",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "regulation"
+      ]
+    },
+    {
+      "title": "Consensus accelerates research with GPT-5 and Responses API",
+      "url": "https://openai.com/index/consensus",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "Sora 2 is here",
+      "url": "https://openai.com/index/sora-2",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "multimodal"
+      ]
+    },
+    {
+      "title": "More ways to work with your team and tools in ChatGPT",
+      "url": "https://openai.com/index/more-ways-to-work-with-your-team",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "regulation"
+      ]
+    },
+    {
+      "title": "Shipping smarter agents with every new model",
+      "url": "https://openai.com/index/safetykit",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "regulation"
+      ]
+    },
+    {
+      "title": "Building more helpful ChatGPT experiences for everyone",
+      "url": "https://openai.com/index/building-more-helpful-chatgpt-experiences-for-everyone",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "reasoning"
+      ]
+    },
+    {
+      "title": "ChatGPT agent System Card",
+      "url": "https://openai.com/index/chatgpt-agent-system-card",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "New in ChatGPT for Business: April 2025",
+      "url": "https://openai.com/business/new-in-chatgpt-for-business-april-updates-2025",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "multimodal"
+      ]
+    },
+    {
+      "title": "Thinking with images",
+      "url": "https://openai.com/index/thinking-with-images",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "reasoning"
+      ]
+    },
+    {
+      "title": "Addendum to GPT-4o System Card: 4o image generation",
+      "url": "https://openai.com/index/gpt-4o-image-generation-system-card-addendum",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "multimodal"
+      ]
+    },
+    {
+      "title": "Building an autonomous financial analyst with o1 and o3-mini",
+      "url": "https://openai.com/index/endex",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "reasoning"
+      ]
+    },
+    {
+      "title": "Strengthening America’s AI leadership with the U.S. National Laboratories",
+      "url": "https://openai.com/index/strengthening-americas-ai-leadership-with-the-us-national-laboratories",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "reasoning"
+      ]
+    },
+    {
+      "title": "Creating agent and human collaboration with GPT 4o",
+      "url": "https://openai.com/index/altera",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "New compliance and administrative tools for ChatGPT Enterprise",
+      "url": "https://openai.com/index/new-tools-for-chatgpt-enterprise",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "regulation"
+      ]
+    },
+    {
+      "title": "Surging developer productivity with custom GPTs",
+      "url": "https://openai.com/index/paf",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "coding"
+      ]
+    },
+    {
+      "title": "Moving AI governance forward",
+      "url": "https://openai.com/index/moving-ai-governance-forward",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "regulation"
+      ]
+    },
+    {
+      "title": "GPT-4",
+      "url": "https://openai.com/index/gpt-4-research",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "multimodal"
+      ]
+    },
+    {
+      "title": "Solving Rubik’s Cube with a robot hand",
+      "url": "https://openai.com/index/solving-rubiks-cube",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "robotics"
+      ]
+    },
+    {
+      "title": "We Got Claude to Fine-Tune an Open Source LLM",
+      "url": "https://huggingface.co/blog/hf-skills-training",
+      "score": 26,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [
+        "open_source"
+      ]
+    },
+    {
+      "title": "Google Maps Gets Chatty With a New Gemini-Powered Interface",
+      "url": "https://www.wired.com/story/google-maps-ask-maps-gemini-powered-tool/",
+      "score": 24,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "google"
+      ],
+      "topics": []
+    },
+    {
+      "title": "I Used Google’s New Gemini-Powered ‘Help Me Create’ Tool in Docs. It’s Great at Corporate-Speak",
+      "url": "https://www.wired.com/story/google-gemini-workspace-ai-tools-hands-on/",
+      "score": 24,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "google"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Wayfair boosts catalog accuracy and support speed with OpenAI",
+      "url": "https://openai.com/index/wayfair",
+      "score": 24,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "New ways to learn math and science in ChatGPT",
+      "url": "https://openai.com/index/new-ways-to-learn-math-and-science-in-chatgpt",
+      "score": 24,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "OpenAI to acquire Promptfoo",
+      "url": "https://openai.com/index/openai-to-acquire-promptfoo",
+      "score": 24,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Introducing ChatGPT for Excel and new financial data integrations",
+      "url": "https://openai.com/index/chatgpt-for-excel",
+      "score": 24,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Understanding AI and learning outcomes",
+      "url": "https://openai.com/index/understanding-ai-and-learning-outcomes",
+      "score": 24,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Scaling AI for everyone",
+      "url": "https://openai.com/index/scaling-ai-for-everyone",
+      "score": 24,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Joint Statement from OpenAI and Microsoft",
+      "url": "https://openai.com/index/continuing-microsoft-partnership",
+      "score": 24,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Introducing EVMbench",
+      "url": "https://openai.com/index/introducing-evmbench",
+      "score": 24,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Introducing Lockdown Mode and Elevated Risk labels in ChatGPT",
+      "url": "https://openai.com/index/introducing-lockdown-mode-and-elevated-risk-labels-in-chatgpt",
+      "score": 24,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Scaling social science research",
+      "url": "https://openai.com/index/scaling-social-science-research",
+      "score": 24,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Bringing ChatGPT to GenAI.mil",
+      "url": "https://openai.com/index/bringing-chatgpt-to-genaimil",
+      "score": 24,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Introducing Trusted Access for Cyber",
+      "url": "https://openai.com/index/trusted-access-for-cyber",
+      "score": 24,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Snowflake and OpenAI partner to bring frontier intelligence to enterprise data",
+      "url": "https://openai.com/index/snowflake-partnership",
+      "score": 24,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "The next chapter for AI in the EU",
+      "url": "https://openai.com/index/the-next-chapter-for-ai-in-the-eu",
+      "score": 24,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "PVH reimagines the future of fashion with OpenAI",
+      "url": "https://openai.com/index/pvh-future-of-fashion",
+      "score": 24,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Introducing Edu for Countries",
+      "url": "https://openai.com/index/edu-for-countries",
+      "score": 24,
+      "fetched_at": "2026-03-12",
+      "source": "",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    }
+  ]
+}
