@@ -215,6 +215,19 @@
       "topic": ""
     },
     {
+      "title": "Instagram is getting rid of end-to-end encrypted DMs that \u2018very few\u2019 people used",
+      "url": "https://www.theverge.com/tech/894752/instagram-end-to-end-encryption",
+      "score": 43,
+      "fetched_at": "2026-03-13",
+      "source": "The Verge",
+      "companies": [
+        "meta"
+      ],
+      "topics": [],
+      "company": "meta",
+      "topic": ""
+    },
+    {
       "title": "Manufact raises $6.3M as MCP becomes the \u2018USB-C for AI\u2019 powering ChatGPT and Claude apps",
       "url": "https://venturebeat.com/infrastructure/manufact-raises-usd6-3m-as-mcp-becomes-the-usb-c-for-ai-powering-chatgpt-and",
       "score": 42,
@@ -7600,6 +7613,19 @@
       "topic": "multimodal"
     },
     {
+      "title": "Travis Kalanick launches a new company called Atoms focused on robotics",
+      "url": "https://techcrunch.com/2026/03/13/travis-kalanick-launches-a-new-company-called-atoms-focused-on-robotics/",
+      "score": 17,
+      "fetched_at": "2026-03-13",
+      "source": "TechCrunch",
+      "companies": [],
+      "topics": [
+        "robotics"
+      ],
+      "company": "",
+      "topic": "robotics"
+    },
+    {
       "title": "Introducing Storage Buckets on the Hugging Face Hub",
       "url": "https://huggingface.co/blog/storage-buckets",
       "score": 16,
@@ -10607,7 +10633,7 @@
     {
       "date": "2026-03-13",
       "posts": 0,
-      "items_processed": 30260,
+      "items_processed": 32040,
       "estimated_tokens": 0
     }
   ]
