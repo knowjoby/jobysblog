@@ -375,5 +375,27 @@
       }
     },
     "posts": []
+  },
+  {
+    "ran_at": "2026-03-13 08:06:58 IST",
+    "triggered_by": "Scheduled",
+    "candidates_found": 11,
+    "posts_created": 0,
+    "queued": 11,
+    "feeds": {
+      "ddg": {
+        "queries": 3,
+        "raw": 0,
+        "candidates": 11
+      },
+      "rss": {
+        "raw": 1780,
+        "feeds_total": 10,
+        "feeds_ok": 10,
+        "feeds_failed": 0,
+        "candidates": 11
+      }
+    },
+    "posts": []
   }
 ]

@@ -80,6 +80,45 @@
       "topic": ""
     },
     {
+      "title": "Gemini\u2019s task automation is here and it\u2019s wild",
+      "url": "https://www.theverge.com/tech/893820/gemini-task-automation-samsung-s26-google-pixel-10",
+      "score": 49,
+      "fetched_at": "2026-03-13",
+      "source": "The Verge",
+      "companies": [
+        "google"
+      ],
+      "topics": [],
+      "company": "google",
+      "topic": ""
+    },
+    {
+      "title": "Anthropic\u2019s Claude AI can respond with charts, diagrams, and other visuals now",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/893625/anthropic-claude-ai-charts-diagrams",
+      "score": 49,
+      "fetched_at": "2026-03-13",
+      "source": "The Verge",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [],
+      "company": "anthropic",
+      "topic": ""
+    },
+    {
+      "title": "Meta exec hopes VR teens will stick around",
+      "url": "https://www.theverge.com/column/893526/meta-vr-games-teens",
+      "score": 49,
+      "fetched_at": "2026-03-13",
+      "source": "The Verge",
+      "companies": [
+        "meta"
+      ],
+      "topics": [],
+      "company": "meta",
+      "topic": ""
+    },
+    {
       "title": "Introducing the Stateful Runtime Environment for Agents in Amazon Bedrock",
       "url": "https://openai.com/index/introducing-the-stateful-runtime-environment-for-agents-in-amazon-bedrock",
       "score": 48,
@@ -161,6 +200,19 @@
       ],
       "company": "openai",
       "topic": "coding"
+    },
+    {
+      "title": "Facebook Marketplace adds AI auto-replies for annoying \u2018Is this still available?\u2019 messages",
+      "url": "https://www.theverge.com/tech/893907/facebook-marketplace-ai-auto-reply-listings",
+      "score": 43,
+      "fetched_at": "2026-03-13",
+      "source": "The Verge",
+      "companies": [
+        "meta"
+      ],
+      "topics": [],
+      "company": "meta",
+      "topic": ""
     },
     {
       "title": "Manufact raises $6.3M as MCP becomes the \u2018USB-C for AI\u2019 powering ChatGPT and Claude apps",
@@ -1831,6 +1883,19 @@
       "topic": ""
     },
     {
+      "title": "How to watch Jensen Huang\u2019s Nvidia GTC 2026 keynote",
+      "url": "https://techcrunch.com/2026/03/12/how-to-watch-jensen-huangs-nvidia-gtc-2026-keynote/",
+      "score": 30,
+      "fetched_at": "2026-03-13",
+      "source": "TechCrunch",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [],
+      "company": "nvidia",
+      "topic": ""
+    },
+    {
       "title": "Inside Mirakl's agentic commerce vision",
       "url": "https://openai.com/index/mirakl",
       "score": 29,
@@ -2393,6 +2458,20 @@
       ],
       "company": "anthropic",
       "topic": "open_source"
+    },
+    {
+      "title": "Y Combinator-backed Random Labs launches Slate V1, claiming the first 'swarm-native' coding agent",
+      "url": "https://venturebeat.com/orchestration/y-combinator-backed-random-labs-launches-slate-v1-claiming-the-first-swarm",
+      "score": 25,
+      "fetched_at": "2026-03-13",
+      "source": "VentureBeat",
+      "companies": [],
+      "topics": [
+        "agentic",
+        "coding"
+      ],
+      "company": "",
+      "topic": "agentic"
     },
     {
       "title": "Google Maps Gets Chatty With a New Gemini-Powered Interface",
@@ -4708,6 +4787,45 @@
       ],
       "topics": [],
       "company": "nvidia",
+      "topic": ""
+    },
+    {
+      "title": "Facebook Marketplace now lets Meta AI respond to buyers\u2019 messages",
+      "url": "https://techcrunch.com/2026/03/12/facebook-marketplace-now-lets-meta-ai-respond-to-buyers-messages/",
+      "score": 24,
+      "fetched_at": "2026-03-13",
+      "source": "TechCrunch",
+      "companies": [
+        "meta"
+      ],
+      "topics": [],
+      "company": "meta",
+      "topic": ""
+    },
+    {
+      "title": "\u2018Uncanny Valley\u2019: Anthropic\u2019s DOD Lawsuit, War Memes, and AI Coming for VC Jobs",
+      "url": "https://www.wired.com/story/uncanny-valley-podcast-anthropic-department-defense-lawsuit-iran-war-memes-artificial-intelligence-venture-capital/",
+      "score": 24,
+      "fetched_at": "2026-03-13",
+      "source": "Wired",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [],
+      "company": "anthropic",
+      "topic": ""
+    },
+    {
+      "title": "Google Is Not Ruling Out Ads in Gemini",
+      "url": "https://www.wired.com/story/google-nick-fox-advertising-search-ai-gemini/",
+      "score": 24,
+      "fetched_at": "2026-03-13",
+      "source": "Wired",
+      "companies": [
+        "google"
+      ],
+      "topics": [],
+      "company": "google",
       "topic": ""
     },
     {
@@ -7817,6 +7935,19 @@
       "topic": ""
     },
     {
+      "title": "Perplexity's \"Personal Computer\" brings its AI agents to the, uh, Personal Computer",
+      "url": "https://arstechnica.com/ai/2026/03/perplexitys-personal-computer-brings-its-ai-agents-to-the-uh-personal-computer/",
+      "score": 16,
+      "fetched_at": "2026-03-13",
+      "source": "Ars Technica",
+      "companies": [
+        "perplexity"
+      ],
+      "topics": [],
+      "company": "perplexity",
+      "topic": ""
+    },
+    {
       "title": "Hustlers are cashing in on China\u2019s OpenClaw AI craze",
       "url": "https://www.technologyreview.com/2026/03/11/1134179/china-openclaw-gold-rush/",
       "score": 14,
@@ -8403,6 +8534,19 @@
       ],
       "company": "",
       "topic": "coding"
+    },
+    {
+      "title": "Humanoid robotics maker Sunday reaches $1.15B valuation to build household robots",
+      "url": "https://techcrunch.com/2026/03/12/humanoid-robotics-maker-sunday-reaches-1-15b-valuation-to-build-household-robots/",
+      "score": 11,
+      "fetched_at": "2026-03-13",
+      "source": "TechCrunch",
+      "companies": [],
+      "topics": [
+        "robotics"
+      ],
+      "company": "",
+      "topic": "robotics"
     },
     {
       "title": "Deep double descent",
@@ -10391,6 +10535,12 @@
     {
       "date": "2026-03-12",
       "posts": 5,
+      "items_processed": 1780,
+      "estimated_tokens": 0
+    },
+    {
+      "date": "2026-03-13",
+      "posts": 0,
       "items_processed": 1780,
       "estimated_tokens": 0
     }

@@ -1,7 +1,129 @@
 {
-  "updated_at_utc": "2026-03-12T23:33:53.787084+00:00",
-  "pending_count": 836,
+  "updated_at_utc": "2026-03-13T02:36:58.439629+00:00",
+  "pending_count": 847,
   "pending": [
+    {
+      "title": "Gemini’s task automation is here and it’s wild",
+      "url": "https://www.theverge.com/tech/893820/gemini-task-automation-samsung-s26-google-pixel-10",
+      "score": 49,
+      "fetched_at": "2026-03-13",
+      "source": "The Verge",
+      "companies": [
+        "google"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Meta exec hopes VR teens will stick around",
+      "url": "https://www.theverge.com/column/893526/meta-vr-games-teens",
+      "score": 49,
+      "fetched_at": "2026-03-13",
+      "source": "The Verge",
+      "companies": [
+        "meta"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Anthropic’s Claude AI can respond with charts, diagrams, and other visuals now",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/893625/anthropic-claude-ai-charts-diagrams",
+      "score": 49,
+      "fetched_at": "2026-03-13",
+      "source": "The Verge",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Facebook Marketplace adds AI auto-replies for annoying ‘Is this still available?’ messages",
+      "url": "https://www.theverge.com/tech/893907/facebook-marketplace-ai-auto-reply-listings",
+      "score": 43,
+      "fetched_at": "2026-03-13",
+      "source": "The Verge",
+      "companies": [
+        "meta"
+      ],
+      "topics": []
+    },
+    {
+      "title": "How to watch Jensen Huang’s Nvidia GTC 2026 keynote",
+      "url": "https://techcrunch.com/2026/03/12/how-to-watch-jensen-huangs-nvidia-gtc-2026-keynote/",
+      "score": 30,
+      "fetched_at": "2026-03-13",
+      "source": "TechCrunch",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Y Combinator-backed Random Labs launches Slate V1, claiming the first 'swarm-native' coding agent",
+      "url": "https://venturebeat.com/orchestration/y-combinator-backed-random-labs-launches-slate-v1-claiming-the-first-swarm",
+      "score": 25,
+      "fetched_at": "2026-03-13",
+      "source": "VentureBeat",
+      "companies": [],
+      "topics": [
+        "agentic",
+        "coding"
+      ]
+    },
+    {
+      "title": "‘Uncanny Valley’: Anthropic’s DOD Lawsuit, War Memes, and AI Coming for VC Jobs",
+      "url": "https://www.wired.com/story/uncanny-valley-podcast-anthropic-department-defense-lawsuit-iran-war-memes-artificial-intelligence-venture-capital/",
+      "score": 24,
+      "fetched_at": "2026-03-13",
+      "source": "Wired",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Google Is Not Ruling Out Ads in Gemini",
+      "url": "https://www.wired.com/story/google-nick-fox-advertising-search-ai-gemini/",
+      "score": 24,
+      "fetched_at": "2026-03-13",
+      "source": "Wired",
+      "companies": [
+        "google"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Facebook Marketplace now lets Meta AI respond to buyers’ messages",
+      "url": "https://techcrunch.com/2026/03/12/facebook-marketplace-now-lets-meta-ai-respond-to-buyers-messages/",
+      "score": 24,
+      "fetched_at": "2026-03-13",
+      "source": "TechCrunch",
+      "companies": [
+        "meta"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Perplexity's \"Personal Computer\" brings its AI agents to the, uh, Personal Computer",
+      "url": "https://arstechnica.com/ai/2026/03/perplexitys-personal-computer-brings-its-ai-agents-to-the-uh-personal-computer/",
+      "score": 16,
+      "fetched_at": "2026-03-13",
+      "source": "Ars Technica",
+      "companies": [
+        "perplexity"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Humanoid robotics maker Sunday reaches $1.15B valuation to build household robots",
+      "url": "https://techcrunch.com/2026/03/12/humanoid-robotics-maker-sunday-reaches-1-15b-valuation-to-build-household-robots/",
+      "score": 11,
+      "fetched_at": "2026-03-13",
+      "source": "TechCrunch",
+      "companies": [],
+      "topics": [
+        "robotics"
+      ]
+    },
     {
       "title": "Using GPT-4o reasoning to transform cancer care",
       "url": "https://openai.com/index/color-health",
