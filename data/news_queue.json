@@ -8319,6 +8319,19 @@
       "topic": "ai"
     },
     {
+      "title": "Nyne, founded by a father-son duo, gives AI agents the human context they\u2019re missing",
+      "url": "https://techcrunch.com/2026/03/13/nyne-founded-by-a-father-son-duo-gives-ai-agents-the-human-context-theyre-missing/",
+      "score": 12,
+      "fetched_at": "2026-03-13",
+      "source": "TechCrunch",
+      "companies": [],
+      "topics": [
+        "ai"
+      ],
+      "company": "",
+      "topic": "ai"
+    },
+    {
       "title": "Notion\u2019s rebuild for agentic AI: How GPT\u20115 helped unlock autonomous workflows",
       "url": "https://openai.com/index/notion",
       "score": 11,
@@ -10605,6 +10618,19 @@
       "topics": [
         "coding"
       ]
+    },
+    {
+      "title": "Microsoft\u2019s Copilot AI assistant is coming to current-gen Xbox consoles this year",
+      "url": "https://www.theverge.com/games/894799/microsoft-gaming-copilot-ai-xbox-consoles",
+      "score": 63,
+      "file": "_posts/2026-03-13-microsofts-copilot-ai-assistant-is-coming-to-current-gen-xbox-consoles.md",
+      "posted_at": "2026-03-13",
+      "companies": [
+        "microsoft"
+      ],
+      "topics": [
+        "coding"
+      ]
     }
   ],
   "daily_usage": [
@@ -10647,8 +10673,8 @@
     },
     {
       "date": "2026-03-13",
-      "posts": 0,
-      "items_processed": 33820,
+      "posts": 1,
+      "items_processed": 35600,
       "estimated_tokens": 0
     }
   ]

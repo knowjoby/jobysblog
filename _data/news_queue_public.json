@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-13T20:46:52.712518+00:00",
-  "pending_count": 855,
+  "updated_at_utc": "2026-03-13T21:39:08.882870+00:00",
+  "pending_count": 856,
   "pending": [
     {
       "title": "Gemini’s task automation is here and it’s wild",
@@ -202,6 +202,17 @@
       "companies": [],
       "topics": [
         "open_source"
+      ]
+    },
+    {
+      "title": "Nyne, founded by a father-son duo, gives AI agents the human context they’re missing",
+      "url": "https://techcrunch.com/2026/03/13/nyne-founded-by-a-father-son-duo-gives-ai-agents-the-human-context-theyre-missing/",
+      "score": 12,
+      "fetched_at": "2026-03-13",
+      "source": "TechCrunch",
+      "companies": [],
+      "topics": [
+        "ai"
       ]
     },
     {
