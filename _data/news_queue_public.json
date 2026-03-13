@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-13T11:55:17.351935+00:00",
-  "pending_count": 848,
+  "updated_at_utc": "2026-03-13T13:13:16.766367+00:00",
+  "pending_count": 851,
   "pending": [
     {
       "title": "Gemini’s task automation is here and it’s wild",
@@ -114,6 +114,29 @@
       "topics": []
     },
     {
+      "title": "The Download: how AI is used for military targeting, and the Pentagon’s war on Claude",
+      "url": "https://www.technologyreview.com/2026/03/13/1134278/the-download-defense-official-ai-chatbots-targeting-pentagon-claude-pollute-military-supply-chain/",
+      "score": 18,
+      "fetched_at": "2026-03-13",
+      "source": "MIT Tech Review",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": []
+    },
+    {
+      "title": "China’s OpenClaw Boom Is a Gold Rush for AI Companies",
+      "url": "https://www.wired.com/story/china-is-going-all-in-on-openclaw/",
+      "score": 16,
+      "fetched_at": "2026-03-13",
+      "source": "Wired",
+      "companies": [],
+      "topics": [
+        "agentic",
+        "open_source"
+      ]
+    },
+    {
       "title": "Perplexity's \"Personal Computer\" brings its AI agents to the, uh, Personal Computer",
       "url": "https://arstechnica.com/ai/2026/03/perplexitys-personal-computer-brings-its-ai-agents-to-the-uh-personal-computer/",
       "score": 16,
@@ -123,6 +146,17 @@
         "perplexity"
       ],
       "topics": []
+    },
+    {
+      "title": "NanoClaw and Docker partner to make sandboxes the safest way for enterprises to deploy AI agents",
+      "url": "https://venturebeat.com/infrastructure/nanoclaw-and-docker-partner-to-make-sandboxes-the-safest-way-for-enterprises",
+      "score": 14,
+      "fetched_at": "2026-03-13",
+      "source": "VentureBeat",
+      "companies": [],
+      "topics": [
+        "agentic"
+      ]
     },
     {
       "title": "Humanoid robotics maker Sunday reaches $1.15B valuation to build household robots",

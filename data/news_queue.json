@@ -7551,6 +7551,19 @@
       "topic": ""
     },
     {
+      "title": "The Download: how AI is used for military targeting, and the Pentagon\u2019s war on Claude",
+      "url": "https://www.technologyreview.com/2026/03/13/1134278/the-download-defense-official-ai-chatbots-targeting-pentagon-claude-pollute-military-supply-chain/",
+      "score": 18,
+      "fetched_at": "2026-03-13",
+      "source": "MIT Tech Review",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [],
+      "company": "anthropic",
+      "topic": ""
+    },
+    {
       "title": "Zendesk acquires agentic customer service startup Forethought",
       "url": "https://techcrunch.com/2026/03/11/zendesk-acquires-agentic-customer-service-startup-forethought/",
       "score": 17,
@@ -7961,6 +7974,20 @@
       "topic": ""
     },
     {
+      "title": "China\u2019s OpenClaw Boom Is a Gold Rush for AI Companies",
+      "url": "https://www.wired.com/story/china-is-going-all-in-on-openclaw/",
+      "score": 16,
+      "fetched_at": "2026-03-13",
+      "source": "Wired",
+      "companies": [],
+      "topics": [
+        "agentic",
+        "open_source"
+      ],
+      "company": "",
+      "topic": "agentic"
+    },
+    {
       "title": "Hustlers are cashing in on China\u2019s OpenClaw AI craze",
       "url": "https://www.technologyreview.com/2026/03/11/1134179/china-openclaw-gold-rush/",
       "score": 14,
@@ -8187,6 +8214,19 @@
       ],
       "company": "",
       "topic": "open_source"
+    },
+    {
+      "title": "NanoClaw and Docker partner to make sandboxes the safest way for enterprises to deploy AI agents",
+      "url": "https://venturebeat.com/infrastructure/nanoclaw-and-docker-partner-to-make-sandboxes-the-safest-way-for-enterprises",
+      "score": 14,
+      "fetched_at": "2026-03-13",
+      "source": "VentureBeat",
+      "companies": [],
+      "topics": [
+        "agentic"
+      ],
+      "company": "",
+      "topic": "agentic"
     },
     {
       "title": "Introducing the Chatbot Guardrails Arena",
@@ -10554,7 +10594,7 @@
     {
       "date": "2026-03-13",
       "posts": 0,
-      "items_processed": 17800,
+      "items_processed": 19580,
       "estimated_tokens": 0
     }
   ]
