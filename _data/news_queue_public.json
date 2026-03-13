@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-13T19:56:11.452437+00:00",
-  "pending_count": 854,
+  "updated_at_utc": "2026-03-13T20:46:52.712518+00:00",
+  "pending_count": 855,
   "pending": [
     {
       "title": "Gemini’s task automation is here and it’s wild",
@@ -56,6 +56,19 @@
         "meta"
       ],
       "topics": []
+    },
+    {
+      "title": "Beyond Semantic Similarity: Introducing NVIDIA NeMo Retriever’s Generalizable Agentic Retrieval Pipeline",
+      "url": "https://huggingface.co/blog/nvidia/nemo-retriever-agentic-retrieval",
+      "score": 41,
+      "fetched_at": "2026-03-13",
+      "source": "Hugging Face",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [
+        "agentic"
+      ]
     },
     {
       "title": "How to watch Jensen Huang’s Nvidia GTC 2026 keynote",

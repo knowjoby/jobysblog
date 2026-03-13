@@ -362,6 +362,21 @@
       "topic": "reasoning"
     },
     {
+      "title": "Beyond Semantic Similarity: Introducing NVIDIA NeMo Retriever\u2019s Generalizable Agentic Retrieval Pipeline",
+      "url": "https://huggingface.co/blog/nvidia/nemo-retriever-agentic-retrieval",
+      "score": 41,
+      "fetched_at": "2026-03-13",
+      "source": "Hugging Face",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [
+        "agentic"
+      ],
+      "company": "nvidia",
+      "topic": "agentic"
+    },
+    {
       "title": "Solving complex problems with OpenAI o1 models",
       "url": "https://openai.com/business/solving-complex-problems-with-openai-o1-models",
       "score": 40,
@@ -10633,7 +10648,7 @@
     {
       "date": "2026-03-13",
       "posts": 0,
-      "items_processed": 32040,
+      "items_processed": 33820,
       "estimated_tokens": 0
     }
   ]
