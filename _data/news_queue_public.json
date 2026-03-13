@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-13T17:07:46.585024+00:00",
-  "pending_count": 851,
+  "updated_at_utc": "2026-03-13T18:01:50.800287+00:00",
+  "pending_count": 852,
   "pending": [
     {
       "title": "Gemini’s task automation is here and it’s wild",
@@ -156,6 +156,17 @@
       "companies": [],
       "topics": [
         "agentic"
+      ]
+    },
+    {
+      "title": "The wild six weeks for NanoClaw’s creator that led to a deal with Docker",
+      "url": "https://techcrunch.com/2026/03/13/the-wild-six-weeks-for-nanoclaws-creator-that-led-to-a-deal-with-docker/",
+      "score": 14,
+      "fetched_at": "2026-03-13",
+      "source": "TechCrunch",
+      "companies": [],
+      "topics": [
+        "open_source"
       ]
     },
     {
