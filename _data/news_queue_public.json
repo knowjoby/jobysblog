@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-13T09:07:38.582695+00:00",
-  "pending_count": 847,
+  "updated_at_utc": "2026-03-13T10:04:22.525738+00:00",
+  "pending_count": 848,
   "pending": [
     {
       "title": "Gemini’s task automation is here and it’s wild",
@@ -99,6 +99,17 @@
       "source": "TechCrunch",
       "companies": [
         "meta"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Palantir Demos Show How the Military Could Use AI Chatbots to Generate War Plans",
+      "url": "https://www.wired.com/story/palantir-demos-show-how-the-military-can-use-ai-chatbots-to-generate-war-plans/",
+      "score": 18,
+      "fetched_at": "2026-03-13",
+      "source": "Wired",
+      "companies": [
+        "anthropic"
       ],
       "topics": []
     },
