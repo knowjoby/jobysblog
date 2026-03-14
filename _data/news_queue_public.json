@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-14T07:40:31.612314+00:00",
-  "pending_count": 857,
+  "updated_at_utc": "2026-03-14T08:35:02.624543+00:00",
+  "pending_count": 858,
   "pending": [
     {
       "title": "‘Not built right the first time’ — Musk’s xAI is starting over again, again",
@@ -14,6 +14,17 @@
       "topics": [
         "coding"
       ]
+    },
+    {
+      "title": "Staff complain that xAI is flailing because of constant upheaval",
+      "url": "https://arstechnica.com/ai/2026/03/staff-complain-that-xai-is-flailing-because-of-constant-upheaval/",
+      "score": 24,
+      "fetched_at": "2026-03-14",
+      "source": "Ars Technica",
+      "companies": [
+        "xai"
+      ],
+      "topics": []
     },
     {
       "title": "Gemini’s task automation is here and it’s wild",
