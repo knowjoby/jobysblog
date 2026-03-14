@@ -1,13 +1,5 @@
 [
   {
-    "ran_at": "2026-02-22 22:44:32 IST",
-    "triggered_by": "Manual (local)",
-    "candidates_found": 0,
-    "posts_created": 0,
-    "queued": 0,
-    "posts": []
-  },
-  {
     "ran_at": "2026-02-23 21:27:25 IST",
     "triggered_by": "Manual (local)",
     "candidates_found": 0,
@@ -1117,6 +1109,28 @@
   },
   {
     "ran_at": "2026-03-14 19:31:02 IST",
+    "triggered_by": "Scheduled",
+    "candidates_found": 0,
+    "posts_created": 0,
+    "queued": 0,
+    "feeds": {
+      "ddg": {
+        "queries": 3,
+        "raw": 0,
+        "candidates": 0
+      },
+      "rss": {
+        "raw": 1780,
+        "feeds_total": 10,
+        "feeds_ok": 10,
+        "feeds_failed": 0,
+        "candidates": 0
+      }
+    },
+    "posts": []
+  },
+  {
+    "ran_at": "2026-03-14 20:25:04 IST",
     "triggered_by": "Scheduled",
     "candidates_found": 0,
     "posts_created": 0,
