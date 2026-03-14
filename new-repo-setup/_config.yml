@@ -1,0 +1,33 @@
+title: AI Product Manager's Blog
+email: ''
+description: >-
+  Daily insights, roadmaps, and strategies for AI Product Managers at every level —
+  beginner, advanced, and expert.
+baseurl: "/Ai-product-managers-blog"
+url: "https://knowjoby.github.io"
+github_username: knowjoby
+
+theme: minima
+minima:
+  skin: classic
+
+header_pages:
+  - about.md
+  - roadmap.md
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: "_pages"
+      type: "pages"
+    values:
+      layout: "page"
+
+collections:
+  pages:
+    output: true
+    permalink: /:name/
