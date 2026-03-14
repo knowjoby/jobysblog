@@ -4986,6 +4986,19 @@
       "topic": ""
     },
     {
+      "title": "Meta reportedly considering layoffs that could affect 20% of the company",
+      "url": "https://techcrunch.com/2026/03/14/meta-reportedly-considering-layoffs-that-could-affect-20-of-the-company/",
+      "score": 20,
+      "fetched_at": "2026-03-14",
+      "source": "TechCrunch",
+      "companies": [
+        "meta"
+      ],
+      "topics": [],
+      "company": "meta",
+      "topic": ""
+    },
+    {
       "title": "DeepMath: A lightweight math reasoning Agent with smolagents",
       "url": "https://huggingface.co/blog/intel-deepmath",
       "score": 19,
@@ -10721,7 +10734,7 @@
     {
       "date": "2026-03-14",
       "posts": 0,
-      "items_processed": 26700,
+      "items_processed": 28480,
       "estimated_tokens": 0
     }
   ]
