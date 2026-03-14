@@ -7620,6 +7620,19 @@
       "topic": ""
     },
     {
+      "title": "How to use the new ChatGPT app integrations, including DoorDash, Spotify, Uber, and others",
+      "url": "https://techcrunch.com/2026/03/14/how-to-use-the-new-chatgpt-app-integrations-including-doordash-spotify-uber-and-others/",
+      "score": 18,
+      "fetched_at": "2026-03-14",
+      "source": "TechCrunch",
+      "companies": [
+        "openai"
+      ],
+      "topics": [],
+      "company": "openai",
+      "topic": ""
+    },
+    {
       "title": "Zendesk acquires agentic customer service startup Forethought",
       "url": "https://techcrunch.com/2026/03/11/zendesk-acquires-agentic-customer-service-startup-forethought/",
       "score": 17,
@@ -10708,7 +10721,7 @@
     {
       "date": "2026-03-14",
       "posts": 0,
-      "items_processed": 19580,
+      "items_processed": 21360,
       "estimated_tokens": 0
     }
   ]
