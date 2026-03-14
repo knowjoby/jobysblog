@@ -187,6 +187,19 @@
       "topic": "agentic"
     },
     {
+      "title": "Meta is reportedly laying off up to 20 percent of its staff",
+      "url": "https://www.theverge.com/business/895026/meta-laying-off-20-percent",
+      "score": 45,
+      "fetched_at": "2026-03-14",
+      "source": "The Verge",
+      "companies": [
+        "meta"
+      ],
+      "topics": [],
+      "company": "meta",
+      "topic": ""
+    },
+    {
       "title": "Pioneering an AI clinical copilot with Penda Health",
       "url": "https://openai.com/index/ai-clinical-copilot-penda-health",
       "score": 44,
@@ -10734,7 +10747,7 @@
     {
       "date": "2026-03-14",
       "posts": 0,
-      "items_processed": 30260,
+      "items_processed": 32040,
       "estimated_tokens": 0
     }
   ]
