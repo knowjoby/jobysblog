@@ -840,6 +840,19 @@
       "topic": ""
     },
     {
+      "title": "The $100,000 fee for H-1Bs is causing all sorts of problems",
+      "url": "https://www.theverge.com/policy/894537/h1b-fee-increase-trump-teacher-shortage-tech-workers",
+      "score": 33,
+      "fetched_at": "2026-03-15",
+      "source": "The Verge",
+      "companies": [],
+      "topics": [
+        "regulation"
+      ],
+      "company": "",
+      "topic": "regulation"
+    },
+    {
       "title": "Trump Administration Won\u2019t Rule Out Further Action Against Anthropic",
       "url": "https://www.wired.com/story/trump-administration-refuses-to-say-it-wont-take-further-action-against-anthropic/",
       "score": 32,
@@ -10753,7 +10766,7 @@
     {
       "date": "2026-03-15",
       "posts": 0,
-      "items_processed": 14240,
+      "items_processed": 16020,
       "estimated_tokens": 0
     }
   ]

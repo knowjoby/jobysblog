@@ -1,7 +1,18 @@
 {
-  "updated_at_utc": "2026-03-15T10:37:25.549929+00:00",
-  "pending_count": 861,
+  "updated_at_utc": "2026-03-15T11:32:22.985964+00:00",
+  "pending_count": 862,
   "pending": [
+    {
+      "title": "The $100,000 fee for H-1Bs is causing all sorts of problems",
+      "url": "https://www.theverge.com/policy/894537/h1b-fee-increase-trump-teacher-shortage-tech-workers",
+      "score": 33,
+      "fetched_at": "2026-03-15",
+      "source": "The Verge",
+      "companies": [],
+      "topics": [
+        "regulation"
+      ]
+    },
     {
       "title": "Meta is reportedly laying off up to 20 percent of its staff",
       "url": "https://www.theverge.com/business/895026/meta-laying-off-20-percent",
