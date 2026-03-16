@@ -1,37 +1,5 @@
 [
   {
-    "ran_at": "2026-03-14 03:09:08 IST",
-    "triggered_by": "Scheduled",
-    "candidates_found": 2,
-    "posts_created": 1,
-    "queued": 1,
-    "feeds": {
-      "ddg": {
-        "queries": 3,
-        "raw": 0,
-        "candidates": 2
-      },
-      "rss": {
-        "raw": 1780,
-        "feeds_total": 10,
-        "feeds_ok": 10,
-        "feeds_failed": 0,
-        "candidates": 2
-      }
-    },
-    "posts": [
-      {
-        "title": "Microsoft’s Copilot AI assistant is coming to current-gen Xbox consoles this year",
-        "file": "_posts/2026-03-13-microsofts-copilot-ai-assistant-is-coming-to-current-gen-xbox-consoles.md",
-        "score": 63,
-        "tags": [
-          "microsoft",
-          "coding"
-        ]
-      }
-    ]
-  },
-  {
     "ran_at": "2026-03-14 04:04:21 IST",
     "triggered_by": "Scheduled",
     "candidates_found": 0,
@@ -1089,6 +1057,28 @@
   },
   {
     "ran_at": "2026-03-16 12:23:50 IST",
+    "triggered_by": "Scheduled",
+    "candidates_found": 0,
+    "posts_created": 0,
+    "queued": 0,
+    "feeds": {
+      "ddg": {
+        "queries": 3,
+        "raw": 0,
+        "candidates": 0
+      },
+      "rss": {
+        "raw": 1780,
+        "feeds_total": 10,
+        "feeds_ok": 10,
+        "feeds_failed": 0,
+        "candidates": 0
+      }
+    },
+    "posts": []
+  },
+  {
+    "ran_at": "2026-03-16 13:40:53 IST",
     "triggered_by": "Scheduled",
     "candidates_found": 0,
     "posts_created": 0,
