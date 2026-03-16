@@ -103,6 +103,19 @@
       "topic": ""
     },
     {
+      "title": "Encyclopedia Britannica is suing OpenAI for allegedly \u2018memorizing\u2019 its content with ChatGPT",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/895372/encyclopedia-britannica-openai-lawsuit",
+      "score": 49,
+      "fetched_at": "2026-03-16",
+      "source": "The Verge",
+      "companies": [
+        "openai"
+      ],
+      "topics": [],
+      "company": "openai",
+      "topic": ""
+    },
+    {
       "title": "Introducing the Stateful Runtime Environment for Agents in Amazon Bedrock",
       "url": "https://openai.com/index/introducing-the-stateful-runtime-environment-for-agents-in-amazon-bedrock",
       "score": 48,
@@ -4905,6 +4918,19 @@
       ],
       "topics": [],
       "company": "xai",
+      "topic": ""
+    },
+    {
+      "title": "Where OpenAI\u2019s technology could show up in Iran",
+      "url": "https://www.technologyreview.com/2026/03/16/1134315/where-openais-technology-could-show-up-in-iran/",
+      "score": 24,
+      "fetched_at": "2026-03-16",
+      "source": "MIT Tech Review",
+      "companies": [
+        "openai"
+      ],
+      "topics": [],
+      "company": "openai",
       "topic": ""
     },
     {
@@ -10793,7 +10819,7 @@
     {
       "date": "2026-03-16",
       "posts": 1,
-      "items_processed": 19580,
+      "items_processed": 21361,
       "estimated_tokens": 0
     }
   ]

@@ -1,7 +1,18 @@
 {
-  "updated_at_utc": "2026-03-16T16:10:29.898950+00:00",
-  "pending_count": 862,
+  "updated_at_utc": "2026-03-16T17:36:30.681721+00:00",
+  "pending_count": 864,
   "pending": [
+    {
+      "title": "Encyclopedia Britannica is suing OpenAI for allegedly ‘memorizing’ its content with ChatGPT",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/895372/encyclopedia-britannica-openai-lawsuit",
+      "score": 49,
+      "fetched_at": "2026-03-16",
+      "source": "The Verge",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
     {
       "title": "This is not a fly uploaded to a computer",
       "url": "https://www.theverge.com/ai-artificial-intelligence/894587/fly-brain-computer-upload",
@@ -12,6 +23,17 @@
       "topics": [
         "robotics"
       ]
+    },
+    {
+      "title": "Where OpenAI’s technology could show up in Iran",
+      "url": "https://www.technologyreview.com/2026/03/16/1134315/where-openais-technology-could-show-up-in-iran/",
+      "score": 24,
+      "fetched_at": "2026-03-16",
+      "source": "MIT Tech Review",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
     },
     {
       "title": "Nurturing agentic AI beyond the toddler stage",
