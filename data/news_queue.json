@@ -7,22 +7,6 @@
   },
   "pending": [
     {
-      "title": "AI power concentrated in too few hands, warns Anthropic CEO Dario Amodei",
-      "url": "https://www.livemint.com/technology/tech-news/ai-power-concentrated-in-too-few-hands-warns-anthropic-ceo-dario-amodei-in-interview-with-nikhil-kamath-11771932098444.html",
-      "score": 62,
-      "fetched_at": "2026-03-01",
-      "company": "anthropic",
-      "topic": "policy"
-    },
-    {
-      "title": "Florida 'AI Bill of Rights' enters free speech debate",
-      "url": "https://www.usatoday.com/story/news/state/2026/02/25/child-safety-vs-free-speech-rights-at-issue-in-florida-ai-bill/88669010007/",
-      "score": 57,
-      "fetched_at": "2026-03-01",
-      "company": "policy",
-      "topic": "policy"
-    },
-    {
       "title": "Using GPT-4o reasoning to transform cancer care",
       "url": "https://openai.com/index/color-health",
       "score": 55,
@@ -10767,6 +10751,12 @@
       "date": "2026-03-15",
       "posts": 0,
       "items_processed": 37380,
+      "estimated_tokens": 0
+    },
+    {
+      "date": "2026-03-16",
+      "posts": 0,
+      "items_processed": 1780,
       "estimated_tokens": 0
     }
   ]

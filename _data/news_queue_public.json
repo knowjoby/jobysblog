@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-15T23:35:54.435116+00:00",
-  "pending_count": 862,
+  "updated_at_utc": "2026-03-16T02:56:13.064550+00:00",
+  "pending_count": 860,
   "pending": [
     {
       "title": "The $100,000 fee for H-1Bs is causing all sorts of problems",
@@ -9688,24 +9688,6 @@
       "companies": [
         "huggingface"
       ],
-      "topics": []
-    },
-    {
-      "title": "AI power concentrated in too few hands, warns Anthropic CEO Dario Amodei",
-      "url": "https://www.livemint.com/technology/tech-news/ai-power-concentrated-in-too-few-hands-warns-anthropic-ceo-dario-amodei-in-interview-with-nikhil-kamath-11771932098444.html",
-      "score": 62,
-      "fetched_at": "2026-03-01",
-      "source": "",
-      "companies": [],
-      "topics": []
-    },
-    {
-      "title": "Florida 'AI Bill of Rights' enters free speech debate",
-      "url": "https://www.usatoday.com/story/news/state/2026/02/25/child-safety-vs-free-speech-rights-at-issue-in-florida-ai-bill/88669010007/",
-      "score": 57,
-      "fetched_at": "2026-03-01",
-      "source": "",
-      "companies": [],
       "topics": []
     }
   ]
