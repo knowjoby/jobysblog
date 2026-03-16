@@ -1,27 +1,5 @@
 [
   {
-    "ran_at": "2026-03-14 16:05:21 IST",
-    "triggered_by": "Scheduled",
-    "candidates_found": 0,
-    "posts_created": 0,
-    "queued": 0,
-    "feeds": {
-      "ddg": {
-        "queries": 3,
-        "raw": 0,
-        "candidates": 0
-      },
-      "rss": {
-        "raw": 1780,
-        "feeds_total": 10,
-        "feeds_ok": 10,
-        "feeds_failed": 0,
-        "candidates": 0
-      }
-    },
-    "posts": []
-  },
-  {
     "ran_at": "2026-03-14 16:59:55 IST",
     "triggered_by": "Scheduled",
     "candidates_found": 0,
@@ -1107,5 +1085,36 @@
       }
     },
     "posts": []
+  },
+  {
+    "ran_at": "2026-03-17 02:37:31 IST",
+    "triggered_by": "Scheduled",
+    "candidates_found": 4,
+    "posts_created": 1,
+    "queued": 3,
+    "feeds": {
+      "ddg": {
+        "queries": 3,
+        "raw": 0,
+        "candidates": 4
+      },
+      "rss": {
+        "raw": 1781,
+        "feeds_total": 10,
+        "feeds_ok": 10,
+        "feeds_failed": 0,
+        "candidates": 4
+      }
+    },
+    "posts": [
+      {
+        "title": "Nvidia says China’s BYD and Geely will use its robotaxi platform",
+        "file": "_posts/2026-03-16-nvidia-says-chinas-byd-and-geely-will-use-its-robotaxi-platform.md",
+        "score": 55,
+        "tags": [
+          "nvidia"
+        ]
+      }
+    ]
   }
 ]

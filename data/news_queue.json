@@ -863,6 +863,19 @@
       "topic": "robotics"
     },
     {
+      "title": "I met Olaf \u2014 the Frozen robot who might be the future of Disney Parks",
+      "url": "https://www.theverge.com/tech/895369/olaf-disney-imagineering-frozen-robot-up-close",
+      "score": 33,
+      "fetched_at": "2026-03-16",
+      "source": "The Verge",
+      "companies": [],
+      "topics": [
+        "robotics"
+      ],
+      "company": "",
+      "topic": "robotics"
+    },
+    {
       "title": "Trump Administration Won\u2019t Rule Out Further Action Against Anthropic",
       "url": "https://www.wired.com/story/trump-administration-refuses-to-say-it-wont-take-further-action-against-anthropic/",
       "score": 32,
@@ -5001,6 +5014,19 @@
       "topic": ""
     },
     {
+      "title": "Warren presses Pentagon over decision to grant xAI access to classified networks",
+      "url": "https://techcrunch.com/2026/03/16/warren-presses-pentagon-over-decision-to-grant-xai-access-to-classified-networks/",
+      "score": 24,
+      "fetched_at": "2026-03-16",
+      "source": "TechCrunch",
+      "companies": [
+        "xai"
+      ],
+      "topics": [],
+      "company": "xai",
+      "topic": ""
+    },
+    {
       "title": "Introducing GPT-5.1 for developers",
       "url": "https://openai.com/index/gpt-5-1-for-developers",
       "score": 22,
@@ -8865,6 +8891,19 @@
       "topic": "agentic"
     },
     {
+      "title": "Memories AI\u00a0is building\u00a0the visual memory layer for wearables and robotics",
+      "url": "https://techcrunch.com/2026/03/16/memories-ai-is-building-the-visual-memory-layer-for-wearables-and-robotics/",
+      "score": 11,
+      "fetched_at": "2026-03-16",
+      "source": "TechCrunch",
+      "companies": [],
+      "topics": [
+        "robotics"
+      ],
+      "company": "",
+      "topic": "robotics"
+    },
+    {
       "title": "Deep double descent",
       "url": "https://openai.com/index/deep-double-descent",
       "score": 10,
@@ -10838,6 +10877,17 @@
         "openai"
       ],
       "topics": []
+    },
+    {
+      "title": "Nvidia says China\u2019s BYD and Geely will use its robotaxi platform",
+      "url": "https://www.theverge.com/tech/895301/nvidia-robotaxi-byd-geely-hyperion-lyft-halos",
+      "score": 55,
+      "file": "_posts/2026-03-16-nvidia-says-chinas-byd-and-geely-will-use-its-robotaxi-platform.md",
+      "posted_at": "2026-03-16",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": []
     }
   ],
   "daily_usage": [
@@ -10898,8 +10948,8 @@
     },
     {
       "date": "2026-03-16",
-      "posts": 1,
-      "items_processed": 24923,
+      "posts": 2,
+      "items_processed": 26704,
       "estimated_tokens": 0
     }
   ]

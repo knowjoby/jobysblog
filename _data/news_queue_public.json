@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-16T20:01:29.739384+00:00",
-  "pending_count": 870,
+  "updated_at_utc": "2026-03-16T21:07:31.413155+00:00",
+  "pending_count": 873,
   "pending": [
     {
       "title": "Encyclopedia Britannica is suing OpenAI for allegedly ‘memorizing’ its content with ChatGPT",
@@ -12,6 +12,17 @@
         "openai"
       ],
       "topics": []
+    },
+    {
+      "title": "I met Olaf — the Frozen robot who might be the future of Disney Parks",
+      "url": "https://www.theverge.com/tech/895369/olaf-disney-imagineering-frozen-robot-up-close",
+      "score": 33,
+      "fetched_at": "2026-03-16",
+      "source": "The Verge",
+      "companies": [],
+      "topics": [
+        "robotics"
+      ]
     },
     {
       "title": "This is not a fly uploaded to a computer",
@@ -56,6 +67,17 @@
       "source": "MIT Tech Review",
       "companies": [
         "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Warren presses Pentagon over decision to grant xAI access to classified networks",
+      "url": "https://techcrunch.com/2026/03/16/warren-presses-pentagon-over-decision-to-grant-xai-access-to-classified-networks/",
+      "score": 24,
+      "fetched_at": "2026-03-16",
+      "source": "TechCrunch",
+      "companies": [
+        "xai"
       ],
       "topics": []
     },
@@ -112,6 +134,17 @@
       "companies": [],
       "topics": [
         "agentic"
+      ]
+    },
+    {
+      "title": "Memories AI is building the visual memory layer for wearables and robotics",
+      "url": "https://techcrunch.com/2026/03/16/memories-ai-is-building-the-visual-memory-layer-for-wearables-and-robotics/",
+      "score": 11,
+      "fetched_at": "2026-03-16",
+      "source": "TechCrunch",
+      "companies": [],
+      "topics": [
+        "robotics"
       ]
     },
     {
