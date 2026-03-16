@@ -10695,6 +10695,17 @@
       "topics": [
         "coding"
       ]
+    },
+    {
+      "title": "OpenAI\u2019s adult mode will reportedly be smutty, not pornographic",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/895130/openai-chatgpt-adult-mode-text-smut-written-erotica",
+      "score": 51,
+      "file": "_posts/2026-03-16-openais-adult-mode-will-reportedly-be-smutty-not-pornographic.md",
+      "posted_at": "2026-03-16",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
     }
   ],
   "daily_usage": [
@@ -10755,8 +10766,8 @@
     },
     {
       "date": "2026-03-16",
-      "posts": 0,
-      "items_processed": 12460,
+      "posts": 1,
+      "items_processed": 14240,
       "estimated_tokens": 0
     }
   ]

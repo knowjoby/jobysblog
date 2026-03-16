@@ -1,27 +1,5 @@
 [
   {
-    "ran_at": "2026-03-14 10:17:35 IST",
-    "triggered_by": "Scheduled",
-    "candidates_found": 0,
-    "posts_created": 0,
-    "queued": 0,
-    "feeds": {
-      "ddg": {
-        "queries": 3,
-        "raw": 0,
-        "candidates": 0
-      },
-      "rss": {
-        "raw": 1780,
-        "feeds_total": 10,
-        "feeds_ok": 10,
-        "feeds_failed": 0,
-        "candidates": 0
-      }
-    },
-    "posts": []
-  },
-  {
     "ran_at": "2026-03-14 11:22:12 IST",
     "triggered_by": "Scheduled",
     "candidates_found": 0,
@@ -1098,5 +1076,36 @@
       }
     },
     "posts": []
+  },
+  {
+    "ran_at": "2026-03-16 17:24:35 IST",
+    "triggered_by": "Scheduled",
+    "candidates_found": 1,
+    "posts_created": 1,
+    "queued": 0,
+    "feeds": {
+      "ddg": {
+        "queries": 3,
+        "raw": 0,
+        "candidates": 1
+      },
+      "rss": {
+        "raw": 1780,
+        "feeds_total": 10,
+        "feeds_ok": 10,
+        "feeds_failed": 0,
+        "candidates": 1
+      }
+    },
+    "posts": [
+      {
+        "title": "OpenAI’s adult mode will reportedly be smutty, not pornographic",
+        "file": "_posts/2026-03-16-openais-adult-mode-will-reportedly-be-smutty-not-pornographic.md",
+        "score": 51,
+        "tags": [
+          "openai"
+        ]
+      }
+    ]
   }
 ]
