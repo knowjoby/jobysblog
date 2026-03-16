@@ -1,27 +1,5 @@
 [
   {
-    "ran_at": "2026-03-14 16:59:55 IST",
-    "triggered_by": "Scheduled",
-    "candidates_found": 0,
-    "posts_created": 0,
-    "queued": 0,
-    "feeds": {
-      "ddg": {
-        "queries": 3,
-        "raw": 0,
-        "candidates": 0
-      },
-      "rss": {
-        "raw": 1780,
-        "feeds_total": 10,
-        "feeds_ok": 10,
-        "feeds_failed": 0,
-        "candidates": 0
-      }
-    },
-    "posts": []
-  },
-  {
     "ran_at": "2026-03-14 17:22:13 IST",
     "triggered_by": "Scheduled",
     "candidates_found": 0,
@@ -1112,6 +1090,40 @@
         "file": "_posts/2026-03-16-nvidia-says-chinas-byd-and-geely-will-use-its-robotaxi-platform.md",
         "score": 55,
         "tags": [
+          "nvidia"
+        ]
+      }
+    ]
+  },
+  {
+    "ran_at": "2026-03-17 03:33:18 IST",
+    "triggered_by": "Scheduled",
+    "candidates_found": 9,
+    "posts_created": 1,
+    "queued": 8,
+    "feeds": {
+      "ddg": {
+        "queries": 3,
+        "raw": 0,
+        "candidates": 9
+      },
+      "rss": {
+        "raw": 1781,
+        "feeds_total": 10,
+        "feeds_ok": 10,
+        "feeds_failed": 0,
+        "candidates": 9
+      }
+    },
+    "posts": [
+      {
+        "title": "Nvidia introduces Vera Rubin, a seven-chip AI platform with OpenAI, Anthropic and Meta on board",
+        "file": "_posts/2026-03-16-nvidia-introduces-vera-rubin-a-seven-chip-ai-platform-with-openai-anth.md",
+        "score": 100,
+        "tags": [
+          "openai",
+          "anthropic",
+          "meta",
           "nvidia"
         ]
       }

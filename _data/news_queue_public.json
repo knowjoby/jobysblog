@@ -1,7 +1,29 @@
 {
-  "updated_at_utc": "2026-03-16T21:07:31.413155+00:00",
-  "pending_count": 873,
+  "updated_at_utc": "2026-03-16T22:03:18.853503+00:00",
+  "pending_count": 881,
   "pending": [
+    {
+      "title": "DLSS 5 looks like a real-time generative AI filter for video games",
+      "url": "https://www.theverge.com/news/895472/nvidia-dlss5-generative-ai-pc-graphics",
+      "score": 49,
+      "fetched_at": "2026-03-16",
+      "source": "The Verge",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Teens sue Elon Musk’s xAI over Grok’s AI-generated CSAM",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/895639/xai-grok-teens-lawsuit-grok-ai-elon-musk",
+      "score": 49,
+      "fetched_at": "2026-03-16",
+      "source": "The Verge",
+      "companies": [
+        "xai"
+      ],
+      "topics": []
+    },
     {
       "title": "Encyclopedia Britannica is suing OpenAI for allegedly ‘memorizing’ its content with ChatGPT",
       "url": "https://www.theverge.com/ai-artificial-intelligence/895372/encyclopedia-britannica-openai-lawsuit",
@@ -12,6 +34,44 @@
         "openai"
       ],
       "topics": []
+    },
+    {
+      "title": "Nvidia's DGX Station is a desktop supercomputer that runs trillion-parameter AI models without the cloud",
+      "url": "https://venturebeat.com/infrastructure/nvidias-dgx-station-is-a-desktop-supercomputer-that-runs-trillion-parameter",
+      "score": 42,
+      "fetched_at": "2026-03-16",
+      "source": "VentureBeat",
+      "companies": [
+        "openai",
+        "nvidia"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Nvidia BlueField-4 STX adds a context memory layer to storage to close the agentic AI throughput gap",
+      "url": "https://venturebeat.com/data/nvidia-bluefield-4-stx-adds-a-context-memory-layer-to-storage-to-close-the",
+      "score": 41,
+      "fetched_at": "2026-03-16",
+      "source": "VentureBeat",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
+      "title": "Nvidia launches enterprise AI agent platform with Adobe, Salesforce, SAP among 17 adopters at GTC 2026",
+      "url": "https://venturebeat.com/technology/nvidia-launches-enterprise-ai-agent-platform-with-adobe-salesforce-sap-among",
+      "score": 38,
+      "fetched_at": "2026-03-16",
+      "source": "VentureBeat",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [
+        "agentic"
+      ]
     },
     {
       "title": "I met Olaf — the Frozen robot who might be the future of Disney Parks",
@@ -104,6 +164,17 @@
       "topics": []
     },
     {
+      "title": "Jensen just put Nvidia’s Blackwell and Vera Rubin sales projections into the $1 trillion stratosphere",
+      "url": "https://techcrunch.com/2026/03/16/jensen-just-put-nvidias-blackwell-and-vera-rubin-sales-projections-into-the-1-trillion-stratosphere/",
+      "score": 24,
+      "fetched_at": "2026-03-16",
+      "source": "TechCrunch",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": []
+    },
+    {
       "title": "Elon Musk’s xAI faces child porn lawsuit from minors Grok allegedly undressed",
       "url": "https://techcrunch.com/2026/03/16/elon-musks-xai-faces-child-porn-lawsuit-from-minors-grok-allegedly-undressed/",
       "score": 24,
@@ -126,6 +197,17 @@
       "topics": []
     },
     {
+      "title": "New \"vibe coded\" AI translation tool splits the video game preservation community",
+      "url": "https://arstechnica.com/ai/2026/03/new-vibe-coded-ai-translation-tool-splits-the-video-game-preservation-community/",
+      "score": 18,
+      "fetched_at": "2026-03-16",
+      "source": "Ars Technica",
+      "companies": [
+        "google"
+      ],
+      "topics": []
+    },
+    {
       "title": "Nurturing agentic AI beyond the toddler stage",
       "url": "https://www.technologyreview.com/2026/03/16/1133979/nurturing-agentic-ai-beyond-the-toddler-stage/",
       "score": 11,
@@ -142,6 +224,17 @@
       "score": 11,
       "fetched_at": "2026-03-16",
       "source": "TechCrunch",
+      "companies": [],
+      "topics": [
+        "robotics"
+      ]
+    },
+    {
+      "title": "The Rise of Physical AI for Healthcare Robotics",
+      "url": "https://huggingface.co/blog/nvidia/physical-ai-for-healthcare-robotics",
+      "score": 11,
+      "fetched_at": "2026-03-16",
+      "source": "Hugging Face",
       "companies": [],
       "topics": [
         "robotics"
