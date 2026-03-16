@@ -1988,6 +1988,21 @@
       "topic": ""
     },
     {
+      "title": "z.ai debuts faster, cheaper GLM-5 Turbo model for agents and 'claws' \u2014 but it's not open-source",
+      "url": "https://venturebeat.com/technology/z-ai-debuts-faster-cheaper-glm-5-turbo-model-for-agents-and-claws-but-its",
+      "score": 30,
+      "fetched_at": "2026-03-16",
+      "source": "VentureBeat",
+      "companies": [],
+      "topics": [
+        "agentic",
+        "open_source",
+        "china"
+      ],
+      "company": "",
+      "topic": "agentic"
+    },
+    {
       "title": "Inside Mirakl's agentic commerce vision",
       "url": "https://openai.com/index/mirakl",
       "score": 29,
@@ -4970,6 +4985,19 @@
       ],
       "topics": [],
       "company": "openai",
+      "topic": ""
+    },
+    {
+      "title": "Elon Musk\u2019s xAI faces child porn lawsuit from minors Grok allegedly undressed",
+      "url": "https://techcrunch.com/2026/03/16/elon-musks-xai-faces-child-porn-lawsuit-from-minors-grok-allegedly-undressed/",
+      "score": 24,
+      "fetched_at": "2026-03-16",
+      "source": "TechCrunch",
+      "companies": [
+        "xai"
+      ],
+      "topics": [],
+      "company": "xai",
       "topic": ""
     },
     {
@@ -10871,7 +10899,7 @@
     {
       "date": "2026-03-16",
       "posts": 1,
-      "items_processed": 23142,
+      "items_processed": 24923,
       "estimated_tokens": 0
     }
   ]

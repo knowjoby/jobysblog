@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-16T19:12:56.052353+00:00",
-  "pending_count": 868,
+  "updated_at_utc": "2026-03-16T20:01:29.739384+00:00",
+  "pending_count": 870,
   "pending": [
     {
       "title": "Encyclopedia Britannica is suing OpenAI for allegedly ‘memorizing’ its content with ChatGPT",
@@ -22,6 +22,19 @@
       "companies": [],
       "topics": [
         "robotics"
+      ]
+    },
+    {
+      "title": "z.ai debuts faster, cheaper GLM-5 Turbo model for agents and 'claws' — but it's not open-source",
+      "url": "https://venturebeat.com/technology/z-ai-debuts-faster-cheaper-glm-5-turbo-model-for-agents-and-claws-but-its",
+      "score": 30,
+      "fetched_at": "2026-03-16",
+      "source": "VentureBeat",
+      "companies": [],
+      "topics": [
+        "agentic",
+        "open_source",
+        "china"
       ]
     },
     {
@@ -65,6 +78,17 @@
       "source": "TechCrunch",
       "companies": [
         "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Elon Musk’s xAI faces child porn lawsuit from minors Grok allegedly undressed",
+      "url": "https://techcrunch.com/2026/03/16/elon-musks-xai-faces-child-porn-lawsuit-from-minors-grok-allegedly-undressed/",
+      "score": 24,
+      "fetched_at": "2026-03-16",
+      "source": "TechCrunch",
+      "companies": [
+        "xai"
       ],
       "topics": []
     },
