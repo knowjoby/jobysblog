@@ -837,6 +837,19 @@
       "topic": "regulation"
     },
     {
+      "title": "This is not a fly uploaded to a computer",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/894587/fly-brain-computer-upload",
+      "score": 33,
+      "fetched_at": "2026-03-16",
+      "source": "The Verge",
+      "companies": [],
+      "topics": [
+        "robotics"
+      ],
+      "company": "",
+      "topic": "robotics"
+    },
+    {
       "title": "Trump Administration Won\u2019t Rule Out Further Action Against Anthropic",
       "url": "https://www.wired.com/story/trump-administration-refuses-to-say-it-wont-take-further-action-against-anthropic/",
       "score": 32,
@@ -8733,6 +8746,19 @@
       "topic": "robotics"
     },
     {
+      "title": "Nurturing agentic AI beyond the toddler stage",
+      "url": "https://www.technologyreview.com/2026/03/16/1133979/nurturing-agentic-ai-beyond-the-toddler-stage/",
+      "score": 11,
+      "fetched_at": "2026-03-16",
+      "source": "MIT Tech Review",
+      "companies": [],
+      "topics": [
+        "agentic"
+      ],
+      "company": "",
+      "topic": "agentic"
+    },
+    {
       "title": "Deep double descent",
       "url": "https://openai.com/index/deep-double-descent",
       "score": 10,
@@ -10767,7 +10793,7 @@
     {
       "date": "2026-03-16",
       "posts": 1,
-      "items_processed": 14240,
+      "items_processed": 16020,
       "estimated_tokens": 0
     }
   ]
