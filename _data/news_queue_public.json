@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-17T19:35:03.966372+00:00",
-  "pending_count": 899,
+  "updated_at_utc": "2026-03-17T20:48:37.072736+00:00",
+  "pending_count": 900,
   "pending": [
     {
       "title": "Nvidia’s DLSS 5 is like motion smoothing for video games, but worse",
@@ -131,6 +131,17 @@
       "source": "Ars Technica",
       "companies": [
         "xai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Equipping workers with insights about compensation",
+      "url": "https://openai.com/index/equipping-workers-with-insights-about-compensation",
+      "score": 18,
+      "fetched_at": "2026-03-17",
+      "source": "OpenAI",
+      "companies": [
+        "openai"
       ],
       "topics": []
     },
