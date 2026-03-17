@@ -8133,6 +8133,19 @@
       "topic": ""
     },
     {
+      "title": "The Pentagon is planning for AI companies to train on classified data, defense official says",
+      "url": "https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/",
+      "score": 18,
+      "fetched_at": "2026-03-17",
+      "source": "MIT Tech Review",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [],
+      "company": "anthropic",
+      "topic": ""
+    },
+    {
       "title": "Zendesk acquires agentic customer service startup Forethought",
       "url": "https://techcrunch.com/2026/03/11/zendesk-acquires-agentic-customer-service-startup-forethought/",
       "score": 17,
@@ -11416,7 +11429,7 @@
     {
       "date": "2026-03-17",
       "posts": 4,
-      "items_processed": 30298,
+      "items_processed": 32083,
       "estimated_tokens": 0
     }
   ]

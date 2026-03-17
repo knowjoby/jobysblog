@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-17T22:40:00.805164+00:00",
-  "pending_count": 902,
+  "updated_at_utc": "2026-03-17T23:38:23.801361+00:00",
+  "pending_count": 903,
   "pending": [
     {
       "title": "Nvidia’s DLSS 5 is like motion smoothing for video games, but worse",
@@ -153,6 +153,17 @@
       "source": "VentureBeat",
       "companies": [
         "mistral"
+      ],
+      "topics": []
+    },
+    {
+      "title": "The Pentagon is planning for AI companies to train on classified data, defense official says",
+      "url": "https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/",
+      "score": 18,
+      "fetched_at": "2026-03-17",
+      "source": "MIT Tech Review",
+      "companies": [
+        "anthropic"
       ],
       "topics": []
     },
