@@ -5125,6 +5125,19 @@
       "topic": ""
     },
     {
+      "title": "Elon Musk's xAI sued for turning three girls' real photos into AI CSAM",
+      "url": "https://arstechnica.com/tech-policy/2026/03/elon-musks-xai-sued-for-turning-three-girls-real-photos-into-ai-csam/",
+      "score": 24,
+      "fetched_at": "2026-03-17",
+      "source": "Ars Technica",
+      "companies": [
+        "xai"
+      ],
+      "topics": [],
+      "company": "xai",
+      "topic": ""
+    },
+    {
       "title": "Introducing GPT-5.1 for developers",
       "url": "https://openai.com/index/gpt-5-1-for-developers",
       "score": 22,
@@ -11088,6 +11101,12 @@
       "date": "2026-03-16",
       "posts": 3,
       "items_processed": 32047,
+      "estimated_tokens": 0
+    },
+    {
+      "date": "2026-03-17",
+      "posts": 0,
+      "items_processed": 1781,
       "estimated_tokens": 0
     }
   ]

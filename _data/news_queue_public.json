@@ -1,7 +1,18 @@
 {
-  "updated_at_utc": "2026-03-16T23:42:21.651073+00:00",
-  "pending_count": 882,
+  "updated_at_utc": "2026-03-17T02:39:27.643406+00:00",
+  "pending_count": 883,
   "pending": [
+    {
+      "title": "Elon Musk's xAI sued for turning three girls' real photos into AI CSAM",
+      "url": "https://arstechnica.com/tech-policy/2026/03/elon-musks-xai-sued-for-turning-three-girls-real-photos-into-ai-csam/",
+      "score": 24,
+      "fetched_at": "2026-03-17",
+      "source": "Ars Technica",
+      "companies": [
+        "xai"
+      ],
+      "topics": []
+    },
     {
       "title": "DLSS 5 looks like a real-time generative AI filter for video games",
       "url": "https://www.theverge.com/news/895472/nvidia-dlss5-generative-ai-pc-graphics",
