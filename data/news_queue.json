@@ -5279,6 +5279,19 @@
       "topic": ""
     },
     {
+      "title": "Meta Is Shutting Down Horizon Worlds on Meta Quest",
+      "url": "https://www.wired.com/story/meta-is-shutting-down-horizon-worlds-on-meta-quest/",
+      "score": 24,
+      "fetched_at": "2026-03-17",
+      "source": "Wired",
+      "companies": [
+        "meta"
+      ],
+      "topics": [],
+      "company": "meta",
+      "topic": ""
+    },
+    {
       "title": "Introducing GPT-5.1 for developers",
       "url": "https://openai.com/index/gpt-5-1-for-developers",
       "score": 22,
@@ -11403,7 +11416,7 @@
     {
       "date": "2026-03-17",
       "posts": 4,
-      "items_processed": 28513,
+      "items_processed": 30298,
       "estimated_tokens": 0
     }
   ]
