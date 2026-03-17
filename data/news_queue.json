@@ -356,6 +356,20 @@
       "topic": ""
     },
     {
+      "title": "The Download: OpenAI\u2019s US military deal, and Grok\u2019s CSAM lawsuit",
+      "url": "https://www.technologyreview.com/2026/03/17/1134322/the-download-openi-us-military-deal-grok-xai-csam-lawsuit/",
+      "score": 42,
+      "fetched_at": "2026-03-17",
+      "source": "MIT Tech Review",
+      "companies": [
+        "openai",
+        "xai"
+      ],
+      "topics": [],
+      "company": "openai",
+      "topic": ""
+    },
+    {
       "title": "Google's Gemini Embedding 2 arrives with native multimodal support to cut costs and speed up your enterprise data stack",
       "url": "https://venturebeat.com/data/googles-gemini-embedding-2-arrives-with-native-multimodal-support-to-cut",
       "score": 41,
@@ -5135,6 +5149,19 @@
       ],
       "topics": [],
       "company": "xai",
+      "topic": ""
+    },
+    {
+      "title": "Niv-AI exits stealth to wring more power performance out of GPUs",
+      "url": "https://techcrunch.com/2026/03/17/niv-ai-exits-stealth-to-wring-more-power-performance-out-of-gpus/",
+      "score": 24,
+      "fetched_at": "2026-03-17",
+      "source": "TechCrunch",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [],
+      "company": "nvidia",
       "topic": ""
     },
     {
@@ -11145,7 +11172,7 @@
     {
       "date": "2026-03-17",
       "posts": 0,
-      "items_processed": 16029,
+      "items_processed": 17811,
       "estimated_tokens": 0
     }
   ]
