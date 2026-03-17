@@ -1,7 +1,18 @@
 {
-  "updated_at_utc": "2026-03-17T15:12:57.430020+00:00",
-  "pending_count": 889,
+  "updated_at_utc": "2026-03-17T16:41:13.280551+00:00",
+  "pending_count": 892,
   "pending": [
+    {
+      "title": "The future of code is exciting and terrifying",
+      "url": "https://www.theverge.com/podcast/895910/claude-code-future-developers-vergecast",
+      "score": 43,
+      "fetched_at": "2026-03-17",
+      "source": "The Verge",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": []
+    },
     {
       "title": "The Download: OpenAI’s US military deal, and Grok’s CSAM lawsuit",
       "url": "https://www.technologyreview.com/2026/03/17/1134322/the-download-openi-us-military-deal-grok-xai-csam-lawsuit/",
@@ -15,6 +26,19 @@
       "topics": []
     },
     {
+      "title": "Nvidia lets its 'claws' out: NemoClaw brings security, scale to the agent platform taking over AI",
+      "url": "https://venturebeat.com/technology/nvidia-lets-its-claws-out-nemoclaw-brings-security-scale-to-the-agent",
+      "score": 38,
+      "fetched_at": "2026-03-17",
+      "source": "VentureBeat",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
       "title": "World launches tool to verify humans behind AI shopping agents",
       "url": "https://techcrunch.com/2026/03/17/world-launches-tool-to-verify-humans-behind-ai-shopping-agents/",
       "score": 32,
@@ -26,6 +50,17 @@
       "topics": [
         "agentic"
       ]
+    },
+    {
+      "title": "OpenAI expands government footprint with AWS deal, report says",
+      "url": "https://techcrunch.com/2026/03/17/openai-expands-government-footprint-with-aws-deal/",
+      "score": 26,
+      "fetched_at": "2026-03-17",
+      "source": "TechCrunch",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
     },
     {
       "title": "Niv-AI exits stealth to wring more power performance out of GPUs",

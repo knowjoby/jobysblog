@@ -264,6 +264,19 @@
       "topic": ""
     },
     {
+      "title": "The future of code is exciting and terrifying",
+      "url": "https://www.theverge.com/podcast/895910/claude-code-future-developers-vergecast",
+      "score": 43,
+      "fetched_at": "2026-03-17",
+      "source": "The Verge",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [],
+      "company": "anthropic",
+      "topic": ""
+    },
+    {
       "title": "Manufact raises $6.3M as MCP becomes the \u2018USB-C for AI\u2019 powering ChatGPT and Claude apps",
       "url": "https://venturebeat.com/infrastructure/manufact-raises-usd6-3m-as-mcp-becomes-the-usb-c-for-ai-powering-chatgpt-and",
       "score": 42,
@@ -628,6 +641,21 @@
       "score": 38,
       "fetched_at": "2026-03-16",
       "source": "TechCrunch",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [
+        "agentic"
+      ],
+      "company": "nvidia",
+      "topic": "agentic"
+    },
+    {
+      "title": "Nvidia lets its 'claws' out: NemoClaw brings security, scale to the agent platform taking over AI",
+      "url": "https://venturebeat.com/technology/nvidia-lets-its-claws-out-nemoclaw-brings-security-scale-to-the-agent",
+      "score": 38,
+      "fetched_at": "2026-03-17",
+      "source": "VentureBeat",
       "companies": [
         "nvidia"
       ],
@@ -2692,6 +2720,19 @@
       ],
       "company": "anthropic",
       "topic": "open_source"
+    },
+    {
+      "title": "OpenAI expands government footprint with AWS deal, report says",
+      "url": "https://techcrunch.com/2026/03/17/openai-expands-government-footprint-with-aws-deal/",
+      "score": 26,
+      "fetched_at": "2026-03-17",
+      "source": "TechCrunch",
+      "companies": [
+        "openai"
+      ],
+      "topics": [],
+      "company": "openai",
+      "topic": ""
     },
     {
       "title": "Y Combinator-backed Random Labs launches Slate V1, claiming the first 'swarm-native' coding agent",
@@ -11120,6 +11161,30 @@
         "nvidia"
       ],
       "topics": []
+    },
+    {
+      "title": "Microsoft appoints a new Copilot boss after AI leadership shake-up",
+      "url": "https://www.theverge.com/news/895963/microsoft-copilot-leadership-changes-consumer-commercial",
+      "score": 57,
+      "file": "_posts/2026-03-17-microsoft-appoints-a-new-copilot-boss-after-ai-leadership-shake-up.md",
+      "posted_at": "2026-03-17",
+      "companies": [
+        "microsoft"
+      ],
+      "topics": [
+        "coding"
+      ]
+    },
+    {
+      "title": "Now everyone in the US is getting Google\u2019s personalized Gemini AI",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/896107/google-expands-personal-intelligence",
+      "score": 55,
+      "file": "_posts/2026-03-17-now-everyone-in-the-us-is-getting-googles-personalized-gemini-ai.md",
+      "posted_at": "2026-03-17",
+      "companies": [
+        "google"
+      ],
+      "topics": []
     }
   ],
   "daily_usage": [
@@ -11186,8 +11251,8 @@
     },
     {
       "date": "2026-03-17",
-      "posts": 0,
-      "items_processed": 19593,
+      "posts": 2,
+      "items_processed": 21375,
       "estimated_tokens": 0
     }
   ]

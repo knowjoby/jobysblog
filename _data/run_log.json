@@ -1,27 +1,5 @@
 [
   {
-    "ran_at": "2026-03-15 08:26:04 IST",
-    "triggered_by": "Scheduled",
-    "candidates_found": 0,
-    "posts_created": 0,
-    "queued": 0,
-    "feeds": {
-      "ddg": {
-        "queries": 3,
-        "raw": 0,
-        "candidates": 0
-      },
-      "rss": {
-        "raw": 1780,
-        "feeds_total": 10,
-        "feeds_ok": 10,
-        "feeds_failed": 0,
-        "candidates": 0
-      }
-    },
-    "posts": []
-  },
-  {
     "ran_at": "2026-03-15 10:41:59 IST",
     "triggered_by": "Scheduled",
     "candidates_found": 0,
@@ -1128,5 +1106,45 @@
       }
     },
     "posts": []
+  },
+  {
+    "ran_at": "2026-03-17 22:11:13 IST",
+    "triggered_by": "Scheduled",
+    "candidates_found": 5,
+    "posts_created": 2,
+    "queued": 3,
+    "feeds": {
+      "ddg": {
+        "queries": 3,
+        "raw": 0,
+        "candidates": 5
+      },
+      "rss": {
+        "raw": 1782,
+        "feeds_total": 10,
+        "feeds_ok": 10,
+        "feeds_failed": 0,
+        "candidates": 5
+      }
+    },
+    "posts": [
+      {
+        "title": "Microsoft appoints a new Copilot boss after AI leadership shake-up",
+        "file": "_posts/2026-03-17-microsoft-appoints-a-new-copilot-boss-after-ai-leadership-shake-up.md",
+        "score": 57,
+        "tags": [
+          "microsoft",
+          "coding"
+        ]
+      },
+      {
+        "title": "Now everyone in the US is getting Google’s personalized Gemini AI",
+        "file": "_posts/2026-03-17-now-everyone-in-the-us-is-getting-googles-personalized-gemini-ai.md",
+        "score": 55,
+        "tags": [
+          "google"
+        ]
+      }
+    ]
   }
 ]
