@@ -5266,6 +5266,19 @@
       "topic": ""
     },
     {
+      "title": "The Pentagon is developing alternatives to Anthropic, report says",
+      "url": "https://techcrunch.com/2026/03/17/the-pentagon-is-developing-alternatives-to-anthropic-report-says/",
+      "score": 24,
+      "fetched_at": "2026-03-17",
+      "source": "TechCrunch",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [],
+      "company": "anthropic",
+      "topic": ""
+    },
+    {
       "title": "Introducing GPT-5.1 for developers",
       "url": "https://openai.com/index/gpt-5-1-for-developers",
       "score": 22,
@@ -11338,7 +11351,7 @@
     {
       "date": "2026-03-17",
       "posts": 2,
-      "items_processed": 23159,
+      "items_processed": 24943,
       "estimated_tokens": 0
     }
   ]

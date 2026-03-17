@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-17T18:01:53.331680+00:00",
-  "pending_count": 898,
+  "updated_at_utc": "2026-03-17T19:35:03.966372+00:00",
+  "pending_count": 899,
   "pending": [
     {
       "title": "Nvidia’s DLSS 5 is like motion smoothing for video games, but worse",
@@ -98,6 +98,17 @@
       "source": "TechCrunch",
       "companies": [
         "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "The Pentagon is developing alternatives to Anthropic, report says",
+      "url": "https://techcrunch.com/2026/03/17/the-pentagon-is-developing-alternatives-to-anthropic-report-says/",
+      "score": 24,
+      "fetched_at": "2026-03-17",
+      "source": "TechCrunch",
+      "companies": [
+        "anthropic"
       ],
       "topics": []
     },
