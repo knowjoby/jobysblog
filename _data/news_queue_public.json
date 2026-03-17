@@ -1,7 +1,32 @@
 {
-  "updated_at_utc": "2026-03-17T16:41:13.280551+00:00",
-  "pending_count": 892,
+  "updated_at_utc": "2026-03-17T18:01:53.331680+00:00",
+  "pending_count": 898,
   "pending": [
+    {
+      "title": "Nvidia’s DLSS 5 is like motion smoothing for video games, but worse",
+      "url": "https://www.theverge.com/entertainment/896213/nvidia-dlss-5-ai-faces-motion-smoothing",
+      "score": 49,
+      "fetched_at": "2026-03-17",
+      "source": "The Verge",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Nvidia's agentic AI stack is the first major platform to ship with security at launch, but governance gaps remain",
+      "url": "https://venturebeat.com/security/nvidia-gtc-2026-agentic-ai-security-five-vendor-governance-framework",
+      "score": 49,
+      "fetched_at": "2026-03-17",
+      "source": "VentureBeat",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [
+        "agentic",
+        "regulation"
+      ]
+    },
     {
       "title": "The future of code is exciting and terrifying",
       "url": "https://www.theverge.com/podcast/895910/claude-code-future-developers-vergecast",
@@ -36,6 +61,20 @@
       ],
       "topics": [
         "agentic"
+      ]
+    },
+    {
+      "title": "Introducing GPT-5.4 mini and nano",
+      "url": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano",
+      "score": 38,
+      "fetched_at": "2026-03-17",
+      "source": "OpenAI",
+      "companies": [],
+      "topics": [
+        "agentic",
+        "reasoning",
+        "coding",
+        "multimodal"
       ]
     },
     {
@@ -83,6 +122,41 @@
         "xai"
       ],
       "topics": []
+    },
+    {
+      "title": "State of Open Source on Hugging Face: Spring 2026",
+      "url": "https://huggingface.co/blog/huggingface/state-of-os-hf-spring-2026",
+      "score": 18,
+      "fetched_at": "2026-03-17",
+      "source": "Hugging Face",
+      "companies": [
+        "huggingface"
+      ],
+      "topics": [
+        "open_source"
+      ]
+    },
+    {
+      "title": "Gamers react with overwhelming disgust to DLSS 5's generative AI glow-ups",
+      "url": "https://arstechnica.com/gaming/2026/03/gamers-react-with-overwhelming-disgust-to-dlss-5s-generative-ai-glow-ups/",
+      "score": 18,
+      "fetched_at": "2026-03-17",
+      "source": "Ars Technica",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Dyson’s New PencilWash Is Here",
+      "url": "https://www.wired.com/story/dyson-pencilwash-now-available/",
+      "score": 14,
+      "fetched_at": "2026-03-17",
+      "source": "Wired",
+      "companies": [],
+      "topics": [
+        "robotics"
+      ]
     },
     {
       "title": "Picsart now allows creators to ‘hire’ AI assistants through agent marketplace",

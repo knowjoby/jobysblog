@@ -142,6 +142,35 @@
       "topic": ""
     },
     {
+      "title": "Nvidia\u2019s DLSS 5 is like motion smoothing for video games, but worse",
+      "url": "https://www.theverge.com/entertainment/896213/nvidia-dlss-5-ai-faces-motion-smoothing",
+      "score": 49,
+      "fetched_at": "2026-03-17",
+      "source": "The Verge",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [],
+      "company": "nvidia",
+      "topic": ""
+    },
+    {
+      "title": "Nvidia's agentic AI stack is the first major platform to ship with security at launch, but governance gaps remain",
+      "url": "https://venturebeat.com/security/nvidia-gtc-2026-agentic-ai-security-five-vendor-governance-framework",
+      "score": 49,
+      "fetched_at": "2026-03-17",
+      "source": "VentureBeat",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [
+        "agentic",
+        "regulation"
+      ],
+      "company": "nvidia",
+      "topic": "agentic"
+    },
+    {
       "title": "Introducing the Stateful Runtime Environment for Agents in Amazon Bedrock",
       "url": "https://openai.com/index/introducing-the-stateful-runtime-environment-for-agents-in-amazon-bedrock",
       "score": 48,
@@ -663,6 +692,22 @@
         "agentic"
       ],
       "company": "nvidia",
+      "topic": "agentic"
+    },
+    {
+      "title": "Introducing GPT-5.4 mini and nano",
+      "url": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano",
+      "score": 38,
+      "fetched_at": "2026-03-17",
+      "source": "OpenAI",
+      "companies": [],
+      "topics": [
+        "agentic",
+        "reasoning",
+        "coding",
+        "multimodal"
+      ],
+      "company": "",
       "topic": "agentic"
     },
     {
@@ -8008,6 +8053,34 @@
       "topic": ""
     },
     {
+      "title": "Gamers react with overwhelming disgust to DLSS 5's generative AI glow-ups",
+      "url": "https://arstechnica.com/gaming/2026/03/gamers-react-with-overwhelming-disgust-to-dlss-5s-generative-ai-glow-ups/",
+      "score": 18,
+      "fetched_at": "2026-03-17",
+      "source": "Ars Technica",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [],
+      "company": "nvidia",
+      "topic": ""
+    },
+    {
+      "title": "State of Open Source on Hugging Face: Spring 2026",
+      "url": "https://huggingface.co/blog/huggingface/state-of-os-hf-spring-2026",
+      "score": 18,
+      "fetched_at": "2026-03-17",
+      "source": "Hugging Face",
+      "companies": [
+        "huggingface"
+      ],
+      "topics": [
+        "open_source"
+      ],
+      "company": "huggingface",
+      "topic": "open_source"
+    },
+    {
       "title": "Zendesk acquires agentic customer service startup Forethought",
       "url": "https://techcrunch.com/2026/03/11/zendesk-acquires-agentic-customer-service-startup-forethought/",
       "score": 17,
@@ -8710,6 +8783,19 @@
       ],
       "company": "",
       "topic": "agentic"
+    },
+    {
+      "title": "Dyson\u2019s New PencilWash Is Here",
+      "url": "https://www.wired.com/story/dyson-pencilwash-now-available/",
+      "score": 14,
+      "fetched_at": "2026-03-17",
+      "source": "Wired",
+      "companies": [],
+      "topics": [
+        "robotics"
+      ],
+      "company": "",
+      "topic": "robotics"
     },
     {
       "title": "Introducing the Chatbot Guardrails Arena",
@@ -11252,7 +11338,7 @@
     {
       "date": "2026-03-17",
       "posts": 2,
-      "items_processed": 21375,
+      "items_processed": 23159,
       "estimated_tokens": 0
     }
   ]
