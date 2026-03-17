@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-17T20:48:37.072736+00:00",
-  "pending_count": 900,
+  "updated_at_utc": "2026-03-17T21:45:24.546522+00:00",
+  "pending_count": 901,
   "pending": [
     {
       "title": "Nvidia’s DLSS 5 is like motion smoothing for video games, but worse",
@@ -131,6 +131,17 @@
       "source": "Ars Technica",
       "companies": [
         "xai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Mistral AI launches Forge to help companies build proprietary AI models, challenging cloud giants",
+      "url": "https://venturebeat.com/infrastructure/mistral-ai-launches-forge-to-help-companies-build-proprietary-ai-models",
+      "score": 22,
+      "fetched_at": "2026-03-17",
+      "source": "VentureBeat",
+      "companies": [
+        "mistral"
       ],
       "topics": []
     },
