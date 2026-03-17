@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-17T02:39:27.643406+00:00",
-  "pending_count": 883,
+  "updated_at_utc": "2026-03-17T04:57:43.526620+00:00",
+  "pending_count": 884,
   "pending": [
     {
       "title": "Elon Musk's xAI sued for turning three girls' real photos into AI CSAM",
@@ -12,6 +12,17 @@
         "xai"
       ],
       "topics": []
+    },
+    {
+      "title": "Picsart now allows creators to ‘hire’ AI assistants through agent marketplace",
+      "url": "https://techcrunch.com/2026/03/16/picsart-now-allows-creators-to-hire-ai-assistants-through-agent-marketplace/",
+      "score": 14,
+      "fetched_at": "2026-03-17",
+      "source": "TechCrunch",
+      "companies": [],
+      "topics": [
+        "agentic"
+      ]
     },
     {
       "title": "DLSS 5 looks like a real-time generative AI filter for video games",
