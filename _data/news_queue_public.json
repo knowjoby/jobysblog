@@ -1,7 +1,44 @@
 {
-  "updated_at_utc": "2026-03-17T23:38:23.801361+00:00",
-  "pending_count": 903,
+  "updated_at_utc": "2026-03-18T02:45:26.151073+00:00",
+  "pending_count": 906,
   "pending": [
+    {
+      "title": "Nvidia says it can shrink LLM memory 20x without changing model weights",
+      "url": "https://venturebeat.com/orchestration/nvidia-shrinks-llm-memory-20x-without-changing-model-weights",
+      "score": 38,
+      "fetched_at": "2026-03-18",
+      "source": "VentureBeat",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [
+        "coding"
+      ]
+    },
+    {
+      "title": "Open source Mamba 3 arrives to surpass Transformer architecture with nearly 4% improved language modeling, reduced latency",
+      "url": "https://venturebeat.com/technology/open-source-mamba-3-arrives-to-surpass-transformer-architecture-with-nearly",
+      "score": 32,
+      "fetched_at": "2026-03-18",
+      "source": "VentureBeat",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "open_source"
+      ]
+    },
+    {
+      "title": "Justice Department Says Anthropic Can’t Be Trusted With Warfighting Systems",
+      "url": "https://www.wired.com/story/department-of-defense-responds-to-anthropic-lawsuit/",
+      "score": 24,
+      "fetched_at": "2026-03-18",
+      "source": "Wired",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": []
+    },
     {
       "title": "Nvidia’s DLSS 5 is like motion smoothing for video games, but worse",
       "url": "https://www.theverge.com/entertainment/896213/nvidia-dlss-5-ai-faces-motion-smoothing",
