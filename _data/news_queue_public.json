@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-18T18:02:11.344835+00:00",
-  "pending_count": 911,
+  "updated_at_utc": "2026-03-18T19:30:04.821765+00:00",
+  "pending_count": 913,
   "pending": [
     {
       "title": "DLSS 5: Has Nvidia’s AI graphics technology gone too far?",
@@ -21,6 +21,17 @@
       "source": "The Verge",
       "companies": [
         "nvidia"
+      ],
+      "topics": []
+    },
+    {
+      "title": "ChatGPT did not cure a dog’s cancer",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/896878/ai-did-not-cure-this-dogs-cancer",
+      "score": 43,
+      "fetched_at": "2026-03-18",
+      "source": "The Verge",
+      "companies": [
+        "openai"
       ],
       "topics": []
     },
@@ -60,6 +71,17 @@
       "topics": [
         "open_source"
       ]
+    },
+    {
+      "title": "OpenAI Japan announces Japan Teen Safety Blueprint to put teen safety first",
+      "url": "https://openai.com/index/japan-teen-safety-blueprint",
+      "score": 30,
+      "fetched_at": "2026-03-18",
+      "source": "OpenAI",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
     },
     {
       "title": "Justice Department Says Anthropic Can’t Be Trusted With Warfighting Systems",

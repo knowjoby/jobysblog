@@ -332,6 +332,19 @@
       "topic": ""
     },
     {
+      "title": "ChatGPT did not cure a dog\u2019s cancer",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/896878/ai-did-not-cure-this-dogs-cancer",
+      "score": 43,
+      "fetched_at": "2026-03-18",
+      "source": "The Verge",
+      "companies": [
+        "openai"
+      ],
+      "topics": [],
+      "company": "openai",
+      "topic": ""
+    },
+    {
       "title": "Manufact raises $6.3M as MCP becomes the \u2018USB-C for AI\u2019 powering ChatGPT and Claude apps",
       "url": "https://venturebeat.com/infrastructure/manufact-raises-usd6-3m-as-mcp-becomes-the-usb-c-for-ai-powering-chatgpt-and",
       "score": 42,
@@ -2270,6 +2283,19 @@
       ],
       "company": "",
       "topic": "agentic"
+    },
+    {
+      "title": "OpenAI Japan announces Japan Teen Safety Blueprint to put teen safety first",
+      "url": "https://openai.com/index/japan-teen-safety-blueprint",
+      "score": 30,
+      "fetched_at": "2026-03-18",
+      "source": "OpenAI",
+      "companies": [
+        "openai"
+      ],
+      "topics": [],
+      "company": "openai",
+      "topic": ""
     },
     {
       "title": "Inside Mirakl's agentic commerce vision",
@@ -11470,6 +11496,20 @@
         "google"
       ],
       "topics": []
+    },
+    {
+      "title": "Why Walmart and OpenAI Are Shaking Up Their Agentic Shopping Deal",
+      "url": "https://www.wired.com/story/ai-lab-walmart-openai-shaking-up-agentic-shopping-deal/",
+      "score": 53,
+      "file": "_posts/2026-03-18-why-walmart-and-openai-are-shaking-up-their-agentic-shopping-deal.md",
+      "posted_at": "2026-03-18",
+      "companies": [
+        "openai",
+        "google"
+      ],
+      "topics": [
+        "agentic"
+      ]
     }
   ],
   "daily_usage": [
@@ -11542,8 +11582,8 @@
     },
     {
       "date": "2026-03-18",
-      "posts": 0,
-      "items_processed": 23205,
+      "posts": 1,
+      "items_processed": 24991,
       "estimated_tokens": 0
     }
   ]
