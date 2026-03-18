@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-18T19:30:04.821765+00:00",
-  "pending_count": 913,
+  "updated_at_utc": "2026-03-18T20:02:37.023068+00:00",
+  "pending_count": 915,
   "pending": [
     {
       "title": "DLSS 5: Has Nvidia’s AI graphics technology gone too far?",
@@ -106,6 +106,17 @@
       "topics": []
     },
     {
+      "title": "Nvidia is quietly building a multibillion-dollar behemoth to rival its chips business",
+      "url": "https://techcrunch.com/2026/03/18/nvidia-networking-division-building-a-multibillion-dollar-behemoth-to-rival-its-chips-business/",
+      "score": 24,
+      "fetched_at": "2026-03-18",
+      "source": "TechCrunch",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": []
+    },
+    {
       "title": "DOD says Anthropic’s ‘red lines’ make it an ‘unacceptable risk to national security’",
       "url": "https://techcrunch.com/2026/03/18/dod-says-anthropics-red-lines-make-it-an-unacceptable-risk-to-national-security/",
       "score": 24,
@@ -115,6 +126,18 @@
         "anthropic"
       ],
       "topics": []
+    },
+    {
+      "title": "New MiniMax M2.7 proprietary AI model is 'self-evolving' and can perform 30-50% of reinforcement learning research workflow",
+      "url": "https://venturebeat.com/technology/new-minimax-m2-7-proprietary-ai-model-is-self-evolving-and-can-perform-30-50",
+      "score": 16,
+      "fetched_at": "2026-03-18",
+      "source": "VentureBeat",
+      "companies": [],
+      "topics": [
+        "open_source",
+        "china"
+      ]
     },
     {
       "title": "Nvidia’s DLSS 5 is like motion smoothing for video games, but worse",

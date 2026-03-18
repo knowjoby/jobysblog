@@ -5426,6 +5426,19 @@
       "topic": ""
     },
     {
+      "title": "Nvidia is quietly building a multibillion-dollar behemoth to rival its chips business",
+      "url": "https://techcrunch.com/2026/03/18/nvidia-networking-division-building-a-multibillion-dollar-behemoth-to-rival-its-chips-business/",
+      "score": 24,
+      "fetched_at": "2026-03-18",
+      "source": "TechCrunch",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [],
+      "company": "nvidia",
+      "topic": ""
+    },
+    {
       "title": "Introducing GPT-5.1 for developers",
       "url": "https://openai.com/index/gpt-5-1-for-developers",
       "score": 22,
@@ -8717,6 +8730,20 @@
       "topic": "agentic"
     },
     {
+      "title": "New MiniMax M2.7 proprietary AI model is 'self-evolving' and can perform 30-50% of reinforcement learning research workflow",
+      "url": "https://venturebeat.com/technology/new-minimax-m2-7-proprietary-ai-model-is-self-evolving-and-can-perform-30-50",
+      "score": 16,
+      "fetched_at": "2026-03-18",
+      "source": "VentureBeat",
+      "companies": [],
+      "topics": [
+        "open_source",
+        "china"
+      ],
+      "company": "",
+      "topic": "open_source"
+    },
+    {
       "title": "Hustlers are cashing in on China\u2019s OpenClaw AI craze",
       "url": "https://www.technologyreview.com/2026/03/11/1134179/china-openclaw-gold-rush/",
       "score": 14,
@@ -11583,7 +11610,7 @@
     {
       "date": "2026-03-18",
       "posts": 1,
-      "items_processed": 24991,
+      "items_processed": 26777,
       "estimated_tokens": 0
     }
   ]
