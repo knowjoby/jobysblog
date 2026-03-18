@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-18T16:37:44.763079+00:00",
-  "pending_count": 909,
+  "updated_at_utc": "2026-03-18T18:02:11.344835+00:00",
+  "pending_count": 911,
   "pending": [
     {
       "title": "DLSS 5: Has Nvidia’s AI graphics technology gone too far?",
@@ -38,6 +38,17 @@
       ]
     },
     {
+      "title": "My favorite robot vacuum now supports Matter",
+      "url": "https://www.theverge.com/tech/896775/matic-robot-vacuum-apple-home-matter",
+      "score": 33,
+      "fetched_at": "2026-03-18",
+      "source": "The Verge",
+      "companies": [],
+      "topics": [
+        "robotics"
+      ]
+    },
+    {
       "title": "Open source Mamba 3 arrives to surpass Transformer architecture with nearly 4% improved language modeling, reduced latency",
       "url": "https://venturebeat.com/technology/open-source-mamba-3-arrives-to-surpass-transformer-architecture-with-nearly",
       "score": 32,
@@ -58,6 +69,17 @@
       "source": "Wired",
       "companies": [
         "anthropic"
+      ],
+      "topics": []
+    },
+    {
+      "title": "The Gemini-powered features in Google Workspace that are worth using",
+      "url": "https://techcrunch.com/2026/03/18/the-gemini-powered-features-in-google-workspace-that-are-worth-using/",
+      "score": 24,
+      "fetched_at": "2026-03-18",
+      "source": "TechCrunch",
+      "companies": [
+        "google"
       ],
       "topics": []
     },

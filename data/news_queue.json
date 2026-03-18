@@ -1089,6 +1089,19 @@
       "topic": "robotics"
     },
     {
+      "title": "My favorite robot vacuum now supports Matter",
+      "url": "https://www.theverge.com/tech/896775/matic-robot-vacuum-apple-home-matter",
+      "score": 33,
+      "fetched_at": "2026-03-18",
+      "source": "The Verge",
+      "companies": [],
+      "topics": [
+        "robotics"
+      ],
+      "company": "",
+      "topic": "robotics"
+    },
+    {
       "title": "Trump Administration Won\u2019t Rule Out Further Action Against Anthropic",
       "url": "https://www.wired.com/story/trump-administration-refuses-to-say-it-wont-take-further-action-against-anthropic/",
       "score": 32,
@@ -5371,6 +5384,19 @@
       ],
       "topics": [],
       "company": "anthropic",
+      "topic": ""
+    },
+    {
+      "title": "The Gemini-powered features in Google Workspace that are worth using",
+      "url": "https://techcrunch.com/2026/03/18/the-gemini-powered-features-in-google-workspace-that-are-worth-using/",
+      "score": 24,
+      "fetched_at": "2026-03-18",
+      "source": "TechCrunch",
+      "companies": [
+        "google"
+      ],
+      "topics": [],
+      "company": "google",
       "topic": ""
     },
     {
@@ -11517,7 +11543,7 @@
     {
       "date": "2026-03-18",
       "posts": 0,
-      "items_processed": 21420,
+      "items_processed": 23205,
       "estimated_tokens": 0
     }
   ]
