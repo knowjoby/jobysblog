@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-18T21:59:52.796899+00:00",
-  "pending_count": 915,
+  "updated_at_utc": "2026-03-18T22:44:21.682184+00:00",
+  "pending_count": 916,
   "pending": [
     {
       "title": "DLSS 5: Has Nvidia’s AI graphics technology gone too far?",
@@ -124,6 +124,17 @@
       "source": "TechCrunch",
       "companies": [
         "anthropic"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Musk’s tactic of blaming users for Grok sex images may be foiled by EU law",
+      "url": "https://arstechnica.com/tech-policy/2026/03/eu-moves-to-ban-nudify-apps-after-grok-made-them-mainstream/",
+      "score": 24,
+      "fetched_at": "2026-03-18",
+      "source": "Ars Technica",
+      "companies": [
+        "xai"
       ],
       "topics": []
     },

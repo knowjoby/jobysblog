@@ -5439,6 +5439,19 @@
       "topic": ""
     },
     {
+      "title": "Musk\u2019s tactic of blaming users for Grok sex images may be foiled by EU law",
+      "url": "https://arstechnica.com/tech-policy/2026/03/eu-moves-to-ban-nudify-apps-after-grok-made-them-mainstream/",
+      "score": 24,
+      "fetched_at": "2026-03-18",
+      "source": "Ars Technica",
+      "companies": [
+        "xai"
+      ],
+      "topics": [],
+      "company": "xai",
+      "topic": ""
+    },
+    {
       "title": "Introducing GPT-5.1 for developers",
       "url": "https://openai.com/index/gpt-5-1-for-developers",
       "score": 22,
@@ -11610,7 +11623,7 @@
     {
       "date": "2026-03-18",
       "posts": 1,
-      "items_processed": 30349,
+      "items_processed": 32135,
       "estimated_tokens": 0
     }
   ]
