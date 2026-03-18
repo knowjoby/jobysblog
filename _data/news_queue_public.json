@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-18T22:44:21.682184+00:00",
-  "pending_count": 916,
+  "updated_at_utc": "2026-03-18T23:35:28.590707+00:00",
+  "pending_count": 917,
   "pending": [
     {
       "title": "DLSS 5: Has Nvidia’s AI graphics technology gone too far?",
@@ -135,6 +135,17 @@
       "source": "Ars Technica",
       "companies": [
         "xai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Sam Altman’s thank-you to coders draws the memes",
+      "url": "https://techcrunch.com/2026/03/18/sam-altmans-thank-you-to-coders-draws-the-memes/",
+      "score": 18,
+      "fetched_at": "2026-03-18",
+      "source": "TechCrunch",
+      "companies": [
+        "openai"
       ],
       "topics": []
     },
