@@ -171,6 +171,32 @@
       "topic": "agentic"
     },
     {
+      "title": "Nvidia has lost the plot with gamers",
+      "url": "https://www.theverge.com/games/895753/nvidia-dlss-5-slop-face-fake-frames",
+      "score": 49,
+      "fetched_at": "2026-03-18",
+      "source": "The Verge",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [],
+      "company": "nvidia",
+      "topic": ""
+    },
+    {
+      "title": "DLSS 5: Has Nvidia\u2019s AI graphics technology gone too far?",
+      "url": "https://www.theverge.com/games/896518/nvidia-dlss-5-ai-3d-rendering",
+      "score": 49,
+      "fetched_at": "2026-03-18",
+      "source": "The Verge",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [],
+      "company": "nvidia",
+      "topic": ""
+    },
+    {
       "title": "Introducing the Stateful Runtime Environment for Agents in Amazon Bedrock",
       "url": "https://openai.com/index/introducing-the-stateful-runtime-environment-for-agents-in-amazon-bedrock",
       "score": 48,
@@ -5327,6 +5353,19 @@
       "score": 24,
       "fetched_at": "2026-03-18",
       "source": "Wired",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [],
+      "company": "anthropic",
+      "topic": ""
+    },
+    {
+      "title": "DOD says Anthropic\u2019s \u2018red lines\u2019 make it an \u2018unacceptable risk to national security\u2019",
+      "url": "https://techcrunch.com/2026/03/18/dod-says-anthropics-red-lines-make-it-an-unacceptable-risk-to-national-security/",
+      "score": 24,
+      "fetched_at": "2026-03-18",
+      "source": "TechCrunch",
       "companies": [
         "anthropic"
       ],
@@ -11478,7 +11517,7 @@
     {
       "date": "2026-03-18",
       "posts": 0,
-      "items_processed": 16065,
+      "items_processed": 17850,
       "estimated_tokens": 0
     }
   ]

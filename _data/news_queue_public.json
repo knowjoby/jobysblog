@@ -1,7 +1,29 @@
 {
-  "updated_at_utc": "2026-03-18T12:07:22.471948+00:00",
-  "pending_count": 906,
+  "updated_at_utc": "2026-03-18T13:59:54.103947+00:00",
+  "pending_count": 909,
   "pending": [
+    {
+      "title": "DLSS 5: Has Nvidia’s AI graphics technology gone too far?",
+      "url": "https://www.theverge.com/games/896518/nvidia-dlss-5-ai-3d-rendering",
+      "score": 49,
+      "fetched_at": "2026-03-18",
+      "source": "The Verge",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Nvidia has lost the plot with gamers",
+      "url": "https://www.theverge.com/games/895753/nvidia-dlss-5-slop-face-fake-frames",
+      "score": 49,
+      "fetched_at": "2026-03-18",
+      "source": "The Verge",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": []
+    },
     {
       "title": "Nvidia says it can shrink LLM memory 20x without changing model weights",
       "url": "https://venturebeat.com/orchestration/nvidia-shrinks-llm-memory-20x-without-changing-model-weights",
@@ -34,6 +56,17 @@
       "score": 24,
       "fetched_at": "2026-03-18",
       "source": "Wired",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": []
+    },
+    {
+      "title": "DOD says Anthropic’s ‘red lines’ make it an ‘unacceptable risk to national security’",
+      "url": "https://techcrunch.com/2026/03/18/dod-says-anthropics-red-lines-make-it-an-unacceptable-risk-to-national-security/",
+      "score": 24,
+      "fetched_at": "2026-03-18",
+      "source": "TechCrunch",
       "companies": [
         "anthropic"
       ],
