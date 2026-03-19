@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-19T22:38:34.408985+00:00",
-  "pending_count": 934,
+  "updated_at_utc": "2026-03-19T23:35:52.538590+00:00",
+  "pending_count": 935,
   "pending": [
     {
       "title": "Fitbit’s AI health coach will soon be able to read your medical records",
@@ -201,6 +201,17 @@
       "topics": [
         "agentic",
         "coding"
+      ]
+    },
+    {
+      "title": "Amazon acquires Rivr, maker of a stair-climbing delivery robot",
+      "url": "https://techcrunch.com/2026/03/19/amazon-acquires-rivr-maker-of-a-stair-climbing-delivery-robot/",
+      "score": 14,
+      "fetched_at": "2026-03-19",
+      "source": "TechCrunch",
+      "companies": [],
+      "topics": [
+        "robotics"
       ]
     },
     {

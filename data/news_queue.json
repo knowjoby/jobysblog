@@ -9285,6 +9285,19 @@
       "topic": "robotics"
     },
     {
+      "title": "Amazon acquires Rivr, maker of a stair-climbing delivery robot",
+      "url": "https://techcrunch.com/2026/03/19/amazon-acquires-rivr-maker-of-a-stair-climbing-delivery-robot/",
+      "score": 14,
+      "fetched_at": "2026-03-19",
+      "source": "TechCrunch",
+      "companies": [],
+      "topics": [
+        "robotics"
+      ],
+      "company": "",
+      "topic": "robotics"
+    },
+    {
       "title": "Introducing the Chatbot Guardrails Arena",
       "url": "https://huggingface.co/blog/arena-lighthouz",
       "score": 12,
@@ -11915,7 +11928,7 @@
     {
       "date": "2026-03-19",
       "posts": 3,
-      "items_processed": 33950,
+      "items_processed": 35738,
       "estimated_tokens": 0
     }
   ]
