@@ -1,7 +1,32 @@
 {
-  "updated_at_utc": "2026-03-18T23:35:28.590707+00:00",
-  "pending_count": 917,
+  "updated_at_utc": "2026-03-19T02:47:03.352168+00:00",
+  "pending_count": 919,
   "pending": [
+    {
+      "title": "Xiaomi stuns with new MiMo-V2-Pro LLM nearing GPT-5.2, Opus 4.6 performance at a fraction of the cost",
+      "url": "https://venturebeat.com/technology/xiaomi-stuns-with-new-mimo-v2-pro-llm-nearing-gpt-5-2-opus-4-6-performance",
+      "score": 42,
+      "fetched_at": "2026-03-19",
+      "source": "VentureBeat",
+      "companies": [
+        "openai",
+        "anthropic"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Meta is having trouble with rogue AI agents",
+      "url": "https://techcrunch.com/2026/03/18/meta-is-having-trouble-with-rogue-ai-agents/",
+      "score": 32,
+      "fetched_at": "2026-03-19",
+      "source": "TechCrunch",
+      "companies": [
+        "meta"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
     {
       "title": "DLSS 5: Has Nvidia’s AI graphics technology gone too far?",
       "url": "https://www.theverge.com/games/896518/nvidia-dlss-5-ai-3d-rendering",

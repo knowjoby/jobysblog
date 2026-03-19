@@ -451,6 +451,20 @@
       "topic": ""
     },
     {
+      "title": "Xiaomi stuns with new MiMo-V2-Pro LLM nearing GPT-5.2, Opus 4.6 performance at a fraction of the cost",
+      "url": "https://venturebeat.com/technology/xiaomi-stuns-with-new-mimo-v2-pro-llm-nearing-gpt-5-2-opus-4-6-performance",
+      "score": 42,
+      "fetched_at": "2026-03-19",
+      "source": "VentureBeat",
+      "companies": [
+        "openai",
+        "anthropic"
+      ],
+      "topics": [],
+      "company": "openai",
+      "topic": ""
+    },
+    {
       "title": "Google's Gemini Embedding 2 arrives with native multimodal support to cut costs and speed up your enterprise data stack",
       "url": "https://venturebeat.com/data/googles-gemini-embedding-2-arrives-with-native-multimodal-support-to-cut",
       "score": 41,
@@ -1494,6 +1508,21 @@
       ],
       "company": "openai",
       "topic": "open_source"
+    },
+    {
+      "title": "Meta is having trouble with rogue AI agents",
+      "url": "https://techcrunch.com/2026/03/18/meta-is-having-trouble-with-rogue-ai-agents/",
+      "score": 32,
+      "fetched_at": "2026-03-19",
+      "source": "TechCrunch",
+      "companies": [
+        "meta"
+      ],
+      "topics": [
+        "agentic"
+      ],
+      "company": "meta",
+      "topic": "agentic"
     },
     {
       "title": "Meta Ramps Up Efforts to Disrupt Industrialized Scamming",
@@ -11637,6 +11666,12 @@
       "date": "2026-03-18",
       "posts": 1,
       "items_processed": 33921,
+      "estimated_tokens": 0
+    },
+    {
+      "date": "2026-03-19",
+      "posts": 0,
+      "items_processed": 1786,
       "estimated_tokens": 0
     }
   ]
