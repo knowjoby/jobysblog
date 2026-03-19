@@ -11592,6 +11592,20 @@
       "topics": [
         "agentic"
       ]
+    },
+    {
+      "title": "Multiverse Computing pushes its compressed AI models into the mainstream",
+      "url": "https://techcrunch.com/2026/03/19/multiverse-computing-pushes-its-compressed-ai-models-into-the-mainstream/",
+      "score": 62,
+      "file": "_posts/2026-03-19-multiverse-computing-pushes-its-compressed-ai-models-into-the-mainstre.md",
+      "posted_at": "2026-03-19",
+      "companies": [
+        "openai",
+        "meta",
+        "deepseek",
+        "mistral"
+      ],
+      "topics": []
     }
   ],
   "daily_usage": [
@@ -11670,8 +11684,8 @@
     },
     {
       "date": "2026-03-19",
-      "posts": 0,
-      "items_processed": 7144,
+      "posts": 1,
+      "items_processed": 8930,
       "estimated_tokens": 0
     }
   ]
