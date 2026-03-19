@@ -5494,6 +5494,19 @@
       "topic": ""
     },
     {
+      "title": "Signal\u2019s Creator Is Helping Encrypt Meta AI",
+      "url": "https://www.wired.com/story/signals-creator-is-helping-encrypt-meta-ai/",
+      "score": 24,
+      "fetched_at": "2026-03-19",
+      "source": "Wired",
+      "companies": [
+        "meta"
+      ],
+      "topics": [],
+      "company": "meta",
+      "topic": ""
+    },
+    {
       "title": "Introducing GPT-5.1 for developers",
       "url": "https://openai.com/index/gpt-5-1-for-developers",
       "score": 22,
@@ -11711,7 +11724,7 @@
     {
       "date": "2026-03-19",
       "posts": 1,
-      "items_processed": 17861,
+      "items_processed": 19648,
       "estimated_tokens": 0
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-19T13:19:50.069995+00:00",
-  "pending_count": 921,
+  "updated_at_utc": "2026-03-19T14:30:00.873833+00:00",
+  "pending_count": 922,
   "pending": [
     {
       "title": "Fitbit’s AI health coach will soon be able to read your medical records",
@@ -37,6 +37,17 @@
       "topics": [
         "agentic"
       ]
+    },
+    {
+      "title": "Signal’s Creator Is Helping Encrypt Meta AI",
+      "url": "https://www.wired.com/story/signals-creator-is-helping-encrypt-meta-ai/",
+      "score": 24,
+      "fetched_at": "2026-03-19",
+      "source": "Wired",
+      "companies": [
+        "meta"
+      ],
+      "topics": []
     },
     {
       "title": "The Fight to Hold AI Companies Accountable for Children’s Deaths",

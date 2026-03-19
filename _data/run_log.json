@@ -1,39 +1,5 @@
 [
   {
-    "ran_at": "2026-03-17 03:33:18 IST",
-    "triggered_by": "Scheduled",
-    "candidates_found": 9,
-    "posts_created": 1,
-    "queued": 8,
-    "feeds": {
-      "ddg": {
-        "queries": 3,
-        "raw": 0,
-        "candidates": 9
-      },
-      "rss": {
-        "raw": 1781,
-        "feeds_total": 10,
-        "feeds_ok": 10,
-        "feeds_failed": 0,
-        "candidates": 9
-      }
-    },
-    "posts": [
-      {
-        "title": "Nvidia introduces Vera Rubin, a seven-chip AI platform with OpenAI, Anthropic and Meta on board",
-        "file": "_posts/2026-03-16-nvidia-introduces-vera-rubin-a-seven-chip-ai-platform-with-openai-anth.md",
-        "score": 100,
-        "tags": [
-          "openai",
-          "anthropic",
-          "meta",
-          "nvidia"
-        ]
-      }
-    ]
-  },
-  {
     "ran_at": "2026-03-17 04:28:09 IST",
     "triggered_by": "Scheduled",
     "candidates_found": 1,
@@ -1153,6 +1119,28 @@
   },
   {
     "ran_at": "2026-03-19 18:49:50 IST",
+    "triggered_by": "Scheduled",
+    "candidates_found": 1,
+    "posts_created": 0,
+    "queued": 1,
+    "feeds": {
+      "ddg": {
+        "queries": 3,
+        "raw": 0,
+        "candidates": 1
+      },
+      "rss": {
+        "raw": 1787,
+        "feeds_total": 10,
+        "feeds_ok": 10,
+        "feeds_failed": 0,
+        "candidates": 1
+      }
+    },
+    "posts": []
+  },
+  {
+    "ran_at": "2026-03-19 20:00:00 IST",
     "triggered_by": "Scheduled",
     "candidates_found": 1,
     "posts_created": 0,
