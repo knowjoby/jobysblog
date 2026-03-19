@@ -1551,6 +1551,36 @@
       "topic": "agentic"
     },
     {
+      "title": "Meta's rogue AI agent passed every identity check \u2014 four gaps in enterprise IAM explain why",
+      "url": "https://venturebeat.com/security/meta-rogue-ai-agent-confused-deputy-iam-identity-governance-matrix",
+      "score": 32,
+      "fetched_at": "2026-03-19",
+      "source": "VentureBeat",
+      "companies": [
+        "meta"
+      ],
+      "topics": [
+        "agentic"
+      ],
+      "company": "meta",
+      "topic": "agentic"
+    },
+    {
+      "title": "OpenAI is acquiring open source Python tool-maker Astral",
+      "url": "https://arstechnica.com/ai/2026/03/openai-is-acquiring-open-source-python-tool-maker-astral/",
+      "score": 32,
+      "fetched_at": "2026-03-19",
+      "source": "Ars Technica",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "open_source"
+      ],
+      "company": "openai",
+      "topic": "open_source"
+    },
+    {
       "title": "Meta Ramps Up Efforts to Disrupt Industrialized Scamming",
       "url": "https://www.wired.com/story/meta-ramps-up-efforts-to-disrupt-industrialized-scamming/",
       "score": 30,
@@ -11855,7 +11885,7 @@
     {
       "date": "2026-03-19",
       "posts": 3,
-      "items_processed": 26798,
+      "items_processed": 28586,
       "estimated_tokens": 0
     }
   ]

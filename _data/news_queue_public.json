@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-19T19:06:59.169242+00:00",
-  "pending_count": 930,
+  "updated_at_utc": "2026-03-19T20:01:45.877640+00:00",
+  "pending_count": 932,
   "pending": [
     {
       "title": "Fitbit’s AI health coach will soon be able to read your medical records",
@@ -37,6 +37,19 @@
       "topics": []
     },
     {
+      "title": "Meta's rogue AI agent passed every identity check — four gaps in enterprise IAM explain why",
+      "url": "https://venturebeat.com/security/meta-rogue-ai-agent-confused-deputy-iam-identity-governance-matrix",
+      "score": 32,
+      "fetched_at": "2026-03-19",
+      "source": "VentureBeat",
+      "companies": [
+        "meta"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
       "title": "Meta is having trouble with rogue AI agents",
       "url": "https://techcrunch.com/2026/03/18/meta-is-having-trouble-with-rogue-ai-agents/",
       "score": 32,
@@ -47,6 +60,19 @@
       ],
       "topics": [
         "agentic"
+      ]
+    },
+    {
+      "title": "OpenAI is acquiring open source Python tool-maker Astral",
+      "url": "https://arstechnica.com/ai/2026/03/openai-is-acquiring-open-source-python-tool-maker-astral/",
+      "score": 32,
+      "fetched_at": "2026-03-19",
+      "source": "Ars Technica",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "open_source"
       ]
     },
     {
