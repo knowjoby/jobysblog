@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-19T09:53:54.543444+00:00",
-  "pending_count": 919,
+  "updated_at_utc": "2026-03-19T10:50:31.800016+00:00",
+  "pending_count": 920,
   "pending": [
     {
       "title": "Xiaomi stuns with new MiMo-V2-Pro LLM nearing GPT-5.2, Opus 4.6 performance at a fraction of the cost",
@@ -26,6 +26,17 @@
       "topics": [
         "agentic"
       ]
+    },
+    {
+      "title": "The Fight to Hold AI Companies Accountable for Children’s Deaths",
+      "url": "https://www.wired.com/story/how-ai-chatbots-drove-families-to-the-brink-and-the-lawyer-fighting-back/",
+      "score": 18,
+      "fetched_at": "2026-03-19",
+      "source": "Wired",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
     },
     {
       "title": "DLSS 5: Has Nvidia’s AI graphics technology gone too far?",

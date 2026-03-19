@@ -8348,6 +8348,19 @@
       "topic": ""
     },
     {
+      "title": "The Fight to Hold AI Companies Accountable for Children\u2019s Deaths",
+      "url": "https://www.wired.com/story/how-ai-chatbots-drove-families-to-the-brink-and-the-lawyer-fighting-back/",
+      "score": 18,
+      "fetched_at": "2026-03-19",
+      "source": "Wired",
+      "companies": [
+        "openai"
+      ],
+      "topics": [],
+      "company": "openai",
+      "topic": ""
+    },
+    {
       "title": "Zendesk acquires agentic customer service startup Forethought",
       "url": "https://techcrunch.com/2026/03/11/zendesk-acquires-agentic-customer-service-startup-forethought/",
       "score": 17,
@@ -11685,7 +11698,7 @@
     {
       "date": "2026-03-19",
       "posts": 1,
-      "items_processed": 12502,
+      "items_processed": 14288,
       "estimated_tokens": 0
     }
   ]
