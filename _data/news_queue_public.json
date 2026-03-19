@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-19T15:29:24.875378+00:00",
-  "pending_count": 923,
+  "updated_at_utc": "2026-03-19T16:34:57.097942+00:00",
+  "pending_count": 925,
   "pending": [
     {
       "title": "Fitbit’s AI health coach will soon be able to read your medical records",
@@ -61,8 +61,30 @@
       "topics": []
     },
     {
+      "title": "Meta decides not to shut down Horizon Worlds on VR after all",
+      "url": "https://techcrunch.com/2026/03/19/meta-decides-not-to-shut-down-horizon-worlds-on-vr-after-all/",
+      "score": 24,
+      "fetched_at": "2026-03-19",
+      "source": "TechCrunch",
+      "companies": [
+        "meta"
+      ],
+      "topics": []
+    },
+    {
       "title": "The Fight to Hold AI Companies Accountable for Children’s Deaths",
       "url": "https://www.wired.com/story/how-ai-chatbots-drove-families-to-the-brink-and-the-lawyer-fighting-back/",
+      "score": 18,
+      "fetched_at": "2026-03-19",
+      "source": "Wired",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "ChatGPT’s ‘Adult Mode’ Could Spark a New Era of Intimate Surveillance",
+      "url": "https://www.wired.com/story/chatgpt-adult-mode-new-era-of-intimate-surveillance/",
       "score": 18,
       "fetched_at": "2026-03-19",
       "source": "Wired",
