@@ -5574,6 +5574,19 @@
       "topic": ""
     },
     {
+      "title": "At the last minute, Meta decides not to kill Horizon Worlds VR after all",
+      "url": "https://arstechnica.com/gadgets/2026/03/at-the-last-minute-meta-decides-not-to-kill-horizon-worlds-vr-after-all/",
+      "score": 24,
+      "fetched_at": "2026-03-19",
+      "source": "Ars Technica",
+      "companies": [
+        "meta"
+      ],
+      "topics": [],
+      "company": "meta",
+      "topic": ""
+    },
+    {
       "title": "Introducing GPT-5.1 for developers",
       "url": "https://openai.com/index/gpt-5-1-for-developers",
       "score": 22,
@@ -11750,6 +11763,19 @@
         "meta"
       ],
       "topics": []
+    },
+    {
+      "title": "A rogue AI led to a serious security incident at Meta",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/897528/meta-rogue-ai-agent-security-incident",
+      "score": 57,
+      "file": "_posts/2026-03-19-a-rogue-ai-led-to-a-serious-security-incident-at-meta.md",
+      "posted_at": "2026-03-19",
+      "companies": [
+        "meta"
+      ],
+      "topics": [
+        "agentic"
+      ]
     }
   ],
   "daily_usage": [
@@ -11828,8 +11854,8 @@
     },
     {
       "date": "2026-03-19",
-      "posts": 2,
-      "items_processed": 25010,
+      "posts": 3,
+      "items_processed": 26798,
       "estimated_tokens": 0
     }
   ]
