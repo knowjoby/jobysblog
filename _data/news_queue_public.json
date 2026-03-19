@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-19T20:01:45.877640+00:00",
-  "pending_count": 932,
+  "updated_at_utc": "2026-03-19T21:04:09.885959+00:00",
+  "pending_count": 933,
   "pending": [
     {
       "title": "Fitbit’s AI health coach will soon be able to read your medical records",
@@ -23,6 +23,20 @@
         "meta"
       ],
       "topics": []
+    },
+    {
+      "title": "Cursor’s new coding model Composer 2 is here: It beats Claude Opus 4.6 but still trails GPT-5.4",
+      "url": "https://venturebeat.com/technology/cursors-new-coding-model-composer-2-is-here-it-beats-claude-opus-4-6-but",
+      "score": 43,
+      "fetched_at": "2026-03-19",
+      "source": "VentureBeat",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [
+        "agentic",
+        "coding"
+      ]
     },
     {
       "title": "Xiaomi stuns with new MiMo-V2-Pro LLM nearing GPT-5.2, Opus 4.6 performance at a fraction of the cost",

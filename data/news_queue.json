@@ -371,6 +371,22 @@
       "topic": ""
     },
     {
+      "title": "Cursor\u2019s new coding model Composer 2 is here: It beats Claude Opus 4.6 but still trails GPT-5.4",
+      "url": "https://venturebeat.com/technology/cursors-new-coding-model-composer-2-is-here-it-beats-claude-opus-4-6-but",
+      "score": 43,
+      "fetched_at": "2026-03-19",
+      "source": "VentureBeat",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [
+        "agentic",
+        "coding"
+      ],
+      "company": "anthropic",
+      "topic": "agentic"
+    },
+    {
       "title": "Manufact raises $6.3M as MCP becomes the \u2018USB-C for AI\u2019 powering ChatGPT and Claude apps",
       "url": "https://venturebeat.com/infrastructure/manufact-raises-usd6-3m-as-mcp-becomes-the-usb-c-for-ai-powering-chatgpt-and",
       "score": 42,
@@ -11885,7 +11901,7 @@
     {
       "date": "2026-03-19",
       "posts": 3,
-      "items_processed": 28586,
+      "items_processed": 30374,
       "estimated_tokens": 0
     }
   ]
