@@ -1,7 +1,18 @@
 {
-  "updated_at_utc": "2026-03-19T11:40:29.449041+00:00",
-  "pending_count": 920,
+  "updated_at_utc": "2026-03-19T13:19:50.069995+00:00",
+  "pending_count": 921,
   "pending": [
+    {
+      "title": "Fitbit’s AI health coach will soon be able to read your medical records",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/897250/fitbits-ai-health-coach-reads-medical-records",
+      "score": 49,
+      "fetched_at": "2026-03-19",
+      "source": "The Verge",
+      "companies": [
+        "openai"
+      ],
+      "topics": []
+    },
     {
       "title": "Xiaomi stuns with new MiMo-V2-Pro LLM nearing GPT-5.2, Opus 4.6 performance at a fraction of the cost",
       "url": "https://venturebeat.com/technology/xiaomi-stuns-with-new-mimo-v2-pro-llm-nearing-gpt-5-2-opus-4-6-performance",
