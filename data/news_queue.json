@@ -262,6 +262,20 @@
       "topic": ""
     },
     {
+      "title": "\u2018Uncanny Valley\u2019: Nvidia\u2019s \u2018Super Bowl of AI,\u2019 Tesla Disappoints, and Meta\u2019s VR Metaverse \u2018Shutdown\u2019",
+      "url": "https://www.wired.com/story/uncanny-valley-podcast-nvidia-gtc-tesla-disappointed-fans-meta-horizon-worlds/",
+      "score": 48,
+      "fetched_at": "2026-03-19",
+      "source": "Wired",
+      "companies": [
+        "meta",
+        "nvidia"
+      ],
+      "topics": [],
+      "company": "meta",
+      "topic": ""
+    },
+    {
       "title": "Netomi\u2019s lessons for scaling agentic systems into the enterprise",
       "url": "https://openai.com/index/netomi",
       "score": 45,
@@ -11901,7 +11915,7 @@
     {
       "date": "2026-03-19",
       "posts": 3,
-      "items_processed": 30374,
+      "items_processed": 32162,
       "estimated_tokens": 0
     }
   ]

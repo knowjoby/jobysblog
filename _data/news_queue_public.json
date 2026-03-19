@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-19T21:04:09.885959+00:00",
-  "pending_count": 933,
+  "updated_at_utc": "2026-03-19T21:56:32.642046+00:00",
+  "pending_count": 934,
   "pending": [
     {
       "title": "Fitbit’s AI health coach will soon be able to read your medical records",
@@ -10,6 +10,18 @@
       "source": "The Verge",
       "companies": [
         "openai"
+      ],
+      "topics": []
+    },
+    {
+      "title": "‘Uncanny Valley’: Nvidia’s ‘Super Bowl of AI,’ Tesla Disappoints, and Meta’s VR Metaverse ‘Shutdown’",
+      "url": "https://www.wired.com/story/uncanny-valley-podcast-nvidia-gtc-tesla-disappointed-fans-meta-horizon-worlds/",
+      "score": 48,
+      "fetched_at": "2026-03-19",
+      "source": "Wired",
+      "companies": [
+        "meta",
+        "nvidia"
       ],
       "topics": []
     },
