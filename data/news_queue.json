@@ -1627,6 +1627,21 @@
       "topic": "open_source"
     },
     {
+      "title": "OpenAI is throwing everything into building a fully automated researcher",
+      "url": "https://www.technologyreview.com/2026/03/20/1134438/openai-is-throwing-everything-into-building-a-fully-automated-researcher/",
+      "score": 32,
+      "fetched_at": "2026-03-20",
+      "source": "MIT Tech Review",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ],
+      "company": "openai",
+      "topic": "agentic"
+    },
+    {
       "title": "Meta Ramps Up Efforts to Disrupt Industrialized Scamming",
       "url": "https://www.wired.com/story/meta-ramps-up-efforts-to-disrupt-industrialized-scamming/",
       "score": 30,
@@ -11989,7 +12004,7 @@
     {
       "date": "2026-03-20",
       "posts": 1,
-      "items_processed": 17880,
+      "items_processed": 19668,
       "estimated_tokens": 0
     }
   ]
