@@ -1683,6 +1683,21 @@
       "topic": "agentic"
     },
     {
+      "title": "What happened at Nvidia GTC:\u00a0NemoClaw, Robot Olaf, and a\u00a0$1 trillion\u00a0bet",
+      "url": "https://techcrunch.com/video/what-happened-at-nvidia-gtc-nemoclaw-robot-olaf-and-a-1-trillion-bet/",
+      "score": 32,
+      "fetched_at": "2026-03-20",
+      "source": "TechCrunch",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [
+        "robotics"
+      ],
+      "company": "nvidia",
+      "topic": "robotics"
+    },
+    {
       "title": "Why people really hate AI",
       "url": "https://www.theverge.com/podcast/897900/ai-trust-gap-killer-app-vergecast",
       "score": 31,
@@ -12013,6 +12028,22 @@
         "xai"
       ],
       "topics": []
+    },
+    {
+      "title": "Mistral's Small 4 consolidates reasoning, vision and coding into one model \u2014 at a fraction of the inference cost",
+      "url": "https://venturebeat.com/technology/mistrals-small-4-consolidates-reasoning-vision-and-coding-into-one-model-at",
+      "score": 60,
+      "file": "_posts/2026-03-20-mistrals-small-4-consolidates-reasoning-vision-and-coding-into-one-mod.md",
+      "posted_at": "2026-03-20",
+      "companies": [
+        "mistral"
+      ],
+      "topics": [
+        "agentic",
+        "reasoning",
+        "coding",
+        "multimodal"
+      ]
     }
   ],
   "daily_usage": [
@@ -12097,8 +12128,8 @@
     },
     {
       "date": "2026-03-20",
-      "posts": 2,
-      "items_processed": 32184,
+      "posts": 3,
+      "items_processed": 33972,
       "estimated_tokens": 0
     }
   ]

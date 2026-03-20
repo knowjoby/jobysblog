@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-20T19:57:26.879009+00:00",
-  "pending_count": 945,
+  "updated_at_utc": "2026-03-20T20:45:08.591684+00:00",
+  "pending_count": 946,
   "pending": [
     {
       "title": "Anthropic just shipped an OpenClaw killer called Claude Code Channels, letting you message it over Telegram and Discord",
@@ -62,6 +62,19 @@
       ],
       "topics": [
         "agentic"
+      ]
+    },
+    {
+      "title": "What happened at Nvidia GTC: NemoClaw, Robot Olaf, and a $1 trillion bet",
+      "url": "https://techcrunch.com/video/what-happened-at-nvidia-gtc-nemoclaw-robot-olaf-and-a-1-trillion-bet/",
+      "score": 32,
+      "fetched_at": "2026-03-20",
+      "source": "TechCrunch",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [
+        "robotics"
       ]
     },
     {
