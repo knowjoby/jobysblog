@@ -1,7 +1,21 @@
 {
-  "updated_at_utc": "2026-03-19T23:35:52.538590+00:00",
-  "pending_count": 935,
+  "updated_at_utc": "2026-03-20T02:37:49.079147+00:00",
+  "pending_count": 936,
   "pending": [
+    {
+      "title": "Anthropic just shipped an OpenClaw killer called Claude Code Channels, letting you message it over Telegram and Discord",
+      "url": "https://venturebeat.com/orchestration/anthropic-just-shipped-an-openclaw-killer-called-claude-code-channels",
+      "score": 46,
+      "fetched_at": "2026-03-20",
+      "source": "VentureBeat",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [
+        "agentic",
+        "open_source"
+      ]
+    },
     {
       "title": "Fitbit’s AI health coach will soon be able to read your medical records",
       "url": "https://www.theverge.com/ai-artificial-intelligence/897250/fitbits-ai-health-coach-reads-medical-records",

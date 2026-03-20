@@ -276,6 +276,22 @@
       "topic": ""
     },
     {
+      "title": "Anthropic just shipped an OpenClaw killer called Claude Code Channels, letting you message it over Telegram and Discord",
+      "url": "https://venturebeat.com/orchestration/anthropic-just-shipped-an-openclaw-killer-called-claude-code-channels",
+      "score": 46,
+      "fetched_at": "2026-03-20",
+      "source": "VentureBeat",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [
+        "agentic",
+        "open_source"
+      ],
+      "company": "anthropic",
+      "topic": "agentic"
+    },
+    {
       "title": "Netomi\u2019s lessons for scaling agentic systems into the enterprise",
       "url": "https://openai.com/index/netomi",
       "score": 45,
@@ -11849,6 +11865,19 @@
       "topics": [
         "agentic"
       ]
+    },
+    {
+      "title": "OpenAI is planning a desktop \u2018superapp\u2019",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/897778/openai-chatgpt-codex-atlas-browser-superapp",
+      "score": 57,
+      "file": "_posts/2026-03-20-openai-is-planning-a-desktop-superapp.md",
+      "posted_at": "2026-03-20",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "coding"
+      ]
     }
   ],
   "daily_usage": [
@@ -11929,6 +11958,12 @@
       "date": "2026-03-19",
       "posts": 3,
       "items_processed": 35738,
+      "estimated_tokens": 0
+    },
+    {
+      "date": "2026-03-20",
+      "posts": 1,
+      "items_processed": 1788,
       "estimated_tokens": 0
     }
   ]
