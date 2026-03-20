@@ -1,27 +1,5 @@
 [
   {
-    "ran_at": "2026-03-18 14:20:15 IST",
-    "triggered_by": "Scheduled",
-    "candidates_found": 0,
-    "posts_created": 0,
-    "queued": 0,
-    "feeds": {
-      "ddg": {
-        "queries": 3,
-        "raw": 0,
-        "candidates": 0
-      },
-      "rss": {
-        "raw": 1785,
-        "feeds_total": 10,
-        "feeds_ok": 10,
-        "feeds_failed": 0,
-        "candidates": 0
-      }
-    },
-    "posts": []
-  },
-  {
     "ran_at": "2026-03-18 14:31:15 IST",
     "triggered_by": "Scheduled",
     "candidates_found": 0,
@@ -1150,5 +1128,39 @@
       }
     },
     "posts": []
+  },
+  {
+    "ran_at": "2026-03-20 23:32:41 IST",
+    "triggered_by": "Scheduled",
+    "candidates_found": 1,
+    "posts_created": 1,
+    "queued": 0,
+    "feeds": {
+      "ddg": {
+        "queries": 3,
+        "raw": 0,
+        "candidates": 1
+      },
+      "rss": {
+        "raw": 1788,
+        "feeds_total": 10,
+        "feeds_ok": 10,
+        "feeds_failed": 0,
+        "candidates": 1
+      }
+    },
+    "posts": [
+      {
+        "title": "Scale AI launches Voice Showdown, the first real-world benchmark for voice AI — and the results are humbling for some top models",
+        "file": "_posts/2026-03-20-scale-ai-launches-voice-showdown-the-first-real-world-benchmark-for-vo.md",
+        "score": 78,
+        "tags": [
+          "openai",
+          "anthropic",
+          "google",
+          "xai"
+        ]
+      }
+    ]
   }
 ]

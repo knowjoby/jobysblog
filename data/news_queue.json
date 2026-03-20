@@ -11973,6 +11973,20 @@
       "topics": [
         "coding"
       ]
+    },
+    {
+      "title": "Scale AI launches Voice Showdown, the first real-world benchmark for voice AI \u2014 and the results are humbling for some top models",
+      "url": "https://venturebeat.com/data/scale-ai-launches-voice-showdown-the-first-real-world-benchmark-for-voice-ai",
+      "score": 78,
+      "file": "_posts/2026-03-20-scale-ai-launches-voice-showdown-the-first-real-world-benchmark-for-vo.md",
+      "posted_at": "2026-03-20",
+      "companies": [
+        "openai",
+        "anthropic",
+        "google",
+        "xai"
+      ],
+      "topics": []
     }
   ],
   "daily_usage": [
@@ -12057,8 +12071,8 @@
     },
     {
       "date": "2026-03-20",
-      "posts": 1,
-      "items_processed": 26820,
+      "posts": 2,
+      "items_processed": 28608,
       "estimated_tokens": 0
     }
   ]
