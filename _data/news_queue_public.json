@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-20T18:02:41.682186+00:00",
-  "pending_count": 943,
+  "updated_at_utc": "2026-03-20T19:21:05.492546+00:00",
+  "pending_count": 945,
   "pending": [
     {
       "title": "Anthropic just shipped an OpenClaw killer called Claude Code Channels, letting you message it over Telegram and Discord",
@@ -26,6 +26,17 @@
         "amazon"
       ],
       "topics": []
+    },
+    {
+      "title": "Trump takes another shot at dismantling state AI regulation",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/898055/trump-new-ai-policy-framework",
+      "score": 42,
+      "fetched_at": "2026-03-20",
+      "source": "The Verge",
+      "companies": [],
+      "topics": [
+        "regulation"
+      ]
     },
     {
       "title": "The Download: OpenAI is building a fully automated researcher, and a psychedelic trial blind spot",
@@ -72,6 +83,17 @@
       "source": "Wired",
       "companies": [
         "meta"
+      ],
+      "topics": []
+    },
+    {
+      "title": "Gamers Hate Nvidia's DLSS 5. Developers Aren’t Crazy About It Either",
+      "url": "https://www.wired.com/story/gamers-hate-nvidia-dlss-5-developers-arent-crazy-about-it-either/",
+      "score": 24,
+      "fetched_at": "2026-03-20",
+      "source": "Wired",
+      "companies": [
+        "nvidia"
       ],
       "topics": []
     },

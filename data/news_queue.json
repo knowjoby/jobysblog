@@ -550,6 +550,19 @@
       "topic": ""
     },
     {
+      "title": "Trump takes another shot at dismantling state AI regulation",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/898055/trump-new-ai-policy-framework",
+      "score": 42,
+      "fetched_at": "2026-03-20",
+      "source": "The Verge",
+      "companies": [],
+      "topics": [
+        "regulation"
+      ],
+      "company": "",
+      "topic": "regulation"
+    },
+    {
       "title": "Google's Gemini Embedding 2 arrives with native multimodal support to cut costs and speed up your enterprise data stack",
       "url": "https://venturebeat.com/data/googles-gemini-embedding-2-arrives-with-native-multimodal-support-to-cut",
       "score": 41,
@@ -5729,6 +5742,19 @@
       ],
       "topics": [],
       "company": "meta",
+      "topic": ""
+    },
+    {
+      "title": "Gamers Hate Nvidia's DLSS 5. Developers Aren\u2019t Crazy About It Either",
+      "url": "https://www.wired.com/story/gamers-hate-nvidia-dlss-5-developers-arent-crazy-about-it-either/",
+      "score": 24,
+      "fetched_at": "2026-03-20",
+      "source": "Wired",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [],
+      "company": "nvidia",
       "topic": ""
     },
     {
@@ -12072,7 +12098,7 @@
     {
       "date": "2026-03-20",
       "posts": 2,
-      "items_processed": 28608,
+      "items_processed": 30396,
       "estimated_tokens": 0
     }
   ]
