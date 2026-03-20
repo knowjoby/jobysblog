@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-20T16:07:42.127798+00:00",
-  "pending_count": 942,
+  "updated_at_utc": "2026-03-20T17:10:51.996826+00:00",
+  "pending_count": 943,
   "pending": [
     {
       "title": "Anthropic just shipped an OpenClaw killer called Claude Code Channels, letting you message it over Telegram and Discord",
@@ -84,6 +84,17 @@
       "companies": [],
       "topics": [
         "ai"
+      ]
+    },
+    {
+      "title": "Nemotron 3 Content Safety 4B: Multimodal, Multilingual Content Moderation",
+      "url": "https://huggingface.co/blog/nvidia/nemotron-3-content-safety",
+      "score": 11,
+      "fetched_at": "2026-03-20",
+      "source": "Hugging Face",
+      "companies": [],
+      "topics": [
+        "multimodal"
       ]
     },
     {

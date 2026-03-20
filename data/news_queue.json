@@ -9847,6 +9847,19 @@
       "topic": "robotics"
     },
     {
+      "title": "Nemotron 3 Content Safety 4B: Multimodal, Multilingual Content Moderation",
+      "url": "https://huggingface.co/blog/nvidia/nemotron-3-content-safety",
+      "score": 11,
+      "fetched_at": "2026-03-20",
+      "source": "Hugging Face",
+      "companies": [],
+      "topics": [
+        "multimodal"
+      ],
+      "company": "",
+      "topic": "multimodal"
+    },
+    {
       "title": "Deep double descent",
       "url": "https://openai.com/index/deep-double-descent",
       "score": 10,
@@ -12045,7 +12058,7 @@
     {
       "date": "2026-03-20",
       "posts": 1,
-      "items_processed": 25032,
+      "items_processed": 26820,
       "estimated_tokens": 0
     }
   ]
