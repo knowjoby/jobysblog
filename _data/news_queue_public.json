@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-20T13:13:05.668638+00:00",
-  "pending_count": 939,
+  "updated_at_utc": "2026-03-20T14:24:45.158072+00:00",
+  "pending_count": 941,
   "pending": [
     {
       "title": "Anthropic just shipped an OpenClaw killer called Claude Code Channels, letting you message it over Telegram and Discord",
@@ -17,6 +17,19 @@
       ]
     },
     {
+      "title": "The Download: OpenAI is building a fully automated researcher, and a psychedelic trial blind spot",
+      "url": "https://www.technologyreview.com/2026/03/20/1134448/the-download-openai-building-fully-automated-researcher-psychedelic-drug-trial/",
+      "score": 32,
+      "fetched_at": "2026-03-20",
+      "source": "MIT Tech Review",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ]
+    },
+    {
       "title": "OpenAI is throwing everything into building a fully automated researcher",
       "url": "https://www.technologyreview.com/2026/03/20/1134438/openai-is-throwing-everything-into-building-a-fully-automated-researcher/",
       "score": 32,
@@ -27,6 +40,17 @@
       ],
       "topics": [
         "agentic"
+      ]
+    },
+    {
+      "title": "Why people really hate AI",
+      "url": "https://www.theverge.com/podcast/897900/ai-trust-gap-killer-app-vergecast",
+      "score": 31,
+      "fetched_at": "2026-03-20",
+      "source": "The Verge",
+      "companies": [],
+      "topics": [
+        "ai"
       ]
     },
     {

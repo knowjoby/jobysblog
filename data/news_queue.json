@@ -1642,6 +1642,34 @@
       "topic": "agentic"
     },
     {
+      "title": "The Download: OpenAI is building a fully automated researcher, and a psychedelic trial blind spot",
+      "url": "https://www.technologyreview.com/2026/03/20/1134448/the-download-openai-building-fully-automated-researcher-psychedelic-drug-trial/",
+      "score": 32,
+      "fetched_at": "2026-03-20",
+      "source": "MIT Tech Review",
+      "companies": [
+        "openai"
+      ],
+      "topics": [
+        "agentic"
+      ],
+      "company": "openai",
+      "topic": "agentic"
+    },
+    {
+      "title": "Why people really hate AI",
+      "url": "https://www.theverge.com/podcast/897900/ai-trust-gap-killer-app-vergecast",
+      "score": 31,
+      "fetched_at": "2026-03-20",
+      "source": "The Verge",
+      "companies": [],
+      "topics": [
+        "ai"
+      ],
+      "company": "",
+      "topic": "ai"
+    },
+    {
       "title": "Meta Ramps Up Efforts to Disrupt Industrialized Scamming",
       "url": "https://www.wired.com/story/meta-ramps-up-efforts-to-disrupt-industrialized-scamming/",
       "score": 30,
@@ -12004,7 +12032,7 @@
     {
       "date": "2026-03-20",
       "posts": 1,
-      "items_processed": 19668,
+      "items_processed": 21456,
       "estimated_tokens": 0
     }
   ]
