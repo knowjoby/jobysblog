@@ -5663,6 +5663,19 @@
       "topic": ""
     },
     {
+      "title": "The Danger Behind Meta\u2019s Decision to Kill End-to-End Encrypted Instagram DMs",
+      "url": "https://www.wired.com/story/the-danger-behind-metas-decision-to-kill-end-to-end-encrypted-instagram-dms/",
+      "score": 24,
+      "fetched_at": "2026-03-20",
+      "source": "Wired",
+      "companies": [
+        "meta"
+      ],
+      "topics": [],
+      "company": "meta",
+      "topic": ""
+    },
+    {
       "title": "Introducing GPT-5.1 for developers",
       "url": "https://openai.com/index/gpt-5-1-for-developers",
       "score": 22,
@@ -9376,6 +9389,19 @@
       "topic": "ai"
     },
     {
+      "title": "LinkedIn Invited My AI 'Cofounder' to Give a Corporate Talk\u2014Then Banned It",
+      "url": "https://www.wired.com/story/linkedin-invited-my-ai-cofounder-to-give-a-corporate-talk-then-banned-it/",
+      "score": 12,
+      "fetched_at": "2026-03-20",
+      "source": "Wired",
+      "companies": [],
+      "topics": [
+        "ai"
+      ],
+      "company": "",
+      "topic": "ai"
+    },
+    {
       "title": "Notion\u2019s rebuild for agentic AI: How GPT\u20115 helped unlock autonomous workflows",
       "url": "https://openai.com/index/notion",
       "score": 11,
@@ -11963,7 +11989,7 @@
     {
       "date": "2026-03-20",
       "posts": 1,
-      "items_processed": 12516,
+      "items_processed": 14304,
       "estimated_tokens": 0
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-20T09:07:44.004350+00:00",
-  "pending_count": 936,
+  "updated_at_utc": "2026-03-20T10:06:03.702273+00:00",
+  "pending_count": 938,
   "pending": [
     {
       "title": "Anthropic just shipped an OpenClaw killer called Claude Code Channels, letting you message it over Telegram and Discord",
@@ -14,6 +14,28 @@
       "topics": [
         "agentic",
         "open_source"
+      ]
+    },
+    {
+      "title": "The Danger Behind Meta’s Decision to Kill End-to-End Encrypted Instagram DMs",
+      "url": "https://www.wired.com/story/the-danger-behind-metas-decision-to-kill-end-to-end-encrypted-instagram-dms/",
+      "score": 24,
+      "fetched_at": "2026-03-20",
+      "source": "Wired",
+      "companies": [
+        "meta"
+      ],
+      "topics": []
+    },
+    {
+      "title": "LinkedIn Invited My AI 'Cofounder' to Give a Corporate Talk—Then Banned It",
+      "url": "https://www.wired.com/story/linkedin-invited-my-ai-cofounder-to-give-a-corporate-talk-then-banned-it/",
+      "score": 12,
+      "fetched_at": "2026-03-20",
+      "source": "Wired",
+      "companies": [],
+      "topics": [
+        "ai"
       ]
     },
     {
