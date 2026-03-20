@@ -1698,6 +1698,21 @@
       "topic": "robotics"
     },
     {
+      "title": "Microsoft rolls back some of its Copilot AI bloat on Windows",
+      "url": "https://techcrunch.com/2026/03/20/microsoft-rolls-back-some-of-its-copilot-ai-bloat-on-windows/",
+      "score": 32,
+      "fetched_at": "2026-03-20",
+      "source": "TechCrunch",
+      "companies": [
+        "microsoft"
+      ],
+      "topics": [
+        "coding"
+      ],
+      "company": "microsoft",
+      "topic": "coding"
+    },
+    {
       "title": "Why people really hate AI",
       "url": "https://www.theverge.com/podcast/897900/ai-trust-gap-killer-app-vergecast",
       "score": 31,
@@ -12129,7 +12144,7 @@
     {
       "date": "2026-03-20",
       "posts": 3,
-      "items_processed": 33972,
+      "items_processed": 35760,
       "estimated_tokens": 0
     }
   ]
