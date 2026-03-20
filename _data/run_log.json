@@ -1,48 +1,5 @@
 [
   {
-    "ran_at": "2026-03-18 03:15:24 IST",
-    "triggered_by": "Scheduled",
-    "candidates_found": 3,
-    "posts_created": 2,
-    "queued": 1,
-    "feeds": {
-      "ddg": {
-        "queries": 3,
-        "raw": 0,
-        "candidates": 3
-      },
-      "rss": {
-        "raw": 1785,
-        "feeds_total": 10,
-        "feeds_ok": 10,
-        "feeds_failed": 0,
-        "candidates": 3
-      }
-    },
-    "posts": [
-      {
-        "title": "Mistral bets on ‘build-your-own AI’ as it takes on OpenAI, Anthropic in the enterprise",
-        "file": "_posts/2026-03-17-mistral-bets-on-build-your-own-ai-as-it-takes-on-openai-anthropic-in-t.md",
-        "score": 64,
-        "tags": [
-          "openai",
-          "anthropic",
-          "mistral"
-        ]
-      },
-      {
-        "title": "Why Garry Tan’s Claude Code setup has gotten so much love, and hate",
-        "file": "_posts/2026-03-17-why-garry-tans-claude-code-setup-has-gotten-so-much-love-and-hate.md",
-        "score": 54,
-        "tags": [
-          "openai",
-          "anthropic",
-          "google"
-        ]
-      }
-    ]
-  },
-  {
     "ran_at": "2026-03-18 04:10:00 IST",
     "triggered_by": "Scheduled",
     "candidates_found": 1,
@@ -1168,6 +1125,28 @@
         "feeds_ok": 10,
         "feeds_failed": 0,
         "candidates": 2
+      }
+    },
+    "posts": []
+  },
+  {
+    "ran_at": "2026-03-20 16:35:43 IST",
+    "triggered_by": "Scheduled",
+    "candidates_found": 0,
+    "posts_created": 0,
+    "queued": 0,
+    "feeds": {
+      "ddg": {
+        "queries": 3,
+        "raw": 0,
+        "candidates": 0
+      },
+      "rss": {
+        "raw": 1788,
+        "feeds_total": 10,
+        "feeds_ok": 10,
+        "feeds_failed": 0,
+        "candidates": 0
       }
     },
     "posts": []
