@@ -1,7 +1,18 @@
 {
-  "updated_at_utc": "2026-03-21T11:28:51.319631+00:00",
-  "pending_count": 950,
+  "updated_at_utc": "2026-03-21T11:49:49.968137+00:00",
+  "pending_count": 951,
   "pending": [
+    {
+      "title": "Gemini task automation is slow, clunky, and super impressive",
+      "url": "https://www.theverge.com/tech/898282/gemini-task-automation-uber-doordash-hands-on",
+      "score": 43,
+      "fetched_at": "2026-03-21",
+      "source": "The Verge",
+      "companies": [
+        "google"
+      ],
+      "topics": []
+    },
     {
       "title": "Anthropic Denies It Could Sabotage AI Tools During War",
       "url": "https://www.wired.com/story/anthropic-denies-sabotage-ai-tools-war-claude/",
