@@ -1,38 +1,5 @@
 [
   {
-    "ran_at": "2026-03-19 01:00:04 IST",
-    "triggered_by": "Scheduled",
-    "candidates_found": 3,
-    "posts_created": 1,
-    "queued": 2,
-    "feeds": {
-      "ddg": {
-        "queries": 3,
-        "raw": 0,
-        "candidates": 3
-      },
-      "rss": {
-        "raw": 1786,
-        "feeds_total": 10,
-        "feeds_ok": 10,
-        "feeds_failed": 0,
-        "candidates": 3
-      }
-    },
-    "posts": [
-      {
-        "title": "Why Walmart and OpenAI Are Shaking Up Their Agentic Shopping Deal",
-        "file": "_posts/2026-03-18-why-walmart-and-openai-are-shaking-up-their-agentic-shopping-deal.md",
-        "score": 53,
-        "tags": [
-          "openai",
-          "google",
-          "agentic"
-        ]
-      }
-    ]
-  },
-  {
     "ran_at": "2026-03-19 01:32:37 IST",
     "triggered_by": "Scheduled",
     "candidates_found": 2,
@@ -1156,6 +1123,28 @@
   },
   {
     "ran_at": "2026-03-21 10:12:07 IST",
+    "triggered_by": "Scheduled",
+    "candidates_found": 0,
+    "posts_created": 0,
+    "queued": 0,
+    "feeds": {
+      "ddg": {
+        "queries": 3,
+        "raw": 0,
+        "candidates": 0
+      },
+      "rss": {
+        "raw": 1788,
+        "feeds_total": 10,
+        "feeds_ok": 10,
+        "feeds_failed": 0,
+        "candidates": 0
+      }
+    },
+    "posts": []
+  },
+  {
+    "ran_at": "2026-03-21 11:16:47 IST",
     "triggered_by": "Scheduled",
     "candidates_found": 0,
     "posts_created": 0,
