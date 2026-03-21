@@ -9532,6 +9532,19 @@
       "topic": "robotics"
     },
     {
+      "title": "Delve accused of misleading customers with \u2018fake compliance\u2019",
+      "url": "https://techcrunch.com/2026/03/21/delve-accused-of-misleading-customers-with-fake-compliance/",
+      "score": 14,
+      "fetched_at": "2026-03-21",
+      "source": "TechCrunch",
+      "companies": [],
+      "topics": [
+        "regulation"
+      ],
+      "company": "",
+      "topic": "regulation"
+    },
+    {
       "title": "Introducing the Chatbot Guardrails Arena",
       "url": "https://huggingface.co/blog/arena-lighthouz",
       "score": 12,
@@ -12243,7 +12256,7 @@
     {
       "date": "2026-03-21",
       "posts": 0,
-      "items_processed": 28608,
+      "items_processed": 30396,
       "estimated_tokens": 0
     }
   ]

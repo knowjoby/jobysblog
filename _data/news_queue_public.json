@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-21T16:37:38.966723+00:00",
-  "pending_count": 954,
+  "updated_at_utc": "2026-03-21T17:31:06.196748+00:00",
+  "pending_count": 955,
   "pending": [
     {
       "title": "The gen AI Kool-Aid tastes like eugenics",
@@ -67,6 +67,17 @@
         "anthropic"
       ],
       "topics": []
+    },
+    {
+      "title": "Delve accused of misleading customers with ‘fake compliance’",
+      "url": "https://techcrunch.com/2026/03/21/delve-accused-of-misleading-customers-with-fake-compliance/",
+      "score": 14,
+      "fetched_at": "2026-03-21",
+      "source": "TechCrunch",
+      "companies": [],
+      "topics": [
+        "regulation"
+      ]
     },
     {
       "title": "Anthropic just shipped an OpenClaw killer called Claude Code Channels, letting you message it over Telegram and Discord",
