@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-03-21T11:49:49.968137+00:00",
-  "pending_count": 951,
+  "updated_at_utc": "2026-03-21T13:02:32.173566+00:00",
+  "pending_count": 952,
   "pending": [
     {
       "title": "Gemini task automation is slow, clunky, and super impressive",
@@ -12,6 +12,17 @@
         "google"
       ],
       "topics": []
+    },
+    {
+      "title": "Dreame’s self-cleaning L10s Pro Ultra is nearly $1,000 off its original list price",
+      "url": "https://www.theverge.com/gadgets/898287/dreame-l10s-pro-ultra-robot-vacuum-mop-amazon-big-spring-sale-2026-deal",
+      "score": 33,
+      "fetched_at": "2026-03-21",
+      "source": "The Verge",
+      "companies": [],
+      "topics": [
+        "robotics"
+      ]
     },
     {
       "title": "Anthropic Denies It Could Sabotage AI Tools During War",

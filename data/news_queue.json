@@ -1240,6 +1240,19 @@
       "topic": "robotics"
     },
     {
+      "title": "Dreame\u2019s self-cleaning L10s Pro Ultra is nearly $1,000 off its original list price",
+      "url": "https://www.theverge.com/gadgets/898287/dreame-l10s-pro-ultra-robot-vacuum-mop-amazon-big-spring-sale-2026-deal",
+      "score": 33,
+      "fetched_at": "2026-03-21",
+      "source": "The Verge",
+      "companies": [],
+      "topics": [
+        "robotics"
+      ],
+      "company": "",
+      "topic": "robotics"
+    },
+    {
       "title": "Trump Administration Won\u2019t Rule Out Further Action Against Anthropic",
       "url": "https://www.wired.com/story/trump-administration-refuses-to-say-it-wont-take-further-action-against-anthropic/",
       "score": 32,
@@ -12204,7 +12217,7 @@
     {
       "date": "2026-03-21",
       "posts": 0,
-      "items_processed": 19668,
+      "items_processed": 21456,
       "estimated_tokens": 0
     }
   ]
