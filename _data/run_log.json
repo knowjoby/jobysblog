@@ -1,39 +1,5 @@
 [
   {
-    "ran_at": "2026-03-19 14:11:27 IST",
-    "triggered_by": "Scheduled",
-    "candidates_found": 1,
-    "posts_created": 1,
-    "queued": 0,
-    "feeds": {
-      "ddg": {
-        "queries": 3,
-        "raw": 0,
-        "candidates": 1
-      },
-      "rss": {
-        "raw": 1786,
-        "feeds_total": 10,
-        "feeds_ok": 10,
-        "feeds_failed": 0,
-        "candidates": 1
-      }
-    },
-    "posts": [
-      {
-        "title": "Multiverse Computing pushes its compressed AI models into the mainstream",
-        "file": "_posts/2026-03-19-multiverse-computing-pushes-its-compressed-ai-models-into-the-mainstre.md",
-        "score": 62,
-        "tags": [
-          "openai",
-          "meta",
-          "deepseek",
-          "mistral"
-        ]
-      }
-    ]
-  },
-  {
     "ran_at": "2026-03-19 14:22:38 IST",
     "triggered_by": "Scheduled",
     "candidates_found": 0,
@@ -1161,6 +1127,28 @@
         "feeds_ok": 10,
         "feeds_failed": 0,
         "candidates": 1
+      }
+    },
+    "posts": []
+  },
+  {
+    "ran_at": "2026-03-21 19:28:46 IST",
+    "triggered_by": "Scheduled",
+    "candidates_found": 0,
+    "posts_created": 0,
+    "queued": 0,
+    "feeds": {
+      "ddg": {
+        "queries": 3,
+        "raw": 0,
+        "candidates": 0
+      },
+      "rss": {
+        "raw": 1788,
+        "feeds_total": 10,
+        "feeds_ok": 10,
+        "feeds_failed": 0,
+        "candidates": 0
       }
     },
     "posts": []
