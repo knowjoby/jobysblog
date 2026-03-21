@@ -5803,6 +5803,32 @@
       "topic": ""
     },
     {
+      "title": "New court filing reveals Pentagon told Anthropic the two sides were nearly aligned \u2014 a week after Trump declared the relationship kaput",
+      "url": "https://techcrunch.com/2026/03/20/new-court-filing-reveals-pentagon-told-anthropic-the-two-sides-were-nearly-aligned-a-week-after-trump-declared-the-relationship-kaput/",
+      "score": 24,
+      "fetched_at": "2026-03-21",
+      "source": "TechCrunch",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [],
+      "company": "anthropic",
+      "topic": ""
+    },
+    {
+      "title": "Anthropic Denies It Could Sabotage AI Tools During War",
+      "url": "https://www.wired.com/story/anthropic-denies-sabotage-ai-tools-war-claude/",
+      "score": 24,
+      "fetched_at": "2026-03-21",
+      "source": "Wired",
+      "companies": [
+        "anthropic"
+      ],
+      "topics": [],
+      "company": "anthropic",
+      "topic": ""
+    },
+    {
       "title": "Introducing GPT-5.1 for developers",
       "url": "https://openai.com/index/gpt-5-1-for-developers",
       "score": 22,
@@ -12160,6 +12186,12 @@
       "date": "2026-03-20",
       "posts": 3,
       "items_processed": 39336,
+      "estimated_tokens": 0
+    },
+    {
+      "date": "2026-03-21",
+      "posts": 0,
+      "items_processed": 1788,
       "estimated_tokens": 0
     }
   ]
