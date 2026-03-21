@@ -210,6 +210,19 @@
       "topic": ""
     },
     {
+      "title": "The gen AI Kool-Aid tastes like eugenics",
+      "url": "https://www.theverge.com/entertainment/897923/ghost-in-the-machine-valerie-veatch-interview",
+      "score": 49,
+      "fetched_at": "2026-03-21",
+      "source": "The Verge",
+      "companies": [
+        "openai"
+      ],
+      "topics": [],
+      "company": "openai",
+      "topic": ""
+    },
+    {
       "title": "Introducing the Stateful Runtime Environment for Agents in Amazon Bedrock",
       "url": "https://openai.com/index/introducing-the-stateful-runtime-environment-for-agents-in-amazon-bedrock",
       "score": 48,
@@ -12217,7 +12230,7 @@
     {
       "date": "2026-03-21",
       "posts": 0,
-      "items_processed": 23244,
+      "items_processed": 25032,
       "estimated_tokens": 0
     }
   ]
