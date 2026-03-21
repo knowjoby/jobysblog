@@ -5868,6 +5868,19 @@
       "topic": ""
     },
     {
+      "title": "Why Wall Street wasn\u2019t won over by Nvidia\u2019s big conference",
+      "url": "https://techcrunch.com/2026/03/21/why-wall-street-wasnt-won-over-by-nvidias-big-conference/",
+      "score": 24,
+      "fetched_at": "2026-03-21",
+      "source": "TechCrunch",
+      "companies": [
+        "nvidia"
+      ],
+      "topics": [],
+      "company": "nvidia",
+      "topic": ""
+    },
+    {
       "title": "Introducing GPT-5.1 for developers",
       "url": "https://openai.com/index/gpt-5-1-for-developers",
       "score": 22,
@@ -12230,7 +12243,7 @@
     {
       "date": "2026-03-21",
       "posts": 0,
-      "items_processed": 26820,
+      "items_processed": 28608,
       "estimated_tokens": 0
     }
   ]
