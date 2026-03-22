@@ -1780,6 +1780,19 @@
       "topic": "ai"
     },
     {
+      "title": "AI was everywhere at gaming\u2019s big developer conference \u2014 except the games",
+      "url": "https://www.theverge.com/games/897982/gdc-2026-ai-game-developer-conference",
+      "score": 31,
+      "fetched_at": "2026-03-22",
+      "source": "The Verge",
+      "companies": [],
+      "topics": [
+        "ai"
+      ],
+      "company": "",
+      "topic": "ai"
+    },
+    {
       "title": "Meta Ramps Up Efforts to Disrupt Industrialized Scamming",
       "url": "https://www.wired.com/story/meta-ramps-up-efforts-to-disrupt-industrialized-scamming/",
       "score": 30,
@@ -12165,6 +12178,18 @@
         "coding",
         "multimodal"
       ]
+    },
+    {
+      "title": "An exclusive tour of Amazon\u2019s Trainium lab, the chip that\u2019s won over Anthropic, OpenAI, even Apple",
+      "url": "https://techcrunch.com/2026/03/22/an-exclusive-tour-of-amazons-trainium-lab-the-chip-thats-won-over-anthropic-openai-even-apple/",
+      "score": 54,
+      "file": "_posts/2026-03-22-an-exclusive-tour-of-amazons-trainium-lab-the-chip-thats-won-over-anth.md",
+      "posted_at": "2026-03-22",
+      "companies": [
+        "openai",
+        "anthropic"
+      ],
+      "topics": []
     }
   ],
   "daily_usage": [
@@ -12261,8 +12286,8 @@
     },
     {
       "date": "2026-03-22",
-      "posts": 0,
-      "items_processed": 19668,
+      "posts": 1,
+      "items_processed": 21456,
       "estimated_tokens": 0
     }
   ]
