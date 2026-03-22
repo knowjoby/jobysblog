@@ -1,7 +1,18 @@
 {
-  "updated_at_utc": "2026-03-22T14:00:20.877874+00:00",
-  "pending_count": 956,
+  "updated_at_utc": "2026-03-22T14:54:27.228824+00:00",
+  "pending_count": 957,
   "pending": [
+    {
+      "title": "Musk says he’s building Terafab chip plant in Austin, Texas",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/898722/musk-terafab-chip-plant",
+      "score": 39,
+      "fetched_at": "2026-03-22",
+      "source": "The Verge",
+      "companies": [],
+      "topics": [
+        "robotics"
+      ]
+    },
     {
       "title": "AI was everywhere at gaming’s big developer conference — except the games",
       "url": "https://www.theverge.com/games/897982/gdc-2026-ai-game-developer-conference",

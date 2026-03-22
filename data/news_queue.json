@@ -743,6 +743,19 @@
       "topic": "robotics"
     },
     {
+      "title": "Musk says he\u2019s building Terafab chip plant in Austin, Texas",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/898722/musk-terafab-chip-plant",
+      "score": 39,
+      "fetched_at": "2026-03-22",
+      "source": "The Verge",
+      "companies": [],
+      "topics": [
+        "robotics"
+      ],
+      "company": "",
+      "topic": "robotics"
+    },
+    {
       "title": "Nvidia's new open weights Nemotron 3 super combines three different architectures to beat gpt-oss and Qwen in throughput",
       "url": "https://venturebeat.com/technology/nvidias-new-open-weights-nemotron-3-super-combines-three-different",
       "score": 38,
@@ -12287,7 +12300,7 @@
     {
       "date": "2026-03-22",
       "posts": 1,
-      "items_processed": 23244,
+      "items_processed": 25032,
       "estimated_tokens": 0
     }
   ]
