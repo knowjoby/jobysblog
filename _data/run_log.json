@@ -1,37 +1,5 @@
 [
   {
-    "ran_at": "2026-03-20 08:07:49 IST",
-    "triggered_by": "Scheduled",
-    "candidates_found": 2,
-    "posts_created": 1,
-    "queued": 1,
-    "feeds": {
-      "ddg": {
-        "queries": 3,
-        "raw": 0,
-        "candidates": 2
-      },
-      "rss": {
-        "raw": 1788,
-        "feeds_total": 10,
-        "feeds_ok": 10,
-        "feeds_failed": 0,
-        "candidates": 2
-      }
-    },
-    "posts": [
-      {
-        "title": "OpenAI is planning a desktop ‘superapp’",
-        "file": "_posts/2026-03-20-openai-is-planning-a-desktop-superapp.md",
-        "score": 57,
-        "tags": [
-          "openai",
-          "coding"
-        ]
-      }
-    ]
-  },
-  {
     "ran_at": "2026-03-20 10:21:50 IST",
     "triggered_by": "Scheduled",
     "candidates_found": 0,
@@ -1114,6 +1082,28 @@
   },
   {
     "ran_at": "2026-03-22 13:27:37 IST",
+    "triggered_by": "Scheduled",
+    "candidates_found": 0,
+    "posts_created": 0,
+    "queued": 0,
+    "feeds": {
+      "ddg": {
+        "queries": 3,
+        "raw": 0,
+        "candidates": 0
+      },
+      "rss": {
+        "raw": 1788,
+        "feeds_total": 10,
+        "feeds_ok": 10,
+        "feeds_failed": 0,
+        "candidates": 0
+      }
+    },
+    "posts": []
+  },
+  {
+    "ran_at": "2026-03-22 14:04:13 IST",
     "triggered_by": "Scheduled",
     "candidates_found": 0,
     "posts_created": 0,
